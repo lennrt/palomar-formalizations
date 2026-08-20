@@ -2,8 +2,8 @@
 
 DOI: [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995)
 
-This directory contains the DOI preprint as `preprint.pdf` and a standalone
-Palomar submission project in `palomar/`.
+This directory contains a standalone Palomar submission project in
+`palomar/`.
 
 The Lean scope is the exact phase-one block reduction and characteristic
 polynomial together with certified quartic-root location and exclusion above

@@ -2,7 +2,6 @@
 
 - DOI: <https://doi.org/10.5281/zenodo.21925582>
 - Author: Lennart Rudolph
-- Preprint: `preprint.pdf`
 - Palomar project: `palomar/`
 
 The Palomar project advertises the kernel-replayable finite rank certificate

@@ -2,7 +2,6 @@
 
 DOI: [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578)
 
-- `preprint.pdf` is the deposited preprint.
 - `palomar/` is the independent Lean project prepared for Palomar submission.
 
 The Palomar entry advertises the exact scalar certificates proved in Lean:

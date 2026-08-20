@@ -2,10 +2,8 @@
 
 DOI: [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230)
 
-This directory pairs the deposited preprint with its Palomar submission
-project:
+This directory contains the Palomar submission project:
 
-- `preprint.pdf` is the DOI preprint;
 - `palomar/` is the standalone Lean project to submit to Palomar.
 
 The formalization is deliberately scoped.  It proves the token-order

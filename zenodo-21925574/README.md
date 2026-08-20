@@ -2,7 +2,6 @@
 
 - DOI: <https://doi.org/10.5281/zenodo.21925574>
 - Author: Lennart Rudolph
-- Preprint: `preprint.pdf`
 - Palomar project: `palomar/`
 
 The Palomar project exposes the abstract safe-cockade induction and the

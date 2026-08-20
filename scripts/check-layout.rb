@@ -78,7 +78,7 @@ errors << "repository root must contain exactly one conventional licence file" u
 projects.each do |project|
   label = project.relative_path_from(ROOT).to_s
   paper = project.parent
-  %w[README.md preprint.pdf].each do |name|
+  %w[README.md].each do |name|
     errors << "#{label}: missing ../#{name}" unless paper.join(name).file?
   end
   %w[Challenge.lean Solution.lean comparator.json formalization.yaml lean-toolchain lake-manifest.json].each do |name|

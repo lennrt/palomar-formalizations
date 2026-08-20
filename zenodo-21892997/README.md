@@ -2,7 +2,6 @@
 
 DOI: [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)
 
-- `preprint.pdf` is the deposited preprint.
 - `palomar/` is the independent Lean project prepared for Palomar submission.
 
 The Palomar entry contains the all-order graph-theoretic Lean core: the leaf

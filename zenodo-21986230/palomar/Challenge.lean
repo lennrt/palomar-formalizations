@@ -7,8 +7,11 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
+import Mathlib.Combinatorics.SimpleGraph.Basic
 import Mathlib.Data.Fin.Pigeonhole
 import Mathlib.Data.Nat.Choose.Basic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Order
 
 /-!
 # Auditable statements for the G2 companion

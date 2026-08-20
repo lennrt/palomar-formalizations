@@ -1,9 +1,9 @@
 # Lean formalizations of nine preprints
 
 Nine standalone Lean 4 projects, each a machine-checked companion to one
-Zenodo preprint by Lennart Rudolph. Each `zenodo-N/` directory pairs the
-deposited preprint PDF with an independent Lake project prepared for
-submission to the [Palomar registry](https://palomar-registry.org/). Each
+Zenodo preprint by Lennart Rudolph. Each `zenodo-N/` directory holds an
+independent Lake project prepared for submission to the
+[Palomar registry](https://palomar-registry.org/). Each
 project states its selected theorems in `Challenge.lean`, proves them in
 `Solution.lean`, and records its scope, sources, and Comparator configuration
 in `formalization.yaml` and `comparator.json`.
@@ -44,7 +44,7 @@ Comparator configurations of all nine projects.
 ## Licensing
 
 The Lean source and repository scaffolding are MIT licensed under the root
-[`LICENSE`](LICENSE). Each `preprint.pdf` remains CC BY 4.0 under its Zenodo
+[`LICENSE`](LICENSE). Each preprint is available under CC BY 4.0 at its Zenodo
 record. The repository root carries exactly one licence file, matching the
 `project.license` field of every project.
 

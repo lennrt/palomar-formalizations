@@ -2,8 +2,7 @@
 
 DOI: [10.5281/zenodo.21925458](https://doi.org/10.5281/zenodo.21925458)
 
-This directory contains the DOI preprint as `preprint.pdf` and the standalone
-Palomar project in `palomar/`.
+This directory contains the standalone Palomar project in `palomar/`.
 
 The Lean project checks only the unordered-pair symmetry and three rational
 identities used in the label-swap argument.  It contains no graph definition
