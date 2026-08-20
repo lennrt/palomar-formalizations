@@ -1,0 +1,23 @@
+name = "regularPathDelay"
+version = "0.3.0"
+keywords = ["enumeration", "skew-symmetric-graphs", "formal-verification"]
+defaultTargets = ["RegularPathDelay", "Challenge", "Solution"]
+
+[leanOptions]
+relaxedAutoImplicit = false
+
+[[require]]
+name = "cslib"
+scope = "leanprover"
+rev = "93aa05752a62ad3498e734d5b75fcbff965891ce"
+
+[[lean_lib]]
+name = "RegularPathDelay"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

@@ -1,0 +1,18 @@
+name = "k331_tutte_redundancy"
+version = "1.0.0"
+defaultTargets = ["K331Tutte", "Challenge", "Solution"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[lean_lib]]
+name = "K331Tutte"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]

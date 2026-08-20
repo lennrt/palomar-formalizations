@@ -1,0 +1,12 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarExtremalFlagBetti.family_leaf_triangle_certificate",
+    "PalomarExtremalFlagBetti.family_no_complete_bipartite_spanning",
+    "PalomarExtremalFlagBetti.family_complement_edge_count"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

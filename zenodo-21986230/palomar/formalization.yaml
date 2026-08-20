@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Order and finite-arithmetic companion to an explicit G2 obstruction"
+  description: >-
+    A scoped Lean formalization of the token-order projection/inversion bridge,
+    same-fibre independence, the exact k = 2 and m = 20 trace-capacity
+    inequality, and the terminal finite pigeonhole obstruction used in the
+    preprint.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C62", "05C75", "06A07", "68R15"]
+
+sources:
+  - title: "An Explicit Obstruction to Uniform Two-Word π-Representability"
+    authors:
+      - "Lennart Rudolph"
+    id: "10.5281/zenodo.21986230"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21986230"
+    relationship: "formalizes"
+    note: >-
+      Formalizes only the order bridge, same-fibre lemma, and finite arithmetic
+      endpoints described by the preprint as its scoped Lean companion.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+status:
+  scope: >-
+    The project proves the two-linear-order bridge, same-fibre independence,
+    the 20-bit trace-capacity inequality, and the finite no-injection endpoint.
+    It does not define words, stars and bars, graph compactions, or prove the
+    full characterization or explicit nonmembership theorem.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarG2.fibre_agreement_iff_no_cross_inversion"
+    - "PalomarG2.no_trace_code_injection"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "Codex and Claude"
+      tool_setup: "Agent-assisted proof development, checking, and adversarial review"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Iterative theorem design, proof repair, and audit prompts"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human mathematical and editorial review with Mathlib tactics"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; exact total not tracked"
+  notes: >-
+    Agents assisted substantially; the named author selected the statements,
+    reviewed the proof boundary, and takes responsibility for the submission.
+
+fidelity:
+  divergences: >-
+    This is intentionally a partial companion, not an end-to-end formalization
+    of the preprint's graph-theoretic results.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The author reviewed the statements and proof boundaries; an automated
+    adversarial audit was also performed, but was not independent peer review.
+
+alignment:
+  namespace: "PalomarG2"
+  statements:
+    - source: "Projection--inversion bridge lemma"
+      lean: "PalomarG2.fibre_agreement_iff_no_cross_inversion"
+      module: "Solution"
+      status: "proved"
+      note: "Token-order form for two genuine linear orders and distinct fibres."
+    - source: "Same-fibre independence step"
+      lean: "PalomarG2.same_fibre_no_inversion"
+      module: "Solution"
+      status: "proved"
+      note: "Assumes both orders respect the occurrence indices."
+    - source: "Neighbourhood-trace calculation for k = 2, m = 20"
+      lean: "PalomarG2.trace_capacity_endpoint"
+      module: "Solution"
+      status: "proved"
+      note: "Exact numerical endpoint only."
+    - source: "Finite pigeonhole endpoint of the obstruction"
+      lean: "PalomarG2.no_trace_code_injection"
+      module: "Solution"
+      status: "proved"
+      note: "Rules out an injection from 741322 traces to 741321 codes."
+
+acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

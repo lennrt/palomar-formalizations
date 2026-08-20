@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Graph certificates for a dense flag-Betti counterexample family"
+  description: >-
+    Lean proofs of the all-order graph-theoretic core of a dense
+    counterexample family: a uniform leaf and triangle-remainder certificate
+    for the sparse complements, absence of a complete bipartite spanning
+    subgraph in every dense complement, and the exact edge count
+    binomial(n,2)-n for every n at least seven.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["math.CO", "math.AT"]
+  msc2020: ["05C35", "05E45", "55U10"]
+
+sources:
+  - title: "An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes"
+    authors:
+      - "Lennart Rudolph"
+    id: "doi:10.5281/zenodo.21892997"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21892997"
+    relationship: "formalizes"
+    note: >-
+      Formalizes the all-order graph construction, obstruction, and edge count;
+      the homology and extremal first-Betti arguments remain in the paper.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalizes the explicit complement graph family, its all-order leaf and
+    triangle-remainder certificate, the connected-complement obstruction to a
+    complete bipartite spanning subgraph, and the exact edge count of the dense
+    family. It does not formalize independence-complex homotopy, the first
+    Betti number, the extremal upper bound, the full counterexample theorem, or
+    the census computations. Finite native_decide certificates in the source
+    module are deliberately outside every advertised proof dependency cone.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "OpenAI Codex and Anthropic Claude"
+      tool_setup: "Agent-assisted research, graph computation, Lean development, verification, and adversarial review"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based; not tracked"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Human-directed iterative proof development and review"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human scope selection, source comparison, proof review, and release approval"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; not tracked"
+  notes: >-
+    The named author directed the work, checked the retained statements and
+    proofs, and approved the release; AI systems are not authors.
+
+fidelity:
+  divergences: >-
+    The cited preprint proves homotopy and extremal first-Betti conclusions;
+    this Lean project intentionally stops at the all-order graph certificates
+    stated under status.scope.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Author-reviewed and mechanically kernel-checked, with exact independent
+    censuses and an automated adversarial audit for the wider paper; not
+    independently peer-reviewed.
+
+alignment:
+  namespace: "PalomarExtremalFlagBetti"
+  statements:
+    - source: "All-order leaf and triangle-remainder certificate"
+      lean: "PalomarExtremalFlagBetti.family_leaf_triangle_certificate"
+      module: "Solution"
+      status: "proved"
+      note: "Graph-structural input to the paper's unformalized homotopy argument."
+    - source: "No complete bipartite spanning subgraph"
+      lean: "PalomarExtremalFlagBetti.family_no_complete_bipartite_spanning"
+      module: "Solution"
+      status: "proved"
+      note: "All-order connected-complement obstruction."
+    - source: "Dense-family edge count"
+      lean: "PalomarExtremalFlagBetti.family_complement_edge_count"
+      module: "Solution"
+      status: "proved"
+      note: "Exact count binomial(n,2)-n for n at least seven."
+
+acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarMSET25.unordered_pair_code_swap",
+    "PalomarMSET25.swapped_row_identity",
+    "PalomarMSET25.swapped_first_distance_identity",
+    "PalomarMSET25.swapped_second_distance_identity"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}
+

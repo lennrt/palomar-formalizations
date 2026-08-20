@@ -1,0 +1,111 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Arithmetic swap identities for cylindrical multiset dimension"
+  description: >-
+    An intentionally small Lean formalization of canonical unordered-pair
+    symmetry and three rational identities used when excluding a possible
+    label swap in the cylindrical multiset-dimension preprint.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["math.CO"]
+  msc2020: ["05C12", "05C76", "68R10"]
+
+sources:
+  - title: "Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census"
+    authors:
+      - "Lennart Rudolph"
+    id: "10.5281/zenodo.21925458"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21925458"
+    relationship: "formalizes"
+    note: >-
+      Formalizes only four arithmetic identities supporting the manuscript's
+      label-swap argument; it does not formalize a graph theorem.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+status:
+  scope: >-
+    The project proves one natural-number unordered-pair symmetry and three
+    rational identities. It has no graph definitions and does not formalize
+    the four-piece distance locus, the infinite-family theorem, resolving
+    sets, or the finite exhaustive census.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarMSET25.unordered_pair_code_swap"
+    - "PalomarMSET25.swapped_row_identity"
+    - "PalomarMSET25.swapped_first_distance_identity"
+    - "PalomarMSET25.swapped_second_distance_identity"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "Codex and Claude"
+      tool_setup: "Agent-assisted arithmetic formalization and audit"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Iterative statement extraction, proof checking, and review prompts"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human mathematical and editorial review with Lean and Mathlib tactics"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; exact total not tracked"
+  notes: >-
+    Agents assisted substantially; the named author chose the scope, reviewed
+    the statements, and takes responsibility for the formalization.
+
+fidelity:
+  divergences: >-
+    This is only the arithmetic companion described in the source and not a
+    formalization of its graph-theoretic main theorem or computation.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The author reviewed the statement correspondence and formalization
+    boundary; automated audits were tooling rather than independent peer review.
+
+alignment:
+  namespace: "PalomarMSET25"
+  statements:
+    - source: "Canonical unordered distance-pair symmetry"
+      lean: "PalomarMSET25.unordered_pair_code_swap"
+      module: "Solution"
+      status: "proved"
+      note: "Generic natural-number symmetry of the sorted pair."
+    - source: "First swapped-row rational identity"
+      lean: "PalomarMSET25.swapped_row_identity"
+      module: "Solution"
+      status: "proved"
+      note: "Exact rational identity only."
+    - source: "First swapped-distance rational identity"
+      lean: "PalomarMSET25.swapped_first_distance_identity"
+      module: "Solution"
+      status: "proved"
+      note: "Exact rational identity only."
+    - source: "Second swapped-distance rational identity"
+      lean: "PalomarMSET25.swapped_second_distance_identity"
+      module: "Solution"
+      status: "proved"
+      note: "Exact rational identity only."
+
+acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

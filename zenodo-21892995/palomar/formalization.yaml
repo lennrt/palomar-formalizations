@@ -1,0 +1,112 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Phase-one algebra and separator certificates for periodic signed circulants"
+  description: >-
+    A scoped Lean formalization of the exact phase-one squared block and its
+    characteristic quartic, existence of a root in a rational separator,
+    exclusion of roots above that separator, and the nested-radical threshold
+    implication used in the signed-circulant preprint.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["math.CO", "math.SP"]
+  msc2020: ["05C22", "05C50", "68R10", "15A18"]
+
+sources:
+  - title: "Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification"
+    authors:
+      - "Lennart Rudolph"
+    id: "10.5281/zenodo.21892995"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21892995"
+    relationship: "formalizes"
+    note: >-
+      Formalizes the phase-one block calculation and selected exact analytic
+      inequalities, not the full Bloch or finite-quotient spectral argument.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+status:
+  scope: >-
+    The project proves the exact four-dimensional phase-one characteristic
+    polynomial, locates a real quartic root, excludes roots at or above the
+    upper separator, and proves the nested-radical threshold implication. It
+    does not formalize the 32 by 32 determinant, full phase dependence,
+    Floquet/direct-integral decomposition, spectral theorem, or exhaustive
+    short-period classification.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarSignedCirculant.phase_one_characteristic_polynomial"
+    - "PalomarSignedCirculant.exists_quartic_root_in_separator"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "Codex and Claude"
+      tool_setup: "Agent-assisted formal proof development and automated adversarial review"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Iterative proof construction, exact-certificate checks, and audit prompts"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human mathematical review with Lean and Mathlib tactics"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; exact total not tracked"
+  notes: >-
+    Agents assisted substantially; the named author made the final mathematical
+    and editorial decisions and takes responsibility for the formalization.
+
+fidelity:
+  divergences: >-
+    The submission deliberately isolates the phase-one and separator lemmas;
+    it does not claim the paper's end-to-end spectral result.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "none"
+  notes: >-
+    The author reviewed the statements and proof boundary. Automated
+    adversarial review is recorded as tooling, not independent peer review.
+
+alignment:
+  namespace: "PalomarSignedCirculant"
+  statements:
+    - source: "Phase-one Bloch bridge"
+      lean: "PalomarSignedCirculant.phase_one_characteristic_polynomial"
+      module: "Solution"
+      status: "proved"
+      note: "Characteristic polynomial of the explicit squared 4 by 4 block."
+    - source: "Quartic separator argument"
+      lean: "PalomarSignedCirculant.exists_quartic_root_in_separator"
+      module: "Solution"
+      status: "proved"
+      note: "Existence only; uniqueness is not asserted."
+    - source: "Root exclusion above the upper separator"
+      lean: "PalomarSignedCirculant.quartic_positive_at_or_above_upper"
+      module: "Solution"
+      status: "proved"
+      note: "Direct positive expansion of the quartic."
+    - source: "Nested-radical threshold comparison"
+      lean: "PalomarSignedCirculant.certified_root_below_nested_target"
+      module: "Solution"
+      status: "proved"
+      note: "Conditional on the displayed upper separator."
+
+acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

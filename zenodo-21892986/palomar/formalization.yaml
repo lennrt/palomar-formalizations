@@ -1,0 +1,109 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Regular-path vertex-splitting and prefix-oracle certificates"
+  description: >-
+    Lean certificates for three interfaces used in fixed-endpoint
+    vertex-regular path enumeration in skew-symmetric digraphs: equivalence of
+    vertex clash-freeness with split-arc clash-freeness on supported traces,
+    exact preservation of walks by the alternating vertex-splitting lift after
+    unit-arc deletion, and the combined regularity/reachability lemma behind a
+    prefix-deletion extension oracle.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["cs.DS", "math.CO"]
+  msc2020: ["05C20", "05C38", "68Q25", "68R10"]
+
+sources:
+  - title: "Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs"
+    authors:
+      - "Lennart Rudolph"
+    id: "doi:10.5281/zenodo.21892986"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21892986"
+    relationship: "formalizes"
+    note: >-
+      Formalizes the model and prefix-oracle lemmas identified in the paper,
+      not the complete enumeration algorithm or its delay analysis.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalizes the vertex-splitting clash model, exact alternating-walk lift,
+    and a regularity plus fixed-length reachability join for prefix deletion.
+    It does not formalize simple paths, the endpoint gadget, the
+    Goldberg--Karzanov implementation, the executable enumerator, completeness
+    or uniqueness of enumeration, or the polynomial-delay and space bounds.
+    CSLib supplies the fixed-length relational reachability definition and is
+    therefore a Palomar-qualified statement dependency.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "OpenAI Codex and Anthropic Claude"
+      tool_setup: "Agent-assisted research, Lean development, verification, and adversarial review"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based; not tracked"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Human-directed iterative proof development and review"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human scope selection, source comparison, code review, and release approval"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; not tracked"
+  notes: >-
+    The named author directed the work, checked the retained statements and
+    proofs, and approved the release; AI systems are not authors.
+
+fidelity:
+  divergences: >-
+    The formalization deliberately covers only the model and prefix-oracle
+    interfaces listed under status.scope, rather than the paper's full
+    algorithmic and complexity theorem.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Author-reviewed and mechanically kernel-checked, with an additional
+    automated adversarial audit; not independently peer-reviewed.
+
+alignment:
+  namespace: "PalomarRegularPathDelay"
+  statements:
+    - source: "Vertex-splitting reduction"
+      lean: "PalomarRegularPathDelay.vertex_split_model_equivalence"
+      module: "Solution"
+      status: "proved"
+      note: "The supported-trace regularity equivalence."
+    - source: "Alternating vertex-splitting walk lift"
+      lean: "PalomarRegularPathDelay.split_walk_lift_nodes_iff"
+      module: "Solution"
+      status: "proved"
+      note: "Unit transfer arcs are excluded explicitly."
+    - source: "Prefix-deletion extension lemma"
+      lean: "PalomarRegularPathDelay.regular_extension_with_reachability"
+      module: "Solution"
+      status: "partial"
+      note: "Formalizes the regularity and reachability join, not the enumerator or its complexity."
+
+acknowledgements: "Lean, Mathlib, CSLib, OpenAI Codex, and Anthropic Claude."

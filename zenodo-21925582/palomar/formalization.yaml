@@ -1,0 +1,80 @@
+version: "v0.4"
+
+project:
+  name: "Exact finite rank certificate for OneTwo Sobol' dimensions 25--28"
+  description: >-
+    This Lean development gives a kernel-replayable finite certificate for the
+    OneTwo Sobol' dimensions 25--28 block at m = 16. Using the 64 packed
+    generator rows, it proves that every one of the 364 four-part selections
+    of total 11 is independent over F_2 and that the corresponding threshold
+    tests for totals 12 through 16 fail. Thus its explicit rank predicate has
+    exact threshold 5. Interpreting that predicate as the digital-net t-value
+    uses the standard criterion stated in the preprint. The complete census of
+    all 345 pair-aligned windows and authentication of the upstream table are
+    not formalized here.
+  authors: ["Lennart Rudolph"]
+  responsible_maintainers: ["Lennart Rudolph"]
+  license: "MIT"
+
+classification:
+  arxiv: [math.NA, cs.NA]
+  msc2020: [11K38, 11K45, 65C05, 65D30]
+
+sources:
+  - title: "Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points"
+    authors: ["Lennart Rudolph"]
+    id: "doi:10.5281/zenodo.21925582"
+    type: paper
+    location: "https://doi.org/10.5281/zenodo.21925582"
+    relationship: formalizes
+    note: >-
+      Formalizes the dimensions 25--28 finite rank certificate, not the
+      complete table-wide census.
+    license: "CC-BY-4.0"
+
+status:
+  scope: >-
+    Exact kernel-checked rank threshold for the worked dimensions 25--28 block;
+    the table-wide census, source download, and digital-net criterion are external.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext]
+
+automation:
+  methods:
+    - method: agent
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "AI-assisted formalization and adversarial review"
+      tool_setup: "Lean 4 kernel-reduced XOR row-reduction certificates plus independent exact computations"
+    - method: manual
+      models: []
+      framework: "n/a"
+      tool_setup: "Author-directed source authentication and mathematical review"
+  spend_usd: "not tracked"
+  notes: >-
+    Agents assisted substantially; the author made the final mathematical and
+    editorial decisions and accepts responsibility for the submitted result.
+
+fidelity:
+  divergences: >-
+    The formalization covers one worked four-dimensional block and assumes the
+    external equivalence between the encoded rank test and the t-value. For the
+    Palomar submission, the release's native exhaustive subset evaluator is
+    replaced by deterministic 16-column XOR row reduction checked by ordinary
+    kernel decide; the packed input rows and threshold claims are unchanged.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["Anthropic Claude"]
+  notes: "The release records adversarial review and three independent exact rank routes."
+
+alignment:
+  namespace: "OneTwoSobolT5"
+  statements:
+    - source: "Dimensions 25--28 exact m=16 rank certificate"
+      lean: "OneTwoSobolT5.exact_t_five_certificate"
+      module: "Solution"
+      status: proved
+      note: "Checks threshold 5 and explicitly excludes every smaller threshold."
+
+acknowledgements: "Lean and the OneTwo direction-number source cited in the preprint."

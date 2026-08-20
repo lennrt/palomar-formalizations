@@ -1,0 +1,91 @@
+version: "v0.4"
+
+project:
+  name: "Certified reduction for tetrahedral-mesh embedding conditions"
+  description: >-
+    This Lean development checks a deliberately scoped component of the
+    tetrahedral-mesh result. A safe-cockade induction and abstract theorems
+    compose explicitly named rigidity, separator, extremal-minor,
+    linkless-embedding, and embedding inputs to show that the separate
+    K_(3,3,1)-minor exclusion is redundant. The deep input theorems, the native
+    finite local certificate, and its relative-homology interpretation are
+    outside the compared proof cone.
+  authors: ["Lennart Rudolph"]
+  responsible_maintainers: ["Lennart Rudolph"]
+  license: "MIT"
+
+classification:
+  arxiv: [math.CO, cs.CG]
+  msc2020: [05C10, 05C83, 57Q15, 68U05]
+
+sources:
+  - title: "Simpler Graph Conditions for Embedding Tetrahedral Meshes"
+    authors: ["Lennart Rudolph"]
+    id: "doi:10.5281/zenodo.21925574"
+    type: paper
+    location: "https://doi.org/10.5281/zenodo.21925574"
+    relationship: formalizes
+    note: >-
+      Formalizes the safe-cockade induction and conditional logical composition;
+      imported mathematical theorems remain explicit inputs.
+    license: "CC-BY-4.0"
+
+status:
+  scope: >-
+    Abstract safe-cockade induction and input composition only; no compared
+    formalization of rigidity, topology, graph-minor classification, linkless
+    embedding, the native finite certificate, or its homological interpretation.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: []
+
+automation:
+  methods:
+    - method: agent
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "AI-assisted formalization and adversarial review"
+      tool_setup: "Lean 4 logical interfaces plus independent executable checks"
+    - method: manual
+      models: []
+      framework: "n/a"
+      tool_setup: "Author-directed proof, source, and scope review"
+  spend_usd: "not tracked"
+  notes: >-
+    Agents assisted substantially; the author made the final mathematical and
+    editorial decisions and accepts responsibility for the submitted result.
+
+fidelity:
+  divergences: >-
+    Deep cited results are represented as fields of Inputs; the native finite
+    certificate and its homological meaning are not in the compared proof cone.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["Anthropic Claude"]
+  notes: "The release records an independent adversarial review and two exact verifiers."
+
+alignment:
+  namespace: "K331Tutte"
+  statements:
+    - source: "Safe-cockade linklessness induction"
+      lean: "K331Tutte.linkless_of_cockade_certificate"
+      module: "Solution"
+      status: proved
+      note: "Proves the recursive logical step for atom and safe-glue cases."
+    - source: "Structural linklessness reduction"
+      lean: "K331Tutte.structural_linkless"
+      module: "Solution"
+      status: proved
+      note: "Composes the explicit fields of Inputs."
+    - source: "K_(3,3,1)-minor exclusion"
+      lean: "K331Tutte.no_k331_minor_of_no_k6_minor"
+      module: "Solution"
+      status: proved
+      note: "Derives the exclusion through linklessness."
+    - source: "Redundancy of the K_(3,3,1) exclusion, conditional composition"
+      lean: "K331Tutte.k331_exclusion_is_redundant"
+      module: "Solution"
+      status: proved
+      note: "Composes all external inputs without hiding them as axioms."
+
+acknowledgements: "Lean and the source works cited in the preprint."

@@ -1,0 +1,9 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "BarnettePalomar.concrete_matching_meets_every_color",
+    "BarnettePalomar.forced_green_excludes_prescribed_cycle"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+}

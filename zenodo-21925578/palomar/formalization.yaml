@@ -1,0 +1,113 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Scalar certificates for generalized-cubic subdivision spectra"
+  description: >-
+    Lean proofs of exact algebraic certificates used in the spectral analysis
+    of generalized cubic subdivision matrices: the zero-mode characteristic
+    factorization, a strict real-root bound from the two Jury margins, the
+    complex nonzero double-ring outer-symbol factorization, and the exact
+    one-dimensional double-ring characteristic factorization.
+  authors:
+    - "Lennart Rudolph"
+  license: "MIT"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+
+classification:
+  arxiv: ["cs.GR", "math.NA"]
+  msc2020: ["15A18", "65D07", "65D17", "65F15"]
+
+sources:
+  - title: "Exact Spectra of Generalized Cubic Subdivision Matrices"
+    authors:
+      - "Lennart Rudolph"
+    id: "doi:10.5281/zenodo.21925578"
+    type: "preprint"
+    location: "https://doi.org/10.5281/zenodo.21925578"
+    relationship: "formalizes"
+    note: >-
+      Formalizes selected exact scalar identities and root bounds from the
+      proof, not the complete matrix-level spectral theorem.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Formalizes the advertised zero-mode, outer-symbol, and line-factor
+    polynomial identities and a real-root exclusion lemma. It does not
+    formalize the source-to-matrix reconstruction, all-valence block Fourier
+    decomposition, eigenvalue multiplicity accounting, trigonometric ordering,
+    the complete half-spectrum theorem, tensor-product interpretation, fully
+    irregular volume matrices, or a complete C1 theorem.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex", "Anthropic Claude"]
+      framework: "OpenAI Codex and Anthropic Claude"
+      tool_setup: "Agent-assisted research, exact algebra, Lean development, verification, and adversarial review"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based; not tracked"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Human-directed iterative certificate construction and review"
+    - method: "manual"
+      models: []
+      framework: "n/a"
+      tool_setup: "Human source reconstruction, scope selection, code review, and release approval"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "not tracked"
+        hardware: "local machine"
+      prompting_notes: "n/a"
+  spend_usd: "subscription-based; not tracked"
+  notes: >-
+    The named author directed the work, checked the retained statements and
+    proofs, and approved the release; AI systems are not authors.
+
+fidelity:
+  divergences: >-
+    The cited preprint proves a complete spectral result at the mathematical
+    level; this Lean project certifies only the selected scalar factorizations
+    and root bound stated under status.scope.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Author-reviewed and mechanically kernel-checked, with independent
+    reconstructions and an automated adversarial audit; not independently
+    peer-reviewed.
+
+alignment:
+  namespace: "PalomarCubicHalfSpectrum"
+  statements:
+    - source: "Zero Fourier-mode factorization"
+      lean: "PalomarCubicHalfSpectrum.zero_mode_factorization"
+      module: "Solution"
+      status: "proved"
+      note: "Exact scalar characteristic-polynomial identity."
+    - source: "Jury root exclusion"
+      lean: "PalomarCubicHalfSpectrum.real_root_in_unit_interval"
+      module: "Solution"
+      status: "proved"
+      note: "Strict interval bound for real quadratic roots under both margins."
+    - source: "Double-ring outer-symbol factorization"
+      lean: "PalomarCubicHalfSpectrum.double_ring_outer_symbol_factorization"
+      module: "Solution"
+      status: "proved"
+      note: "Exact complex scalar factorization for nonzero phase."
+    - source: "One-dimensional double-ring factor"
+      lean: "PalomarCubicHalfSpectrum.double_ring_line_factorization"
+      module: "Solution"
+      status: "proved"
+      note: "Exact polynomial reassociation after the initial-line factorization."
+
+acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

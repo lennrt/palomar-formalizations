@@ -1,0 +1,18 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarSignedCirculant.phase_one_characteristic_polynomial",
+    "PalomarSignedCirculant.exists_quartic_root_in_separator",
+    "PalomarSignedCirculant.quartic_positive_at_or_above_upper",
+    "PalomarSignedCirculant.certified_root_below_nested_target"
+  ],
+  "definition_names": [
+    "PalomarSignedCirculant.quartic",
+    "PalomarSignedCirculant.phaseOneSquaredBlock",
+    "PalomarSignedCirculant.phaseOneSquaredBlockReal"
+  ],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}
+

@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarG2.fibre_agreement_iff_no_cross_inversion",
+    "PalomarG2.same_fibre_no_inversion",
+    "PalomarG2.trace_capacity_endpoint",
+    "PalomarG2.no_trace_code_injection"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}
+

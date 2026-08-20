@@ -1,0 +1,20 @@
+name = "MSET25"
+version = "1.0.0"
+defaultTargets = ["MSET25", "Challenge", "Solution"]
+
+[[lean_lib]]
+name = "MSET25"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.30.0"
+

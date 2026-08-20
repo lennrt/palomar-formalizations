@@ -1,0 +1,13 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarCubicHalfSpectrum.zero_mode_factorization",
+    "PalomarCubicHalfSpectrum.real_root_in_unit_interval",
+    "PalomarCubicHalfSpectrum.double_ring_outer_symbol_factorization",
+    "PalomarCubicHalfSpectrum.double_ring_line_factorization"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

@@ -1,0 +1,12 @@
+.DS_Store
+**/.lake/
+**/*.olean
+**/*.ilean
+**/*.a
+**/*.bc
+**/*.dll
+**/*.dylib
+**/*.o
+**/*.obj
+**/*.so
+**/*.trace

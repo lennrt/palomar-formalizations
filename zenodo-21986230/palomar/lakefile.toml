@@ -1,0 +1,25 @@
+name = "g2_companion"
+version = "1.0.5"
+keywords = ["graph-theory", "combinatorics-on-words", "certificate"]
+defaultTargets = ["G2Companion", "Challenge", "Solution"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.30.0"
+
+[[lean_lib]]
+name = "G2Companion"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
+

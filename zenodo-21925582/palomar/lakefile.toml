@@ -1,0 +1,14 @@
+name = "onetwo-sobol-t5"
+version = "1.0.0"
+defaultTargets = ["OneTwoSobolT5", "Challenge", "Solution"]
+
+[[lean_lib]]
+name = "OneTwoSobolT5"
+
+[[lean_lib]]
+name = "Challenge"
+roots = ["Challenge"]
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Solution"]
