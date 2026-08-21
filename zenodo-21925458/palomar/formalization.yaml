@@ -2,13 +2,19 @@
 version: "v0.4"
 
 project:
-  name: "Arithmetic swap identities for cylindrical multiset dimension"
+  name: "A three-landmark multiset resolving set for even cylindrical graphs"
   description: >-
-    An intentionally small Lean formalization of canonical unordered-pair
-    symmetry and three rational identities used when excluding a possible
-    label swap in the cylindrical multiset-dimension preprint.
+    A concrete formalization of the infinite-family construction in the source:
+    cycle and Cartesian-product distances on P_m □ C_(6m), the displayed
+    landmarks (0,0), (0,2m), and (m-1,0), the four-piece cycle distance-pair
+    locus, and injectivity of the resulting unordered multiset code for every
+    even m at least 2. This establishes the three-landmark resolving upper
+    bound. It does not formalize the separate general lower bound needed to
+    conclude that the set is a basis or that the multiset dimension equals 3.
   authors:
     - "Lennart Rudolph"
+    - "Sol"
+    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -21,37 +27,42 @@ sources:
   - title: "Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census"
     authors:
       - "Lennart Rudolph"
+      - "Sol"
+      - "Fable"
     id: "10.5281/zenodo.21925458"
-    type: "preprint"
+    type: paper
     location: "https://doi.org/10.5281/zenodo.21925458"
     relationship: "formalizes"
     note: >-
-      Formalizes only four arithmetic identities supporting the manuscript's
-      label-swap argument; it does not formalize a graph theorem.
+      Formalizes Lemma 1 and the resolving-set half of Theorem 2. The source's
+      final lower-bound appeal, exact dimension equality, basis minimality,
+      and finite exhaustive census are outside the Lean scope.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
 
 status:
   scope: >-
-    The project proves one natural-number unordered-pair symmetry and three
-    rational identities. It has no graph definitions and does not formalize
-    the four-piece distance locus, the infinite-family theorem, resolving
-    sets, or the finite exhaustive census.
+    The project defines the concrete vertex type Fin m × Fin (6m), the standard
+    cycle and Cartesian-product distance formulas, the paper's three displayed
+    landmarks, unordered multiset codes, and the resolving property. It proves
+    the complete four-piece cycle distance-pair locus and its injectivity, then
+    proves that the displayed landmarks resolve P_m □ C_(6m) for every even
+    m ≥ 2. It does not define or prove the minimum over all landmark sets, and
+    therefore does not claim basis minimality or dim_m(P_m □ C_(6m)) = 3.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
-    - "PalomarMSET25.unordered_pair_code_swap"
-    - "PalomarMSET25.swapped_row_identity"
-    - "PalomarMSET25.swapped_first_distance_identity"
-    - "PalomarMSET25.swapped_second_distance_identity"
+    - "PalomarMSET25.cycle_distance_pair_locus"
+    - "PalomarMSET25.cycle_distance_pair_injective"
+    - "PalomarMSET25.even_cylinder_three_landmarks_resolve"
 
 automation:
   methods:
     - method: "agent"
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "Codex and Claude"
-      tool_setup: "Agent-assisted arithmetic formalization and audit"
+      tool_setup: "Agent-assisted formalization and adversarial audit"
       cost:
         wall_time: "not tracked"
         spend_usd: "subscription-based"
@@ -68,44 +79,48 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; exact total not tracked"
   notes: >-
-    Agents assisted substantially; the named author chose the scope, reviewed
-    the statements, and takes responsibility for the formalization.
+    The three named authors collaborated on the scope, statements, review,
+    and responsibility for the formalization.
 
 fidelity:
   divergences: >-
-    This is only the arithmetic companion described in the source and not a
-    formalization of its graph-theoretic main theorem or computation.
+    The Lean development uses the paper's explicit coordinate distance formula
+    rather than Mathlib's SimpleGraph Cartesian-product distance. It formalizes
+    the resolving-set construction and cycle-locus lemma, but not the external
+    theorem that a connected non-path graph has multiset dimension at least 3;
+    consequently it does not formalize basis minimality or exact dimension.
 
 review:
   status: "self-assessed"
   reviewers:
-    - "none"
+    - "OpenAI Codex (Sol)"
+    - "Anthropic Claude (Fable)"
   notes: >-
-    The author reviewed the statement correspondence and formalization
-    boundary; automated audits were tooling rather than independent peer review.
+    OpenAI Codex (Sol), acting as a co-author, performed a line-by-line
+    source-fidelity self-audit of the upgraded statements and proof structure
+    against Lemma 1 and Theorem 2. Fable's earlier co-author adversarial
+    self-review covered the arithmetic package. No independent human peer
+    review has been performed.
 
 alignment:
   namespace: "PalomarMSET25"
   statements:
-    - source: "Canonical unordered distance-pair symmetry"
-      lean: "PalomarMSET25.unordered_pair_code_swap"
+    - source: "Lemma 1, Equation (5): four-piece cycle distance-pair locus"
+      lean: "PalomarMSET25.cycle_distance_pair_locus"
       module: "Solution"
       status: "proved"
-      note: "Generic natural-number symmetry of the sorted pair."
-    - source: "First swapped-row rational identity"
-      lean: "PalomarMSET25.swapped_row_identity"
+      note: "Uses the same half-open cycle-column range through Fin (6*m)."
+    - source: "Lemma 1: the distance pair determines the cycle column modulo 6m"
+      lean: "PalomarMSET25.cycle_distance_pair_injective"
       module: "Solution"
       status: "proved"
-      note: "Exact rational identity only."
-    - source: "First swapped-distance rational identity"
-      lean: "PalomarMSET25.swapped_first_distance_identity"
+      note: "Injectivity of distances to columns 0 and 2m."
+    - source: "Theorem 2: the displayed landmarks resolve P_m □ C_(6m) for even m ≥ 2"
+      lean: "PalomarMSET25.even_cylinder_three_landmarks_resolve"
       module: "Solution"
       status: "proved"
-      note: "Exact rational identity only."
-    - source: "Second swapped-distance rational identity"
-      lean: "PalomarMSET25.swapped_second_distance_identity"
-      module: "Solution"
-      status: "proved"
-      note: "Exact rational identity only."
+      note: >-
+        Formalizes the resolving assertion, not the final general lower-bound
+        step that upgrades the resolving set to a basis of exact dimension 3.
 
 acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

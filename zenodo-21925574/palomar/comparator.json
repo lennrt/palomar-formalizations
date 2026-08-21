@@ -2,10 +2,11 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "K331Tutte.linkless_of_cockade_certificate",
-    "K331Tutte.structural_linkless",
-    "K331Tutte.no_k331_minor_of_no_k6_minor",
-    "K331Tutte.k331_exclusion_is_redundant"
+    "K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible",
+    "K331Tutte.FiniteHomology.Ambient.induced_four_coordinate_chain_identification",
+    "K331Tutte.FiniteHomology.Ambient.induced_four_clique_relative_homology_bound"
   ],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
 }

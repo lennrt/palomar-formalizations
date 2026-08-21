@@ -2,14 +2,19 @@
 version: "v0.4"
 
 project:
-  name: "Phase-one algebra and separator certificates for periodic signed circulants"
+  name: "Full Bloch determinant and algebraic band-edge certificates for periodic signed circulants"
   description: >-
-    A scoped Lean formalization of the exact phase-one squared block and its
-    characteristic quartic, existence of a root in a rational separator,
-    exclusion of roots above that separator, and the nested-radical threshold
-    implication used in the signed-circulant preprint.
+    The exact algebraic core of a band-edge theorem for periodic signings of
+    C_n(1,2): the paper's full phase-dependent 8 by 8 Bloch symbol, its exact
+    bivariate determinant expansion and specialization to F(x^2,z+z^{-1}),
+    phase reversal, certified existence and location of the phase-one root,
+    nonnegativity at that root for every phase parameter y in [-2,2], and
+    exclusion of all-phase determinant zeros above it. The Fourier
+    direct-integral and spectral identification remain manuscript arguments.
   authors:
     - "Lennart Rudolph"
+    - "Sol"
+    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -22,35 +27,46 @@ sources:
   - title: "Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification"
     authors:
       - "Lennart Rudolph"
+      - "Sol"
+      - "Fable"
     id: "10.5281/zenodo.21892995"
-    type: "preprint"
+    type: paper
     location: "https://doi.org/10.5281/zenodo.21892995"
     relationship: "formalizes"
     note: >-
-      Formalizes the phase-one block calculation and selected exact analytic
-      inequalities, not the full Bloch or finite-quotient spectral argument.
+      Formalizes the displayed full 8 by 8 Bloch matrix, its determinant
+      identity, and the all-phase polynomial inequalities and root exclusion.
+      It does not formalize the direct-integral/spectral theorem step, finite
+      quotient sampling, the 32 by 32 characteristic-polynomial/Sturm
+      computation, or the exhaustive period-at-most-16 classification.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
 
 status:
   scope: >-
-    The project proves the exact four-dimensional phase-one characteristic
-    polynomial, locates a real quartic root, excludes roots at or above the
-    upper separator, and proves the nested-radical threshold implication. It
-    does not formalize the 32 by 32 determinant, full phase dependence,
-    Floquet/direct-integral decomposition, spectral theorem, or exhaustive
-    short-period classification.
+    The project defines the paper's exact full Bloch symbol using independent
+    variables z and zInv, proves a fraction-free determinant expansion whose
+    correction is divisible by z*zInv-1, derives det(xI-B(z)) =
+    F(x^2,z+z^{-1}), proves phase-reversal symmetry, and packages the root
+    separator, nested-radical comparison, all-phase nonnegativity, strictness
+    away from phase one, and exclusion of all determinant zeros above the
+    certified root. It does not assert that this algebraic root is the operator
+    norm or a finite-quotient spectral limit; those Fourier, direct-integral,
+    and spectral-theorem steps remain external. It also omits the 32 by 32
+    Sturm certificate and short-period classification.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
-    - "PalomarSignedCirculant.phase_one_characteristic_polynomial"
-    - "PalomarSignedCirculant.exists_quartic_root_in_separator"
+    - "PalomarSignedCirculant.bloch_symbol_phase_reversal"
+    - "PalomarSignedCirculant.bloch_determinant_with_correction"
+    - "PalomarSignedCirculant.bloch_determinant_identity"
+    - "PalomarSignedCirculant.algebraic_band_edge_certificate"
 
 automation:
   methods:
     - method: "agent"
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "Codex and Claude"
       tool_setup: "Agent-assisted formal proof development and automated adversarial review"
       cost:
@@ -69,44 +85,57 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; exact total not tracked"
   notes: >-
-    Agents assisted substantially; the named author made the final mathematical
-    and editorial decisions and takes responsibility for the formalization.
+    The three named authors contributed to proof development, mathematical
+    checking, and editorial decisions for the formalization.
 
 fidelity:
   divergences: >-
-    The submission deliberately isolates the phase-one and separator lemmas;
-    it does not claim the paper's end-to-end spectral result.
+    The exact displayed Bloch matrix and its determinant identity are included,
+    but the submission deliberately stops at the all-phase algebraic band-edge
+    certificate. It does not claim the paper's end-to-end spectral result or
+    its finite short-period classification.
 
 review:
   status: "self-assessed"
   reviewers:
-    - "none"
+    - "OpenAI Codex (Sol)"
   notes: >-
-    The author reviewed the statements and proof boundary. Automated
-    adversarial review is recorded as tooling, not independent peer review.
+    OpenAI Codex (Sol), acting as a co-author, checked the upgraded statements
+    term by term against the rendered preprint while developing and mechanically
+    testing the proofs. An earlier Fable co-author adversarial self-review
+    applied to the older phase-one-only selection and is not represented as
+    review of this upgraded compared theorem set. No independent human peer
+    review has been performed.
 
 alignment:
   namespace: "PalomarSignedCirculant"
   statements:
-    - source: "Phase-one Bloch bridge"
-      lean: "PalomarSignedCirculant.phase_one_characteristic_polynomial"
+    - source: "Displayed period-eight Bloch matrix and phase reversal"
+      lean: "PalomarSignedCirculant.bloch_symbol_phase_reversal"
       module: "Solution"
       status: "proved"
-      note: "Characteristic polynomial of the explicit squared 4 by 4 block."
-    - source: "Quartic separator argument"
-      lean: "PalomarSignedCirculant.exists_quartic_root_in_separator"
+      note: >-
+        Swapping z and zInv transposes the exact displayed matrix; at a unit
+        complex phase this is the paper's Hermitian symmetry.
+    - source: "Fraction-free determinant expansion of the displayed Bloch matrix"
+      lean: "PalomarSignedCirculant.bloch_determinant_with_correction"
       module: "Solution"
       status: "proved"
-      note: "Existence only; uniqueness is not asserted."
-    - source: "Root exclusion above the upper separator"
-      lean: "PalomarSignedCirculant.quartic_positive_at_or_above_upper"
+      note: >-
+        Strengthens the paper specialization by exhibiting the exact correction
+        factor before imposing z*zInv=1.
+    - source: "Equations (4)--(5): det(xI-B(z)) = F(x^2,z+z^{-1})"
+      lean: "PalomarSignedCirculant.bloch_determinant_identity"
       module: "Solution"
       status: "proved"
-      note: "Direct positive expansion of the quartic."
-    - source: "Nested-radical threshold comparison"
-      lean: "PalomarSignedCirculant.certified_root_below_nested_target"
+      note: "Derived from the exact 8 by 8 determinant under z*zInv=1."
+    - source: "All-phase polynomial band-edge argument"
+      lean: "PalomarSignedCirculant.algebraic_band_edge_certificate"
       module: "Solution"
       status: "proved"
-      note: "Conditional on the displayed upper separator."
+      note: >-
+        Includes the rational root separator and nested-radical comparison,
+        F(t0,y) nonnegative on [-2,2] and strict for y<2, and exclusion of all
+        roots F(t,y)=0 above t0. It makes no operator-spectrum assertion.
 
 acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

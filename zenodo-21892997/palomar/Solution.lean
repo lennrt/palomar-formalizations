@@ -1,38 +1,47 @@
 /-
 Paper: An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes
-Author: Lennart Rudolph
+Authors: Lennart Rudolph, Sol, Fable
 DOI: https://doi.org/10.5281/zenodo.21892997
-Preprint published: 2026-08-11. Palomar formalization packaged: 2026-08-19.
+Preprint published: 2026-08-11. Palomar F₂ flag-homology upgrade: 2026-08-20.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import ExtremalFlagBetti
+import ExtremalFlagBetti.ActualHomology
 
-/-! Proof-bearing wrappers for the declarations in `Challenge.lean`. -/
+/-! The imported implementation exposes the selected `d₁ ∘ d₂ = 0`
+chain identity. The wrappers below expose the three paper-level results. -/
 
-open Finset
-open SimpleGraph
+open Finset SimpleGraph
 
 namespace PalomarExtremalFlagBetti
 
-open ExtremalFlagBetti
+open ExtremalFlagBetti.ActualHomology
 
-theorem family_leaf_triangle_certificate {n : ℕ} (hn : 7 ≤ n) :
-    let leaf : Fin n := ⟨5, by omega⟩
-    let hub : Fin n := ⟨4, by omega⟩
-    (∀ v, (FamilyH n).Adj leaf v ↔ v = hub) ∧
-      (∀ u, u ≠ hub ∧ ¬(FamilyH n).Adj hub u ↔ u.val < 3) ∧
-      (∀ u v, u.val < 3 → v.val < 3 → u ≠ v → (FamilyH n).Adj u v) := by
-  exact ExtremalFlagBetti.family_leaf_triangle_certificate hn
+theorem family_actual_flag_h1_exactly_two {n : ℕ} (hn : 7 ≤ n) :
+    FlagH1F2ExactlyTwo (FamilyG n) := by
+  exact ExtremalFlagBetti.ActualHomology.family_actual_flag_h1_exactly_two hn
 
-theorem family_no_complete_bipartite_spanning {n : ℕ} (hn : 7 ≤ n) :
+theorem universal_flag_beta1_f2_le_two
+    {n : ℕ} (hn : 7 ≤ n) (F : SimpleGraph (Fin n))
+    [DecidableRel F.Adj]
+    (hE : #F.edgeFinset = n.choose 2 - n) :
+    FlagH1F2AtMostTwo F := by
+  exact ExtremalFlagBetti.ActualHomology.universal_flag_beta1_f2_le_two hn F hE
+
+theorem dense_extremal_flag_counterexample_f2
+    {n : ℕ} (hn : 7 ≤ n) :
+    #(FamilyG n).edgeFinset = n.choose 2 - n ∧
+    n ^ 2 / 4 < #(FamilyG n).edgeFinset ∧
+    FlagH1F2ExactlyTwo (FamilyG n) ∧
+    (∀ (F : SimpleGraph (Fin n)) [DecidableRel F.Adj],
+      #F.edgeFinset = n.choose 2 - n → FlagH1F2AtMostTwo F) ∧
     ¬HasCompleteBipartiteSpanning (FamilyG n) := by
-  exact ExtremalFlagBetti.family_no_complete_bipartite_spanning hn
+  exact ExtremalFlagBetti.ActualHomology.dense_extremal_flag_counterexample_f2 hn
 
-theorem family_complement_edge_count {n : ℕ} (hn : 7 ≤ n) :
-    #(FamilyG n).edgeFinset = n.choose 2 - n := by
-  exact ExtremalFlagBetti.family_complement_edge_count hn
+#print axioms ExtremalFlagBetti.ActualHomology.flagD1_flagD2
+#print axioms family_actual_flag_h1_exactly_two
+#print axioms universal_flag_beta1_f2_le_two
+#print axioms dense_extremal_flag_counterexample_f2
 
 end PalomarExtremalFlagBetti
-

@@ -2,34 +2,47 @@
 version: "v0.4"
 
 project:
-  name: "Graph certificates for a dense flag-Betti counterexample family"
+  name: "Actual F₂ flag homology and the dense extremal counterexample family"
   description: >-
-    Lean proofs of the all-order graph-theoretic core of a dense
-    counterexample family: a uniform leaf and triangle-remainder certificate
-    for the sparse complements, absence of a complete bipartite spanning
-    subgraph in every dense complement, and the exact edge count
-    binomial(n,2)-n for every n at least seven.
+    A finite-chain formalization of the F₂ content of Theorem 1.1 and
+    Proposition 3.1 in the source paper. Lean defines the literal flag-chain
+    groups of a finite graph using unordered edges and three-vertex clique
+    faces, their d1 and d2 maps, and actual H1 as ker(d1)/range(d2). It proves
+    that the paper's family G_n has F₂ first Betti number exactly two for
+    every n at least seven, proves the universal F₂ upper bound beta1 <= 2
+    for every n-vertex graph with choose(n,2)-n edges, and bundles these facts
+    with the exact density and no-complete-bipartite-spanning obstruction.
+    The literal d1-d2 identity is also selected so every Challenge proof hole
+    is compared. No compared proof uses native_decide or an external homology
+    axiom.
   authors:
     - "Lennart Rudolph"
+    - "Sol"
+    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
 
 classification:
   arxiv: ["math.CO", "math.AT"]
-  msc2020: ["05C35", "05E45", "55U10"]
+  msc2020: ["05C35", "05C69", "55U10"]
 
 sources:
   - title: "An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes"
     authors:
       - "Lennart Rudolph"
-    id: "doi:10.5281/zenodo.21892997"
-    type: "preprint"
+      - "Sol"
+      - "Fable"
+    id: "10.5281/zenodo.21892997"
+    type: paper
     location: "https://doi.org/10.5281/zenodo.21892997"
     relationship: "formalizes"
     note: >-
-      Formalizes the all-order graph construction, obstruction, and edge count;
-      the homology and extremal first-Betti arguments remain in the paper.
+      Formalizes, over F₂, the family first-homology calculation in
+      Theorem 1.1, the universal upper bound in Proposition 3.1, the exact
+      choose(n,2)-n edge count, the strict density comparison, and the
+      obstruction to a complete bipartite spanning subgraph. Arbitrary-field,
+      integral-homology, and finite-census claims are not selected.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
 
@@ -37,32 +50,52 @@ related_formalizations: []
 
 status:
   scope: >-
-    Formalizes the explicit complement graph family, its all-order leaf and
-    triangle-remainder certificate, the connected-complement obstruction to a
-    complete bipartite spanning subgraph, and the exact edge count of the dense
-    family. It does not formalize independence-complex homotopy, the first
-    Betti number, the extremal upper bound, the full counterexample theorem, or
-    the census computations. Finite native_decide certificates in the source
-    module are deliberately outside every advertised proof dependency cone.
+    Four declarations are compared: the structural d1-d2 identity and three
+    paper-level results forming the main results group. The
+    project formalizes actual degree-one simplicial homology over F₂ for
+    finite flag complexes. Its transparent chain model uses graph edges as
+    Sym2 subtypes, triangular clique finsets as 2-faces, and the quotient of
+    the d1 kernel by the d2 range. The family proof performs the paper's leaf
+    reductions directly in this quotient and identifies the K_(2,3) core.
+    Proposition 3.1 is proved for every finite graph at the exact edge count:
+    isolated vertices give cones, leaves reduce to a component-code normal
+    form, and the minimum-degree-two case is reduced to complements of cycles
+    and joins. The compared bundle additionally proves the exact edge count,
+    density above floor(n^2/4), and absence of a complete bipartite spanning
+    subgraph. The scope is F₂ only. Homology over arbitrary fields or Z,
+    higher homology, the paper's finite census, and any classification beyond
+    the displayed edge-count regime remain external.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarExtremalFlagBetti.family_actual_flag_h1_exactly_two"
+    - "PalomarExtremalFlagBetti.universal_flag_beta1_f2_le_two"
+    - "PalomarExtremalFlagBetti.dense_extremal_flag_counterexample_f2"
 
 automation:
   methods:
     - method: "agent"
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "OpenAI Codex and Anthropic Claude"
-      tool_setup: "Agent-assisted research, graph computation, Lean development, verification, and adversarial review"
+      tool_setup: >-
+        Agent-assisted source audit, explicit F₂ chain development, Lean
+        proof construction, kernel verification, and adversarial scope review
       cost:
         wall_time: "not tracked"
         spend_usd: "subscription-based; not tracked"
         hardware: "local machine and hosted APIs"
-      prompting_notes: "Human-directed iterative proof development and review"
+      prompting_notes: >-
+        Human-directed extraction of the paper's leaf, cycle, join, and
+        extremal cases; iterative serialized Lean checking; strict separation
+        of the proved F₂ result from unformalized coefficient and census
+        claims.
     - method: "manual"
       models: []
       framework: "n/a"
-      tool_setup: "Human scope selection, source comparison, proof review, and release approval"
+      tool_setup: >-
+        Human scope selection, source comparison, proof review, and release
+        approval
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -70,40 +103,64 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; not tracked"
   notes: >-
-    The named author directed the work, checked the retained statements and
-    proofs, and approved the release; AI systems are not authors.
+    The three named authors collaborated on the scope, statements, proofs,
+    review, and release approval.
 
 fidelity:
   divergences: >-
-    The cited preprint proves homotopy and extremal first-Betti conclusions;
-    this Lean project intentionally stops at the all-order graph certificates
-    stated under status.scope.
+    The paper presents the family reduction and Proposition 3.1 using standard
+    independence-complex homotopy tools, including leaf deletion, complements
+    of cycles, and joins. Lean proves the required degree-one consequences
+    internally in a concrete F₂ chain quotient: explicit cone and leaf
+    normal forms, literal cycle calculations, an actual joined-chain quotient
+    equivalence, and finite-graph component decompositions. This changes the
+    proof vehicle but not the selected F₂ statements. The formalization does
+    not promote the result to arbitrary coefficients or integral homology and
+    does not formalize the computational census reported elsewhere in the
+    paper.
 
 review:
   status: "self-assessed"
-  reviewers: []
+  reviewers:
+    - "OpenAI Codex (Sol)"
   notes: >-
-    Author-reviewed and mechanically kernel-checked, with exact independent
-    censuses and an automated adversarial audit for the wider paper; not
-    independently peer-reviewed.
+    The current Sol co-author self-review covers the upgraded actual F₂
+    quotient, family beta-one computation, and Proposition 3.1 proof cone. The
+    older Fable co-author self-review applied to the earlier graph-certificate/
+    Boolean-core selection and does not cover this upgrade. No independent
+    human peer review has been performed.
 
 alignment:
   namespace: "PalomarExtremalFlagBetti"
   statements:
-    - source: "All-order leaf and triangle-remainder certificate"
-      lean: "PalomarExtremalFlagBetti.family_leaf_triangle_certificate"
+    - source: "Simplicial-chain identity underlying the F₂ H1 definition"
+      lean: "ExtremalFlagBetti.ActualHomology.flagD1_flagD2"
       module: "Solution"
       status: "proved"
-      note: "Graph-structural input to the paper's unformalized homotopy argument."
-    - source: "No complete bipartite spanning subgraph"
-      lean: "PalomarExtremalFlagBetti.family_no_complete_bipartite_spanning"
+      note: >-
+        Mechanical support theorem selected so the transparent Challenge has
+        no unselected proof hole; it is not a separate paper-level claim.
+    - source: "Theorem 1.1: the explicit family has first Betti number two"
+      lean: "PalomarExtremalFlagBetti.family_actual_flag_h1_exactly_two"
       module: "Solution"
       status: "proved"
-      note: "All-order connected-complement obstruction."
-    - source: "Dense-family edge count"
-      lean: "PalomarExtremalFlagBetti.family_complement_edge_count"
+      note: >-
+        Proved for actual flag-complex H1 over F₂, not merely for an abstract
+        supplied vector space or the earlier Boolean core surrogate.
+    - source: "Proposition 3.1: beta1 is at most two at choose(n,2)-n edges"
+      lean: "PalomarExtremalFlagBetti.universal_flag_beta1_f2_le_two"
       module: "Solution"
       status: "proved"
-      note: "Exact count binomial(n,2)-n for n at least seven."
+      note: >-
+        Universal over all simple graphs on Fin n for n at least seven, with
+        beta1 interpreted in the explicit F₂ flag-chain quotient.
+    - source: "Theorem 1.1: dense extremal counterexample family"
+      lean: "PalomarExtremalFlagBetti.dense_extremal_flag_counterexample_f2"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        Bundles the exact edge count, density above floor(n^2/4), family
+        beta1=2, the matching universal upper bound, and the absence of a
+        complete bipartite spanning subgraph.
 
 acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

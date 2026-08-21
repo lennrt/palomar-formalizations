@@ -1,6 +1,6 @@
 /-
 Paper: A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs
-Author: Lennart Rudolph
+Authors: Lennart Rudolph, Sol, Fable
 DOI: https://doi.org/10.5281/zenodo.21890733
 Preprint published: 2026-08-11. Palomar formalization packaged: 2026-08-19.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)

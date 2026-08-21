@@ -2,13 +2,30 @@
 
 DOI: [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)
 
-- `palomar/` is the independent Lean project prepared for Palomar submission.
+Authors: Lennart Rudolph, Sol, Fable
 
-The Palomar entry contains the all-order graph-theoretic Lean core: the leaf
-and triangle-remainder certificate for the complement family, the proof that
-the counterexample graphs have no complete bipartite spanning subgraph, and
-their exact edge count. It intentionally does not advertise the finite
-`native_decide` certificates. The homotopy equivalence, first Betti-number
-calculation, and extremal upper bound are not formalized in Lean and are not
-claimed by this entry.
+This directory contains the standalone Palomar project in `palomar/`.
 
+The upgraded Lean development formalizes actual first simplicial homology over
+F₂ for finite graph flag complexes, using unordered graph edges, triangular
+clique faces, and the quotient `ker d₁ / range d₂`. It proves that the paper's
+family has F₂ first Betti number exactly two for every `n ≥ 7`, proves the
+universal F₂ upper bound in Proposition 3.1 for every graph with
+`choose(n,2)-n` edges, and bundles these with the exact density and the
+obstruction to a complete bipartite spanning subgraph.
+
+The formalized result is F₂-specific. Arbitrary-field and integral homology,
+higher homology, and the finite census remain outside the selected Lean scope.
+No compared proof uses `native_decide` or a custom axiom.
+
+To verify it:
+
+```sh
+cd palomar
+lake build
+```
+
+The current actual-homology upgrade was reviewed by OpenAI Codex (Sol). The
+older Anthropic Claude (Fable) review remains documented as provenance for the
+earlier graph-certificate/Boolean-core package, not as a review of the new
+Proposition 3.1 proof cone.

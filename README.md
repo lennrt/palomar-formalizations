@@ -1,7 +1,7 @@
 # Lean formalizations of nine preprints
 
 Nine standalone Lean 4 projects, each a machine-checked companion to one
-Zenodo preprint by Lennart Rudolph. Each `zenodo-N/` directory holds an
+Zenodo preprint by Lennart Rudolph, Sol, Fable. Each `zenodo-N/` directory holds an
 independent Lake project prepared for submission to the
 [Palomar registry](https://palomar-registry.org/). Each
 project states its selected theorems in `Challenge.lean`, proves them in
@@ -37,7 +37,7 @@ lake exe cache get
 lake build
 ```
 
-Eight projects pin Lean 4.30.0; `zenodo-21892986/` pins Lean 4.32.2.
+Eight projects pin Lean 4.30.0; `zenodo-21892986/` pins Lean 4.32.0.
 `ruby scripts/check-layout.rb` checks the repository layout, metadata, and
 Comparator configurations of all nine projects.
 
@@ -50,8 +50,8 @@ record. The repository root carries exactly one licence file, matching the
 
 ## AI disclosure
 
-OpenAI Codex (Sol) and Anthropic Claude (Fable) were used for formalization
-and adversarial analysis. The author selected the statements, reviewed the
-proofs, and takes responsibility for the results. Every compared theorem is
-checked by the Lean kernel, and each `formalization.yaml` records the
+Authors: Lennart Rudolph, Sol, Fable. Sol and Fable contributed formalization
+and adversarial analysis; Lennart Rudolph selected the statements, reviewed
+the proofs, and takes responsibility for the results. Every compared theorem
+is checked by the Lean kernel, and each `formalization.yaml` records the
 automation methods in detail.

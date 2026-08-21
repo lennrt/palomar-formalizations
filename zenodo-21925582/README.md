@@ -1,7 +1,7 @@
 # Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 
 - DOI: <https://doi.org/10.5281/zenodo.21925582>
-- Author: Lennart Rudolph
+- Authors: Lennart Rudolph, Sol, Fable
 - Palomar project: `palomar/`
 
 The Palomar project advertises the kernel-replayable finite rank certificate

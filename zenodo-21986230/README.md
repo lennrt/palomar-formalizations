@@ -2,15 +2,19 @@
 
 DOI: [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230)
 
+Authors: Lennart Rudolph, Sol, Fable
+
 This directory contains the Palomar submission project:
 
 - `palomar/` is the standalone Lean project to submit to Palomar.
 
-The formalization is deliberately scoped.  It proves the token-order
-projection/inversion bridge, same-fibre independence, the exact `k = 2`,
-`m = 20` arithmetic endpoint, and the finite pigeonhole obstruction.  It does
-not formalize words, graph compactions, the full characterization theorem, or
-the paper's explicit graph nonmembership theorem.
+The formalization defines the paper's finite-word semantics for uniform
+two-word π-representability, proves its general neighbourhood-trace bound,
+defines the explicit 20-by-741322 bit-incidence graph `B20`, and proves that
+`B20` is not representable by two 2-uniform words.  It also retains the
+token-order projection/inversion bridge and exact arithmetic endpoints.  The
+paper's separate permutation-graph compaction characterization and
+VC-dimension consequences remain outside the formalized scope.
 
 To verify the project locally:
 
@@ -19,4 +23,3 @@ cd palomar
 lake exe cache get
 lake build
 ```
-

@@ -9,10 +9,18 @@ relaxedAutoImplicit = false
 [[require]]
 name = "cslib"
 scope = "leanprover"
-rev = "93aa05752a62ad3498e734d5b75fcbff965891ce"
+rev = "5ccce0ebe0d94fbad8cc21a1822500b82428b5a2"
 
 [[lean_lib]]
 name = "RegularPathDelay"
+
+[[lean_lib]]
+name = "RegularPathDelayEnumeration"
+roots = ["RegularPathDelayEnumeration"]
+
+[[lean_lib]]
+name = "RegularPathDelayTrace"
+roots = ["RegularPathDelayTrace"]
 
 [[lean_lib]]
 name = "Challenge"

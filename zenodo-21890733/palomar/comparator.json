@@ -2,8 +2,18 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "BarnettePalomar.concrete_matching_meets_every_color",
-    "BarnettePalomar.forced_green_excludes_prescribed_cycle"
+    "BarnettePalomar.concrete_graph_certificate",
+    "BarnettePalomar.deletion_connectivity_certificate",
+    "BarnettePalomar.hamiltonian_cycle_and_matching_certificate",
+    "BarnettePalomar.plane_embedding_certificate",
+    "BarnettePalomar.face_coloring_certificate",
+    "BarnettePalomar.property_one_excludes_prescribed_cycle"
   ],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true,
+  "definition_names": []
 }

@@ -1,18 +1,26 @@
-# Palomar project: MSET25 arithmetic companion
+# Palomar project: the even-cylinder resolving construction
 
-This is the intentionally narrow arithmetic companion to the cylindrical
-multiset-dimension preprint.  `Challenge.lean` states one unordered-pair
-symmetry and the three rational swap identities; `Solution.lean` supplies
-explicit wrappers around `MSET25`.
+Authors: Lennart Rudolph, Sol, Fable
+
+This Lean project formalizes the graph-theoretic core of the paper's infinite
+family. It defines the coordinate model and standard distance on
+`P_m □ C_(6m)`, proves the four-piece cycle distance-pair locus from Lemma 1,
+and proves that `(0,0)`, `(0,2m)`, and `(m-1,0)` form a multiset resolving set
+for every even `m ≥ 2`.
+
+The formalization establishes the three-landmark upper bound. It does not
+formalize the general theorem that a connected non-path graph has multiset
+dimension at least three, so it does not claim basis minimality or the exact
+dimension equality. The finite exhaustive census also remains outside Lean.
 
 The original Lean v4.19.0 project has been migrated to the Palomar-supported
-Lean and Mathlib v4.30.0 pair.  Build it with:
+Lean and Mathlib v4.30.0 pair. Build it with:
 
 ```sh
 lake exe cache get
 lake build
 ```
 
-The project contains no `native_decide`, `sorry`, or custom axiom outside the
-deliberate Challenge placeholders.
-
+`Challenge.lean` contains only the compared theorem placeholders;
+`Solution.lean` supplies the proofs. The solution contains no `sorry`,
+`native_decide`, or custom axiom.

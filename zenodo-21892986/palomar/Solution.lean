@@ -1,50 +1,56 @@
 /-
 Paper: Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs
-Author: Lennart Rudolph
+Authors: Lennart Rudolph, Sol, Fable
 DOI: https://doi.org/10.5281/zenodo.21892986
-Preprint published: 2026-08-11. Palomar formalization packaged: 2026-08-19.
-AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
-were used for formalization and adversarial analysis.
+Preprint published: 2026-08-11. Palomar formalization upgraded: 2026-08-20.
 -/
 
-import RegularPathDelay
-
-/-! Proof-bearing wrappers for the declarations in `Challenge.lean`. -/
+import RegularPathDelayTrace
 
 namespace PalomarRegularPathDelay
 
 open RegularPathDelay
 
-theorem vertex_split_model_equivalence
-    {α : Type} {bar : α → α} {vertices : Set α} {arcs : Set (α × α)}
-    (hsupport : ∀ ⦃u v⦄, (u, v) ∈ arcs → u ∈ vertices ∧ v ∈ vertices) :
-    SplitArcClashFree bar (LiftedArcs vertices arcs) ↔
-      VertexClashFree bar vertices := by
-  exact RegularPathDelay.vertexSplit_model_equivalence hsupport
+theorem exact_prefix_deletion_extension
+    {alpha : Type} [DecidableEq alpha] [Fintype alpha]
+    (I : FiniteRegularPathInstance alpha) {pfx : List alpha} {v w : alpha}
+    (hpfx : IsRegularPrefix I pfx)
+    (hlast : pfx.getLast? = some v)
+    (hedge : I.Edge v w)
+    (hsurvives : Survives I.bar pfx w) :
+    HasRegularExtension I pfx w ↔ DeletedCompletion I pfx w := by
+  exact RegularPathDelay.prefix_extension_iff_deleted_completion
+    I hpfx hlast hedge hsurvives
 
-theorem split_walk_lift_nodes_iff
-    {α : Type} {edge : α → α → Prop} {bar : α → α} (xs : List α) :
-    Walk (SplitEdge edge bar) (liftNodes xs) ↔
-      Walk (fun u v => edge u v ∧ v ≠ bar u) xs := by
-  exact RegularPathDelay.splitWalk_liftNodes_iff xs
+theorem exact_oracle_regular_extension
+    {alpha : Type} [DecidableEq alpha] [Fintype alpha]
+    (I : FiniteRegularPathInstance alpha) (oracle : ExactReachabilityOracle I)
+    {pfx : List alpha} {v w : alpha}
+    (hpfx : IsRegularPrefix I pfx)
+    (hlast : pfx.getLast? = some v)
+    (hw : w ∈ orderedAdmissibleSuccessors I pfx) :
+    oracle.query pfx w = true ↔ HasRegularExtension I pfx w := by
+  exact RegularPathDelay.oracle_accepts_iff_regular_extension
+    I oracle hpfx hlast hw
 
-theorem regular_extension_with_reachability
-    {α : Type} {edge : α → α → Prop} {bar : α → α}
-    {old tail : List α} {s v w t : α} {k ℓ : Nat}
-    (hinvol : ∀ x, bar (bar x) = x)
-    (hprefixRegular : Regular bar (old ++ [w]))
-    (hsuffixRegular : Regular bar (w :: tail))
-    (hsurvives : SuffixSurvives bar old tail)
-    (hprefixReach : Relation.RelatesInSteps edge s v k)
-    (hvw : edge v w)
-    (hw : Survives bar old w) (ht : Survives bar old t)
-    (hsuffixReach : Relation.RelatesInSteps
-      (InducedAfterDeletion edge bar old) ⟨w, hw⟩ ⟨t, ht⟩ ℓ) :
-    Regular bar (old ++ w :: tail) ∧
-      Relation.RelatesInSteps edge s t (k + (ℓ + 1)) := by
-  exact RegularPathDelay.regular_and_reachability_join_induced
-    hinvol hprefixRegular hsuffixRegular hsurvives
-    hprefixReach hvw hw ht hsuffixReach
+theorem ordered_fixed_endpoint_enumerator
+    {alpha : Type} [DecidableEq alpha] [Fintype alpha]
+    (I : FiniteRegularPathInstance alpha) (oracle : ExactReachabilityOracle I) :
+    (∀ p, p ∈ enumerateRegularPaths I oracle ↔ IsTargetRegularPath I p) ∧
+    (enumerateRegularPaths I oracle).Nodup ∧
+    (∀ p ∈ enumerateRegularPaths I oracle,
+      p.length ≤ Fintype.card alpha) := by
+  exact RegularPathDelay.enumerateRegularPaths_specification I oracle
+
+theorem explicit_dfs_event_trace_certificate
+    {alpha : Type} [DecidableEq alpha] [Fintype alpha]
+    (I : FiniteRegularPathInstance alpha) (oracle : ExactReachabilityOracle I) :
+    let events := enumerateRegularPathsTrace I oracle
+    let profile := workProfile events
+    profile.totalWork = traceWork events ∧
+      profile.outputs = enumerateRegularPaths I oracle ∧
+      ProfileBound I [I.source] profile ∧
+      events.getLast? = some (.exit [I.source]) := by
+  exact RegularPathDelay.explicit_dfs_event_trace_certificate I oracle
 
 end PalomarRegularPathDelay
-

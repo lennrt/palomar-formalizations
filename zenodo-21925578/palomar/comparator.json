@@ -2,10 +2,11 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "PalomarCubicHalfSpectrum.zero_mode_factorization",
-    "PalomarCubicHalfSpectrum.real_root_in_unit_interval",
-    "PalomarCubicHalfSpectrum.double_ring_outer_symbol_factorization",
-    "PalomarCubicHalfSpectrum.double_ring_line_factorization"
+    "PalomarCubicHalfSpectrum.released_outer_source_normal_form",
+    "PalomarCubicHalfSpectrum.released_zero_block_strictly_upper",
+    "PalomarCubicHalfSpectrum.outer_core_charpoly",
+    "PalomarCubicHalfSpectrum.outer_normal_form_charpoly",
+    "PalomarCubicHalfSpectrum.released_outer_charpoly"
   ],
   "definition_names": [],
   "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],

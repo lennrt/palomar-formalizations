@@ -1,22 +1,36 @@
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
-Author: Lennart Rudolph
+Authors: Lennart Rudolph, Sol, Fable
 DOI: https://doi.org/10.5281/zenodo.21925574
-Preprint published: 2026-08-14. Palomar formalization packaged: 2026-08-19.
-AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
-were used for formalization and adversarial analysis.
+Palomar ambient-bridge upgrade: 2026-08-20.
 -/
+import K331Tutte.AmbientFourClique
 
-import K331Tutte
+set_option autoImplicit true
 
-/-!
-# Proved solution
+namespace K331Tutte.FiniteHomology.Ambient
 
-The imported project supplies the selected structural declarations. Their
-proof cones avoid the separate native finite-certificate module.
--/
+theorem encoded_induced_four_pair_admissible
+    (P : FiniteSimplicialPair n) (L : LabelledFourClique P)
+    (hBT : BoundaryTriangleCondition P) :
+    Admissible (encodePair (inducedPair P L)) := by
+  exact encoded_induced_four_pair_admissible_source P L hBT
 
-#print axioms K331Tutte.linkless_of_cockade_certificate
-#print axioms K331Tutte.structural_linkless
-#print axioms K331Tutte.no_k331_minor_of_no_k6_minor
-#print axioms K331Tutte.k331_exclusion_is_redundant
+theorem induced_four_coordinate_chain_identification
+    (P : FiniteSimplicialPair n) (L : LabelledFourClique P)
+    (hBT : BoundaryTriangleCondition P) :
+    let Q := inducedPair P L
+    let c := encodePair Q
+    actualRelativeFaces Q = relativeFaces c ∧
+      (∀ z, ActualRelativeCycle Q z ↔ RelativeCycle c z) ∧
+      actualD3Boundary Q = d3Boundary c ∧
+      (∀ x y, ActualHomologous Q x y ↔ Homologous c x y) := by
+  exact induced_four_coordinate_chain_identification_source P L hBT
+
+theorem induced_four_clique_relative_homology_bound
+    (P : FiniteSimplicialPair n) (L : LabelledFourClique P)
+    (hBT : BoundaryTriangleCondition P) :
+    ActualHomologyDimensionAtMostOne (inducedPair P L) := by
+  exact induced_four_clique_relative_homology_bound_source P L hBT
+
+end K331Tutte.FiniteHomology.Ambient

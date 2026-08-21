@@ -1,17 +1,19 @@
 version: "v0.4"
 
 project:
-  name: "Finite obstruction to prescribed-cycle recovery in a Barnette graph"
+  name: "Concrete Barnette graph certificate and prescribed-cycle obstruction"
   description: >-
-    This Lean development formalizes the decisive finite obstruction used for
-    the explicit prescribed-cycle counterexample: the eight-edge matching
-    omitted by the displayed Hamiltonian cycle meets each of the three
-    displayed edge-color classes. It also proves the abstract implication that
-    an output containing every forced green edge cannot equal a cycle that
-    omits a green matching edge. The planar embedding, derivation and uniqueness
-    of the simultaneous coloring, Hamiltonicity checks, and the published
-    algorithm's Property 1 are outside the compared statement surface.
-  authors: ["Lennart Rudolph"]
+    A kernel-checked certificate for the finite mathematical core of the
+    paper's explicit 16-vertex counterexample. The compared declarations prove
+    cubicity, bipartiteness, connectivity after every deletion of at most two
+    vertices, Hamiltonicity of the displayed cycle, its exact complementary
+    perfect matching, the displayed oriented facial incidence and dual data,
+    Euler's equality, properness and uniqueness up to global permutation of the
+    face coloring, the induced edge-color classes, their unavoidable
+    intersections with the complementary matching, and the instantiated final
+    obstruction. The topological realization of the incidence data as a sphere
+    embedding and the published algorithm's Property 1 remain external inputs.
+  authors: ["Lennart Rudolph", "Sol", "Fable"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
 
@@ -21,62 +23,115 @@ classification:
 
 sources:
   - title: "A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs"
-    authors: ["Lennart Rudolph"]
+    authors: ["Lennart Rudolph", "Sol", "Fable"]
     id: "doi:10.5281/zenodo.21890733"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21890733"
     relationship: formalizes
     note: >-
-      The compared declarations formalize the matching-versus-color
-      obstruction and its final forced-edge implication, not the complete paper.
+      The compared declarations formalize the concrete finite certificate and
+      its final forced-edge obstruction, not the paper's external algorithm
+      theorem or a general topological realization theorem.
     license: "CC-BY-4.0"
 
 status:
   scope: >-
-    Finite matching-versus-color intersection and the generic forced-edge
-    implication only; the embedding, full certificate chain, and external
-    algorithm theorem are not compared.
+    Concrete 16-vertex graph, deletion-connectivity, Hamiltonian cycle,
+    complementary matching, oriented face/dual incidence, Euler, face-coloring
+    uniqueness, induced edge colors, and the conditional Property-1
+    obstruction. The incidence-to-sphere theorem and Property 1 itself are not
+    formalized.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: [propext, Quot.sound, Classical.choice]
+  main_results:
+    - "BarnettePalomar.concrete_graph_certificate"
+    - "BarnettePalomar.deletion_connectivity_certificate"
+    - "BarnettePalomar.hamiltonian_cycle_and_matching_certificate"
+    - "BarnettePalomar.plane_embedding_certificate"
+    - "BarnettePalomar.face_coloring_certificate"
+    - "BarnettePalomar.property_one_excludes_prescribed_cycle"
 
 automation:
   methods:
     - method: agent
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "AI-assisted formalization and adversarial review"
-      tool_setup: "Lean 4, Mathlib, exact certificate checks, and agent review"
+      tool_setup: >-
+        Lean 4, Mathlib, ordinary decide, an explicit 137-case finite BFS
+        certificate, exact incidence checks, and agent review
     - method: manual
       models: []
       framework: "n/a"
       tool_setup: "Author-directed mathematical and editorial verification"
   spend_usd: "not tracked"
   notes: >-
-    Agents assisted substantially; the author made the final mathematical and
-    editorial decisions and accepts responsibility for the submitted result.
+    The three named authors contributed to the formalization, mathematical
+    checks, and editorial work for the submitted result.
 
 fidelity:
   divergences: >-
-    The compared Lean result is deliberately narrower than the paper and treats
-    the algorithmic forced-edge property as an external premise.
+    The graph, cycle, facial boundaries, dual, and base coloring are transcribed
+    finite data. Lean checks their complete finite certificate chain, including
+    standard graph connectivity after deletion of at most two vertices. It does
+    not prove that the oriented facial-incidence certificate determines a
+    cellular embedding of the sphere, nor does it formalize or prove Property 1
+    of the published algorithm. The final compared theorem therefore assumes
+    that every edge of an admissible green class is contained in the algorithm's
+    output and proves the obstruction for the concrete prescribed cycle.
 
 review:
-  status: "agent-reviewed"
-  reviewers: ["Anthropic Claude"]
-  notes: "The release records independent adversarial review and exact verification."
+  status: "self-assessed"
+  reviewers: ["Anthropic Claude (Fable)", "OpenAI Codex (Sol)"]
+  notes: >-
+    Anthropic Claude (Fable), acting as a co-author, performed an adversarial
+    self-review of the archived preprint and its original Lean companion before
+    release. After the six-theorem Palomar selection was introduced, OpenAI
+    Codex (Sol), also a co-author, performed a later read-only editorial
+    self-review on 2026-08-20 covering the preprint, compared declarations,
+    their Solution proof cone, Comparator selection, and metadata. No
+    independent human peer review has been performed.
 
 alignment:
   namespace: "BarnettePalomar"
   statements:
-    - source: "Finite matching-versus-color obstruction"
-      lean: "BarnettePalomar.concrete_matching_meets_every_color"
+    - source: "The displayed graph is cubic and bipartite"
+      lean: "BarnettePalomar.concrete_graph_certificate"
       module: "Solution"
       status: proved
-      note: "Checks the concrete three-color intersection used in the obstruction."
-    - source: "Forced-green final implication"
-      lean: "BarnettePalomar.forced_green_excludes_prescribed_cycle"
+      note: "Checks 24 edges, degree three at every vertex, and the displayed bipartition."
+    - source: "The displayed graph is 3-connected"
+      lean: "BarnettePalomar.deletion_connectivity_certificate"
       module: "Solution"
       status: proved
-      note: "Abstracts the last logical step while leaving Property 1 external."
+      note: >-
+        A 137-mask BFS certificate is bridged to Mathlib Connected and yields
+        connectivity after every vertex deletion set of cardinality at most two.
+    - source: "The prescribed cycle is Hamiltonian with complementary perfect matching"
+      lean: "BarnettePalomar.hamiltonian_cycle_and_matching_certificate"
+      module: "Solution"
+      status: proved
+      note: "Checks the cyclic order, exact edge complement, disjointness, and matching degree one."
+    - source: "Displayed facial boundaries and dual incidence"
+      lean: "BarnettePalomar.plane_embedding_certificate"
+      module: "Solution"
+      status: proved
+      note: >-
+        Checks oriented edge incidence, two faces per edge, the exact dual, and
+        Euler's equality; topological sphere realization remains external.
+    - source: "Unique simultaneous face coloring and induced edge colors"
+      lean: "BarnettePalomar.face_coloring_certificate"
+      module: "Solution"
+      status: proved
+      note: >-
+        Proves properness, uniqueness up to a global color permutation, the
+        induced edge classes, and matching intersection for every admissible green class.
+    - source: "Property-1 obstruction for the prescribed cycle"
+      lean: "BarnettePalomar.property_one_excludes_prescribed_cycle"
+      module: "Solution"
+      status: proved
+      note: >-
+        Instantiates the final matching argument on the concrete cycle while
+        retaining Property 1 as the forced-green subset hypothesis.
 
 acknowledgements: "Mathlib, Lean, and the source works cited in the preprint."

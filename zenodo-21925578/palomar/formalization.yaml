@@ -2,15 +2,21 @@
 version: "v0.4"
 
 project:
-  name: "Scalar certificates for generalized-cubic subdivision spectra"
+  name: "Released all-valence outer double-ring spectrum for cubic subdivision"
   description: >-
-    Lean proofs of exact algebraic certificates used in the spectral analysis
-    of generalized cubic subdivision matrices: the zero-mode characteristic
-    factorization, a strict real-root bound from the two Jury margins, the
-    complex nonzero double-ring outer-symbol factorization, and the exact
-    one-dimensional double-ring characteristic factorization.
+    A Lean formalization of Lemma 7.1 and the outer-matrix content of Theorem
+    7.2 for generalized cubic subdivision. It defines the naturally indexed
+    28n by 28n outer matrix row-by-row from the authenticated released MATLAB
+    masks, including all previous/current/next-sector references. It constructs
+    the paper's explicit topological permutation, proves that the first 24n
+    coordinates are strictly upper triangular and that the remaining diagonal
+    components are n scalar 1/64 blocks and n copies of the displayed 3 by 3
+    core, and proves unconditionally for every n at least 3 the characteristic
+    polynomial X^(24n)(X-1/64)^n(X-1/32)^n(X-1/16)^n(X-1/8)^n.
   authors:
     - "Lennart Rudolph"
+    - "Sol"
+    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -23,13 +29,18 @@ sources:
   - title: "Exact Spectra of Generalized Cubic Subdivision Matrices"
     authors:
       - "Lennart Rudolph"
+      - "Sol"
+      - "Fable"
     id: "doi:10.5281/zenodo.21925578"
-    type: "preprint"
+    type: paper
     location: "https://doi.org/10.5281/zenodo.21925578"
     relationship: "formalizes"
     note: >-
-      Formalizes selected exact scalar identities and root bounds from the
-      proof, not the complete matrix-level spectral theorem.
+      Formalizes the exact outer row data/support in Lemma 7.1 and the
+      topological-permutation and characteristic-polynomial argument in
+      Theorem 7.2. The decisive released routine is
+      computeBiCubicSubdivisionMatrixBig.m, Git blob ecf810899065 and SHA-256
+      82767dc59f57bdf1c9c3e330d8791cef65a74666521666c99b779fdae98d5836.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
 
@@ -37,31 +48,44 @@ related_formalizations: []
 
 status:
   scope: >-
-    Formalizes the advertised zero-mode, outer-symbol, and line-factor
-    polynomial identities and a real-root exclusion lemma. It does not
-    formalize the source-to-matrix reconstruction, all-valence block Fourier
-    decomposition, eigenvalue multiplicity accounting, trigonometric ordering,
-    the complete half-spectrum theorem, tensor-product interpretation, fully
-    irregular volume matrices, or a complete C1 theorem.
+    The project defines all 28 outer roles in every sector and the exact
+    rational entries of the restricted released outer matrix Q_n. It defines
+    the cyclic sector maps, the explicit equivalence sending
+    {24_s,25_s,29_(s+1)} to one 3-coordinate core, and the extracted zero,
+    upper-coupling, singleton, and core blocks. It proves the source-indexed
+    matrix equals the block normal form, proves the 24n zero block is strictly
+    upper triangular, and proves the complete characteristic polynomial with
+    algebraic multiplicities 24n,n,n,n,n for every n at least 3. It does not
+    formalize a MATLAB parser/evaluator or a cryptographic proof that the
+    external file has the stated digest; the row-by-row Lean definition was
+    audited against that pinned file. It also does not formalize the central
+    S_n Fourier decomposition, Corollary 7.3, tensor-product volume results,
+    fully irregular volume matrices, or a complete C1 theorem.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarCubicHalfSpectrum.released_outer_source_normal_form"
+    - "PalomarCubicHalfSpectrum.released_zero_block_strictly_upper"
+    - "PalomarCubicHalfSpectrum.outer_core_charpoly"
+    - "PalomarCubicHalfSpectrum.outer_normal_form_charpoly"
+    - "PalomarCubicHalfSpectrum.released_outer_charpoly"
 
 automation:
   methods:
     - method: "agent"
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "OpenAI Codex and Anthropic Claude"
-      tool_setup: "Agent-assisted research, exact algebra, Lean development, verification, and adversarial review"
+      tool_setup: "Agent-assisted source audit, exact algebra, Lean development, verification, and adversarial review"
       cost:
         wall_time: "not tracked"
         spend_usd: "subscription-based; not tracked"
         hardware: "local machine and hosted APIs"
-      prompting_notes: "Human-directed iterative certificate construction and review"
+      prompting_notes: "Human-directed iterative source reconstruction, certificate construction, and review"
     - method: "manual"
       models: []
       framework: "n/a"
-      tool_setup: "Human source reconstruction, scope selection, code review, and release approval"
+      tool_setup: "Human source reconstruction, row audit, scope selection, code review, and release approval"
       cost:
         wall_time: "not tracked"
         spend_usd: "not tracked"
@@ -69,45 +93,68 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; not tracked"
   notes: >-
-    The named author directed the work, checked the retained statements and
-    proofs, and approved the release; AI systems are not authors.
+    The authors are Lennart Rudolph, Sol, and Fable. Lennart Rudolph directed
+    the work, checked the retained statements and proofs, and approved the
+    release.
 
 fidelity:
   divergences: >-
-    The cited preprint proves a complete spectral result at the mathematical
-    level; this Lean project certifies only the selected scalar factorizations
-    and root bound stated under status.scope.
+    The outer matrix, sector gluing, source-to-normal permutation, strict
+    triangular support consequence, core block, and full characteristic
+    polynomial are formalized. What remains external is provenance from the
+    authenticated MATLAB syntax to the row-by-row Lean definition: Lean does
+    not parse the routine or verify its Git/SHA digests. The central matrix and
+    later full-scheme and volume conclusions are outside this project.
 
 review:
   status: "self-assessed"
-  reviewers: []
+  reviewers:
+    - "OpenAI Codex (Sol)"
   notes: >-
-    Author-reviewed and mechanically kernel-checked, with independent
-    reconstructions and an automated adversarial audit; not independently
-    peer-reviewed.
+    OpenAI Codex (Sol), acting as a co-author, checked every encoded outer row
+    against the pinned released routine and checked the theorem statements
+    against the rendered preprint while developing and mechanically testing the
+    proofs. This was automated co-author self-review; no independent human peer
+    review has been performed.
 
 alignment:
   namespace: "PalomarCubicHalfSpectrum"
   statements:
-    - source: "Zero Fourier-mode factorization"
-      lean: "PalomarCubicHalfSpectrum.zero_mode_factorization"
-      module: "Solution"
+    - source: "Lemma 7.1 outer support and Theorem 7.2 topological permutation"
+      lean: "PalomarCubicHalfSpectrum.released_outer_source_normal_form"
+      module: "CubicHalfSpectrum.ReleasedOuter"
       status: "proved"
-      note: "Exact scalar characteristic-polynomial identity."
-    - source: "Jury root exclusion"
-      lean: "PalomarCubicHalfSpectrum.real_root_in_unit_interval"
-      module: "Solution"
+      note: >-
+        Reindexes the row-by-row source model by the explicit paper permutation
+        and proves entrywise equality with the nested upper-block normal form.
+    - source: "Theorem 7.2 topologically ordered zero components"
+      lean: "PalomarCubicHalfSpectrum.released_zero_block_strictly_upper"
+      module: "CubicHalfSpectrum.ReleasedOuter"
       status: "proved"
-      note: "Strict interval bound for real quadratic roots under both margins."
-    - source: "Double-ring outer-symbol factorization"
-      lean: "PalomarCubicHalfSpectrum.double_ring_outer_symbol_factorization"
-      module: "Solution"
+      note: >-
+        Proves that every nonzero zero-role dependency strictly increases the
+        displayed role rank and hence that the entire 24n block is strictly
+        upper triangular.
+    - source: "Theorem 7.2 displayed outer core H"
+      lean: "PalomarCubicHalfSpectrum.outer_core_charpoly"
+      module: "CubicHalfSpectrum.ReleasedOuter"
       status: "proved"
-      note: "Exact complex scalar factorization for nonzero phase."
-    - source: "One-dimensional double-ring factor"
-      lean: "PalomarCubicHalfSpectrum.double_ring_line_factorization"
-      module: "Solution"
+      note: >-
+        Computes Matrix.charpoly of the exact displayed 3 by 3 matrix as the
+        factors X-1/8, X-1/16, and X-1/32.
+    - source: "Theorem 7.2 block upper-triangular characteristic polynomial"
+      lean: "PalomarCubicHalfSpectrum.outer_normal_form_charpoly"
+      module: "CubicHalfSpectrum.ReleasedOuter"
       status: "proved"
-      note: "Exact polynomial reassociation after the initial-line factorization."
+      note: >-
+        Proves the full 28n-dimensional polynomial for arbitrary one-way star
+        couplings once the 24n block is strictly upper triangular.
+    - source: "Theorem 7.2 released outer double-ring spectrum"
+      lean: "PalomarCubicHalfSpectrum.released_outer_charpoly"
+      module: "CubicHalfSpectrum.ReleasedOuter"
+      status: "proved"
+      note: >-
+        Gives the stated characteristic polynomial directly for releasedOuterQ
+        for every n at least 3, with no supplied permutation-equality premise.
 
 acknowledgements: "Lean, Mathlib, OpenAI Codex, and Anthropic Claude."

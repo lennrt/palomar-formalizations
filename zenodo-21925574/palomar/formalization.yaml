@@ -1,91 +1,102 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 version: "v0.4"
-
 project:
-  name: "Certified reduction for tetrahedral-mesh embedding conditions"
+  name: "Ambient four-clique relative F₂ homology bound"
   description: >-
-    This Lean development checks a deliberately scoped component of the
-    tetrahedral-mesh result. A safe-cockade induction and abstract theorems
-    compose explicitly named rigidity, separator, extremal-minor,
-    linkless-embedding, and embedding inputs to show that the separate
-    K_(3,3,1)-minor exclusion is redundant. The deep input theorems, the native
-    finite local certificate, and its relative-homology interpretation are
-    outside the compared proof cone.
-  authors: ["Lennart Rudolph"]
-  responsible_maintainers: ["Lennart Rudolph"]
+    A paper-faithful formalization of Lemma 7.1 and Lemma 4.3. It defines an
+    actual finite abstract simplicial complex, boundary subcomplex, induced
+    labelled four-clique pair under (BT), identifies its relative C₂→C₁ and
+    d₃ coordinate complex with the checked FourVertexPair model, and proves
+    that its relative H₂ quotient has at most two classes.
+  authors: ["Lennart Rudolph", "Sol", "Fable"]
   license: "MIT"
-
+  responsible_maintainers: ["Lennart Rudolph"]
 classification:
-  arxiv: [math.CO, cs.CG]
-  msc2020: [05C10, 05C83, 57Q15, 68U05]
-
+  arxiv: ["math.CO", "cs.CG"]
+  msc2020: ["05C10", "55N10", "57Q15", "68U05"]
 sources:
   - title: "Simpler Graph Conditions for Embedding Tetrahedral Meshes"
-    authors: ["Lennart Rudolph"]
-    id: "doi:10.5281/zenodo.21925574"
+    authors: ["Lennart Rudolph", "Sol", "Fable"]
+    id: "10.5281/zenodo.21925574"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21925574"
-    relationship: formalizes
+    relationship: "formalizes"
     note: >-
-      Formalizes the safe-cockade induction and conditional logical composition;
-      imported mathematical theorems remain explicit inputs.
+      Formalizes the actual ambient-to-coordinate soundness bridge of Lemma
+      7.1 and the four-clique relative bound of Lemma 4.3. Later duality,
+      separator, rigidity, minor, and embedding arguments remain external.
     license: "CC-BY-4.0"
-
+    author_endorsement: "participated"
+related_formalizations: []
 status:
   scope: >-
-    Abstract safe-cockade induction and input composition only; no compared
-    formalization of rigidity, topology, graph-minor classification, linkless
-    embedding, the native finite certificate, or its homological interpretation.
+    Simplices are extensional vertex predicates on Fin n, so the ambient
+    object is a finite abstract simplicial complex with downward closure. The
+    boundary is an actual subcomplex. An injectively labelled four-clique is
+    pulled back to K=T[S] and K_boundary=K∩boundary(T). The global (BT)
+    condition is transported to that induced pair. Lean proves the induced
+    Boolean record is admissible, proves exact coordinate equality for the
+    relative face generators, quotient-zero d₂ cycles, d₃ generator, and
+    homology relation, constructs the actual quotient, and transports the
+    finite classification to show it has at most two classes. This is the
+    finite-F₂ formulation of dim H₂≤1. No external homology-equivalence
+    hypothesis is assumed. The topological-ball realization, general
+    simplicial/singular homology equivalence, Alexander--Lefschetz duality,
+    deletion retraction, graph separator, and later paper theorems remain out
+    of scope.
   sorry_count: 0
   sorry_in_definitions: 0
-  axioms: []
-
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible"
+    - "K331Tutte.FiniteHomology.Ambient.induced_four_coordinate_chain_identification"
+    - "K331Tutte.FiniteHomology.Ambient.induced_four_clique_relative_homology_bound"
 automation:
   methods:
-    - method: agent
-      models: ["OpenAI Codex", "Anthropic Claude"]
-      framework: "AI-assisted formalization and adversarial review"
-      tool_setup: "Lean 4 logical interfaces plus independent executable checks"
-    - method: manual
-      models: []
-      framework: "n/a"
-      tool_setup: "Author-directed proof, source, and scope review"
-  spend_usd: "not tracked"
+    - method: "agent"
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
+      framework: "Codex and Claude"
+      tool_setup: "Agent-assisted formalization and adversarial audit"
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "local machine and hosted APIs"
+      prompting_notes: "Iterative source comparison, Lean proof development, and review"
+  spend_usd: "subscription-based; exact total not tracked"
   notes: >-
-    Agents assisted substantially; the author made the final mathematical and
-    editorial decisions and accepts responsibility for the submitted result.
-
+    The three named authors collaborated on the scope, statements, review,
+    and responsibility for the formalization.
 fidelity:
   divergences: >-
-    Deep cited results are represented as fields of Inputs; the native finite
-    certificate and its homological meaning are not in the compared proof cone.
-
+    Relative chains and homology are realized by the exact four-face/six-edge
+    F₂ coordinate complex instead of a general homology library. The proved
+    coordinate-identification theorem connects that model to the actual
+    induced simplicial pair; the quotient-at-most-two formulation replaces a
+    general vector-space finrank API. No topological-ball or duality claim is
+    made by the selected theorems.
 review:
-  status: "agent-reviewed"
-  reviewers: ["Anthropic Claude"]
-  notes: "The release records an independent adversarial review and two exact verifiers."
-
+  status: "self-assessed"
+  reviewers: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
+  notes: >-
+    Sol and Fable performed co-author automated adversarial self-reviews of
+    statement alignment and the no-sorry kernel proof. No independent human
+    peer review was performed.
 alignment:
-  namespace: "K331Tutte"
+  namespace: "K331Tutte.FiniteHomology.Ambient"
   statements:
-    - source: "Safe-cockade linklessness induction"
-      lean: "K331Tutte.linkless_of_cockade_certificate"
+    - source: "Lemma 7.1 (soundness of the finite model)"
+      lean: "K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible"
       module: "Solution"
-      status: proved
-      note: "Proves the recursive logical step for atom and safe-glue cases."
-    - source: "Structural linklessness reduction"
-      lean: "K331Tutte.structural_linkless"
+      status: "proved"
+      note: "Derives every admissibility clause from actual closure, subcomplex membership, and (BT)."
+    - source: "Coordinate relative-chain identification"
+      lean: "K331Tutte.FiniteHomology.Ambient.induced_four_coordinate_chain_identification"
       module: "Solution"
-      status: proved
-      note: "Composes the explicit fields of Inputs."
-    - source: "K_(3,3,1)-minor exclusion"
-      lean: "K331Tutte.no_k331_minor_of_no_k6_minor"
+      status: "proved"
+      note: "Identifies relative faces, d₂ cycles, d₃, and homology equivalence exactly."
+    - source: "Lemma 4.3 (four-vertex relative bound)"
+      lean: "K331Tutte.FiniteHomology.Ambient.induced_four_clique_relative_homology_bound"
       module: "Solution"
-      status: proved
-      note: "Derives the exclusion through linklessness."
-    - source: "Redundancy of the K_(3,3,1) exclusion, conditional composition"
-      lean: "K331Tutte.k331_exclusion_is_redundant"
-      module: "Solution"
-      status: proved
-      note: "Composes all external inputs without hiding them as axioms."
-
-acknowledgements: "Lean and the source works cited in the preprint."
+      status: "proved"
+      note: "The actual induced relative quotient has at most two F₂ classes."
+acknowledgements: "Lean, OpenAI Codex, and Anthropic Claude."

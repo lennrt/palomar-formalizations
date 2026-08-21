@@ -3,16 +3,16 @@ version: "v0.4"
 project:
   name: "Exact finite rank certificate for OneTwo Sobol' dimensions 25--28"
   description: >-
-    This Lean development gives a kernel-replayable finite certificate for the
-    OneTwo Sobol' dimensions 25--28 block at m = 16. Using the 64 packed
-    generator rows, it proves that every one of the 364 four-part selections
-    of total 11 is independent over F_2 and that the corresponding threshold
-    tests for totals 12 through 16 fail. Thus its explicit rank predicate has
-    exact threshold 5. Interpreting that predicate as the digital-net t-value
-    uses the standard criterion stated in the preprint. The complete census of
-    all 345 pair-aligned windows and authentication of the upstream table are
-    not formalized here.
-  authors: ["Lennart Rudolph"]
+    A complete kernel-replayable certificate that the explicit 16 x 16
+    generator rows for OneTwo Sobol' dimensions 25--28 at m = 16 have exact
+    rank threshold 5: every one of the 364 four-part selections of total 11
+    is proved independent over F_2 and the threshold tests for totals 12
+    through 16 are proved to fail, checked end to end by kernel-reduced
+    16-column XOR row reduction with no native evaluation. Under the standard
+    digital-net criterion stated in the preprint this threshold is the
+    quality parameter t = 5 for the block; the census of all 345 pair-aligned
+    windows and authentication of the upstream table remain informal.
+  authors: ["Lennart Rudolph", "Sol", "Fable"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
 
@@ -22,7 +22,7 @@ classification:
 
 sources:
   - title: "Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points"
-    authors: ["Lennart Rudolph"]
+    authors: ["Lennart Rudolph", "Sol", "Fable"]
     id: "doi:10.5281/zenodo.21925582"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21925582"
@@ -31,6 +31,15 @@ sources:
       Formalizes the dimensions 25--28 finite rank certificate, not the
       complete table-wide census.
     license: "CC-BY-4.0"
+  - title: "OneTwo direction-number table"
+    type: dataset
+    location: "https://doi.org/10.5281/zenodo.21925582"
+    relationship: background
+    note: >-
+      Source of the packed 16 x 16 generator rows for dimensions 25--28 that
+      are embedded verbatim in the Challenge; the table is cited and
+      distributed through the preprint's record, and its authentication is
+      informal and outside the compared statements.
 
 status:
   scope: >-
@@ -39,21 +48,23 @@ status:
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: [propext]
+  main_results:
+    - "OneTwoSobolT5.exact_t_five_certificate"
 
 automation:
   methods:
     - method: agent
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "AI-assisted formalization and adversarial review"
       tool_setup: "Lean 4 kernel-reduced XOR row-reduction certificates plus independent exact computations"
     - method: manual
       models: []
       framework: "n/a"
-      tool_setup: "Author-directed source authentication and mathematical review"
+      tool_setup: "Co-author-directed source authentication and mathematical review"
   spend_usd: "not tracked"
   notes: >-
-    Agents assisted substantially; the author made the final mathematical and
-    editorial decisions and accepts responsibility for the submitted result.
+    The three named authors jointly developed, reviewed, and accept
+    responsibility for the submitted result.
 
 fidelity:
   divergences: >-
@@ -64,9 +75,13 @@ fidelity:
     kernel decide; the packed input rows and threshold claims are unchanged.
 
 review:
-  status: "agent-reviewed"
-  reviewers: ["Anthropic Claude"]
-  notes: "The release records adversarial review and three independent exact rank routes."
+  status: "self-assessed"
+  reviewers: ["Anthropic Claude (Fable)"]
+  notes: >-
+    Anthropic Claude (Fable), acting as a co-author, performed an automated
+    adversarial self-review pass separate from proof development and checked
+    the compared statements against the preprint before release. No independent
+    human peer review has been performed.
 
 alignment:
   namespace: "OneTwoSobolT5"

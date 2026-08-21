@@ -1,6 +1,6 @@
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
-Author: Lennart Rudolph
+Authors: Lennart Rudolph, Sol, Fable
 DOI: https://doi.org/10.5281/zenodo.21925574
 Preprint published: 2026-08-14. Palomar formalization packaged: 2026-08-19.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)

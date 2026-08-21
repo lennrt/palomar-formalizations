@@ -2,16 +2,17 @@
 version: "v0.4"
 
 project:
-  name: "Regular-path vertex-splitting and prefix-oracle certificates"
+  name: "Exact ordered enumeration of fixed-endpoint vertex-regular paths"
   description: >-
-    Lean certificates for three interfaces used in fixed-endpoint
-    vertex-regular path enumeration in skew-symmetric digraphs: equivalence of
-    vertex clash-freeness with split-arc clash-freeness on supported traces,
-    exact preservation of walks by the alternating vertex-splitting lift after
-    unit-arc deletion, and the combined regularity/reachability lemma behind a
-    prefix-deletion extension oracle.
+    Lean formalization of the paper's finite skew-symmetric path instance,
+    exact prefix-deletion completion oracle, deterministic oracle-pruned DFS,
+    correctness and duplicate-freedom, and an executable DFS event trace whose
+    extracted first-output, inter-output, post-output, and no-output work
+    intervals satisfy the paper-level depth/LCP bounds.
   authors:
     - "Lennart Rudolph"
+    - "Sol"
+    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -24,13 +25,17 @@ sources:
   - title: "Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs"
     authors:
       - "Lennart Rudolph"
+      - "Sol"
+      - "Fable"
     id: "doi:10.5281/zenodo.21892986"
-    type: "preprint"
+    type: paper
     location: "https://doi.org/10.5281/zenodo.21892986"
     relationship: "formalizes"
     note: >-
-      Formalizes the model and prefix-oracle lemmas identified in the paper,
-      not the complete enumeration algorithm or its delay analysis.
+      Formalizes the recursive ordered enumerator and its operational
+      combinatorial delay certificate. Goldberg--Karzanov's linear-time
+      regular-reachability implementation remains an explicitly external
+      complexity input.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
 
@@ -38,21 +43,37 @@ related_formalizations: []
 
 status:
   scope: >-
-    Formalizes the vertex-splitting clash model, exact alternating-walk lift,
-    and a regularity plus fixed-length reachability join for prefix deletion.
-    It does not formalize simple paths, the endpoint gadget, the
-    Goldberg--Karzanov implementation, the executable enumerator, completeness
-    or uniqueness of enumeration, or the polynomial-delay and space bounds.
-    CSLib supplies the fixed-length relational reachability definition and is
-    therefore a Palomar-qualified statement dependency.
+    Formalizes a finite skew-symmetric Boolean adjacency representation with
+    fixed successor order and degree bound; genuine directed vertex-regular
+    fixed-endpoint paths; exact regular completion after deletion of a prefix
+    and its complementary vertices; the regularity/deletion join; and a
+    bounded-fuel ordered exact-oracle-pruned DFS. The selected results prove
+    the oracle semantics, soundness, completeness, duplicate-freedom, and the
+    output depth bound. They also define an executable streaming DFS trace
+    with frame-enter, individual query, frame-resume, output, and exit events.
+    The trace's output projection is the enumerator, its terminal event is the
+    root exit, and its extracted work profile counts the actual work events.
+    For a no-output run, work is at most outBound+1. For a productive run,
+    preprocessing through the first output is bounded by descent depth times
+    outBound+1; every actual gap between consecutive output events is bounded
+    by their retreat/descent distance through the longest common prefix times
+    outBound+1; and post-last-output work is bounded by retreat depth times
+    outBound+1. It does not implement or verify Goldberg--Karzanov's
+    regular-reachability algorithm, its O(|V|+|E|) running time, the derived
+    executable wall-clock complexity, or the paper's space bound.
   sorry_count: 0
   sorry_in_definitions: 0
-  axioms: ["propext", "Quot.sound"]
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - "PalomarRegularPathDelay.exact_prefix_deletion_extension"
+    - "PalomarRegularPathDelay.exact_oracle_regular_extension"
+    - "PalomarRegularPathDelay.ordered_fixed_endpoint_enumerator"
+    - "PalomarRegularPathDelay.explicit_dfs_event_trace_certificate"
 
 automation:
   methods:
     - method: "agent"
-      models: ["OpenAI Codex", "Anthropic Claude"]
+      models: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
       framework: "OpenAI Codex and Anthropic Claude"
       tool_setup: "Agent-assisted research, Lean development, verification, and adversarial review"
       cost:
@@ -71,39 +92,64 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; not tracked"
   notes: >-
-    The named author directed the work, checked the retained statements and
-    proofs, and approved the release; AI systems are not authors.
+    The three named authors contributed to proof development, statement
+    checking, and release review.
 
 fidelity:
   divergences: >-
-    The formalization deliberately covers only the model and prefix-oracle
-    interfaces listed under status.scope, rather than the paper's full
-    algorithmic and complexity theorem.
+    Lean proves exact ordered enumeration and an operational combinatorial
+    event-count certificate. Each exact reachability query is one charged
+    event. The executable Goldberg--Karzanov implementation and its
+    O(|V|+|E|) per-query analysis remain external, so no wall-clock runtime or
+    space theorem is claimed.
 
 review:
   status: "self-assessed"
-  reviewers: []
+  reviewers:
+    - "Anthropic Claude (Fable)"
+    - "OpenAI Codex (Sol)"
   notes: >-
-    Author-reviewed and mechanically kernel-checked, with an additional
-    automated adversarial audit; not independently peer-reviewed.
+    The earlier Fable co-author review covered the prior four-result selection.
+    A later Sol co-author review found that its fourth result bounded a path-pair
+    proxy rather than actual evaluator intervals and required an executable
+    event trace. The present trace/profile repair responds to that finding.
+    Sol then re-audited the repaired result on 2026-08-20 for evaluator
+    semantics, statement alignment, and definition fidelity. These were
+    co-author self-reviews; no independent human peer review has been performed.
 
 alignment:
   namespace: "PalomarRegularPathDelay"
   statements:
-    - source: "Vertex-splitting reduction"
-      lean: "PalomarRegularPathDelay.vertex_split_model_equivalence"
+    - source: "Prefix-deletion extension equivalence"
+      lean: "PalomarRegularPathDelay.exact_prefix_deletion_extension"
       module: "Solution"
       status: "proved"
-      note: "The supported-trace regularity equivalence."
-    - source: "Alternating vertex-splitting walk lift"
-      lean: "PalomarRegularPathDelay.split_walk_lift_nodes_iff"
+      note: >-
+        Exact equivalence between a full regular-path extension and a regular
+        completion surviving deletion of the prefix and its mates.
+    - source: "Exact reachability-oracle pruning criterion"
+      lean: "PalomarRegularPathDelay.exact_oracle_regular_extension"
       module: "Solution"
       status: "proved"
-      note: "Unit transfer arcs are excluded explicitly."
-    - source: "Prefix-deletion extension lemma"
-      lean: "PalomarRegularPathDelay.regular_extension_with_reachability"
+      note: >-
+        Positive answers on ordered admissible successors are exactly the
+        children admitting a fixed-target regular-path extension.
+    - source: "Ordered fixed-endpoint enumeration theorem"
+      lean: "PalomarRegularPathDelay.ordered_fixed_endpoint_enumerator"
       module: "Solution"
-      status: "partial"
-      note: "Formalizes the regularity and reachability join, not the enumerator or its complexity."
+      status: "proved"
+      note: >-
+        The bounded ordered DFS enumerates exactly all target regular paths,
+        without duplicates, and every output has at most |V| vertices.
+    - source: "Operational DFS event-trace delay certificate"
+      lean: "PalomarRegularPathDelay.explicit_dfs_event_trace_certificate"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        The explicit streaming evaluator has exactly the enumerator's output
+        projection and terminates at root exit. Its extracted event profile
+        gives actual no-output, first-output, consecutive-output, and
+        post-last-output work counts with depth/LCP frame bounds. The external
+        O(|V|+|E|) cost of one exact query is not formalized.
 
 acknowledgements: "Lean, Mathlib, CSLib, OpenAI Codex, and Anthropic Claude."

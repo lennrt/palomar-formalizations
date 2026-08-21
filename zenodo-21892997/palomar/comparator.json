@@ -2,11 +2,16 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "PalomarExtremalFlagBetti.family_leaf_triangle_certificate",
-    "PalomarExtremalFlagBetti.family_no_complete_bipartite_spanning",
-    "PalomarExtremalFlagBetti.family_complement_edge_count"
+    "ExtremalFlagBetti.ActualHomology.flagD1_flagD2",
+    "PalomarExtremalFlagBetti.family_actual_flag_h1_exactly_two",
+    "PalomarExtremalFlagBetti.universal_flag_beta1_f2_le_two",
+    "PalomarExtremalFlagBetti.dense_extremal_flag_counterexample_f2"
   ],
   "definition_names": [],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
   "enable_nanoda": true
 }

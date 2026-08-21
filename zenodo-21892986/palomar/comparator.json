@@ -2,9 +2,10 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "PalomarRegularPathDelay.vertex_split_model_equivalence",
-    "PalomarRegularPathDelay.split_walk_lift_nodes_iff",
-    "PalomarRegularPathDelay.regular_extension_with_reachability"
+    "PalomarRegularPathDelay.exact_prefix_deletion_extension",
+    "PalomarRegularPathDelay.exact_oracle_regular_extension",
+    "PalomarRegularPathDelay.ordered_fixed_endpoint_enumerator",
+    "PalomarRegularPathDelay.explicit_dfs_event_trace_certificate"
   ],
   "definition_names": [],
   "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],

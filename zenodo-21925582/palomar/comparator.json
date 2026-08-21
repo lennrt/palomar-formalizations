@@ -1,6 +1,14 @@
 {
   "challenge_module": "Challenge",
   "solution_module": "Solution",
-  "theorem_names": ["OneTwoSobolT5.exact_t_five_certificate"],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"]
+  "theorem_names": [
+    "OneTwoSobolT5.exact_t_five_certificate"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true,
+  "definition_names": []
 }
