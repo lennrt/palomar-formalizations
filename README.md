@@ -17,15 +17,15 @@ project claims to formalize its paper end to end.
 
 | Directory | Paper | DOI | Registry |
 | --- | --- | --- | --- |
-| `zenodo-21890733/` | A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs | [10.5281/zenodo.21890733](https://doi.org/10.5281/zenodo.21890733)  [PALOMAR-2026-08-21-000002](https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-21-000002&version=1) |
-| `zenodo-21892986/` | Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs | [10.5281/zenodo.21892986](https://doi.org/10.5281/zenodo.21892986)  — |
-| `zenodo-21892995/` | Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification | [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995)  — |
-| `zenodo-21892997/` | An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes | [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)  — |
-| `zenodo-21925458/` | Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census | [10.5281/zenodo.21925458](https://doi.org/10.5281/zenodo.21925458)  — |
-| `zenodo-21925574/` | Simpler Graph Conditions for Embedding Tetrahedral Meshes | [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574)  — |
-| `zenodo-21925578/` | Exact Spectra of Generalized Cubic Subdivision Matrices | [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578)  — |
-| `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582)  — |
-| `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230)  — |
+| `zenodo-21890733/` | A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs | [10.5281/zenodo.21890733](https://doi.org/10.5281/zenodo.21890733) | [PALOMAR-2026-08-21-000002](https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-21-000002&version=1) |
+| `zenodo-21892986/` | Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs | [10.5281/zenodo.21892986](https://doi.org/10.5281/zenodo.21892986) | — |
+| `zenodo-21892995/` | Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification | [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995) | — |
+| `zenodo-21892997/` | An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes | [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997) | — |
+| `zenodo-21925458/` | Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census | [10.5281/zenodo.21925458](https://doi.org/10.5281/zenodo.21925458) | — |
+| `zenodo-21925574/` | Simpler Graph Conditions for Embedding Tetrahedral Meshes | [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574) | — |
+| `zenodo-21925578/` | Exact Spectra of Generalized Cubic Subdivision Matrices | [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578) | — |
+| `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582) | — |
+| `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230) | — |
 
 ## Verifying a project
 
