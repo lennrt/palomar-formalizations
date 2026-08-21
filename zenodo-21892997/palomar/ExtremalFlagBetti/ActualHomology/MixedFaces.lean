@@ -3,6 +3,7 @@ Literal mixed triangular faces for the canonical unordered chain model used
 in the graph-join proof.
 
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
 import Mathlib

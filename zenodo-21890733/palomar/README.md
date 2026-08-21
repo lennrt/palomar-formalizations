@@ -1,6 +1,6 @@
 # Concrete Barnette graph certificate and prescribed-cycle obstruction
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 This Palomar project formalizes the finite certificate chain for the paper's
 explicit 16-vertex counterexample.  The compared declarations check:

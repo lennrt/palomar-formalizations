@@ -1,6 +1,6 @@
 # Palomar project: signed-circulant Bloch algebra
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 `Challenge.lean` exposes the paper's exact phase-dependent `8 × 8` Bloch
 symbol, with independent variables `z` and `zInv`, together with four compared

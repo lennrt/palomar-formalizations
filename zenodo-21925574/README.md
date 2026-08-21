@@ -2,6 +2,8 @@
 
 DOI: [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574)
 
+Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+
 Authors: Lennart Rudolph, Sol, Fable
 
 The compared Lean theorem group now formalizes the paper's actual

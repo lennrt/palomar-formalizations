@@ -1,6 +1,6 @@
 # Palomar project: released cubic outer double-ring spectrum
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 This project formalizes the outer-matrix part of Lemma 7.1 and Theorem 7.2
 from *Exact Spectra of Generalized Cubic Subdivision Matrices*.

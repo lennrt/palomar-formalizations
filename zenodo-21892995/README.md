@@ -2,6 +2,8 @@
 
 DOI: [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995)
 
+Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+
 Authors: Lennart Rudolph, Sol, Fable
 
 This directory contains a standalone Palomar submission project in

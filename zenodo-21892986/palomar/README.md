@@ -1,6 +1,6 @@
 # Exact regular-path enumeration — Palomar project
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 This Lean project formalizes the recursive core of *Polynomial-Delay
 Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric

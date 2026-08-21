@@ -1,6 +1,8 @@
 # Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 
 - DOI: <https://doi.org/10.5281/zenodo.21925582>
+Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+
 - Authors: Lennart Rudolph, Sol, Fable
 - Palomar project: `palomar/`
 

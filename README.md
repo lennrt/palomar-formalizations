@@ -1,7 +1,7 @@
 # Lean formalizations of nine preprints
 
 Nine standalone Lean 4 projects, each a machine-checked companion to one
-Zenodo preprint by Lennart Rudolph, Sol, Fable. Each `zenodo-N/` directory holds an
+Zenodo preprint by Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable. Each `zenodo-N/` directory holds an
 independent Lake project prepared for submission to the
 [Palomar registry](https://palomar-registry.org/). Each
 project states its selected theorems in `Challenge.lean`, proves them in
@@ -15,17 +15,17 @@ project claims to formalize its paper end to end.
 
 ## Index
 
-| Directory | Paper | DOI |
-| --- | --- | --- |
-| `zenodo-21890733/` | A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs | [10.5281/zenodo.21890733](https://doi.org/10.5281/zenodo.21890733) |
-| `zenodo-21892986/` | Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs | [10.5281/zenodo.21892986](https://doi.org/10.5281/zenodo.21892986) |
-| `zenodo-21892995/` | Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification | [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995) |
-| `zenodo-21892997/` | An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes | [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997) |
-| `zenodo-21925458/` | Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census | [10.5281/zenodo.21925458](https://doi.org/10.5281/zenodo.21925458) |
-| `zenodo-21925574/` | Simpler Graph Conditions for Embedding Tetrahedral Meshes | [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574) |
-| `zenodo-21925578/` | Exact Spectra of Generalized Cubic Subdivision Matrices | [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578) |
-| `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582) |
-| `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230) |
+| Directory | Paper | DOI | Registry |
+| --- | --- | --- | --- |
+| `zenodo-21890733/` | A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs | [10.5281/zenodo.21890733](https://doi.org/10.5281/zenodo.21890733)  [PALOMAR-2026-08-21-000002](https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-21-000002&version=1) |
+| `zenodo-21892986/` | Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs | [10.5281/zenodo.21892986](https://doi.org/10.5281/zenodo.21892986)  — |
+| `zenodo-21892995/` | Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification | [10.5281/zenodo.21892995](https://doi.org/10.5281/zenodo.21892995)  — |
+| `zenodo-21892997/` | An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes | [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)  — |
+| `zenodo-21925458/` | Multiset Dimension of Cylindrical Graphs: An Infinite Family and a Certified Census | [10.5281/zenodo.21925458](https://doi.org/10.5281/zenodo.21925458)  — |
+| `zenodo-21925574/` | Simpler Graph Conditions for Embedding Tetrahedral Meshes | [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574)  — |
+| `zenodo-21925578/` | Exact Spectra of Generalized Cubic Subdivision Matrices | [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578)  — |
+| `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582)  — |
+| `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230)  — |
 
 ## Verifying a project
 
@@ -50,7 +50,8 @@ record. The repository root carries exactly one licence file, matching the
 
 ## AI disclosure
 
-Authors: Lennart Rudolph, Sol, Fable. Sol and Fable contributed formalization
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable.
+Sol and Fable contributed formalization
 and adversarial analysis; Lennart Rudolph selected the statements, reviewed
 the proofs, and takes responsibility for the results. Every compared theorem
 is checked by the Lean kernel, and each `formalization.yaml` records the

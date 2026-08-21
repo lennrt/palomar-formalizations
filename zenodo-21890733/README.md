@@ -1,7 +1,8 @@
 # A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs
 
 - DOI: <https://doi.org/10.5281/zenodo.21890733>
-- Authors: Lennart Rudolph, Sol, Fable
+- Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
+- Palomar registry entry: [PALOMAR-2026-08-21-000002](https://palomar-registry.org/entry.html?id=PALOMAR-2026-08-21-000002&version=1)
 - Palomar project: `palomar/`
 
 The Palomar project exposes six compared declarations covering the finite

@@ -1,6 +1,7 @@
 /-
 Paper: An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21892997
 Preprint published: 2026-08-11. Palomar F₂ flag-homology upgrade: 2026-08-20.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
@@ -65,10 +66,116 @@ def flagD1 : FlagChain1 G →ₗ[F₂] FlagChain0 (V := V) :=
 noncomputable def flagD2 : FlagChain2 G →ₗ[F₂] FlagChain1 G :=
   Finsupp.linearCombination F₂ (triangleBoundary G)
 
-/-- Boundary squared is zero for the literal edge/triangle boundary maps. -/
-theorem flagD1_flagD2 (c : FlagChain2 G) :
-    flagD1 G (flagD2 G c) = 0 := by
-  sorry
+lemma f2_add_self {M : Type*} [AddCommGroup M] [Module F₂ M] (x : M) : x + x = 0 := by
+  calc
+    x + x = (1 : F₂) • x + (1 : F₂) • x := by simp
+    _ = ((1 : F₂) + 1) • x := by rw [add_smul]
+    _ = 0 := by
+      have htwo : (1 : F₂) + 1 = 0 := by decide
+      rw [htwo, zero_smul]
+
+def flagEdgeOfAdj {u v : V} (h : G.Adj u v) : FlagEdge G :=
+  ⟨s(u, v), G.mem_edgeSet.mpr h⟩
+
+@[simp] lemma edgeBoundary_flagEdgeOfAdj
+    {u v : V} (h : G.Adj u v) :
+    edgeBoundary G (flagEdgeOfAdj G h) =
+      Finsupp.single u 1 + Finsupp.single v 1 := by
+  rfl
+
+lemma flagD1_single_flagEdgeOfAdj
+    {u v : V} (h : G.Adj u v) (a : F₂) :
+    flagD1 G (Finsupp.single (flagEdgeOfAdj G h) a) =
+      Finsupp.single u a + Finsupp.single v a := by
+  simp [flagD1, edgeBoundary_flagEdgeOfAdj, smul_add]
+
+lemma triangleBoundary_apply [DecidableEq V]
+    (t : FlagTriangle G) (e : FlagEdge G) :
+    triangleBoundary G t e = if e.1 ∈ t.1.sym2 then 1 else 0 := by
+  classical
+  let es : Finset (Sym2 V) := t.1.sym2.filter (fun z ↦ z ∈ G.edgeSet)
+  change
+    (es.attach.sum fun z ↦
+      Finsupp.single ⟨z.1, (mem_filter.mp z.2).2⟩ 1) e = _
+  simp only [Finsupp.finsetSum_apply]
+  by_cases he : e.1 ∈ t.1.sym2
+  · rw [if_pos he]
+    let x : es := ⟨e.1, mem_filter.mpr ⟨he, e.2⟩⟩
+    rw [Finset.sum_eq_single_of_mem x (by simp)]
+    · simp [x]
+    · intro z _ hzx
+      have hne :
+          (⟨z.1, (mem_filter.mp z.2).2⟩ : FlagEdge G) ≠ e := by
+        intro h
+        have hval : z.1 = e.1 :=
+          congrArg (fun q : FlagEdge G ↦ q.1) h
+        apply hzx
+        exact Subtype.ext hval
+      simp [hne]
+  · rw [if_neg he]
+    apply Finset.sum_eq_zero
+    intro z _
+    have hne :
+        (⟨z.1, (mem_filter.mp z.2).2⟩ : FlagEdge G) ≠ e := by
+      intro h
+      apply he
+      have hzmem : z.1 ∈ t.1.sym2 := (mem_filter.mp z.2).1
+      have hval : z.1 = e.1 :=
+        congrArg (fun q : FlagEdge G ↦ q.1) h
+      rw [← hval]
+      exact hzmem
+    simp [hne]
+
+lemma triangleBoundary_eq_three_edges [DecidableEq V]
+    (t : FlagTriangle G) {a b c : V}
+    (hab : G.Adj a b) (hac : G.Adj a c) (hbc : G.Adj b c)
+    (ht : t.1 = {a, b, c}) :
+    triangleBoundary G t =
+      Finsupp.single (flagEdgeOfAdj G hab) 1 +
+      Finsupp.single (flagEdgeOfAdj G hac) 1 +
+      Finsupp.single (flagEdgeOfAdj G hbc) 1 := by
+  classical
+  ext e
+  rw [triangleBoundary_apply]
+  rcases e with ⟨e, he⟩
+  induction e using Sym2.ind with
+  | _ x y =>
+      have hxy : G.Adj x y := G.mem_edgeSet.mp he
+      simp only [ht, Finset.mk_mem_sym2_iff]
+      simp [flagEdgeOfAdj, Finsupp.single_apply, Subtype.ext_iff,
+        Sym2.mk_eq_mk_iff, hxy.ne, hab.ne, hac.ne, hbc.ne]
+      aesop
+
+lemma flagD1_triangleBoundary (t : FlagTriangle G) :
+    flagD1 G (triangleBoundary G t) = 0 := by
+  classical
+  obtain ⟨a, b, c, hab, hac, hbc, ht⟩ :=
+    SimpleGraph.is3Clique_iff.mp
+      (⟨t.2.2, t.2.1⟩ : G.IsNClique 3 t.1)
+  rw [triangleBoundary_eq_three_edges G t hab hac hbc ht,
+    map_add, map_add,
+    flagD1_single_flagEdgeOfAdj G hab,
+    flagD1_single_flagEdgeOfAdj G hac,
+    flagD1_single_flagEdgeOfAdj G hbc]
+  calc
+    (Finsupp.single a (1 : F₂) + Finsupp.single b 1) +
+        (Finsupp.single a 1 + Finsupp.single c 1) +
+        (Finsupp.single b 1 + Finsupp.single c 1) =
+        (Finsupp.single a 1 + Finsupp.single a 1) +
+        (Finsupp.single b 1 + Finsupp.single b 1) +
+        (Finsupp.single c 1 + Finsupp.single c 1) := by abel
+    _ = 0 := by
+      rw [f2_add_self (Finsupp.single a 1),
+        f2_add_self (Finsupp.single b 1),
+        f2_add_self (Finsupp.single c 1)]
+      simp
+
+/-- Every vertex of a three-element face occurs in exactly two of its
+three non-diagonal pairs. -/
+lemma flagD1_flagD2 (c : FlagChain2 G) : flagD1 G (flagD2 G c) = 0 := by
+  classical
+  rw [flagD2, Finsupp.linearCombination_apply, map_finsuppSum]
+  simp only [map_smul, flagD1_triangleBoundary, smul_zero, Finsupp.sum_zero]
 
 def FlagCycleSubmodule : Submodule F₂ (FlagChain1 G) :=
   LinearMap.ker (flagD1 G)

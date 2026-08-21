@@ -3,6 +3,7 @@ Canonical unordered graph-level bridge for the degree-one join formula used
 in Proposition 3.1.
 
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
 import Mathlib

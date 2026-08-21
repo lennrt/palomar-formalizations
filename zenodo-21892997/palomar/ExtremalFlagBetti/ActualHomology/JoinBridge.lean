@@ -3,6 +3,7 @@ This file composes the three independently checked unordered join layers into
 the literal degree-one homology equivalence required by Proposition 3.1.
 
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
 import ExtremalFlagBetti.ActualHomology.UnorderedJoin

@@ -1,6 +1,6 @@
 # Palomar project: the even-cylinder resolving construction
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 This Lean project formalizes the graph-theoretic core of the paper's infinite
 family. It defines the coordinate model and standard distance on

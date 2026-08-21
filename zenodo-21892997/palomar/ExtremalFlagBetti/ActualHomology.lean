@@ -5,6 +5,7 @@ Proposition 3.1 of
 of Flag Complexes".
 
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
 import ExtremalFlagBetti
@@ -71,7 +72,7 @@ lemma f2_add_self {M : Type*} [AddCommGroup M] [Module F₂ M] (x : M) : x + x =
 def flagEdgeOfAdj {u v : V} (h : G.Adj u v) : FlagEdge G :=
   ⟨s(u, v), G.mem_edgeSet.mpr h⟩
 
-@[simp] private lemma edgeBoundary_flagEdgeOfAdj
+@[simp] lemma edgeBoundary_flagEdgeOfAdj
     {u v : V} (h : G.Adj u v) :
     edgeBoundary G (flagEdgeOfAdj G h) =
       Finsupp.single u 1 + Finsupp.single v 1 := by
@@ -83,7 +84,7 @@ lemma flagD1_single_flagEdgeOfAdj
       Finsupp.single u a + Finsupp.single v a := by
   simp [flagD1, edgeBoundary_flagEdgeOfAdj, smul_add]
 
-private lemma triangleBoundary_apply [DecidableEq V]
+lemma triangleBoundary_apply [DecidableEq V]
     (t : FlagTriangle G) (e : FlagEdge G) :
     triangleBoundary G t e = if e.1 ∈ t.1.sym2 then 1 else 0 := by
   classical
@@ -140,7 +141,7 @@ lemma triangleBoundary_eq_three_edges [DecidableEq V]
         Sym2.mk_eq_mk_iff, hxy.ne, hab.ne, hac.ne, hbc.ne]
       aesop
 
-private lemma flagD1_triangleBoundary (t : FlagTriangle G) :
+lemma flagD1_triangleBoundary (t : FlagTriangle G) :
     flagD1 G (triangleBoundary G t) = 0 := by
   classical
   obtain ⟨a, b, c, hab, hac, hbc, ht⟩ :=

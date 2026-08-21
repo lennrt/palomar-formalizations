@@ -1,6 +1,7 @@
 /-
 Paper: Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21892995
 Preprint published: 2026-08-11. Palomar formalization upgraded: 2026-08-20.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)

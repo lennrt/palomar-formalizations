@@ -1,5 +1,6 @@
 /-
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
 import Mathlib.Data.Multiset.Basic

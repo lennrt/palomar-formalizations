@@ -1,6 +1,6 @@
 # Palomar project: explicit G2 obstruction
 
-Authors: Lennart Rudolph, Sol, Fable
+Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
 
 This post-paper Palomar upgrade advertises six declarations in
 `Challenge.lean`.  Four retain the original companion's token-order and exact

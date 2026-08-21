@@ -2,6 +2,8 @@
 
 DOI: [10.5281/zenodo.21892986](https://doi.org/10.5281/zenodo.21892986)
 
+Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+
 Authors: Lennart Rudolph, Sol, Fable
 
 - `palomar/` is the independent Lean project prepared for Palomar submission.

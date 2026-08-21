@@ -1,6 +1,7 @@
 /-
 Paper: An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21892997
 Preprint published: 2026-08-11. Palomar F₂ flag-homology upgrade: 2026-08-20.
 AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)

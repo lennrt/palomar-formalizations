@@ -1,5 +1,6 @@
 /- Exact Spectra of Generalized Cubic Subdivision Matrices.
 Authors: Lennart Rudolph, Sol, Fable
+ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21925578 -/
 
 import Mathlib.Algebra.Polynomial.Roots
