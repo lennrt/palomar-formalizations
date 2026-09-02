@@ -16,7 +16,7 @@ project:
     joined inside Lean: the paper's route from Lemma 4.3 to the separator
     bound runs through the deletion retraction and relative ball duality of
     Section 4, which are not formalized.
-  authors: ["Lennart Rudolph", "Sol", "Fable"]
+  authors: ["Lennart Rudolph"]
   license: "MIT"
   responsible_maintainers: ["Lennart Rudolph"]
 classification:
@@ -108,9 +108,9 @@ review:
   status: "self-assessed"
   reviewers: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
   notes: >-
-    Fable performed the co-author automated adversarial review of the new
+    Fable performed the automated adversarial review of the new
     clique-sum layer (statement alignment against Section 5 and the no-sorry
-    kernel proof); Sol's earlier co-author review covered the finite layer.
+    kernel proof); Sol's earlier automated review covered the finite layer.
     No independent human peer review was performed.
 alignment:
   namespace: "K331Tutte"

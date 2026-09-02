@@ -17,8 +17,6 @@ project:
     axiom.
   authors:
     - "Lennart Rudolph"
-    - "Sol"
-    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -101,8 +99,9 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; not tracked"
   notes: >-
-    The three named authors collaborated on the scope, statements, proofs,
-    review, and release approval.
+    Lennart Rudolph selected the scope and statements, reviewed the proofs,
+    and approved the release. Sol and Fable contributed proof development and
+    adversarial review as automated assistants.
 
 fidelity:
   divergences: >-
@@ -122,9 +121,9 @@ review:
   reviewers:
     - "OpenAI Codex (Sol)"
   notes: >-
-    The current Sol co-author self-review covers the upgraded actual F₂
+    The current Sol automated self-review covers the upgraded actual F₂
     quotient, family beta-one computation, and Proposition 3.1 proof cone. The
-    older Fable co-author self-review applied to the earlier graph-certificate/
+    older Fable automated self-review applied to the earlier graph-certificate/
     Boolean-core selection and does not cover this upgrade. No independent
     human peer review has been performed.
 

@@ -1,5 +1,6 @@
 /-
-Formalization authors: Lennart Rudolph, Sol, Fable
+Formalization: Lennart Rudolph, with the automated assistants Sol (OpenAI
+Codex) and Fable (Anthropic Claude)
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 

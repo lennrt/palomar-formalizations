@@ -57,9 +57,9 @@ The papers are authored by Lennart Rudolph
 ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) alone;
 each paper's own declaration states that no AI system is listed as an author.
 
-The formalization authors are Lennart Rudolph, Sol (OpenAI Codex), and Fable
-(Anthropic Claude). Sol and Fable contributed formalization and adversarial
-analysis; Lennart Rudolph selected the statements, reviewed the proofs, and
+The formalizations are by Lennart Rudolph, with the automated assistants Sol
+(OpenAI Codex) and Fable (Anthropic Claude). Sol and Fable contributed
+formalization and adversarial analysis; Lennart Rudolph selected the statements, reviewed the proofs, and
 takes responsibility for the results.
 Every compared theorem is checked by the Lean kernel, and each
 `formalization.yaml` records the automation methods in detail.

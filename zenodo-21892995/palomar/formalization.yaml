@@ -18,8 +18,6 @@ project:
     certificate remain selected as the supporting layer.
   authors:
     - "Lennart Rudolph"
-    - "Sol"
-    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -118,8 +116,9 @@ automation:
       prompting_notes: "n/a"
   spend_usd: "subscription-based; exact total not tracked"
   notes: >-
-    The three named authors contributed to proof development, mathematical
-    checking, and editorial decisions for the formalization.
+    Lennart Rudolph made the editorial decisions and is responsible for the
+    formalization. Sol and Fable contributed proof development and
+    mathematical checking as automated assistants.
 
 fidelity:
   divergences: >-
@@ -145,10 +144,10 @@ review:
     - "OpenAI Codex (Sol)"
     - "Anthropic Claude (Fable)"
   notes: >-
-    Anthropic Claude (Fable), acting as a co-author, developed and
+    Anthropic Claude (Fable), an automated assistant, developed and
     adversarially reviewed the new matrix-level disproof layer, checking the
     signing, the certificate identities, and the radical comparison against
-    the preprint. OpenAI Codex (Sol), acting as a co-author, previously
+    the preprint. OpenAI Codex (Sol), an automated assistant, previously
     checked the Bloch determinant layer term by term against the rendered
     preprint. No independent human peer review has been performed.
 

@@ -1,7 +1,8 @@
 # Palomar project: a periodic signing of C_n(1,2) below the conjectured minimum
 
-Formalization authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable.
-The cited paper is by Lennart Rudolph alone.
+Formalization: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), with the automated
+assistants Sol (OpenAI Codex) and Fable (Anthropic Claude). The cited paper is
+by Lennart Rudolph alone.
 
 Nine declarations are compared, in two layers.
 

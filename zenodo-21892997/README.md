@@ -5,7 +5,8 @@ DOI: [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)
 Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) — the sole
 author of record on the cited Zenodo deposit.
 
-Formalization authors: Lennart Rudolph, Sol, Fable.
+Formalization: Lennart Rudolph, with the automated assistants Sol (OpenAI
+Codex) and Fable (Anthropic Claude).
 
 This directory contains the standalone Palomar project in `palomar/`.
 

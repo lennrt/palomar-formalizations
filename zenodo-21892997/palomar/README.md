@@ -1,7 +1,8 @@
 # Palomar project: actual F₂ flag homology and the dense extremal family
 
-Formalization authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable.
-The cited paper is by Lennart Rudolph alone.
+Formalization: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), with the automated
+assistants Sol (OpenAI Codex) and Fable (Anthropic Claude). The cited paper is
+by Lennart Rudolph alone.
 
 This Lean project formalizes the F₂ content of Theorem 1.1 and Proposition
 3.1 of *An Infinite Dense Counterexample Family for Extremal First Betti
