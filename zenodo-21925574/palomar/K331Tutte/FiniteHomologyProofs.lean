@@ -1,6 +1,6 @@
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21925574
 Preprint published: 2026-08-14. Palomar formalization upgraded: 2026-08-20.

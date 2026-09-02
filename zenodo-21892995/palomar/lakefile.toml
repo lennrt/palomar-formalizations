@@ -1,6 +1,6 @@
 name = "signed_circulant_arithmetic"
 version = "0.1.0"
-defaultTargets = ["ArithmeticAndMonotonicity", "Challenge", "Solution"]
+defaultTargets = ["ArithmeticAndMonotonicity", "SignedCirculantFamily", "Challenge", "Solution"]
 
 [leanOptions]
 autoImplicit = false
@@ -12,6 +12,10 @@ rev = "v4.30.0"
 
 [[lean_lib]]
 name = "ArithmeticAndMonotonicity"
+
+[[lean_lib]]
+name = "SignedCirculantFamily"
+roots = ["SignedCirculantFamily"]
 
 [[lean_lib]]
 name = "Challenge"

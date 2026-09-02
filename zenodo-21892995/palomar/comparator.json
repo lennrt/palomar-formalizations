@@ -2,12 +2,21 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
+    "PalomarSignedCirculant.periodic_signing_beats_twisted_class",
+    "PalomarSignedCirculant.eigenvalue_band_bound",
+    "PalomarSignedCirculant.rayleigh_band_bound",
+    "PalomarSignedCirculant.separator_lt_twisted_value",
+    "PalomarSignedCirculant.signedAdjacency_isCirculantSigning",
     "PalomarSignedCirculant.bloch_symbol_phase_reversal",
     "PalomarSignedCirculant.bloch_determinant_with_correction",
     "PalomarSignedCirculant.bloch_determinant_identity",
     "PalomarSignedCirculant.algebraic_band_edge_certificate"
   ],
   "definition_names": [],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
   "enable_nanoda": true
 }

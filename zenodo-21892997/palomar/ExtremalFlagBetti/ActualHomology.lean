@@ -4,7 +4,7 @@ Proposition 3.1 of
 "An Infinite Dense Counterexample Family for Extremal First Betti Numbers
 of Flag Complexes".
 
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 

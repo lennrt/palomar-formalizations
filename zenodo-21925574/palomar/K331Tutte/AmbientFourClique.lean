@@ -1,5 +1,5 @@
 /-
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 

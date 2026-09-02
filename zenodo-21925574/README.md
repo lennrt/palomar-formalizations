@@ -2,25 +2,37 @@
 
 DOI: [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574)
 
-Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) — the sole
+author of record on the cited Zenodo deposit.
 
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable.
 
-The compared Lean theorem group now formalizes the paper's actual
-ambient-to-finite bridge. It defines a finite abstract simplicial complex and
-boundary subcomplex, restricts them to an injectively labelled four-clique,
-and proves under the paper's boundary-triangle condition (BT) that the induced
-pair gives an admissible `FourVertexPair` (Lemma 7.1). It then identifies the
-actual relative `C₂ → C₁` map, `d₃` generator, cycles, and boundary relation
-with that coordinate model and proves the actual quotient has at most two F₂
-classes (Lemma 4.3).
+The compared Lean theorem group formalizes the paper's structural mechanism
+and its finite support layer.
 
-The selected proof does not assume an external homology equivalence. It uses
-the explicit four-face/six-edge coordinate complex, so “dimension at most
-one” is represented by the equivalent finite-F₂ statement that the quotient
-has at most two classes. The topological-ball realization, general homology
-library bridge, Alexander--Lefschetz duality, deletion retraction, separator
-theorem, rigidity, graph-minor, and embedding results remain outside scope.
+The structural layer works over mathlib simple graphs.
+`attachment_reachable_transfer` is Lemma 5.2: when a new part is attached to
+an old part along a clique, two old vertices joined after deleting any vertex
+set were already joined inside the old part — proved by walk surgery through
+the attachment clique. `safe_cockade_linkless` is Proposition 5.3: a graph
+generated from atoms of at least five vertices by K₄-attachments is linklessly
+embeddable whenever every four-clique deletion leaves at most two components.
+Linkless embeddability enters as an abstract predicate constrained by exactly
+the two inputs the paper cites: atoms are linklessly embeddable (Lemma 5.1)
+and the Holst–Lovász–Schrijver four-clique specialization (Corollary 2.5),
+both explicit hypotheses of the theorem.
 
-The three compared declarations have no `sorry` and use only `propext`,
-`Quot.sound`, and (for the quotient theorem) `Classical.choice`.
+The finite layer is the ambient-to-finite bridge retained from the previous
+version: an injectively labelled four-clique of a finite simplicial pair
+under the boundary-triangle condition (BT) induces an admissible
+`FourVertexPair` (Lemma 7.1), identifies exactly with the four-face/six-edge
+F₂ coordinate complex, and its relative quotient has at most two classes
+(Lemma 4.3).
+
+Generic rigidity, Jørgensen's classification, Alexander–Lefschetz duality,
+the Holst–Lovász–Schrijver theorem itself, graph minors, spatial embeddings,
+and Alexa's theorem remain external, matching the paper's own formal-scope
+statement.
+
+The compared declarations have no `sorry` and use only `propext`,
+`Quot.sound`, and `Classical.choice`.

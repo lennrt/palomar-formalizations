@@ -2,9 +2,10 @@
 
 DOI: [10.5281/zenodo.21892997](https://doi.org/10.5281/zenodo.21892997)
 
-Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) — the sole
+author of record on the cited Zenodo deposit.
 
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable.
 
 This directory contains the standalone Palomar project in `palomar/`.
 

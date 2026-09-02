@@ -1,6 +1,6 @@
 /-
 Paper: Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21892995
 Preprint published: 2026-08-11. Palomar formalization upgraded: 2026-08-20.
@@ -9,6 +9,7 @@ were used for formalization and adversarial analysis.
 -/
 
 import ArithmeticAndMonotonicity
+import SignedCirculantFamily
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Polynomial
 
@@ -196,11 +197,60 @@ theorem algebraic_band_edge_certificate :
     rw [hzero] at hpos
     exact (lt_irrefl 0 hpos)
 
+def fluxWord (i : ZMod 8) : ℤ :=
+  if i.val = 1 ∨ i.val = 3 ∨ i.val = 4 ∨ i.val = 6 then -1 else 1
+
+def stepTwoSign (n : ℕ) (hdvd : 8 ∣ n) (i : ZMod n) : ℤ :=
+  fluxWord (ZMod.castHom hdvd (ZMod 8) i)
+
+def signedAdjacency (n : ℕ) (hdvd : 8 ∣ n) : Matrix (ZMod n) (ZMod n) ℝ :=
+  fun i j =>
+    (if j = i + 1 ∨ i = j + 1 then 1 else 0) +
+    (if j = i + 2 then (stepTwoSign n hdvd i : ℝ) else 0) +
+    (if i = j + 2 then (stepTwoSign n hdvd j : ℝ) else 0)
+
+def IsCirculantSigning (n : ℕ) (A : Matrix (ZMod n) (ZMod n) ℝ) : Prop :=
+  (∀ i j, A i j = A j i) ∧
+  (∀ i j, (SimpleGraph.circulantGraph {(1 : ZMod n), 2}).Adj i j →
+    A i j = 1 ∨ A i j = -1) ∧
+  (∀ i j, ¬ (SimpleGraph.circulantGraph {(1 : ZMod n), 2}).Adj i j → A i j = 0)
+
+noncomputable def rhoMinus (n : ℕ) : ℝ :=
+  2 * Real.sqrt (Real.cos (Real.pi / n) ^ 2 + Real.cos (2 * Real.pi / n) ^ 2)
+
+theorem signedAdjacency_isCirculantSigning (n : ℕ) [NeZero n] (hdvd : 8 ∣ n) :
+    IsCirculantSigning n (signedAdjacency n hdvd) :=
+  PalomarSignedCirculantSource.signedAdjacency_isCirculantSigning_core n hdvd
+
+theorem rayleigh_band_bound (n : ℕ) [NeZero n] (hdvd : 8 ∣ n) (v : ZMod n → ℝ) :
+    |∑ i, ∑ j, v i * signedAdjacency n hdvd i j * v j| ≤ 1397 / 500 * ∑ i, v i ^ 2 :=
+  PalomarSignedCirculantSource.rayleigh_band_bound_core n hdvd v
+
+theorem eigenvalue_band_bound (n : ℕ) [NeZero n] (hdvd : 8 ∣ n) (μ : ℝ) (v : ZMod n → ℝ)
+    (hv : v ≠ 0) (hev : (signedAdjacency n hdvd).mulVec v = μ • v) :
+    |μ| ≤ 1397 / 500 :=
+  PalomarSignedCirculantSource.eigenvalue_band_bound_core n hdvd μ v hv hev
+
+theorem separator_lt_twisted_value (n : ℕ) (hn : 32 ≤ n) :
+    (1397 / 500 : ℝ) < rhoMinus n :=
+  PalomarSignedCirculantSource.separator_lt_twisted_value_core n hn
+
+theorem periodic_signing_beats_twisted_class (n : ℕ) [NeZero n] (hdvd : 8 ∣ n)
+    (hn : 32 ≤ n) :
+    ∃ A : Matrix (ZMod n) (ZMod n) ℝ, IsCirculantSigning n A ∧
+      ∀ (μ : ℝ) (v : ZMod n → ℝ), v ≠ 0 → A.mulVec v = μ • v → |μ| < rhoMinus n :=
+  PalomarSignedCirculantSource.periodic_signing_beats_twisted_class_core n hdvd hn
+
 end
 
 #print axioms bloch_symbol_phase_reversal
 #print axioms bloch_determinant_with_correction
 #print axioms bloch_determinant_identity
 #print axioms algebraic_band_edge_certificate
+#print axioms signedAdjacency_isCirculantSigning
+#print axioms rayleigh_band_bound
+#print axioms eigenvalue_band_bound
+#print axioms separator_lt_twisted_value
+#print axioms periodic_signing_beats_twisted_class
 
 end PalomarSignedCirculant

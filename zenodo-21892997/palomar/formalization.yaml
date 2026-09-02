@@ -31,8 +31,6 @@ sources:
   - title: "An Infinite Dense Counterexample Family for Extremal First Betti Numbers of Flag Complexes"
     authors:
       - "Lennart Rudolph"
-      - "Sol"
-      - "Fable"
     id: "10.5281/zenodo.21892997"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21892997"

@@ -1,6 +1,7 @@
 # Palomar project: actual F₂ flag homology and the dense extremal family
 
-Authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable
+Formalization authors: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), Sol, Fable.
+The cited paper is by Lennart Rudolph alone.
 
 This Lean project formalizes the F₂ content of Theorem 1.1 and Proposition
 3.1 of *An Infinite Dense Counterexample Family for Extremal First Betti
@@ -39,10 +40,11 @@ Build with:
 lake build
 ```
 
-`Challenge.lean` contains Mathlib-only transparent definitions and four
-compared proof holes: the structural identity `d₁ ∘ d₂ = 0` and the three
-paper-level results. `ExtremalFlagBetti/ActualHomology.lean` contains the
-implementation, and `Solution.lean` imports the identity and provides the
+`Challenge.lean` contains Mathlib-only transparent definitions and the four
+compared statements: the structural identity `d₁ ∘ d₂ = 0`, which is proved
+in the Challenge file itself, and the three paper-level results, which are
+stated there as proof holes. `ExtremalFlagBetti/ActualHomology.lean` contains
+the implementation, and `Solution.lean` imports the identity and provides the
 three paper-level wrappers. Comparator, NanoDa, and the default Lean kernel
 check the selected proof cone.
 

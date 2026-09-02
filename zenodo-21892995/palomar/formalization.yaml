@@ -2,15 +2,20 @@
 version: "v0.4"
 
 project:
-  name: "Full Bloch determinant and algebraic band-edge certificates for periodic signed circulants"
+  name: "An explicit periodic signing of C_n(1,2) below the conjectured minimum"
   description: >-
-    The exact algebraic core of a band-edge theorem for periodic signings of
-    C_n(1,2): the paper's full phase-dependent 8 by 8 Bloch symbol, its exact
-    bivariate determinant expansion and specialization to F(x^2,z+z^{-1}),
-    phase reversal, certified existence and location of the phase-one root,
-    nonnegativity at that root for every phase parameter y in [-2,2], and
-    exclusion of all-phase determinant zeros above it. The Fourier
-    direct-integral and spectral identification remain manuscript arguments.
+    The paper's disproof of Suvagiya's signed-circulant minimum conjecture on
+    an infinite arithmetic progression, formalized at the matrix level. For
+    every n divisible by 8, Lean defines the paper's period-8 triangle-flux
+    signing of the circulant graph C_n(1,2) as an explicit signed adjacency
+    matrix, proves it is a plus-minus-one signing of mathlib's circulant
+    graph, and proves by exact rational sum-of-squares window certificates
+    that every eigenvalue has absolute value at most 1397/500. For every
+    n >= 32 this rational separator lies strictly below the conjectured
+    minimum rho_-(n) = 2*sqrt(cos^2(pi/n)+cos^2(2pi/n)), so the conjectured
+    value is beaten by an explicit signing on all of n = 0 mod 8, n >= 32.
+    The full Bloch determinant identity and the all-phase algebraic band-edge
+    certificate remain selected as the supporting layer.
   authors:
     - "Lennart Rudolph"
     - "Sol"
@@ -27,37 +32,60 @@ sources:
   - title: "Periodic Signings of C_n(1,2): An Exact Band Edge and Short-Period Classification"
     authors:
       - "Lennart Rudolph"
-      - "Sol"
-      - "Fable"
     id: "10.5281/zenodo.21892995"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21892995"
     relationship: "formalizes"
     note: >-
-      Formalizes the displayed full 8 by 8 Bloch matrix, its determinant
-      identity, and the all-phase polynomial inequalities and root exclusion.
-      It does not formalize the direct-integral/spectral theorem step, finite
-      quotient sampling, the 32 by 32 characteristic-polynomial/Sturm
-      computation, or the exhaustive period-at-most-16 classification.
+      Formalizes the disproof clause of Theorem 2.1 at the rational separator
+      1397/500 used by Proposition 2.2, uniformly in the quotient order, and
+      the displayed Bloch matrix with its determinant identity and all-phase
+      band-edge certificate. The exact band-edge value sqrt(t0), the infinite
+      operator, the direct-integral and spectral-theorem steps, and the
+      period-at-most-16 classification remain external.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
+  - title: "Signed circulants at the Ramanujan bound"
+    authors: ["Vaibhav Suvagiya"]
+    id: "arXiv:2607.18334"
+    type: paper
+    location: "https://arxiv.org/abs/2607.18334"
+    relationship: "background"
+    note: >-
+      Conjecture 3 there proposes rho_-(n) as the minimum spectral radius over
+      all signings of C_n(1,2) for every even n >= 8. The compared headline
+      theorem exhibits, for every n = 0 mod 8 with n >= 32, an explicit
+      signing whose eigenvalues all lie strictly below rho_-(n).
+    license: "arXiv.org perpetual non-exclusive license"
+    author_endorsement: "none"
 
 status:
   scope: >-
-    The project defines the paper's exact full Bloch symbol using independent
-    variables z and zInv, proves a fraction-free determinant expansion whose
-    correction is divisible by z*zInv-1, derives det(xI-B(z)) =
-    F(x^2,z+z^{-1}), proves phase-reversal symmetry, and packages the root
-    separator, nested-radical comparison, all-phase nonnegativity, strictness
-    away from phase one, and exclusion of all determinant zeros above the
-    certified root. It does not assert that this algebraic root is the operator
-    norm or a finite-quotient spectral limit; those Fourier, direct-integral,
-    and spectral-theorem steps remain external. It also omits the 32 by 32
-    Sturm certificate and short-period classification.
+    The new layer defines the period-8 flux word, the induced step-2 signs on
+    ZMod n through the reduction ZMod n -> ZMod 8, and the signed adjacency
+    matrix of C_n(1,2) with positive step-1 edges. Compared theorems: the
+    matrix is a plus-minus-one signing of mathlib's circulantGraph {1,2}; the
+    Rayleigh quotient bound |v^T A v| <= (1397/500)|v|^2 for every real
+    vector, proved by two exact rational sum-of-squares window certificates
+    (period-8 local quadratic forms summing telescopically to
+    (1397/500)I -/+ A); the eigenvalue corollary |mu| <= 1397/500 for every
+    real eigenpair; the strict comparison 1397/500 < rho_-(n) for n >= 32 via
+    the nested-radical bounds; and the bundled disproof statement. The
+    supporting layer is unchanged: the exact Bloch symbol, its fraction-free
+    determinant expansion, det(xI-B(z)) = F(x^2,z+z^{-1}), and the all-phase
+    algebraic band-edge certificate. Not formalized: the identification of
+    the common spectral radius with sqrt(t0) (both directions), the infinite
+    operator and its direct integral, Sturm's theorem, and the exhaustive
+    short-period classification of Theorem 4.1.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
+    - "PalomarSignedCirculant.periodic_signing_beats_twisted_class"
+    - "PalomarSignedCirculant.eigenvalue_band_bound"
+    - "PalomarSignedCirculant.rayleigh_band_bound"
+    - "PalomarSignedCirculant.separator_lt_twisted_value"
+    - "PalomarSignedCirculant.signedAdjacency_isCirculantSigning"
     - "PalomarSignedCirculant.bloch_symbol_phase_reversal"
     - "PalomarSignedCirculant.bloch_determinant_with_correction"
     - "PalomarSignedCirculant.bloch_determinant_identity"
@@ -73,7 +101,12 @@ automation:
         wall_time: "not tracked"
         spend_usd: "subscription-based"
         hardware: "local machine and hosted APIs"
-      prompting_notes: "Iterative proof construction, exact-certificate checks, and audit prompts"
+      prompting_notes: >-
+        Iterative proof construction, exact-certificate checks, and audit
+        prompts. The sum-of-squares window data was computed externally by a
+        periodic Cholesky factorization and rounded to exact rationals whose
+        certificate identities Lean re-proves from scratch; the discovery
+        computation is not trusted by any compared proof.
     - method: "manual"
       models: []
       framework: "n/a"
@@ -90,26 +123,71 @@ automation:
 
 fidelity:
   divergences: >-
-    The exact displayed Bloch matrix and its determinant identity are included,
-    but the submission deliberately stops at the all-phase algebraic band-edge
-    certificate. It does not claim the paper's end-to-end spectral result or
-    its finite short-period classification.
+    The paper proves the family bound through the Bloch determinant, Sturm
+    certificates, and phase monotonicity, and obtains the exact common radius
+    sqrt(t0); the formalization proves the slightly weaker rational bound
+    1397/500 (the same separator Proposition 2.2 uses) directly at the level
+    of finite quadratic forms, by period-8 sum-of-squares window certificates
+    valid for every quotient order at once. The conjectured value rho_-(n) is
+    defined by its closed trigonometric formula; the comparison uses the
+    paper's nested-radical bounds together with cosine monotonicity rather
+    than a monotonicity claim about rho_- itself. The eigenvalue statements
+    quantify over real eigenpairs of the real symmetric matrix. For such a
+    matrix that is the whole spectrum, but the formalization does not import
+    the spectral theorem and does not assert it: the bound is proved directly
+    for real eigenpairs, and no complex-spectrum or spectral-radius statement
+    is selected. The uniform statement is the Rayleigh bound over all real
+    vectors, from which the eigenvalue bound is derived.
 
 review:
   status: "self-assessed"
   reviewers:
     - "OpenAI Codex (Sol)"
+    - "Anthropic Claude (Fable)"
   notes: >-
-    OpenAI Codex (Sol), acting as a co-author, checked the upgraded statements
-    term by term against the rendered preprint while developing and mechanically
-    testing the proofs. An earlier Fable co-author adversarial self-review
-    applied to the older phase-one-only selection and is not represented as
-    review of this upgraded compared theorem set. No independent human peer
-    review has been performed.
+    Anthropic Claude (Fable), acting as a co-author, developed and
+    adversarially reviewed the new matrix-level disproof layer, checking the
+    signing, the certificate identities, and the radical comparison against
+    the preprint. OpenAI Codex (Sol), acting as a co-author, previously
+    checked the Bloch determinant layer term by term against the rendered
+    preprint. No independent human peer review has been performed.
 
 alignment:
   namespace: "PalomarSignedCirculant"
   statements:
+    - source: "Theorem 2.1, disproof clause: an explicit signing below rho_-(8q) for all q >= 4"
+      lean: "PalomarSignedCirculant.periodic_signing_beats_twisted_class"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        For every n = 0 mod 8 with n >= 32: the period-8 signing's matrix has
+        every eigenvalue strictly below rho_-(n) in absolute value. The exact
+        radius sqrt(t0) is not asserted.
+    - source: "Proposition 2.2, separator form, uniform in n: all eigenvalues within [-1397/500, 1397/500]"
+      lean: "PalomarSignedCirculant.eigenvalue_band_bound"
+      module: "Solution"
+      status: "proved"
+      note: "Real eigenpairs of the explicit signed adjacency matrix, every n = 0 mod 8."
+    - source: "Quadratic-form band bound behind Proposition 2.2"
+      lean: "PalomarSignedCirculant.rayleigh_band_bound"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        |v^T A v| <= (1397/500)|v|^2 by two exact rational sum-of-squares
+        window certificates, checked by the kernel.
+    - source: "Proposition 2.2, comparison 1397/500 < rho_-(32) and monotone extension"
+      lean: "PalomarSignedCirculant.separator_lt_twisted_value"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        Via the cos(pi/8) and cos(pi/16) closed forms and the project's
+        nested-radical bounds. It assumes only n >= 32; no divisibility
+        hypothesis is needed for this comparison.
+    - source: "Equation (1): the period-8 signing as a signing of C_n(1,2)"
+      lean: "PalomarSignedCirculant.signedAdjacency_isCirculantSigning"
+      module: "Solution"
+      status: "proved"
+      note: "Symmetric, plus-minus-one exactly on mathlib's circulantGraph {1,2} edges, zero elsewhere."
     - source: "Displayed period-eight Bloch matrix and phase reversal"
       lean: "PalomarSignedCirculant.bloch_symbol_phase_reversal"
       module: "Solution"

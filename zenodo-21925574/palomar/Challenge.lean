@@ -1,8 +1,9 @@
 /- Simpler Graph Conditions for Embedding Tetrahedral Meshes.
-Authors: Lennart Rudolph, Sol, Fable
+Formalization authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 https://doi.org/10.5281/zenodo.21925574 -/
 import Init
+import Mathlib
 set_option autoImplicit true
 namespace K331Tutte.FiniteHomology
 structure Chain2 where
@@ -300,3 +301,79 @@ theorem induced_four_clique_relative_homology_bound
 
 end Ambient
 end K331Tutte.FiniteHomology
+
+namespace K331Tutte.Cockades
+
+open SimpleGraph
+
+variable {V : Type*}
+
+/-- Delete a vertex set: keep only edges with both endpoints outside `S`. -/
+def deleteVerts (G : SimpleGraph V) (S : Set V) : SimpleGraph V where
+  Adj u v := G.Adj u v ∧ u ∉ S ∧ v ∉ S
+  symm := fun _ _ h => ⟨h.1.symm, h.2.2, h.2.1⟩
+  loopless := ⟨fun u h => G.loopless.irrefl u h.1⟩
+
+/-- All edges of `G` lie inside the vertex set `s`. -/
+def EdgesWithin (G : SimpleGraph V) (s : Set V) : Prop :=
+  ∀ ⦃u v : V⦄, G.Adj u v → u ∈ s ∧ v ∈ s
+
+/-- `R` is a four-clique of `G`. -/
+def IsFourClique (G : SimpleGraph V) (R : Finset V) : Prop :=
+  R.card = 4 ∧ G.IsClique (↑R : Set V)
+
+/-- After deleting `S`, the vertices of `s` fall into at most two connected
+components: of any three, some two are joined. -/
+def TwoComponentsAfterDeletion (G : SimpleGraph V) (s : Set V) (S : Set V) : Prop :=
+  ∀ u ∈ s, ∀ v ∈ s, ∀ w ∈ s, u ∉ S → v ∉ S → w ∉ S →
+    ((deleteVerts G S).Reachable u v ∨ (deleteVerts G S).Reachable u w ∨
+      (deleteVerts G S).Reachable v w)
+
+/-- A K₄-attachment: the new part `A` (supported on `t`) meets the old part `X`
+(supported on `s`) exactly in a four-clique `R` of both. This is the
+disjoint-copies-before-identification clique-sum step of Definition 2.3. -/
+structure K4Attachment (X A : SimpleGraph V) (s t : Set V) (R : Finset V) : Prop where
+  edgesX : EdgesWithin X s
+  edgesA : EdgesWithin A t
+  inter : s ∩ t = (↑R : Set V)
+  cliqueX : IsFourClique X R
+  cliqueA : IsFourClique A R
+
+/-- MP₁-cockades over an abstract atom family: recursively generated from atoms
+by K₄-attachments (Definition 2.3 / Jørgensen). -/
+inductive IsCockade (Atom : SimpleGraph V → Set V → Prop) :
+    SimpleGraph V → Set V → Prop
+  | atom {A : SimpleGraph V} {s : Set V} : Atom A s → IsCockade Atom A s
+  | glue {X A : SimpleGraph V} {s t : Set V} {R : Finset V} :
+      IsCockade Atom X s → Atom A t → K4Attachment X A s t R →
+      IsCockade Atom (X ⊔ A) (s ∪ t)
+
+/-- Lemma 5.2 (attachments do not merge old components): a K₄-attachment
+cannot create new connections between vertices of the old support, even after
+an arbitrary vertex set has been deleted. -/
+theorem attachment_reachable_transfer
+    (X A : SimpleGraph V) (s t : Set V) (R : Finset V)
+    (h : K4Attachment X A s t R) (S : Set V) {u v : V}
+    (hu : u ∈ s) (hv : v ∈ s) (hus : u ∉ S) (hvs : v ∉ S)
+    (hreach : (deleteVerts (X ⊔ A) S).Reachable u v) :
+    (deleteVerts X S).Reachable u v := by sorry
+
+/-- Proposition 5.3 (the safe clique-sum induction): every MP₁-cockade whose
+four-cliques all leave at most two components on the support is `nIL`, given
+that the atoms are `nIL` and the Holst-Lovasz-Schrijver four-clique rule
+(`hHLS`, paper Corollary 2.5) is available; `hsep` is the separator bound
+(paper Theorem 4.4) for the final graph. -/
+theorem safe_cockade_linkless
+    (Atom : SimpleGraph V → Set V → Prop) (nIL : SimpleGraph V → Prop)
+    (hatom_nIL : ∀ (A : SimpleGraph V) (s : Set V), Atom A s → nIL A)
+    (hatom_big : ∀ (A : SimpleGraph V) (s : Set V), Atom A s →
+      ∃ T : Finset V, (↑T : Set V) ⊆ s ∧ 5 ≤ T.card)
+    (hHLS : ∀ (X A : SimpleGraph V) (s t : Set V) (R : Finset V),
+      K4Attachment X A s t R → nIL X → nIL A →
+      TwoComponentsAfterDeletion (X ⊔ A) (s ∪ t) (↑R : Set V) → nIL (X ⊔ A))
+    {G : SimpleGraph V} {s : Set V} (hG : IsCockade Atom G s)
+    (hsep : ∀ R : Finset V, IsFourClique G R → (∃ x ∈ s, x ∉ (↑R : Set V)) →
+      TwoComponentsAfterDeletion G s (↑R : Set V)) :
+    nIL G := by sorry
+
+end K331Tutte.Cockades
