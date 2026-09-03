@@ -2,7 +2,9 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "OneTwoSobolT5.exact_t_five_certificate"
+    "OneTwoSobolT5.exact_t_five_certificate",
+    "OneTwoSobolT5.census_every_window",
+    "OneTwoSobolT5.census_distribution"
   ],
   "permitted_axioms": [
     "propext",

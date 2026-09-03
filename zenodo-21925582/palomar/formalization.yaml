@@ -1,17 +1,21 @@
 version: "v0.4"
 
 project:
-  name: "Exact finite rank certificate for OneTwo Sobol' dimensions 25--28"
+  name: "Exact rank certificates for the complete OneTwo Sobol' 345-window census"
   description: >-
-    A complete kernel-replayable certificate that the explicit 16 x 16
-    generator rows for OneTwo Sobol' dimensions 25--28 at m = 16 have exact
-    rank threshold 5: every one of the 364 four-part selections of total 11
-    is proved independent over F_2 and the threshold tests for totals 12
-    through 16 are proved to fail, checked end to end by kernel-reduced
-    16-column XOR row reduction with no native evaluation. Under the standard
-    digital-net criterion stated in the preprint this threshold is the
-    quality parameter t = 5 for the block; the census of all 345 pair-aligned
-    windows and authentication of the upstream table remain informal.
+    A complete kernel-replayable certificate for the projection quality of
+    the OneTwo Sobol' direction table at m = 16: for every one of the 345
+    pair-aligned four-dimensional windows of the 692-dimension table, Lean
+    proves that the window's 16 x 16 generator rows have exactly the claimed
+    rank threshold, by checking every four-part selection at the threshold
+    total independent over F_2 and a selection one total higher dependent.
+    All checks are 16-column XOR row reductions reduced by kernel decide
+    with no native evaluation, sharded over 35 files of at most ten windows
+    each. The census distribution is proved as stated in the preprint: 9
+    windows with t = 4 and 336 with t = 5. The worked dimensions 25--28
+    block keeps its separate explicit certificate. Authentication of the
+    upstream direction-number table and the digital-net equivalence between
+    the rank test and the t-value remain informal.
   authors: ["Lennart Rudolph", "Sol", "Fable"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
@@ -28,28 +32,33 @@ sources:
     location: "https://doi.org/10.5281/zenodo.21925582"
     relationship: formalizes
     note: >-
-      Formalizes the dimensions 25--28 finite rank certificate, not the
-      complete table-wide census.
+      Formalizes the complete 345-window census and the dimensions 25--28
+      finite rank certificate; the digital-net rank criterion remains
+      external.
     license: "CC-BY-4.0"
   - title: "OneTwo direction-number table"
     type: dataset
     location: "https://doi.org/10.5281/zenodo.21925582"
     relationship: background
     note: >-
-      Source of the packed 16 x 16 generator rows for dimensions 25--28 that
-      are embedded verbatim in the Challenge; the table is cited and
-      distributed through the preprint's record, and its authentication is
-      informal and outside the compared statements.
+      Source of the packed 16 x 16 generator rows for all 692 dimensions
+      that are embedded in the Challenge, one 256-bit literal per dimension
+      with an explicit in-file decoder; the table is cited and distributed
+      through the preprint's record, and its authentication is informal and
+      outside the compared statements.
 
 status:
   scope: >-
-    Exact kernel-checked rank threshold for the worked dimensions 25--28 block;
-    the table-wide census, source download, and digital-net criterion are external.
+    Exact kernel-checked rank profiles for all 345 pair-aligned windows and
+    the worked dimensions 25--28 block; source authentication and the
+    digital-net criterion are external.
   sorry_count: 0
   sorry_in_definitions: 0
-  axioms: [propext]
+  axioms: [propext, Quot.sound]
   main_results:
     - "OneTwoSobolT5.exact_t_five_certificate"
+    - "OneTwoSobolT5.census_every_window"
+    - "OneTwoSobolT5.census_distribution"
 
 automation:
   methods:
@@ -68,11 +77,15 @@ automation:
 
 fidelity:
   divergences: >-
-    The formalization covers one worked four-dimensional block and assumes the
-    external equivalence between the encoded rank test and the t-value. For the
-    Palomar submission, the release's native exhaustive subset evaluator is
-    replaced by deterministic 16-column XOR row reduction checked by ordinary
-    kernel decide; the packed input rows and threshold claims are unchanged.
+    The formalization assumes the external equivalence between the encoded
+    rank test and the t-value. For the Palomar submission, the release's
+    native exhaustive subset evaluator is replaced by deterministic
+    16-column XOR row reduction checked by ordinary kernel decide; the
+    packed input rows and threshold claims are unchanged. The Challenge and
+    the census data module store the 692-dimension table as one 256-bit
+    literal per dimension and decode it in place by explicit division and
+    remainder; the decoded rows enter the compared statements only through
+    that decoder.
 
 review:
   status: "self-assessed"
@@ -91,5 +104,15 @@ alignment:
       module: "Solution"
       status: proved
       note: "Checks threshold 5 and explicitly excludes every smaller threshold."
+    - source: "Complete census of exact quality parameters, all 345 windows"
+      lean: "OneTwoSobolT5.census_every_window"
+      module: "Solution"
+      status: proved
+      note: "Every pair-aligned window's rank profile matches its claimed exact t."
+    - source: "Census distribution, 9 windows at t=4 and 336 at t=5"
+      lean: "OneTwoSobolT5.census_distribution"
+      module: "Solution"
+      status: proved
+      note: "Counts over the claimed quality parameter list, of length 345."
 
 acknowledgements: "Lean and the OneTwo direction-number source cited in the preprint."

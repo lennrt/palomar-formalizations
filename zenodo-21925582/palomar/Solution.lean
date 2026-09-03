@@ -13,9 +13,12 @@ import OneTwoSobolT5
 /-!
 # Proved solution
 
-The selected declaration is provided by the imported, fully proved
-`OneTwoSobolT5` development. Its six row-reduction checks use kernel-reduced
-`decide`, with no native-evaluation proof primitive.
+The selected declarations are provided by the imported, fully proved
+`OneTwoSobolT5` development. Every row-reduction check, across the worked
+block and the complete 345-window census, uses kernel-reduced `decide`, with
+no native-evaluation proof primitive.
 -/
 
 #print axioms OneTwoSobolT5.exact_t_five_certificate
+#print axioms OneTwoSobolT5.census_every_window
+#print axioms OneTwoSobolT5.census_distribution

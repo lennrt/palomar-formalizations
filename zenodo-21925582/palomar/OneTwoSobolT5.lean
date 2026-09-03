@@ -9,6 +9,7 @@ were used for formalization and adversarial analysis.
 -/
 
 import OneTwoSobolT5.Core
+import OneTwoSobolT5.Census
 
 #print axioms OneTwoSobolT5.source_directions_to_rows
 #print axioms OneTwoSobolT5.compositions_11_count
@@ -36,3 +37,8 @@ import OneTwoSobolT5.Core
 #print axioms OneTwoSobolT5.not_t_le_zero_certificate
 #print axioms OneTwoSobolT5.exact_t_five_certificate
 #print axioms OneTwoSobolT5.explicit_eight_row_xor
+#print axioms OneTwoSobolT5.Census.buildWindows_eq_wlist
+#print axioms OneTwoSobolT5.Census.wlist_all
+#print axioms OneTwoSobolT5.Census.census_all
+#print axioms OneTwoSobolT5.census_every_window
+#print axioms OneTwoSobolT5.census_distribution
