@@ -312,7 +312,7 @@ variable {V : Type*}
 /-- Delete a vertex set: keep only edges with both endpoints outside `S`. -/
 def deleteVerts (G : SimpleGraph V) (S : Set V) : SimpleGraph V where
   Adj u v := G.Adj u v ∧ u ∉ S ∧ v ∉ S
-  symm := fun _ _ h => ⟨h.1.symm, h.2.2, h.2.1⟩
+  symm := ⟨fun _ _ h => ⟨h.1.symm, h.2.2, h.2.1⟩⟩
   loopless := ⟨fun u h => G.loopless.irrefl u h.1⟩
 
 /-- All edges of `G` lie inside the vertex set `s`. -/
