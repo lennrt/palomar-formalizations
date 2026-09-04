@@ -106,11 +106,13 @@ fidelity:
     induced simplicial pair.
 review:
   status: "self-assessed"
-  reviewers: ["OpenAI Codex (Sol)", "Anthropic Claude (Fable)"]
+  reviewers: []
   notes: >-
-    Fable performed the automated adversarial review of the new
-    clique-sum layer (statement alignment against Section 5 and the no-sorry
-    kernel proof); Sol's earlier automated review covered the finite layer.
+    Lennart Rudolph reviewed the compared statements against the paper.
+    Anthropic Claude (Fable), acting as an automated assistant rather than a
+    reviewer of record, ran the adversarial review of the clique-sum layer
+    (statement alignment against Section 5 and the no-sorry kernel proof);
+    OpenAI Codex (Sol) ran the earlier automated review of the finite layer.
     No independent human peer review was performed.
 alignment:
   namespace: "K331Tutte"

@@ -2,7 +2,7 @@
 
 DOI: [10.5281/zenodo.21925574](https://doi.org/10.5281/zenodo.21925574)
 
-Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) — the sole
+Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), the sole
 author of record on the cited Zenodo deposit.
 
 Formalization: Lennart Rudolph, with the automated assistants Sol (OpenAI
@@ -14,7 +14,7 @@ and its finite support layer.
 The structural layer works over mathlib simple graphs.
 `attachment_reachable_transfer` is Lemma 5.2: when a new part is attached to
 an old part along a clique, two old vertices joined after deleting any vertex
-set were already joined inside the old part — proved by walk surgery through
+set were already joined inside the old part, proved by walk surgery through
 the attachment clique. `safe_cockade_linkless` is Proposition 5.3: a graph
 generated from atoms of at least five vertices by K₄-attachments is linklessly
 embeddable whenever every four-clique deletion leaves at most two components.

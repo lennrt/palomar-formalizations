@@ -1,10 +1,13 @@
-/- Simpler Graph Conditions for Embedding Tetrahedral Meshes.
-Formalization: Lennart Rudolph, with the automated assistants Sol (OpenAI
-Codex) and Fable (Anthropic Claude)
+/-
+Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
+Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
-https://doi.org/10.5281/zenodo.21925574 -/
-import Init
-import Mathlib
+DOI: https://doi.org/10.5281/zenodo.21925574
+Formalization: Lennart Rudolph, the responsible author, with the automated
+assistants Sol (OpenAI Codex) and Fable (Anthropic Claude)
+-/
+import Mathlib.Combinatorics.SimpleGraph.Clique
+import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 set_option autoImplicit true
 namespace K331Tutte.FiniteHomology
 structure Chain2 where
@@ -231,17 +234,24 @@ abbrev ActualCycleSpace (Q : FiniteSimplicialPair 4) :=
 theorem actual_homologous_refl (Q : FiniteSimplicialPair 4) (x : Chain2) :
     ActualHomologous Q x x := Or.inl rfl
 
+/-- Adding the same F₂ chain twice is the identity, one coordinate at a time. -/
+theorem f2add_f2add_cancel (a b : Bool) : f2add (f2add a b) b = a := by
+  cases a <;> cases b <;> rfl
+
+/-- Adding the same F₂ chain twice is the identity. -/
+theorem add2_add2_cancel (y d : Chain2) : add2 (add2 y d) d = y := by
+  cases y
+  cases d
+  simp only [add2, f2add_f2add_cancel]
+
 theorem actual_homologous_symm {Q : FiniteSimplicialPair 4} {x y : Chain2}
     (h : ActualHomologous Q x y) : ActualHomologous Q y x := by
   rcases h with rfl | h
   · exact Or.inl rfl
   · right
     calc
-      y = add2 (add2 y (actualD3Boundary Q)) (actualD3Boundary Q) := by
-        rcases y with ⟨a, b, d, e⟩
-        rcases actualD3Boundary Q with ⟨f, g, k, i⟩
-        cases a <;> cases b <;> cases d <;> cases e <;>
-          cases f <;> cases g <;> cases k <;> cases i <;> rfl
+      y = add2 (add2 y (actualD3Boundary Q)) (actualD3Boundary Q) :=
+        (add2_add2_cancel y (actualD3Boundary Q)).symm
       _ = add2 x (actualD3Boundary Q) := by rw [← h]
 
 theorem actual_homologous_trans
@@ -256,11 +266,7 @@ theorem actual_homologous_trans
     calc
       x = add2 y (actualD3Boundary Q) := hxy
       _ = add2 (add2 z (actualD3Boundary Q)) (actualD3Boundary Q) := by rw [hyz]
-      _ = z := by
-        rcases z with ⟨a, b, d, e⟩
-        rcases actualD3Boundary Q with ⟨f, g, k, i⟩
-        cases a <;> cases b <;> cases d <;> cases e <;>
-          cases f <;> cases g <;> cases k <;> cases i <;> rfl
+      _ = z := add2_add2_cancel z (actualD3Boundary Q)
 
 def actualHomologySetoid (Q : FiniteSimplicialPair 4) : Setoid (ActualCycleSpace Q) where
   r x y := ActualHomologous Q x.1 y.1
