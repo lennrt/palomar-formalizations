@@ -16,7 +16,7 @@ project:
     block keeps its separate explicit certificate. Authentication of the
     upstream direction-number table and the digital-net equivalence between
     the rank test and the t-value remain informal.
-  authors: ["Lennart Rudolph", "Sol", "Fable"]
+  authors: ["Lennart Rudolph"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
 
@@ -26,7 +26,7 @@ classification:
 
 sources:
   - title: "Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points"
-    authors: ["Lennart Rudolph", "Sol", "Fable"]
+    authors: ["Lennart Rudolph"]
     id: "doi:10.5281/zenodo.21925582"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21925582"
@@ -36,6 +36,7 @@ sources:
       finite rank certificate; the digital-net rank criterion remains
       external.
     license: "CC-BY-4.0"
+    author_endorsement: "participated"
   - title: "OneTwo direction-number table"
     type: dataset
     location: "https://doi.org/10.5281/zenodo.21925582"
@@ -69,11 +70,12 @@ automation:
     - method: manual
       models: []
       framework: "n/a"
-      tool_setup: "Co-author-directed source authentication and mathematical review"
+      tool_setup: "Author-directed source authentication and mathematical review"
   spend_usd: "not tracked"
   notes: >-
-    The three named authors jointly developed, reviewed, and accept
-    responsibility for the submitted result.
+    Lennart Rudolph selected the statements, directed the work, and is
+    solely responsible for the submitted result. Sol and Fable contributed
+    formalization and adversarial review as automated assistants.
 
 fidelity:
   divergences: >-
@@ -89,12 +91,13 @@ fidelity:
 
 review:
   status: "self-assessed"
-  reviewers: ["Anthropic Claude (Fable)"]
+  reviewers: []
   notes: >-
-    Anthropic Claude (Fable), acting as a co-author, performed an automated
-    adversarial self-review pass separate from proof development and checked
-    the compared statements against the preprint before release. No independent
-    human peer review has been performed.
+    Lennart Rudolph reviewed the compared statements against the preprint.
+    Anthropic Claude (Fable), acting as an automated assistant rather than a
+    reviewer of record, ran an adversarial review pass separate from proof
+    development before release. No independent human peer review has been
+    performed.
 
 alignment:
   namespace: "OneTwoSobolT5"

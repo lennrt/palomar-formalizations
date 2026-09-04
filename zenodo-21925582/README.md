@@ -1,10 +1,14 @@
 # Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 
-- DOI: <https://doi.org/10.5281/zenodo.21925582>
-Author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X))
+DOI: [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582)
 
-- Authors: Lennart Rudolph, Sol, Fable
-- Palomar project: `palomar/`
+Paper author: Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), the sole
+author of record on the cited Zenodo deposit.
+
+Formalization: Lennart Rudolph, with the automated assistants Sol (OpenAI
+Codex) and Fable (Anthropic Claude).
+
+This directory contains the standalone Palomar project in `palomar/`.
 
 The Palomar project advertises kernel-replayable exact rank certificates for
 all 345 pair-aligned four-dimensional windows of the 692-dimension OneTwo
