@@ -8,6 +8,75 @@ assistants Sol (OpenAI Codex) and Fable (Anthropic Claude)
 -/
 import Mathlib.Combinatorics.SimpleGraph.Clique
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+
+/-!
+# The `K₃,₃,₁` exclusion is redundant for tetrahedral balls: the combinatorial core
+
+Alexa's three-dimensional Tutte embedding theorem (Discrete & Computational
+Geometry 73, 2025) embeds a tetrahedral mesh whose graph is 4-connected and has
+neither a `K₆` nor a `K₃,₃,₁` minor, and asks whether the second exclusion is
+needed. The paper proves that it is redundant for a precisely defined class of
+meshes. Let `T` be a finite simplicial complex whose realization is a closed
+topological 3-ball, let `G` be its 1-skeleton, and assume (BT): every
+triangular face whose three vertices lie on the boundary is itself a boundary
+face. If `G` has no `K₆` minor, then `G` is linklessly embeddable, hence has
+no `K₃,₃,₁` minor (Theorem 1.1), and Alexa's theorem applies to `T` without
+the `K₃,₃,₁` clause (Corollary 1.2).
+
+The proof runs in four steps. (1) (BT) makes the closed stars of interior
+vertices cover `G`; Gluck's theorem, coning, and rigidity gluing make `G`
+generically 4-rigid, so `G` has at least `4|V| - 10` edges; Mader's bound gives
+equality and Jørgensen's classification makes `G` an MP₁-cockade, a graph
+generated from `K₅` and apex-planar atoms by `K₄`-sums (Corollary 3.6).
+(2) For every four-clique `S` of `G`, the relative `F₂` homology
+`H₂(T[S], T[S] ∩ ∂T)` has dimension at most one (Lemma 4.3), and relative ball
+duality converts this into the separator bound `comp(G - S) ≤ 2`
+(Theorem 4.4). (3) A `K₄`-attachment never merges components of the old part
+(Lemma 5.2), so the separator bound of the final graph transports down the
+cockade construction tree, and the four-clique Holst–Lovász–Schrijver criterion
+(Corollary 2.5) preserves linkless embeddability at every internal node
+(Proposition 5.3). (4) Linkless embeddability is minor closed and `K₃,₃,₁` is
+intrinsically linked. Steps (2) and (3) are the paper's new mathematics;
+step (1) is a new argument on cited theorems, and step (4) is cited.
+
+## Compared declarations
+
+Six declarations are compared.
+
+* `K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible`,
+  `induced_four_coordinate_chain_identification`, and
+  `induced_four_clique_relative_homology_bound` are Lemma 7.1, the
+  identification of the induced relative chain complex with its four-face,
+  six-edge Boolean coordinate model, and Lemma 4.3. They are stated for every
+  finite simplicial pair on `Fin n` and every injectively labelled four-clique
+  under (BT), not for one fixed configuration. The 32,768-encoding census of
+  Section 7 is a regression check of this lemma; the compared statement is the
+  lemma itself.
+* `K331Tutte.Cockades.attachment_reachable_transfer` and
+  `K331Tutte.Cockades.safe_cockade_linkless` are Lemma 5.2 and
+  Proposition 5.3 over mathlib `SimpleGraph`s. Linkless embeddability is the
+  abstract predicate `nIL`, constrained by exactly the two cited inputs the
+  paper uses: atoms are linklessly embeddable (Lemma 5.1) and the four-clique
+  HLS criterion (Corollary 2.5).
+* `K331Tutte.Bridge.structural_theorem` joins the two layers into the
+  combinatorial core of Theorem 1.1. The skeleton of the complex is a
+  `SimpleGraph`, every four-clique of the skeleton is a labelled four-clique
+  of the pair, Lemma 4.3 supplies the homological bound for each of them, and
+  the hypothesis `hduality` (Propositions 4.1 and 4.2 with universal
+  coefficients) turns that bound into Theorem 4.4. With Corollary 3.6 as the
+  hypothesis `hcockade`, the conclusion is the linkless embeddability of the
+  skeleton. Every hypothesis names the cited theorem it stands for.
+
+## External inputs
+
+Generic rigidity (Gluck, Whiteley), Mader's extremal theorem, Jørgensen's
+classification, the PL topology behind the deletion retraction and relative
+ball duality, the Holst–Lovász–Schrijver theorem, linkless embeddability of
+apex graphs, minor-closedness of linkless embeddability, and Alexa's theorem
+are not formalized. Each enters the compared statements only as an explicit
+hypothesis, matching the paper's own formal-scope statement in Section 7.
+-/
+
 set_option autoImplicit true
 namespace K331Tutte.FiniteHomology
 structure Chain2 where
@@ -384,3 +453,47 @@ theorem safe_cockade_linkless
     nIL G := by sorry
 
 end K331Tutte.Cockades
+
+namespace K331Tutte.Bridge
+
+open K331Tutte.FiniteHomology K331Tutte.FiniteHomology.Ambient K331Tutte.Cockades
+
+variable {n : Nat}
+
+/-- The 1-skeleton of a finite simplicial complex: two distinct vertices are
+adjacent exactly when the edge between them is a simplex. -/
+def skeleton (C : FiniteSimplicialComplex n) : SimpleGraph (Fin n) where
+  Adj u v := u ≠ v ∧ C.simplex (EdgeVertexSet u v) = true
+  symm := ⟨fun u v h => ⟨h.1.symm, by
+    rw [C.extensional (a := EdgeVertexSet v u) (b := EdgeVertexSet u v)
+      (fun w => show (w = v ∨ w = u) ↔ (w = u ∨ w = v) from or_comm)]
+    exact h.2⟩⟩
+  loopless := ⟨fun u h => h.1 rfl⟩
+
+/-- Theorem 1.1 (structural theorem), combinatorial core. `P` is the finite
+simplicial pair `(T, ∂T)` on `n` vertices and `hBT` is (BT). The hypotheses
+are the paper's cited inputs, one each: `hatom_nIL` is Lemma 5.1 (atoms are
+linklessly embeddable), `hatom_big` records that atoms have at least five
+vertices, `hHLS` is Corollary 2.5 (the four-clique Holst–Lovász–Schrijver
+criterion), `hcockade` is Corollary 3.6 (rigidity, Mader, and Jørgensen make
+the skeleton an MP₁-cockade), and `hduality` is the relative ball duality of
+Propositions 4.1 and 4.2 with universal coefficients, which turns the relative
+homology bound into the component bound. The proved content is Lemma 4.3 for
+every four-clique of the skeleton, Lemma 5.2, and Proposition 5.3, composed
+into the conclusion that the skeleton is linklessly embeddable. -/
+theorem structural_theorem (P : FiniteSimplicialPair n)
+    (hBT : BoundaryTriangleCondition P)
+    (Atom : SimpleGraph (Fin n) → Set (Fin n) → Prop) (nIL : SimpleGraph (Fin n) → Prop)
+    (hatom_nIL : ∀ (A : SimpleGraph (Fin n)) (s : Set (Fin n)), Atom A s → nIL A)
+    (hatom_big : ∀ (A : SimpleGraph (Fin n)) (s : Set (Fin n)), Atom A s →
+      ∃ T : Finset (Fin n), (↑T : Set (Fin n)) ⊆ s ∧ 5 ≤ T.card)
+    (hHLS : ∀ (X A : SimpleGraph (Fin n)) (s t : Set (Fin n)) (R : Finset (Fin n)),
+      K4Attachment X A s t R → nIL X → nIL A →
+      TwoComponentsAfterDeletion (X ⊔ A) (s ∪ t) (↑R : Set (Fin n)) → nIL (X ⊔ A))
+    (hcockade : IsCockade Atom (skeleton P.ambient) Set.univ)
+    (hduality : ∀ L : LabelledFourClique P, (∃ x : Fin n, x ∉ Set.range L.label) →
+      ActualHomologyDimensionAtMostOne (inducedPair P L) →
+      TwoComponentsAfterDeletion (skeleton P.ambient) Set.univ (Set.range L.label)) :
+    nIL (skeleton P.ambient) := by sorry
+
+end K331Tutte.Bridge

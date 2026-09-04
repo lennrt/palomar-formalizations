@@ -2,6 +2,7 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
+    "K331Tutte.Bridge.structural_theorem",
     "K331Tutte.Cockades.safe_cockade_linkless",
     "K331Tutte.Cockades.attachment_reachable_transfer",
     "K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible",

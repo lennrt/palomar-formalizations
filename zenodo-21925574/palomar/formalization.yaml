@@ -1,21 +1,32 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 version: "v0.4"
 project:
-  name: "Safe clique-sum induction and the four-clique relative F₂ bound"
+  name: "Combinatorial core of the K₃,₃,₁-redundancy theorem for tetrahedral balls"
   description: >-
-    A formalization of the paper's structural mechanism and its finite support
-    layer. Over mathlib simple graphs, Lean proves Lemma 5.2 (attachments over
-    a clique do not merge old components, by explicit walk surgery) and
-    Proposition 5.3 (every graph generated from atoms of at least five
-    vertices by K₄-attachments is linklessly embeddable whenever each
-    four-clique deletion leaves at most two components), with the
-    Holst–Lovász–Schrijver four-clique rule and atom linklessness as explicit
-    hypotheses. The ambient four-clique pair bridge of Lemma 7.1 and the
-    relative F₂ bound of Lemma 4.3 remain selected as the finite layer that
-    supplies that separator hypothesis in the paper. The two layers are not
-    joined inside Lean: the paper's route from Lemma 4.3 to the separator
-    bound runs through the deletion retraction and relative ball duality of
-    Section 4, which are not formalized.
+    Alexa's three-dimensional Tutte embedding theorem (Discrete & Computational
+    Geometry, 2025) requires the graph of a tetrahedral mesh to have neither a
+    K₆ nor a K₃,₃,₁ minor and asks whether the second exclusion is necessary.
+    The paper proves that it is redundant for finite simplicial complexes
+    whose realization is a closed topological 3-ball and which satisfy the
+    boundary-triangle condition (BT): if the 1-skeleton G has no K₆ minor,
+    then G is linklessly embeddable and hence has no K₃,₃,₁ minor
+    (Theorem 1.1). This Lean development proves the paper's new combinatorial
+    mathematics over mathlib simple graphs and finite simplicial complexes and
+    composes it into Theorem 1.1 with the cited theorems as explicit
+    hypotheses. Proved: for every four-clique of a (BT) pair the induced
+    relative F₂ chain complex has homology of dimension at most one
+    (Lemma 4.3, with the soundness of its Boolean coordinate model,
+    Lemma 7.1); a K₄-attachment never merges components of the old part
+    (Lemma 5.2); every MP₁-cockade whose four-clique deletions leave at most
+    two components is linklessly embeddable, given the four-clique
+    Holst–Lovász–Schrijver criterion and linkless atoms (Proposition 5.3); and
+    the joined statement structural_theorem, in which the skeleton of the
+    complex is a mathlib SimpleGraph, every skeleton four-clique is a labelled
+    four-clique of the pair, and the hypotheses are Corollary 3.6 (rigidity,
+    Mader, Jørgensen), the relative ball duality of Section 4, Corollary 2.5,
+    and Lemma 5.1. Generic rigidity, the extremal-minor classification, PL
+    duality, the Holst–Lovász–Schrijver theorem, apex linklessness, and
+    Alexa's theorem are not formalized and enter only as named hypotheses.
   authors: ["Lennart Rudolph"]
   license: "MIT"
   responsible_maintainers: ["Lennart Rudolph"]
@@ -30,40 +41,78 @@ sources:
     location: "https://doi.org/10.5281/zenodo.21925574"
     relationship: "formalizes"
     note: >-
-      Formalizes the clique-sum induction of Section 5 (Lemma 5.2 and
-      Proposition 5.3) over mathlib simple graphs, and the ambient-to-finite
-      four-clique bridge of Lemma 7.1 with the relative bound of Lemma 4.3.
-      Generic rigidity, Jørgensen's classification, Alexander–Lefschetz
-      duality, the Holst–Lovász–Schrijver theorem, and Alexa's embedding
-      theorem remain external, as in the paper's own formal-scope statement.
+      Formalizes Lemma 4.3 with Lemma 7.1 (Sections 4 and 7), Lemma 5.2 and
+      Proposition 5.3 (Section 5), and their composition into the
+      combinatorial core of Theorem 1.1 with the cited inputs as hypotheses.
+      Section 3 (rigidity and the extremal equality), Propositions 4.1 and 4.2
+      (PL topology), the Holst–Lovász–Schrijver theorem, Lemma 5.1, and
+      Corollary 1.2 remain external, as in the paper's own formal-scope
+      statement in Section 7.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
+  - title: "Tutte Embeddings of Tetrahedral Meshes"
+    authors: ["Marc Alexa"]
+    id: "10.1007/s00454-023-00494-0"
+    type: paper
+    location: "https://doi.org/10.1007/s00454-023-00494-0"
+    relationship: "background"
+    note: >-
+      Discrete & Computational Geometry 73(1):197–207, 2025. States the
+      three-dimensional Tutte embedding theorem with the K₆ and K₃,₃,₁
+      exclusions and asks in its Section 5 whether the K₃,₃,₁ clause is
+      necessary; the formalized paper answers this for (BT) topological-ball
+      meshes.
+  - title: "The Colin de Verdière graph parameter"
+    authors: ["Hein van der Holst", "László Lovász", "Alexander Schrijver"]
+    type: paper
+    location: "Graph Theory and Combinatorial Biology, Bolyai Society Mathematical Studies 7, pages 29–85, 1999"
+    relationship: "background"
+    note: >-
+      Source of the clique-sum criterion (Theorem 2.4 of the paper) whose
+      four-clique specialization, Corollary 2.5, is the hypothesis hHLS of
+      safe_cockade_linkless and structural_theorem.
+  - title: "New bounds on maximal linkless graphs"
+    authors: ["Ramin Naimi", "Andrei Pavelescu", "Elena Pavelescu"]
+    id: "10.2140/agt.2023.23.2545"
+    type: paper
+    location: "https://doi.org/10.2140/agt.2023.23.2545"
+    relationship: "background"
+    note: >-
+      Algebraic & Geometric Topology 23(6):2545–2559, 2023. Records the graph
+      form of the clique-sum theorem that the paper uses (its Theorem 7).
+  - title: "Extremal graphs for contractions to K₇"
+    authors: ["L. K. Jørgensen"]
+    type: paper
+    location: "Ars Combinatoria 25C, pages 133–148, 1988"
+    relationship: "background"
+    note: >-
+      Classifies the K₆-minor-free graphs on n ≥ 5 vertices with 4n − 10 edges
+      as MP₁-cockades; with Mader's bound (Mathematische Annalen
+      178:154–168, 1968) it supplies the hypothesis hcockade of
+      structural_theorem.
 related_formalizations: []
 status:
   scope: >-
-    Two layers are compared. The structural layer works with mathlib
-    SimpleGraph values on an arbitrary vertex type: graphs carry explicit
-    vertex supports with an edges-within discipline, a K₄-attachment is a
-    clique sum whose parts meet exactly in a four-clique of both, and
-    MP₁-cockades are generated inductively from an abstract atom family by
-    such attachments (the linearization of a construction tree). Lemma 5.2 is
-    proved by walk induction: any path between old vertices avoiding a deleted
-    set is rerouted through the attachment clique. Proposition 5.3 is proved
-    by structural induction, transporting the final graph's separator bound
-    down the construction via Lemma 5.2. Linkless embeddability enters as an
-    abstract predicate constrained exactly by the two explicit hypotheses the
-    paper cites: atoms are linklessly embeddable (Lemma 5.1) and the
-    Holst–Lovász–Schrijver four-clique specialization (Corollary 2.5). The
-    finite layer covers the paper's Section 4 support: the induced
-    four-clique pair of a labelled clique in a finite simplicial pair under
-    (BT) is admissible, identifies exactly with the Boolean coordinate
-    complex, and has relative F₂ quotient with at most two classes. The
-    topological-ball realization, rigidity, duality, graph minors, spatial
-    embeddings, and Alexa's theorem are not formalized.
+    Compared: the combinatorial core of Theorem 1.1 (structural_theorem) with
+    Corollary 3.6, the Section 4 relative ball duality, Corollary 2.5, and
+    Lemma 5.1 as explicit hypotheses; Lemma 5.2 and Proposition 5.3 over
+    mathlib SimpleGraph values on an arbitrary vertex type, with linkless
+    embeddability an abstract predicate constrained by exactly those
+    hypotheses; and Lemma 7.1, the coordinate identification, and Lemma 4.3
+    for every finite simplicial pair on Fin n and every injectively labelled
+    four-clique under (BT). In structural_theorem the skeleton of the pair is
+    a SimpleGraph on Fin n, a four-clique of the skeleton yields a labelled
+    four-clique of the pair, and Lemma 4.3 discharges the antecedent of the
+    duality hypothesis for each of them. Not formalized: generic rigidity,
+    Mader's theorem, Jørgensen's classification, the PL topology of
+    Propositions 4.1 and 4.2, the Holst–Lovász–Schrijver theorem, linkless
+    embeddability of apex graphs, graph minors, spatial embeddings, and
+    Alexa's theorem.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
+    - "K331Tutte.Bridge.structural_theorem"
     - "K331Tutte.Cockades.safe_cockade_linkless"
     - "K331Tutte.Cockades.attachment_reachable_transfer"
     - "K331Tutte.FiniteHomology.Ambient.encoded_induced_four_pair_admissible"
@@ -81,8 +130,9 @@ automation:
         hardware: "local machine and hosted APIs"
       prompting_notes: >-
         Iterative source comparison, Lean proof development against mathlib's
-        SimpleGraph library, and review. The clique-sum layer was added by
-        Claude (Fable); the finite layer was developed with Codex (Sol).
+        SimpleGraph library, and review. The clique-sum layer and the bridge
+        module joining the two layers were added by Claude (Fable); the finite
+        layer was developed with Codex (Sol).
   spend_usd: "subscription-based; exact total not tracked"
   notes: >-
     Lennart Rudolph selected the scope and statements, reviewed the proofs,
@@ -103,7 +153,12 @@ fidelity:
     are exactly the paper's conditional mechanism. In the finite layer,
     relative chains and homology are realized by the four-face/six-edge F₂
     coordinate complex, with the proved identification connecting it to the
-    induced simplicial pair.
+    induced simplicial pair. In structural_theorem the skeleton is the
+    SimpleGraph on Fin n whose distinct vertices are adjacent exactly when
+    their edge is a simplex of the ambient complex; the nonempty-complement
+    clause of Theorem 4.4 is the hypothesis that some vertex lies outside the
+    four-clique; and the duality hypothesis is stated per labelled
+    four-clique, from the homology bound to the three-vertex component bound.
 review:
   status: "self-assessed"
   reviewers: []
@@ -117,6 +172,16 @@ review:
 alignment:
   namespace: "K331Tutte"
   statements:
+    - source: "Theorem 1.1 (structural theorem), combinatorial core"
+      lean: "K331Tutte.Bridge.structural_theorem"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        The skeleton of the (BT) pair is linklessly embeddable, given
+        Corollary 3.6 (hcockade), the Section 4 relative ball duality
+        (hduality), Corollary 2.5 (hHLS), and Lemma 5.1 (hatom_nIL) as
+        hypotheses; Lemma 4.3, Lemma 5.2, and Proposition 5.3 are proved
+        inside. The K₃,₃,₁ conclusion and Corollary 1.2 are not stated.
     - source: "Proposition 5.3 (safe clique-sum induction)"
       lean: "K331Tutte.Cockades.safe_cockade_linkless"
       module: "Solution"

@@ -14,6 +14,7 @@ import K331Tutte.FiniteLocal
 import K331Tutte.Cockade
 import K331Tutte.Reduction
 import K331Tutte.CockadeLinkless
+import K331Tutte.Skeleton
 
 #print axioms K331Tutte.FiniteLocal.raw_configuration_count
 #print axioms K331Tutte.FiniteLocal.admissible_encoding_count
@@ -24,3 +25,4 @@ import K331Tutte.CockadeLinkless
 #print axioms K331Tutte.no_k331_minor_of_no_k6_minor
 #print axioms K331Tutte.k331_exclusion_is_redundant
 #print axioms K331Tutte.trivialInputs
+#print axioms K331Tutte.Bridge.structural_theorem_source

@@ -9,6 +9,7 @@ Palomar ambient-bridge upgrade: 2026-08-20.
 -/
 import K331Tutte.AmbientFourClique
 import K331Tutte.CockadeLinkless
+import K331Tutte.Skeleton
 
 set_option autoImplicit true
 
@@ -71,3 +72,29 @@ theorem safe_cockade_linkless
 #print axioms K331Tutte.Cockades.safe_cockade_linkless
 
 end K331Tutte.Cockades
+
+namespace K331Tutte.Bridge
+
+open K331Tutte.FiniteHomology K331Tutte.FiniteHomology.Ambient K331Tutte.Cockades
+
+variable {n : Nat}
+
+theorem structural_theorem (P : FiniteSimplicialPair n)
+    (hBT : BoundaryTriangleCondition P)
+    (Atom : SimpleGraph (Fin n) → Set (Fin n) → Prop) (nIL : SimpleGraph (Fin n) → Prop)
+    (hatom_nIL : ∀ (A : SimpleGraph (Fin n)) (s : Set (Fin n)), Atom A s → nIL A)
+    (hatom_big : ∀ (A : SimpleGraph (Fin n)) (s : Set (Fin n)), Atom A s →
+      ∃ T : Finset (Fin n), (↑T : Set (Fin n)) ⊆ s ∧ 5 ≤ T.card)
+    (hHLS : ∀ (X A : SimpleGraph (Fin n)) (s t : Set (Fin n)) (R : Finset (Fin n)),
+      K4Attachment X A s t R → nIL X → nIL A →
+      TwoComponentsAfterDeletion (X ⊔ A) (s ∪ t) (↑R : Set (Fin n)) → nIL (X ⊔ A))
+    (hcockade : IsCockade Atom (skeleton P.ambient) Set.univ)
+    (hduality : ∀ L : LabelledFourClique P, (∃ x : Fin n, x ∉ Set.range L.label) →
+      ActualHomologyDimensionAtMostOne (inducedPair P L) →
+      TwoComponentsAfterDeletion (skeleton P.ambient) Set.univ (Set.range L.label)) :
+    nIL (skeleton P.ambient) := by
+  exact structural_theorem_source P hBT Atom nIL hatom_nIL hatom_big hHLS hcockade hduality
+
+#print axioms K331Tutte.Bridge.structural_theorem
+
+end K331Tutte.Bridge
