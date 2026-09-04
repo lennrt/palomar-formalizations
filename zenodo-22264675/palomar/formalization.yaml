@@ -1,0 +1,137 @@
+version: "v0.4"
+
+project:
+  name: "Even-order Grünschloß–Keller permutation nets: net property and tiling distance"
+  description: >-
+    This Lean development proves that the even-order permutation construction of
+    Grünschloß and Keller (MCQMC 2008 proceedings, implemented in gendiag0m2.h) is a
+    base-2 (0,m,2)-net for every even m >= 4. The proof is symbolic: for every
+    resolution a <= m the dyadic-box map is shown injective through the concatenation
+    x = floor(k/4) + 2^(m/2-2) z and fixed-width bit-reversal splitting, and a
+    cardinality argument upgrades injectivity to a bijection (exactly one point per
+    elementary interval). For the source's row-shifted tiling lattice
+    <(N,0),(N/4,N)> it proves, for every even m >= 8, that one explicit pair of points
+    has squared distance 241 * 2^(m-8), and at m = 8 that 241 is the exact minimum over
+    all pairs and all lattice translates. The exhaustive m = 8 lower bound is reduced
+    by ordinary kernel decide; the exactness of the computed candidate minimum over
+    the whole lattice is a symbolic lemma. The all-parameter lower bound of the
+    distance theorem (even m >= 10) is proved in the paper but is not formalized.
+  authors: ["Lennart Rudolph"]
+  responsible_maintainers: ["Lennart Rudolph"]
+  license: "MIT"
+
+classification:
+  arxiv: [math.NA, cs.LO]
+  msc2020: [11K38, 65C05, 65D18, 68V20]
+
+sources:
+  - title: "The Even-Order Grünschloß–Keller Permutation Nets Are (0,m,2)-Nets"
+    authors: ["Lennart Rudolph"]
+    id: "doi:10.5281/zenodo.22264675"
+    type: paper
+    location: "https://doi.org/10.5281/zenodo.22264675"
+    relationship: formalizes
+    note: >-
+      Formalizes Theorem A completely, the upper bound of Theorem B for every even
+      m >= 8, and the exact value of Theorem B at m = 8. The lower bound of Theorem B
+      for even m >= 10 is external (paper proof plus exact computation through m = 30).
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "(t,m,s)-Nets and Maximized Minimum Distance, Part II"
+    authors: ["Leonhard Grünschloß", "Alexander Keller"]
+    id: "doi:10.1007/978-3-642-04107-5_25"
+    type: paper
+    location: "https://doi.org/10.1007/978-3-642-04107-5_25"
+    relationship: background
+    note: >-
+      Section 3.2.2 states that t = 0 was verified by computer for even m <= 22 and
+      that a proof like the odd case should be possible. The header gendiag0m2.h
+      (repository lgruen/diag0m2, blob 8afdab911ca62dd15921fc942bd5eea8157b487e) fixes
+      the construction; the m = 8 point list of the Lean definitions was diffed
+      byte-for-byte against two independent generators.
+    license: "MIT (header); publisher copyright (paper)"
+
+status:
+  scope: >-
+    Theorem A symbolic for all even m >= 4; Theorem B upper bound symbolic for all even
+    m >= 8; Theorem B exact at m = 8 (kernel decide over all 32,640 pairs plus symbolic
+    lattice-minimum exactness). Not formalized: the all-m lower bound of Theorem B.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+  main_results:
+    - declaration: "GKEvenNet.net"
+      file: "GKEvenNet/Main.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: "comparator.json"
+    - declaration: "GKEvenNet.distance_upper"
+      file: "GKEvenNet/Main.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: "comparator.json"
+    - declaration: "GKEvenNet.distance_m8_exact"
+      file: "GKEvenNet/Main.lean"
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      comparator_config: "comparator.json"
+
+automation:
+  methods:
+    - method: agent
+      models: ["Anthropic Claude", "OpenAI Codex"]
+      framework: "AI-assisted proof drafting, formalization, and adversarial review"
+      tool_setup: "Lean 4.30.0 with Mathlib v4.30.0; ordinary kernel decide for the finite certificates; Go and Python exact checkers outside Lean"
+    - method: manual
+      models: []
+      framework: "n/a"
+      tool_setup: "Author-directed source authentication, statement selection, and review"
+  spend_usd: "not tracked"
+  notes: >-
+    Anthropic Claude and OpenAI Codex were used for literature searches, algebraic
+    exploration, proof and checker drafting, the Lean formalization, and adversarial
+    review; the author selected the target and the theorem statements, executed the
+    checks and the Lean build, and accepts full responsibility for the claims; no AI
+    system is an author.
+
+fidelity:
+  divergences: >-
+    The Lean point set uses the closed form 2^r * rev r k for the 32-bit van der Corput
+    term of the header; the identity holds for k < 2^r and the m = 8 point lists agree
+    byte-for-byte with a literal reimplementation of the header. The tiling distance is
+    stated through the lattice <(N,0),(N/4,N)> read off getShiftedTiling; the paper's
+    normalized distance sqrt(241 * 2^(m-8)) / 2^m is the integer-scale value divided by
+    2^m. Theorem A is stated as a unique-existence statement per dyadic box, which is
+    the definition of a (0,m,2)-net after normalization by 2^m.
+
+review:
+  status: "self-assessed"
+  reviewers: []
+  notes: >-
+    Lennart Rudolph reviewed the statements against the paper and the source
+    header; Anthropic Claude and OpenAI Codex, acting as automated assistants
+    rather than reviewers of record, ran adversarial review passes separate
+    from proof development. Every compared theorem is kernel-checked, and the
+    finite claims are reproduced by three exact programs in the accompanying
+    Zenodo archive. No independent human peer review has been performed.
+
+alignment:
+  namespace: "GKEvenNet"
+  statements:
+    - source: "Theorem A: even-order construction is a (0,m,2)-net for every even m >= 4"
+      lean: "GKEvenNet.net"
+      module: "Solution"
+      status: proved
+      note: "Symbolic in m; classical exactly-one-point-per-box form."
+    - source: "Theorem B upper bound: squared tiling distance <= 241 * 2^(m-8) for even m >= 8"
+      lean: "GKEvenNet.distance_upper"
+      module: "Solution"
+      status: proved
+      note: "Explicit pair (2^(r-1),0), (2^(r-2),0), evaluated symbolically."
+    - source: "Theorem B at m = 8: minimum squared tiling distance equals 241"
+      lean: "GKEvenNet.distance_m8_exact"
+      module: "Solution"
+      status: proved
+      note: "Exhaustive kernel decide plus symbolic lattice-minimum exactness."
+
+acknowledgements: "Lean, Mathlib, and the MIT-licensed generator header of the source authors."

@@ -1,9 +1,9 @@
 ![Palomar Formalizations: observatory dome beneath a graph-like constellation at dusk](assets/palomar-hero.png)
 
-# Lean formalizations of nine preprints
+# Lean formalizations of Zenodo preprints
 
-Nine standalone Lean 4 projects, each a machine-checked companion to one
-Zenodo preprint by Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), who is the sole author of
+This repository holds standalone Lean 4 projects, each a machine-checked
+companion to one Zenodo preprint by Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), who is the sole author of
 record on every cited deposit. Each `zenodo-N/` directory holds an
 independent Lake project prepared for submission to the
 [Palomar registry](https://palomar-registry.org/). Each
@@ -29,20 +29,22 @@ project claims to formalize its paper end to end.
 | `zenodo-21925578/` | Exact Spectra of Generalized Cubic Subdivision Matrices | [10.5281/zenodo.21925578](https://doi.org/10.5281/zenodo.21925578) | [PALOMAR-2026-08-21-000010](https://palomar-registry.org/entry?id=PALOMAR-2026-08-21-000010&version=1) |
 | `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582) | — |
 | `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230) | [PALOMAR-2026-08-21-000007](https://palomar-registry.org/entry?id=PALOMAR-2026-08-21-000007&version=1) |
+| `zenodo-22264675/` | The Even-Order Grünschloß–Keller Permutation Nets Are (0,m,2)-Nets | [10.5281/zenodo.22264675](https://doi.org/10.5281/zenodo.22264675) | — |
 
 ## Verifying a project
 
 Each `zenodo-N/palomar/` directory is an independent Lake project:
 
 ```sh
-cd zenodo-21986230/palomar
+cd zenodo-22264675/palomar
 lake exe cache get
 lake build
 ```
 
-Eight projects pin Lean 4.30.0; `zenodo-21892986/` pins Lean 4.32.0.
-`ruby scripts/check-layout.rb` checks the repository layout, metadata, and
-Comparator configurations of all nine projects.
+Each project's `lean-toolchain` pins its Lean release, currently 4.30.0 or
+4.32.0, with Mathlib at the matching tag. `ruby scripts/check-layout.rb`
+checks the repository layout, metadata, and Comparator configurations of
+every project.
 
 ## Licensing
 
