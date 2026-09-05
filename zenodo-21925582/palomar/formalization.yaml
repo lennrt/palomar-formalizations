@@ -1,21 +1,35 @@
 version: "v0.4"
 
 project:
-  name: "Exact rank certificates for the complete OneTwo Sobol' 345-window census"
+  name: "Exact four-dimensional projection quality of the OneTwo Sobol' table at 65,536 points"
   description: >-
-    A complete kernel-replayable certificate for the projection quality of
-    the OneTwo Sobol' direction table at m = 16: for every one of the 345
-    pair-aligned four-dimensional windows of the 692-dimension table, Lean
-    proves that the window's 16 x 16 generator rows have exactly the claimed
-    rank threshold, by checking every four-part selection at the threshold
-    total independent over F_2 and a selection one total higher dependent.
-    All checks are 16-column XOR row reductions reduced by kernel decide
-    with no native evaluation, sharded over 35 files of at most ten windows
-    each. The census distribution is proved as stated in the preprint: 9
-    windows with t = 4 and 336 with t = 5. The worked dimensions 25--28
-    block keeps its separate explicit certificate. Authentication of the
-    upstream direction-number table and the digital-net equivalence between
-    the rank test and the t-value remain informal.
+    The quality parameter t of a base-2 digital net with 2^m points measures
+    exact equidistribution in dyadic boxes, and for Sobol' sequences used in
+    quasi-Monte Carlo integration and computer graphics the quality of
+    low-dimensional projections is a practical bottleneck. The OneTwo
+    construction of Bonneel, Coeurjolly, Iehl, and Ostromoukhov (ACM
+    Transactions on Graphics, 2025) releases a 692-dimension direction-number
+    table whose protected pairs (2k-1, 2k) have the (1,2) property, with
+    acceptance targets t <= 3 through m <= 10 and t <= 4 through m <= 15 for
+    the pair-aligned four-dimensional blocks. Theorem 1.1 of the preprint
+    determines the next depth exactly: at m = 16, a complete batch of 65,536
+    points, every one of the 345 pair-aligned windows of the released table has
+    exact four-dimensional t-value 4 when its first dimension is one of 1, 7,
+    31, 49, 67, 195, 225, 243, 373 and t-value 5 otherwise, so the t <= 4
+    guarantee extends to m = 16 in exactly nine windows and fails in the other
+    336, each failure witnessed by an empty dyadic box of volume 2^-12 in that
+    projection. The standard star-discrepancy bound for the projection is
+    299/4096 at t = 4 and 29/256 at t = 5. This Lean development proves the
+    theorem in rank form with the released table embedded as one 256-bit
+    literal per dimension: for every window, every four-part composition at
+    the threshold total selects independent generator rows over F_2 and some
+    composition one total higher does not, and the distribution is 9 windows
+    at t = 4 and 336 at t = 5. The worked block, dimensions 25 to 28, keeps
+    its separate explicit certificate (t = 5, with every smaller threshold
+    refuted). All checks are 16-column XOR row reductions reduced by kernel
+    decide with no native evaluation. The digital-net rank criterion, the
+    discrepancy bound, and the authentication of the upstream table remain
+    informal.
   authors: ["Lennart Rudolph"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
@@ -32,27 +46,90 @@ sources:
     location: "https://doi.org/10.5281/zenodo.21925582"
     relationship: formalizes
     note: >-
-      Formalizes the complete 345-window census and the dimensions 25--28
-      finite rank certificate; the digital-net rank criterion remains
-      external.
+      Formalizes Theorem 1.1 in rank form (the complete 345-window census at
+      m = 16 and its distribution) and the dimensions 25 to 28 certificate of
+      Theorems 5.1 and 6.1 (t = 5 exactly). The digital-net rank criterion of
+      Proposition 2.2, the star-discrepancy consequence, the ancillary
+      depth-15 census, and the protected-pair audit remain external.
     license: "CC-BY-4.0"
     author_endorsement: "participated"
-  - title: "OneTwo direction-number table"
+  - title: "OneTwo direction-number table (sampler/onetwo_matrices.cpp)"
+    authors: ["Nicolas Bonneel", "David Coeurjolly", "Jean-Claude Iehl", "Victor Ostromoukhov"]
     type: dataset
-    location: "https://doi.org/10.5281/zenodo.21925582"
+    location: "https://github.com/liris-origami/OneTwoSobolSequences/tree/163127a0c1731ffe2d43cd685067795c2689a308"
     relationship: background
     note: >-
-      Source of the packed 16 x 16 generator rows for all 692 dimensions
-      that are embedded in the Challenge, one 256-bit literal per dimension
-      with an explicit in-file decoder; the table is cited and distributed
-      through the preprint's record, and its authentication is informal and
-      outside the compared statements.
+      The released 692-by-52 direction table at the pinned commit
+      163127a0c1731ffe2d43cd685067795c2689a308 (Git blob
+      f183f3d97496ee3a60a0330f199ffc7a3dcf8f7f). The first sixteen direction
+      columns of every dimension are embedded in the Challenge as one 256-bit
+      literal per dimension with an explicit in-file decoder; the
+      transcription and the hashes are authenticated in the preprint, not in
+      Lean.
+    license: "see repository"
+  - title: "Sobol' sequences with guaranteed-quality 2D projections"
+    authors: ["Nicolas Bonneel", "David Coeurjolly", "Jean-Claude Iehl", "Victor Ostromoukhov"]
+    id: "doi:10.1145/3730821"
+    type: paper
+    location: "https://doi.org/10.1145/3730821"
+    relationship: background
+    note: >-
+      ACM Transactions on Graphics 44(4), article 97, 2025. Introduces the
+      OneTwo construction, states the (1,2) property of the protected pairs,
+      and gives in its Section 5.2 the acceptance targets t <= 3 through
+      m <= 10 and t <= 4 through m <= 15 for pair-aligned four-dimensional
+      blocks; the formalized theorem gives the exact values at m = 16.
+  - title: "Constructing Sobol Sequences with Better Two-Dimensional Projections"
+    authors: ["Stephen Joe", "Frances Y. Kuo"]
+    id: "doi:10.1137/070709359"
+    type: paper
+    location: "https://doi.org/10.1137/070709359"
+    relationship: background
+    note: >-
+      SIAM Journal on Scientific Computing 30(5):2635–2654, 2008. Projection
+      t-values of direction-number tables as a design and audit criterion.
+  - title: "An algorithm to compute the t-value of a digital net and of its projections"
+    authors: ["Pierre Marion", "Maxime Godin", "Pierre L'Ecuyer"]
+    id: "doi:10.1016/j.cam.2019.112669"
+    type: paper
+    location: "https://doi.org/10.1016/j.cam.2019.112669"
+    relationship: background
+    note: >-
+      Journal of Computational and Applied Mathematics 371:112669, 2020.
+      General algorithms for projection t-values; the formalization instead
+      certifies one released table exactly, with kernel-checked rank witnesses.
+  - title: "Random Number Generation and Quasi-Monte Carlo Methods"
+    authors: ["Harald Niederreiter"]
+    id: "doi:10.1137/1.9781611970081"
+    type: book
+    location: "https://doi.org/10.1137/1.9781611970081"
+    relationship: background
+    note: >-
+      SIAM CBMS-NSF 63, 1992. Chapter 4 gives the rank characterization of
+      digital nets and Theorems 4.5 and 4.6 the star-discrepancy bounds for
+      (t, m, s)-nets, cited by the preprint alongside Dick and Pillichshammer.
+  - title: "Digital Nets and Sequences: Discrepancy Theory and Quasi-Monte Carlo Integration"
+    authors: ["Josef Dick", "Friedrich Pillichshammer"]
+    id: "doi:10.1017/CBO9780511761188"
+    type: book
+    location: "https://doi.org/10.1017/CBO9780511761188"
+    relationship: background
+    note: >-
+      Cambridge University Press, 2010. Theorem 4.52 is the digital-net rank
+      criterion used as Proposition 2.2 of the preprint, and Corollary 5.3 the
+      star-discrepancy bound quoted for (t, 16, 4)-nets.
 
 status:
   scope: >-
-    Exact kernel-checked rank profiles for all 345 pair-aligned windows and
-    the worked dimensions 25--28 block; source authentication and the
-    digital-net criterion are external.
+    Theorem 1.1 of the preprint in rank form: for all 345 pair-aligned windows
+    of the pinned OneTwo table at m = 16, the exact t-value is 4 for the nine
+    windows starting at dimensions 1, 7, 31, 49, 67, 195, 225, 243, 373 and 5
+    otherwise, each certified by full row rank at total 16 - t and a
+    dependent selection at total 17 - t; the distribution 9 and 336; and the
+    dimensions 25 to 28 certificate with every smaller threshold refuted.
+    External: the digital-net rank criterion, the discrepancy consequence,
+    source authentication, the ancillary depth-15 census, and the
+    protected-pair audit.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: [propext, Quot.sound]

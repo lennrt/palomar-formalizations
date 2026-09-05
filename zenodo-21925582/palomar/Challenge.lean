@@ -11,17 +11,74 @@ were used for formalization and adversarial analysis.
 -/
 
 /-!
-# Exact rank threshold for the OneTwo Sobol' dimensions 25--28 block
+# Exact four-dimensional projection quality of the OneTwo Sobol' table at 65,536 points
 
-The packed rows below are the top-left `16 x 16` generator matrices for the
-four one-based dimensions. For each weak four-part composition, the selected
-leading rows are checked by deterministic 16-column XOR row reduction. The
-advertised theorem checks total 11 and rejects totals 12 through 16, which is
-the complete finite rank certificate corresponding to `t = 5` under the
-standard digital-net criterion used in the cited preprint.  The census
-section states the same exact rank profile for every one of the 345
-pair-aligned windows of the 692-dimension table, with the claimed
-distribution of quality parameters.
+Sobol' sequences are standard digital constructions for quasi-Monte Carlo
+integration and for sampling in computer graphics, and because one
+high-dimensional sequence serves many sampling decisions, the quality of its
+low-dimensional projections matters as much as that of the full point set. The
+quality parameter `t` of a base-2 digital net with `2^m` points measures exact
+equidistribution: a `(t, m, s)`-net places exactly `2^t` points in every
+elementary dyadic interval of volume `2^(t - m)`, and smaller `t` is better.
+Bonneel, Coeurjolly, Iehl, and Ostromoukhov's OneTwo construction (ACM
+Transactions on Graphics 44(4), 2025) releases a 692-dimension direction-number
+table whose protected pairs `(2k - 1, 2k)` have the `(1, 2)` property, and its
+Section 5.2 states acceptance targets for the pair-aligned four-dimensional
+blocks `(2k - 1, 2k, 2k + 1, 2k + 2)`: `t ≤ 3` through `m ≤ 10` and `t ≤ 4`
+through `m ≤ 15`. Those targets are construction criteria, not a theorem at
+every depth.
+
+Theorem 1.1 of the cited preprint settles the next depth, `m = 16`, which is
+a complete batch of `65,536` points. For every one of the 345 pair-aligned
+windows of the released table, the exact four-dimensional `t`-value is `4`
+when the first dimension of the window is one of `1, 7, 31, 49, 67, 195, 225,
+243, 373`, and `5` for the other 336 windows. So the `t ≤ 4` guarantee
+extends from `m = 15` to `m = 16` in exactly nine windows and in no other. The
+difference is operationally concrete: `t = 4` certifies 16 points in every
+dyadic box of volume `2^-12`, whereas `t = 5` certifies 32 points only from
+volume `2^-11`, and the standard star-discrepancy bound for a `(t, 16, 4)`-net
+is `299/4096` at `t = 4` against `29/256` at `t = 5`. Each `t = 5` window
+carries an explicit lower-bound witness, a rank-deficient composition of total
+12, which by the digital-net rank criterion is an empty dyadic box of volume
+`2^-12` in that projection of the 65,536 points. For the worked block,
+dimensions 25 to 28, the unique row dependency has mask `0xD2F`, the empty box
+is `[0, 1) × [1/2, 5/8) × [0, 1/8) × [0, 1/64)`, and Remark 6.2 of the preprint
+traces the obstruction to the unprotected middle pair `(26, 27)`, whose exact
+two-dimensional value is already `5` at `m = 16`.
+
+The theorem answers a question practitioners put to any direction-number
+table: at the batch sizes actually drawn, which low-dimensional projections are
+exactly equidistributed, and to what depth. Its statement is about the pinned
+released table, not about optimal direction numbers, scrambled points,
+unaligned windows, or other prefixes.
+
+## Compared declarations
+
+Three declarations are compared. Every check is deterministic 16-column XOR row
+reduction over `F₂`, reduced by the Lean kernel with no native evaluation.
+
+* `exact_t_five_certificate` is the worked block, dimensions 25 to 28: every
+  weak four-composition of total 11 selects independent leading rows of the
+  four `16 × 16` generator matrices, and for each total 12 through 16 some
+  composition selects dependent rows. Under the rank criterion this is
+  exactly `t = 5`.
+* `census_every_window` is Theorem 1.1 in rank form. The 692-dimension table
+  enters as one 256-bit literal per dimension with a three-line decoder; the
+  345 pair-aligned windows are formed from consecutive dimension pairs; and
+  for each window every composition of total `16 - t` selects independent
+  rows while some composition of total `17 - t` does not, where `t` is the
+  claimed exact value of that window.
+* `census_distribution` is the count: exactly 9 windows have `t = 4`, 336 have
+  `t = 5`, and there are 345 windows.
+
+## What is external
+
+The digital-net rank criterion (Proposition 2.2 of the preprint; Dick and
+Pillichshammer, Theorem 4.52; Niederreiter, Chapter 4), the identification of
+direction integers with generator-matrix rows, the star-discrepancy bound, and
+the authentication of the upstream table (repository commit, Git blob, and
+file hashes recorded in the preprint) are not formalized. The preprint's
+ancillary depth-15 census and its protected-pair audit are not compared.
 -/
 
 namespace OneTwoSobolT5
