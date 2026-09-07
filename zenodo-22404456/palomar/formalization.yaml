@@ -1,0 +1,188 @@
+version: v0.4
+project:
+  name: 'Distance-shell tomography: product kernels and sharp grid sensing'
+  description: General integer-trade criterion and full-factor Cartesian-product kernel/recovery
+    theorem; the all-order grid lower bound; and, for every n ≥ 6, the complete four-parameter integer
+    grid kernel, exact threshold n−2 for odd n and n−3 for even n, optimal n−2 sensor count throughout
+    2 ≤ h < threshold, and unique four-parameter description of equal-observation populations.
+  authors:
+  - Lennart Rudolph
+  responsible_maintainers:
+  - Lennart Rudolph
+  license: MIT
+classification:
+  arxiv:
+  - math.CO
+  - cs.LO
+  msc2020:
+  - 05C12
+  - 05C50
+  - 68V20
+sources:
+- title: 'Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing'
+  authors:
+  - Lennart Rudolph
+  id: doi:10.5281/zenodo.22404456
+  type: paper
+  location: https://doi.org/10.5281/zenodo.22404456
+  relationship: formalizes
+  note: Published preprint, version 1.0.0, 2026-09-06. Selected all-order results and precise
+    coverage are documented in COVERAGE.md.
+  license: CC-BY-4.0
+  author_endorsement: participated
+- title: The metric dimension for resolving several objects
+  authors:
+  - Tero Laihonen
+  id: doi:10.1016/j.ipl.2016.06.002
+  type: paper
+  relationship: background
+  location: https://doi.org/10.1016/j.ipl.2016.06.002
+  note: Nearest-object grid cross obstruction is credited; complete histograms and multiplicities
+    define a different observation contract.
+status:
+  scope: General integer-trade criterion and full-factor Cartesian-product kernel/recovery theorem;
+    the all-order grid lower bound; and, for every n ≥ 6, the complete four-parameter integer grid
+    kernel, exact threshold n−2 for odd n and n−3 for even n, optimal n−2 sensor count throughout
+    2 ≤ h < threshold, and unique four-parameter description of equal-observation populations.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: ShellTomography.Verified.trade_criterion
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.product_kernel
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.product_recovery
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.grid_lower_bound
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.grid_kernel_uniform
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.grid_capacity_uniform
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.grid_sensor_optimality
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+  - declaration: ShellTomography.Verified.grid_fibre_uniform
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+automation:
+  methods:
+  - method: agent
+    models:
+    - OpenAI ChatGPT
+    - OpenAI Codex
+    framework: Author-directed AI-assisted source revision, formal proof development, citation and
+      mathematical checks
+    tool_setup: Lean 4.30.0, Mathlib v4.30.0, integer Laurent-polynomial proofs with ordinary kernel
+      terms, Comparator and NanoDa, and separate exact Python checks.
+  spend_usd: not tracked
+  notes: AI assistance is disclosed in the paper. No AI system is an author.
+    The human author is responsible for the mathematical claims and submission.
+fidelity:
+  divergences: >-
+    Finite labelled sensor types allow duplicate positions in the product theorem. Lean
+    also proves three benign endpoint extensions beyond the paper's displayed domains: the trade
+    criterion at h = 0 (the paper states h >= 1), the selected product clauses for an empty
+    sensor-label type (the paper assumes a nonempty placement), and vacuous n < 3 cases of the grid
+    lower bound because Nat subtraction makes S.card < n-2 impossible there (the paper states n >= 3).
+    The substantive grid results retain n >= 6. Actual graph shortest-path distances and literal
+    multiplicity-preserving bags are used. The exactly-h equivalence, grid-distance bridge,
+    extraction inverse, direct minimum/attainer, and alternating-placement facts are proved in the
+    source but are not separately selected. The detector/B-channel/capacity-profile formulations,
+    exact detector-cross converse, two-sensor cycle theorem, rational-rank and rational-kernel
+    clauses, coefficient census and exact norm formulas, rational normalized-fibre and slab claims,
+    adjacent-corner metric-dimension and named capacity-jump statements, and executable decoder
+    correctness, termination, and complexity are not formalized as corresponding paper-level Lean
+    theorems in this release.
+review:
+  status: self-assessed
+  reviewers: []
+  notes: Automated statement, axiom, kernel, citation, rendering and reproducibility checks completed.
+    No independent human peer review, online Palomar editorial result, or registry entry is claimed.
+alignment:
+  namespace: ShellTomography.Verified
+  statements:
+  - source: Proposition 1 bounded trade criterion
+    lean: ShellTomography.Verified.trade_criterion
+    module: Solution
+    status: proved
+  - source: Theorem 7 exact integer product kernel, equation (3)
+    lean: ShellTomography.Verified.product_kernel
+    module: Solution
+    status: proved
+  - source: Theorem 7 recovery consequence
+    lean: ShellTomography.Verified.product_recovery
+    module: Solution
+    status: proved
+  - source: Lemma 8 sensor lower bound
+    lean: ShellTomography.Verified.grid_lower_bound
+    module: Solution
+    status: proved
+  - source: Lemma 10 complete integer kernel for every n ≥ 6
+    lean: ShellTomography.Verified.grid_kernel_uniform
+    module: Solution
+    status: proved
+  - source: Theorem 9 and Lemma 11 exact threshold for every n ≥ 6
+    lean: ShellTomography.Verified.grid_capacity_uniform
+    module: Solution
+    status: proved
+  - source: Theorem 9 optimal sensor count for every n ≥ 6
+    lean: ShellTomography.Verified.grid_sensor_optimality
+    module: Solution
+    status: proved
+  - source: Corollary 13 population-level affine fibre, for every n ≥ 6
+    lean: ShellTomography.Verified.grid_fibre_uniform
+    module: Solution
+    status: proved
+acknowledgements: Lean, Mathlib, Comparator, lean4export, NanoDa, Landrun, Verso, and the Palomar
+  tooling authors. Scaffolding follows Lennart Rudolph’s existing Palomar projects.

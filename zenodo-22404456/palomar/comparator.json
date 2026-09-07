@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ShellTomography.Verified.trade_criterion",
+    "ShellTomography.Verified.product_kernel",
+    "ShellTomography.Verified.product_recovery",
+    "ShellTomography.Verified.grid_lower_bound",
+    "ShellTomography.Verified.grid_kernel_uniform",
+    "ShellTomography.Verified.grid_capacity_uniform",
+    "ShellTomography.Verified.grid_sensor_optimality",
+    "ShellTomography.Verified.grid_fibre_uniform"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

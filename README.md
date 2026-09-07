@@ -30,6 +30,7 @@ project claims to formalize its paper end to end.
 | `zenodo-21925582/` | Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points | [10.5281/zenodo.21925582](https://doi.org/10.5281/zenodo.21925582) | [PALOMAR-2026-09-05-000004](https://palomar-registry.org/entry?id=PALOMAR-2026-09-05-000004&version=1) |
 | `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230) | [PALOMAR-2026-08-21-000007](https://palomar-registry.org/entry?id=PALOMAR-2026-08-21-000007&version=1) |
 | `zenodo-22264675/` | The Even-Order Grünschloß–Keller Permutation Nets Are (0,m,2)-Nets | [10.5281/zenodo.22264675](https://doi.org/10.5281/zenodo.22264675) | [PALOMAR-2026-09-04-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-09-04-000001&version=1) |
+| `zenodo-22404456/` | Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing | [10.5281/zenodo.22404456](https://doi.org/10.5281/zenodo.22404456) | — |
 
 ## Verifying a project
 

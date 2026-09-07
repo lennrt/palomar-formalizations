@@ -1,0 +1,17 @@
+name = "shellTomography"
+version = "1.0.0"
+defaultTargets = ["ShellTomography", "Challenge", "Solution"]
+
+[[lean_lib]]
+name = "ShellTomography"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.30.0"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
