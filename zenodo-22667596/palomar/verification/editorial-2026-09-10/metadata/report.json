@@ -1,0 +1,232 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-10T01:27:56.863845+00:00",
+  "palomar_submission": "ef2fa1eadcb246c2346ddba39b52eaa53d4bb763",
+  "metadata_sha256": "ea98d0e290bdd7eefe08847c20b0f6cfc359b5926b8b3be19942888700f898cd",
+  "authors": [
+    "Lennart Rudolph"
+  ],
+  "responsible_maintainers": [
+    "Lennart Rudolph"
+  ],
+  "normalized_provenance": {
+    "result_origin": "source-based",
+    "repository_role": "substantive-development",
+    "responsible_maintainers": [
+      {
+        "name": "Lennart Rudolph"
+      }
+    ],
+    "mathematical_sources": [
+      {
+        "title": "Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs",
+        "authors": [
+          {
+            "name": "Lennart Rudolph"
+          }
+        ],
+        "relationship": "formalizes",
+        "identifier": "doi:10.5281/zenodo.22667596",
+        "location": "https://doi.org/10.5281/zenodo.22667596",
+        "note": "End-to-end formalization of the main arbitrary-graph theorem, its exact bound and graph-to-strategy dependencies, with the recurrent-coverage, structural and expansion results. The separate sensing discussion around Remark 19 is supplementary library material, not part of the Comparator selection.",
+        "license": "CC-BY-4.0",
+        "author_endorsement": "participated",
+        "type": "paper"
+      },
+      {
+        "title": "The Zombie Damage Number of a Graph",
+        "authors": [
+          {
+            "name": "Randy Davila"
+          }
+        ],
+        "relationship": "formalizes",
+        "identifier": "arxiv:2607.16382v1",
+        "location": "https://arxiv.org/abs/2607.16382v1",
+        "note": "Randy Davila introduced the zombie damage number and the one-zombie game in Definition 1 and posed Conjecture 24. Lennart Rudolph formalized those rules and developed the complete conjecture proof with disclosed AI assistance. The numerical value is the maximal forceable damage score; its connection to the full-damage predicate and eventual semantics is proved. SOURCE_THEORY.md identifies the original source results formalized here. This project does not claim to formalize every theorem in the original paper.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing",
+        "authors": [
+          {
+            "name": "Lennart Rudolph"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "doi:10.5281/zenodo.22404456",
+        "location": "https://doi.org/10.5281/zenodo.22404456",
+        "note": "Section 2 defines multiplicity-preserving labelled shell observations and bounded recovery. The supplementary library source encodes those semantics using lists modulo permutation and shortest-walk radii; no grid theorem is imported. No distance-shell result is selected by comparator.json.",
+        "license": "CC-BY-4.0",
+        "type": "paper"
+      },
+      {
+        "title": "Computing Metric Dimension of Two Types of Claw-free Cubic Graphs with Applications",
+        "authors": [
+          {
+            "name": "Muhammad Shoaib Sardar"
+          },
+          {
+            "name": "Shou-Jun Xu"
+          },
+          {
+            "name": "Murat Cancan"
+          },
+          {
+            "name": "Mohammad Reza Farahani"
+          },
+          {
+            "name": "Mehdi Alaeiyan"
+          },
+          {
+            "name": "Shobha V. Patil"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "doi:10.61091/jcmcc119-17",
+        "location": "https://doi.org/10.61091/jcmcc119-17",
+        "note": "Theorem 2 already gives metric dimension t for the ring of t>=3 diamonds and hence the paper's sensor lower bound. The central-pair and sensor-counting formalizations are supplementary known mathematics, not new sensor-bound priority claims and not selected by comparator.json.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "The Graph Curvature Calculator and the curvatures of cubic graphs",
+        "authors": [
+          {
+            "name": "D. Cushing"
+          },
+          {
+            "name": "R. Kangaslampi"
+          },
+          {
+            "name": "V. Lipiäinen"
+          },
+          {
+            "name": "S. Liu"
+          },
+          {
+            "name": "G. W. Stagg"
+          }
+        ],
+        "relationship": "background",
+        "identifier": "doi:10.1080/10586458.2019.1660740",
+        "location": "https://doi.org/10.1080/10586458.2019.1660740",
+        "note": "The closed cubic classification is already known. Lemma 5.1 and Corollary 5.4 in arXiv:1712.03033v2 identify prisms and Möbius ladders via the curvature criterion. That closed classification and the earlier ring sensor bound are credited rather than claimed as new.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "The damage number of a graph",
+        "authors": [
+          {
+            "name": "Danielle Cox"
+          },
+          {
+            "name": "Asiyeh Sanaei"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://ajc.maths.uq.edu.au/pdf/75/ajc_v75_p001.pdf",
+        "note": "Original ordinary-damage game, AJC 75(1), 1–16 (2019). Randy Davila introduced the zombie-restricted damage parameter. No ordinary-damage theorem is assumed by the proof.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "Replacing Cops with Zombies",
+        "authors": [
+          {
+            "name": "Fengyi Liu"
+          },
+          {
+            "name": "Avery Miller"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://doi.org/10.4230/LIPIcs.FUN.2026.30",
+        "note": "Related geodesic pursuit with a capture objective, FUN 2026, LIPIcs 366, 30:1–30:12. It does not resolve the damaged-vertex objective.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "On the damage number of graphs",
+        "authors": [
+          {
+            "name": "Valentin Gledel"
+          },
+          {
+            "name": "William B. Kinnersley"
+          },
+          {
+            "name": "Balázs Patkós"
+          },
+          {
+            "name": "Miloš Stojaković"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://arxiv.org/abs/2608.15226v1",
+        "note": "Ordinary one-cop damage, arXiv v1 of 15 August 2026; graph-family and complexity results. Cop moves are not constrained to be geodesic.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "On the multi-robber damage number",
+        "authors": [
+          {
+            "name": "Miloš Stojaković"
+          },
+          {
+            "name": "Lasse Wulf"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://arxiv.org/abs/2209.10965v4",
+        "note": "Ordinary cop/multiple-robber damage; first posted in 2022, v4 revised 22 June 2026. Background only.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "The damage number of the Cartesian product of graphs",
+        "authors": [
+          {
+            "name": "Melissa A. Huggan"
+          },
+          {
+            "name": "Margaret-Ellen Messinger"
+          },
+          {
+            "name": "Amanda Porter"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://ajc.maths.uq.edu.au/pdf/88/ajc_v88_p362.pdf",
+        "note": "Ordinary-damage background, AJC 88(3), 362–384 (2024); read together with the 2025 corrigendum.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      },
+      {
+        "title": "Corrigendum to: The damage number of the Cartesian product of graphs",
+        "authors": [
+          {
+            "name": "Melissa A. Huggan"
+          },
+          {
+            "name": "Margaret-Ellen Messinger"
+          },
+          {
+            "name": "Amanda Porter"
+          }
+        ],
+        "relationship": "background",
+        "location": "https://ajc.maths.uq.edu.au/pdf/91/ajc_v91_p217.pdf",
+        "note": "AJC 91(1), 217–218 (2025). Corrects domination definitions and affected ordinary-damage statements. No corrected theorem is a premise here.",
+        "author_endorsement": "not-contacted",
+        "type": "paper"
+      }
+    ],
+    "related_formalizations": []
+  },
+  "hosted_submission": false,
+  "editorial_acceptance": "Not evaluated by this mechanical metadata-contract check"
+}

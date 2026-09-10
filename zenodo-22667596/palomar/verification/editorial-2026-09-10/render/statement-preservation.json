@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-10T01:24:07.455251+00:00",
+  "baseline_commit": "c52864a39eb96a92ff9393e3b8bc62f98b196553",
+  "challenge_sha256": "4040c4fce0ea13a6f01c48cbf6bcad8ca73ee283e0d5261f62aa18157da774e6",
+  "challenge_lines": 902,
+  "challenge_bytes": 49366,
+  "selected_theorems": 39,
+  "removed_selected_theorems": [
+    "ZombieMain.diamond_ring_sensor_bound",
+    "ZombieDamage.Graph.involution_blocks_recovery",
+    "PalomarVerified.central_pair_sensor"
+  ],
+  "retained_statement_tokens_unchanged": true,
+  "method": "Remove the two exact sensing-only source blocks from baseline Challenge, strip Lean block/line comments and whitespace, then compare all remaining tokens; compare comparator object except removal of the three named selections.",
+  "remaining_config_fields_unchanged": true,
+  "selection_order_preserved": true,
+  "sensing_symbols_absent": true
+}

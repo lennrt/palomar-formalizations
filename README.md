@@ -4,7 +4,7 @@
 
 This repository holds standalone Lean 4 projects, each a machine-checked
 companion to one Zenodo preprint by Lennart Rudolph ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)), who is the sole author of
-record on every cited deposit. Each `zenodo-N/` directory holds an
+these manuscripts. Each `zenodo-N/` directory holds an
 independent Lake project prepared for submission to the
 [Palomar registry](https://palomar-registry.org/). Each
 project states its selected theorems in `Challenge.lean`, proves them in
@@ -31,6 +31,7 @@ project claims to formalize its paper end to end.
 | `zenodo-21986230/` | An Explicit Obstruction to Uniform Two-Word π-Representability | [10.5281/zenodo.21986230](https://doi.org/10.5281/zenodo.21986230) | [PALOMAR-2026-08-21-000007](https://palomar-registry.org/entry?id=PALOMAR-2026-08-21-000007&version=1) |
 | `zenodo-22264675/` | The Even-Order Grünschloß–Keller Permutation Nets Are (0,m,2)-Nets | [10.5281/zenodo.22264675](https://doi.org/10.5281/zenodo.22264675) | [PALOMAR-2026-09-04-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-09-04-000001&version=1) |
 | `zenodo-22404456/` | Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing | [10.5281/zenodo.22404456](https://doi.org/10.5281/zenodo.22404456) | [PALOMAR-2026-09-07-000003](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-07-000003&version=1) |
+| [`zenodo-22667596/`](zenodo-22667596/README.md) | Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs | [10.5281/zenodo.22667596](https://doi.org/10.5281/zenodo.22667596) | — |
 
 ## Verifying a project
 
@@ -50,8 +51,9 @@ every project.
 ## Licensing
 
 The Lean source and repository scaffolding are MIT licensed under the root
-[`LICENSE`](LICENSE). Each preprint is available under CC BY 4.0 at its Zenodo
-record. The repository root carries exactly one licence file, matching the
+[`LICENSE`](LICENSE). The preprints carry CC BY 4.0 and are linked through
+their Zenodo DOIs above.
+The repository root carries exactly one licence file, matching the
 `project.license` field of every project.
 
 ## AI disclosure

@@ -20,6 +20,7 @@ EXPECTED = %w[
   21986230
   22264675
   22404456
+  22667596
 ].freeze
 STANDARD_AXIOMS = ["propext", "Quot.sound", "Classical.choice"].freeze
 CONFIG_KEYS = %w[

@@ -2,14 +2,17 @@
 version: v0.4
 project:
   name: Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs
-  description: Full formalization of Randy Davila’s one-zombie damage game and the complete proof of his
-    Conjecture 24. The game includes shortest-walk geodesic replies, adversarial choices, start and turn
-    order, survivor passes, capture, distinct-vertex damage, bounded and eventual strategies, and an explicit
-    numerical damage value. For every finite simple connected bridgeless cubic graph of order n at least
-    10, the survivor can force damage to all n vertices within 2n(n+1) survivor moves. The project also
-    proves the four-exception characterization, structural classification, routing, recurrence and related
-    bounds. All proof sources are included in one Lake project. Supporting distance-shell observation
-    obstructions and diamond-ring sensor bounds are included with explicit attribution to earlier work.
+  description: For every finite simple connected bridgeless cubic graph G, the survivor can force full
+    zombie damage if and only if G is not isomorphic to K4, K3,3, the triangular prism or the cube.
+    In particular, for order n at least 10 this proves Randy Davila's Conjecture 24, zdmg(G)=n,
+    with an explicit bound of 2n(n+1) survivor moves against every initial zombie position and
+    every legal geodesic reply. The game formalization retains starting and turn order, survivor
+    passes, capture and distinct-vertex damage, and proves the numerical payoff's connection to
+    bounded and eventual strategies. The argument classifies short-cycle components, bounds their
+    boundaries by four ports and composes metric exit and target routes into an ambient-graph
+    strategy. Structural expansion corollaries and recurrent-coverage extensions accompany the
+    characterization. The 39 selected results connect structural cubic-graph theory with extremal
+    damage and worst-case strategies in graph pursuit. All proof sources are included in one Lake project.
   authors:
   - Lennart Rudolph
   responsible_maintainers:
@@ -31,9 +34,8 @@ sources:
   location: https://doi.org/10.5281/zenodo.22667596
   relationship: formalizes
   note: End-to-end formalization of the main arbitrary-graph theorem, its exact bound and graph-to-strategy
-    dependencies, with the recurrent-coverage, structural and expansion results. Author manuscript,
-    to be deposited at the associated DOI; the manuscript is not yet publicly accessible and its files
-    are not included in this repository.
+    dependencies, with the recurrent-coverage, structural and expansion results. The separate sensing
+    discussion around Remark 19 is supplementary library material, not part of the Comparator selection.
   license: CC-BY-4.0
   author_endorsement: participated
   id: doi:10.5281/zenodo.22667596
@@ -60,8 +62,8 @@ sources:
   location: https://doi.org/10.5281/zenodo.22404456
   license: CC-BY-4.0
   note: Section 2 defines multiplicity-preserving labelled shell observations and bounded recovery. The
-    new source encodes those semantics using lists modulo permutation and shortest-walk radii; no grid
-    theorem is imported.
+    supplementary library source encodes those semantics using lists modulo permutation and shortest-walk
+    radii; no grid theorem is imported. No distance-shell result is selected by comparator.json.
 - title: Computing Metric Dimension of Two Types of Claw-free Cubic Graphs with Applications
   authors:
   - Muhammad Shoaib Sardar
@@ -75,8 +77,8 @@ sources:
   location: https://doi.org/10.61091/jcmcc119-17
   relationship: background
   note: Theorem 2 already gives metric dimension t for the ring of t>=3 diamonds and hence the paper's
-    sensor lower bound. The central-pair formalization is supporting formalization of known mathematics,
-    not a new sensor-bound priority claim.
+    sensor lower bound. The central-pair and sensor-counting formalizations are supplementary known
+    mathematics, not new sensor-bound priority claims and not selected by comparator.json.
   author_endorsement: not-contacted
 - title: The Graph Curvature Calculator and the curvatures of cubic graphs
   authors:
@@ -165,86 +167,85 @@ status:
     the four-exception characterization, structural classification, routing, recurrence and related bounds.
     All proof sources are included in one Lake project. This includes the complete game semantics and
     the stated results, not every theorem or a numerical solver for arbitrary graphs in Davila’s paper.
-    Supporting distance-shell observation obstructions and diamond-ring sensor bounds are included with
-    explicit attribution to earlier work. The paper's degree-independent arbitrary-game interface theorem
+    The 39 selected declarations concern pursuit, its game semantics and the short-cycle structure
+    and routing used by the full-damage argument, including structural corollaries and recurrence.
+    Three distance-shell and diamond-ring sensing results remain as unselected supplementary library
+    material with explicit attribution to earlier work. The paper's degree-independent arbitrary-game interface theorem
     (Theorem 13) remains a written abstraction; Lean proves its complete cubic-zombie application directly.
     Remark 19's ring-structure connection to recurrence remains written-only; its observation obstruction
-    and sensor lower bound are formalized. Computational census counts and historical regression checks
+    and sensor lower bound are formalized but unselected. Computational census counts and historical regression checks
     are tests, not additional formal theorem claims.
   sorry_count: 0
   sorry_in_definitions: 0
   sorry_count_scope: Solution and all its dependencies have no proof holes. Challenge independently states
-    all 42 selected results with 42 deliberate statement holes and imports only Std and Mathlib. The isolated
-    GameChallenge retains the additional 24-statement comparison. Neither challenge is imported by any proof.
-  axiom_audit_status: All 42 root selections and all 24 independently stated game results passed Comparator
-    and NanoDa locally. All 276 axiom roots (263 supplied declarations plus 13 interface wrappers) report only propext, Quot.sound and Classical.choice. No registry
-    submission or registration has occurred.
+    all 39 selected results with 39 deliberate statement holes and imports only Std and Mathlib. The isolated
+    GameChallenge retains the additional 24-statement regression comparison, including two supplementary
+    sensing statements; that configuration is not the Palomar submission. Neither challenge is imported by any proof.
+  axiom_audit_status: All 276 axiom roots (263 supplied declarations plus 13 interface wrappers) are retained.
+    The previous 42-result and 24-result comparisons passed Comparator and NanoDa and the audit reported
+    only propext, Quot.sound and Classical.choice. Revised-selection verification is recorded separately
+    in VERIFICATION.md; historical reports are not evidence for a changed Challenge snapshot.
   main_results:
   - declaration: PalomarVerified.full_damage_within_iff
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.full_damage_iff
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.davila_conjecture_24
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.full_damage_of_clean_edge
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.recurrent_coverage_of_clean_edge
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: ZombieMain.mobius_recurrent_coverage
     file: ZombieMain/PeriodicCoverage.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.four_boundary_edges
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.short_component_expansion
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
-  - declaration: ZombieMain.diamond_ring_sensor_bound
-    file: ZombieMain/SensorCounting.lean
-    sorry_count: 0
-    comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.four_port_principle
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.cycle_union_classification
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff
     file: ZombieMain/GameValue.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   - declaration: PalomarVerified.davila_conjecture_24_damage_number
     file: PalomarWrappers.lean
     sorry_count: 0
     comparator_config: comparator.json
-    build_status: Lean, Comparator and NanoDa passed locally
+    build_status: Proved; snapshot-specific verification is recorded in VERIFICATION.md
   axioms:
   - propext
   - Quot.sound
@@ -262,8 +263,8 @@ automation:
     framework: Human-directed AI assistance in mathematics, drafting, literature search, verification
       and release preparation
     tool_setup: Lean 4.32.0 and Mathlib v4.32.0 at immutable commit 81a5d257c8e410db227a6665ed08f64fea08e997;
-      276 axiom roots (263 supplied, 13 presentation wrappers); 42 root Comparator selections and a separate independently stated 24-theorem game
-      comparison. The scripts require real pinned Comparator, lean4export, NanoDa and Landrun. All 132
+      276 axiom roots (263 supplied, 13 presentation wrappers); 39 root Comparator selections and a separate independently stated 24-theorem regression
+      comparison, which includes two unselected sensing results. The scripts require real pinned Comparator, lean4export, NanoDa and Landrun. All 132
       prior library files are retained byte-for-byte; the numerical value bridge is added in three Lean
       modules.
   spend_usd: not tracked
@@ -285,22 +286,23 @@ fidelity:
     theorem in Davila’s paper. The structural classification has an explicit one-port alternative; the
     proof derives that this alternative cannot occur for a short-edge component in the bridgeless cubic
     application. The general degree-independent interface theorem and the ring family's structural connection
-    to recurrence are written-only; the complete cubic application, recurrence theorem and ring sensor bound
-    are proved. No computational census or historical regression count is a formal theorem claim.
-    Thirteen selections use transparent PalomarVerified wrappers to avoid Palomar's known core-notation
+    to recurrence are written-only; the complete cubic application and recurrence theorem are proved.
+    The involution obstruction, central-pair sensor lemma and ring sensor bound remain proved but are
+    supplementary library material outside the 39-result selection. No computational census or historical
+    regression count is a formal theorem claim.
+    Twelve selections use transparent PalomarVerified wrappers to avoid Palomar's known core-notation
     alias bug (PalomarSubmission issue 134). Four helpers have the literal original degree, vertex-pair,
     equality and inequality definitions; every wrapper is proved by a direct application of its original
-    theorem. The other 29 selections keep their original names. All 42 original results remain represented
-    and all 135 supplied library sources are unchanged; verification/selection-map.json records the mapping.
+    theorem. The other 27 selections keep their original names. All 13 wrappers and all 135 supplied
+    library sources are unchanged; verification/selection-map.json records the selected mapping.
 review:
-  status: Locally kernel-checked; AI-assisted source and mathematical review; not independently human-refereed
-    or registered
+  status: AI-assisted source and mathematical review; not independently human-refereed
   reviewers: []
-  notes: The unified source was rebuilt locally. Comparator and NanoDa accepted all 42 root selections
-    and the original 24 independently reconstructed game statements; 276 axiom reports use only the three
-    standard axioms. Source and mathematical review was AI-assisted, with no independent human refereeing
-    claimed. The author will handle public submission; nothing has been published, submitted or registered
-    by this local preparation.
+  notes: The selection is limited to 39 pursuit and short-cycle results; the three separate sensing
+    results remain proved in the library but are not advertised as selected research results.
+    VERIFICATION.md distinguishes the revised-selection checks from the historical 42-result checks.
+    Source and mathematical review was AI-assisted, with no independent human refereeing or editorial
+    acceptance claimed.
 alignment:
   namespace: ZombieMain
   statements:
@@ -335,10 +337,6 @@ alignment:
   - source: Edge-expansion corollary
     lean: PalomarVerified.short_component_expansion
     module: PalomarWrappers
-    status: proved
-  - source: Attributed diamond-ring sensor cardinality lower bound
-    lean: ZombieMain.diamond_ring_sensor_bound
-    module: Solution
     status: proved
   - source: Four-port principle
     lean: PalomarVerified.four_port_principle

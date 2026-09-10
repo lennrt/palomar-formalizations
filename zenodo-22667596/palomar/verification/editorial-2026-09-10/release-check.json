@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-09-10T01:29:15.884185+00:00",
+  "baseline_commit": "c52864a39eb96a92ff9393e3b8bc62f98b196553",
+  "source_inputs_bound_to_fresh_lean_report": 157,
+  "source_inputs_bound_to_each_comparator_run": 146,
+  "selected_results": 39,
+  "supplied_library_files_preserved": 135,
+  "axiom_roots": 276,
+  "official_metadata_authors": [
+    "Lennart Rudolph"
+  ],
+  "no_preprint_pdf_or_tex": true,
+  "no_other_paper_directories_changed": true,
+  "hosted_editorial_acceptance": "Requires a new Palomar submission"
+}

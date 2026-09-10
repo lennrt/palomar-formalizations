@@ -26,8 +26,8 @@ endorsement of this implementation.
 | Conjecture 24 | Posed by Davila; its complete proof and numerical conclusion are formalized here |
 | Four-exception characterization, explicit move bound and clean-edge recurrence | Results of the associated paper and formalization |
 | Closed cubic short-cycle classification | Earlier work by Cushing, Kangaslampi, Lipiäinen, Liu and Stagg |
-| Ring-of-diamonds metric dimension and resulting sensor lower bound | Earlier work by Sardar, Xu, Cancan, Farahani, Alaeiyan and Patil |
-| Labelled multiplicity-preserving distance-shell observations | The observation model in Rudolph’s tomography preprint; a supporting topic separate from the pursuit theorem |
+| Ring-of-diamonds metric dimension and resulting sensor lower bound | Earlier work by Sardar, Xu, Cancan, Farahani, Alaeiyan and Patil; supplementary library material, not selected |
+| Labelled multiplicity-preserving distance-shell observations | The observation model in Rudolph’s tomography preprint; supplementary library material separate from the selected pursuit theorem |
 
 Cushing et al., [*The Graph Curvature Calculator and the curvatures of cubic
 graphs*](https://doi.org/10.1080/10586458.2019.1660740), *Experimental Mathematics*
@@ -40,11 +40,15 @@ Graphs with Applications*](https://doi.org/10.61091/jcmcc119-17), *Journal of
 Combinatorial Mathematics and Combinatorial Computing* 119, 163–174 (2024),
 Theorem 2, already prove the metric-dimension bound for rings of diamonds.
 The sensor results in this project are supporting formalizations of known
-mathematics, without a new priority claim.
+mathematics, without a new priority claim. The involution obstruction,
+central-pair sensor lemma and ring sensor-cardinality bound are preserved in
+the Lean library but excluded from the 39-result pursuit Comparator selection
+and its Challenge. They support the separate discussion around paper Remark 19,
+not the proof of Conjecture 24.
 
 The observation model is documented in [*Distance-Shell Tomography on Graphs:
 Integer Trades and Optimal Grid Sensing*](https://doi.org/10.5281/zenodo.22404456).
-It is used only for the accompanying observation results.
+It is used only for those unselected accompanying observation results.
 
 ## Related pursuit and damage literature
 

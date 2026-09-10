@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "scope": "Supporting distance-shell and diamond-ring sensing results retained in the complete proof library, but not selected by comparator.json.",
+  "reason": "These results accompany the paper's Remark 19 and its attributed known sensor bound; they are separate from the pursuit and short-cycle structural contribution of this submission.",
+  "declarations": [
+    {
+      "declaration": "ZombieMain.diamond_ring_sensor_bound",
+      "file": "ZombieMain/SensorCounting.lean",
+      "line": 9,
+      "meaning": "Attributed ring sensor cardinality lower bound",
+      "selected_declaration": "ZombieMain.diamond_ring_sensor_bound",
+      "selected_file": "ZombieMain/SensorCounting.lean"
+    },
+    {
+      "declaration": "ZombieDamage.Graph.involution_blocks_recovery",
+      "file": "ZombieDamage/Observation.lean",
+      "line": 74,
+      "meaning": "Involution collision obstructs observation recovery",
+      "selected_declaration": "ZombieDamage.Graph.involution_blocks_recovery",
+      "selected_file": "ZombieDamage/Observation.lean"
+    },
+    {
+      "declaration": "ZombieDamage.DiamondRing.central_pair_sensor",
+      "file": "ZombieDamage/DiamondRing.lean",
+      "line": 97,
+      "meaning": "Every central diamond pair needs a sensor; attributed supporting result",
+      "selected_declaration": "PalomarVerified.central_pair_sensor",
+      "selected_file": "PalomarWrappers.lean"
+    }
+  ]
+}

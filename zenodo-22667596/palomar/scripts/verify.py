@@ -28,7 +28,7 @@ def input_hashes():
             for p in files() if p.suffix in (".lean", ".toml", ".py", ".yaml", ".cff") or p.name in
             ("lean-toolchain", "lake-manifest.json", "comparator.json", "game-comparator.json",
              "formalization.yaml", "tool-pins.json", "selection-map.json", "library-sources.json",
-             "proof-sources.json", "declarations.json")}
+             "proof-sources.json", "declarations.json", "supplementary-results.json")}
 
 
 def strip_comments(text):
@@ -65,15 +65,21 @@ def closure(module):
 def static_checks():
     cfg = json.loads((ROOT / "comparator.json").read_text())
     game = json.loads((ROOT / "verification/game-comparator.json").read_text())
-    assert len(cfg["theorem_names"]) == len(set(cfg["theorem_names"])) == 42
+    assert len(cfg["theorem_names"]) == len(set(cfg["theorem_names"])) == 39
     assert len(game["theorem_names"]) == len(set(game["theorem_names"])) == 24
     mapping = json.loads((ROOT / "verification/selection-map.json").read_text())["mapping"]
     declarations = json.loads((ROOT / "verification/declarations.json").read_text())
     assert list(mapping) == [d["declaration"] for d in declarations]
-    assert len(mapping) == 42 and list(mapping.values()) == cfg["theorem_names"]
-    assert sum(old != new for old, new in mapping.items()) == 13
+    assert len(mapping) == 39 and list(mapping.values()) == cfg["theorem_names"]
+    assert sum(old != new for old, new in mapping.items()) == 12
     assert all(d["selected_declaration"] == mapping[d["declaration"]] for d in declarations)
-    assert set(game["theorem_names"]) <= set(mapping)
+    supplementary = json.loads((ROOT / "verification/supplementary-results.json").read_text())["declarations"]
+    excluded = {"ZombieMain.diamond_ring_sensor_bound",
+                "ZombieDamage.Graph.involution_blocks_recovery", "PalomarVerified.central_pair_sensor"}
+    assert {d["selected_declaration"] for d in supplementary} == excluded
+    assert not excluded.intersection(cfg["theorem_names"])
+    assert not set(mapping).intersection(d["declaration"] for d in supplementary)
+    assert set(game["theorem_names"]) <= set(mapping) | {d["declaration"] for d in supplementary}
     assert cfg["challenge_module"] == "Challenge" and cfg["solution_module"] == "Solution"
     assert game["challenge_module"] == "GameChallenge" and game["solution_module"] == "ZombieDamage"
     for c in (cfg, game):
@@ -98,7 +104,7 @@ def static_checks():
     assert len(supplied) == 135
     for name, digest in supplied.items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest, name
-    expected_holes = {"Challenge.lean": 42, "GameChallenge.lean": 24}
+    expected_holes = {"Challenge.lean": 39, "GameChallenge.lean": 24}
     actual_holes = {}
     lean = [p for p in files() if p.suffix == ".lean"]
     forbidden = r"\b(?:admit|axiom|native_decide|unsafe)\b|Lean\.ofReduceBool|implemented_by"
@@ -118,13 +124,17 @@ def static_checks():
     challenge = (ROOT / "Challenge.lean").read_text()
     assert len(challenge.splitlines()) <= 1000 and len(challenge.encode()) <= 100 * 1024
     assert not any(m.startswith(("ZombieDamage", "ZombieMain")) for m in closure("Challenge"))
+    assert not re.search(r"\b(?:shellCount|SameShellData|Recovers|DiamondRing|diamondVertex|central_pair_sensor|involution_blocks_recovery|diamond_ring_sensor_bound)\b",
+                         strip_comments(challenge)), "Unselected sensing interface in Challenge"
     audit = re.findall(r"#print axioms\s+(\S+)", (ROOT / "verification/Audit.lean").read_text())
     assert len(audit) == len(set(audit)) == 276
     assert set(mapping) <= set(audit)
     assert set(cfg["theorem_names"]) <= set(audit)
-    return {"passed": True, "selected_declarations": 42, "independent_challenge_statements": 42,
+    return {"passed": True, "selected_declarations": 39, "independent_challenge_statements": 39,
             "independent_game_statements": 24,
-            "transparent_presentation_wrappers": 13,
+            "selected_transparent_presentation_wrappers": 12,
+            "total_transparent_presentation_wrappers": 13,
+            "supplementary_sensing_results": 3,
             "original_library_files_unchanged": 132, "lean_files": len(lean),
             "supplied_library_files_unchanged": 135,
             "proof_holes": 0, "challenge_holes": actual_holes, "path_dependencies": 0,

@@ -16,7 +16,7 @@ def main():
  parser.add_argument('--tools-dir',type=Path,default=P/'.verification/tools',help='Cache for the pinned verification tools')
  a=parser.parse_args();out=a.out.resolve();out.mkdir(parents=True,exist_ok=True)
  result={'comparator_passed':False,'nanoda_passed':False,'registered':False,
-         'all_orders_theorem_formalized':False,'scope':'42 unified root selections and the 24 independent game statements'}
+         'all_orders_theorem_formalized':False,'scope':'39 pursuit/structural root selections plus 24 supplementary game regression statements (not a second submission)'}
  def finish(code,reason):
   result.update(exit_code=code,reason=reason)
   (out/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2));return code

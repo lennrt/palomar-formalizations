@@ -1,0 +1,11 @@
+{
+  "source_count": 7,
+  "dependencies": [
+    {
+      "repository": "leanprover-community/mathlib4",
+      "provenance": "allowlisted"
+    }
+  ],
+  "untrusted_sources": [],
+  "trust_level": "high"
+}

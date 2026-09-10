@@ -13,14 +13,15 @@ attribute [-instance] List.instNeZeroNatLengthCons
 /-!
 # Short-cycle decompositions and full zombie damage
 Lennart Rudolph. Associated paper: DOI 10.5281/zenodo.22667596.
-The 42 independently stated results include the all-order four-exception theorem,
+The 39 independently stated pursuit and structural results include the all-order four-exception theorem,
 Davila Conjecture 24 as a numerical equality, its 2n(n+1) move bound, recurrent
-coverage, universal short-cycle structure and the complete supplied game interface.
+coverage, universal short-cycle structure and the game interfaces used in these proofs.
 Definitions below retain actual graph metrics, adversarial reply quantifiers,
 source-vertex damage and the original starting/turn order. No local proof is imported.
 Only selected statements have intentional holes; Solution proves them independently.
 Small proofs in definitions establish graph validity and finite-label arithmetic.
-Known closed classifications and sensor bounds are supporting results, not priority claims.
+The closed cubic classification is attributed prior work used in the structural argument.
+The paper's separate supporting sensing results are retained in the library, not selected here.
 The degree-independent arbitrary-game interface and Remark 19's ring-structure
 connection remain written-only; the entire cubic-game application is formalized.
 See README.md, GAME.md and SOURCE_THEORY.md for scope, attribution and AI disclosure.
@@ -189,74 +190,6 @@ component order many survivor moves. -/
 theorem finite_component_routing (g : Gadget) : (∀ p q : g.Vertex, g.port p = true → g.port q = true → p ≠ q →
     g.RouteExit p q) ∧ (∀ p t : g.Vertex, g.port p = true → g.inside t = true → g.RouteTarget p t) := by sorry
 end ZombieDamage.Verified
-namespace ZombieDamage.Graph
-variable {V : Type} (G : Graph V)
-/-- Multiplicity of radius r in the distance histogram of a finite population. Order is ignored and repeated vertices
-are retained. -/
-noncomputable def shellCount (r : Nat) (s : V) (population : List V) : Nat := by
-  classical
-  exact (population.filter (fun v => decide (G.Distance r s v))).length
-/-- Sensor identities are retained; target labels and cross-sensor matching are not. Equality is required at every
-nonnegative integral radius. -/
-def SameShellData (S : V → Prop) (xs ys : List V) : Prop := ∀ s, S s → ∀ r, G.shellCount r s xs = G.shellCount r s ys
-/-- Recovery of all populations of mass at most h, including multiplicities and the empty population. Equality of
-populations is list permutation. -/
-def Recovers (S : V → Prop) (h : Nat) : Prop := ∀ xs ys : List V, xs.length ≤ h → ys.length ≤ h →
-    G.SameShellData S xs ys → xs.Perm ys
-end ZombieDamage.Graph
-namespace ZombieDamage.DiamondRing
-/-- a,b are the adjacent central vertices; c,d are the two nonadjacent ports. -/
-inductive Role where
-  | a | b | c | d
-  deriving DecidableEq, Repr
-def Vertex (k : Nat) := Fin (k + 3) × Role
-def next {k : Nat} (i : Fin (k + 3)) : Fin (k + 3) := ⟨(i.val + 1) % (k + 3), Nat.mod_lt _ (Nat.zero_lt_succ _)⟩
-/-- Literal K4-minus-cd adjacency: ten ordered edges, no loops. -/
-def internal : Role → Role → Bool
-  | .a, .b => true
-  | .a, .c => true
-  | .a, .d => true
-  | .b, .a => true
-  | .b, .c => true
-  | .b, .d => true
-  | .c, .a => true
-  | .c, .b => true
-  | .d, .a => true
-  | .d, .b => true
-  | _, _ => false
-/-- Diamonds are joined only by d_i--c_(i+1), cyclically. -/
-def adjacency {k : Nat} (u v : Vertex k) : Prop := (u.1 = v.1 ∧ internal u.2 v.2 = true) ∨
-  (u.2 = .d ∧ v.2 = .c ∧ next u.1 = v.1) ∨
-  (u.2 = .c ∧ v.2 = .d ∧ next v.1 = u.1)
-def graph (k : Nat) : Graph (Vertex k) where
-  adj := adjacency
-  symm := by
-    rintro ⟨i, r⟩ ⟨j, s⟩ h
-    rcases h with ⟨hij, hrs⟩ | ⟨hr, hs, hn⟩ | ⟨hr, hs, hn⟩
-    · apply Or.inl
-      refine ⟨hij.symm, ?_⟩
-      have heq : internal r s = internal s r := by
-        cases r <;> cases s <;> rfl
-      exact heq ▸ hrs
-    · exact Or.inr (Or.inr ⟨hs, hr, hn⟩)
-    · exact Or.inr (Or.inl ⟨hs, hr, hn⟩)
-  loopless := by
-    rintro ⟨i, r⟩ h
-    cases r <;> simp [adjacency, internal] at h
-end ZombieDamage.DiamondRing
-namespace ZombieDamage.Graph
-variable {V : Type} (G : Graph V)
-/-- An involution fixing every sensor but exchanging two distinct vertices prevents bounded-population recovery. -/
-theorem involution_blocks_recovery (f : V → V) (hinv : ∀ v, f (f v) = v) (hmap : ∀ u v, G.adj u v → G.adj (f u) (f v))
-    (S : V → Prop) (hfix : ∀ s, S s → f s = s) (a b : V) (hne : a ≠ b) (hab : f a = b) (h : Nat) (hh : 1 ≤ h) : ¬
-    G.Recovers S h := by sorry
-end ZombieDamage.Graph
-namespace ZombieDamage.DiamondRing
-/-- Each diamond requires one of its central pair as a sensor for bounded-population recovery. -/
-def _root_.PalomarVerified.diamondVertex (k : Nat) (i : Fin (k + 3)) (r : Role) : Vertex k := (i, r)
-theorem _root_.PalomarVerified.central_pair_sensor (k : Nat) (S : Vertex k → Prop) (h : Nat) (hh : 1 ≤ h) (hrec : (graph k).Recovers S h) (i
-    : Fin (k + 3)) : S (PalomarVerified.diamondVertex k i .a) ∨ S (PalomarVerified.diamondVertex k i .b) := by sorry
-end ZombieDamage.DiamondRing
 namespace ZombieDamage.FullGame
 inductive Phase where
   | zombie | survivor
@@ -930,10 +863,6 @@ theorem _root_.PalomarVerified.short_component_expansion (H : G.Subgraph) (hconn
     v).ncard) (hmax : ∀v,PalomarVerified.degree G v≤3) (hshort : ∀u v,H.coe.Adj u v → ∃C : H.coe.Subgraph,IsShortCycle C ∧ C.Adj u v)
     (η : ℝ) (hη : 0<η) (hex : HasEdgeExpansion G η) : ((min H.verts.ncard (Fintype.card V-H.verts.ncard) : Nat) :
     ℝ)≤4/η := by sorry
-/-- Recovering all populations of positive bounded mass on a ring of k+3 diamonds needs at least k+3 labelled sensors;
-a formalized known lower bound. -/
-theorem diamond_ring_sensor_bound (k : Nat) (S : Finset (DiamondRing.Vertex k)) (h : Nat) (hh : 1 ≤ h) (hrec :
-    (DiamondRing.graph k).Recovers (fun v => v∈S) h) : k+3 ≤ S.card := by sorry
 section Structural
 variable {W : Type*} [Fintype W] {H : SimpleGraph W} [DecidableRel H.Adj]
 /-- A connected subcubic graph with minimum degree two and every edge on a triangle or quadrilateral has at most four
