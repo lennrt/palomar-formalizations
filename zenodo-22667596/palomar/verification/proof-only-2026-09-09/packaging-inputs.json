@@ -1,0 +1,16 @@
+{
+  "checked_at_utc": "2026-09-09T23:08:47.221522+00:00",
+  "tested_cached_project": "/private/tmp/palomar-zombie-build.hjmcJZ/project",
+  "final_project": "/Users/lennartrudolph/.codex/worktrees/35cf/Arxiv Math/palomar-formalizations/zenodo-22667596/palomar",
+  "proof_config_file_count": 146,
+  "proof_config_inputs_exactly_match": true,
+  "build_script_input_count": 156,
+  "build_script_inputs_exactly_match": true,
+  "challenge_current_sha256": "852d410b9cdc001fdde80e7cc77481ab68f65b733da8cdbfcff68f8ab6b32561",
+  "challenge_historical_render_sha256": "24409a2acade562c18753964d6d4c29fba2af674db891652d6ba5ff12db4fa42",
+  "challenge_change": "Exactly one module-docstring source attribution line; no executable Lean change.",
+  "challenge_comment_stripped_content_identical": true,
+  "current_yaml_sha256": "faa6f843a6b67d444ad8a73a521f37d5f96a4b921e457f73539baf43235c8b6a",
+  "renderer_rerun": false,
+  "renderer_evidence": "Prior trusted-render report applies to the explicitly identified historical source; this report proves the sole Challenge change is a comment, not that the current byte snapshot was rerendered."
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-09",
+  "release": "1.0.0",
+  "lean_toolchain": "leanprover/lean4:v4.32.0",
+  "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "project_build_passed": true,
+  "kernel_checked": true,
+  "axiom_roots": 263,
+  "found_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "solution_proof_holes": 0,
+  "intentional_challenge_holes": {
+    "MainChallenge.lean": 16,
+    "GameChallenge.lean": 24
+  },
+  "configurations": [
+    {
+      "config": "comparator.json",
+      "selected_declarations": 42,
+      "comparator_passed": true,
+      "nanoda_passed": true,
+      "sha256": "e5bed7da2304075c135e1d85cb0995f470df9f7a4389f27153bd9f8b5381c8b8"
+    },
+    {
+      "config": "verification/game-comparator.json",
+      "selected_declarations": 24,
+      "comparator_passed": true,
+      "nanoda_passed": true,
+      "sha256": "dec7d5b80897a6e245a712170dafd122dbe7748a6510d7902e8385314263db43"
+    }
+  ],
+  "original_library_files_unchanged": 132,
+  "new_numerical_interface_modules": 3,
+  "path_dependencies": 0,
+  "project_author": "Lennart Rudolph",
+  "ai_authors": false,
+  "palomar_metadata_profile_passed": true,
+  "palomar_profile_commit": "ef2fa1eadcb246c2346ddba39b52eaa53d4bb763",
+  "registered": false,
+  "submitted": false,
+  "published": false,
+  "verification_scope": "Local Lean, Comparator and NanoDa checks; this is not a Palomar service result or human peer review."
+}

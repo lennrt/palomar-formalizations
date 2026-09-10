@@ -1,0 +1,824 @@
+{
+  "direct-results.json": [
+    {
+      "key": "davila_html",
+      "url": "https://arxiv.org/html/2607.16382v1",
+      "at": "2026-09-09T14:50:50.292606+00:00",
+      "status": 200,
+      "file": "davila_html.response",
+      "bytes": 246660,
+      "sha256": "3e76417defbf41fb1e8289a903100b414d9fb2043a122401d508cd15d291e18e",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "datacite_zombie",
+      "url": "https://api.datacite.org/dois?query=%22zombie+damage%22&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:50.293119+00:00",
+      "status": 200,
+      "file": "datacite_zombie.response",
+      "bytes": 3734,
+      "sha256": "8e063f355e2a723f4134b42d23ef0bd3520cdedfde1843f62d8e0654a04f057f",
+      "same_bytes_as_1404_sweep": true,
+      "total": 1,
+      "records": [
+        {
+          "id": "10.48550/arxiv.2607.16382",
+          "title": [
+            {
+              "title": "The Zombie Damage Number of a Graph"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "openalex_zombie",
+      "url": "https://api.openalex.org/works?search=%22zombie+damage%22&per-page=100",
+      "at": "2026-09-09T14:50:50.293197+00:00",
+      "status": 200,
+      "file": "openalex_zombie.response",
+      "bytes": 66729,
+      "sha256": "fa4cd938cc83e31a95ba59932cde0a2dec964fde8c39f05fde28c187600a789e",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "crossref_release",
+      "url": "https://api.crossref.org/works?query.title=Short-Cycle+Decompositions+and+Full+Zombie+Damage+in+Cubic+Graphs&rows=25",
+      "at": "2026-09-09T14:50:50.293248+00:00",
+      "status": 200,
+      "file": "crossref_release.response",
+      "bytes": 126821,
+      "sha256": "5e497108a5af707039e8f466e5bd4d7f9d2d675f361dbaa4ea7815520275ddfd",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "crossref_cushing",
+      "url": "https://api.crossref.org/works/10.1080/10586458.2019.1660740",
+      "at": "2026-09-09T14:50:50.293292+00:00",
+      "status": 200,
+      "file": "crossref_cushing.response",
+      "bytes": 9307,
+      "sha256": "9eff6dc2e9348d28749745fa291d1ab32ae1096389d57a4543e601a95b5921ce",
+      "same_bytes_as_1404_sweep": true,
+      "records": [
+        {
+          "title": [
+            "The Graph Curvature Calculator and the Curvatures of Cubic Graphs"
+          ],
+          "doi": "10.1080/10586458.2019.1660740",
+          "published": {
+            "date-parts": [
+              [
+                2019,
+                9,
+                14
+              ]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "key": "datacite_title",
+      "url": "https://api.datacite.org/dois?query=titles.title%3A%22Short-Cycle+Decompositions+and+Full+Zombie+Damage+in+Cubic+Graphs%22&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:50.293332+00:00",
+      "status": 200,
+      "file": "datacite_title.response",
+      "bytes": 220,
+      "sha256": "1f51a62438a96457a5fee71fb77a7107fd1aa0f31c646a52170fb79b9b4165ca",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "datacite_structure",
+      "url": "https://api.datacite.org/dois?query=%22subcubic%22+AND+%28%22triangles%22+OR+%22quadrilaterals%22%29&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:50.293368+00:00",
+      "status": 200,
+      "file": "datacite_structure.response",
+      "bytes": 59567,
+      "sha256": "31cd9fabe9875172e3896fe5e80cf30747dc29658ec47db1e62534b4b697423b",
+      "same_bytes_as_1404_sweep": true,
+      "total": 11,
+      "records": [
+        {
+          "id": "10.48550/arxiv.2507.18845",
+          "title": [
+            {
+              "title": "A Truly Subcubic Combinatorial Algorithm for Induced 4-Cycle Detection"
+            }
+          ]
+        },
+        {
+          "id": "10.4230/lipics.icalp.2026.10",
+          "title": [
+            {
+              "lang": "en",
+              "title": "Node-Weighted Triangles: Faster and Simpler"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.2605.08588",
+          "title": [
+            {
+              "title": "Node-Weighted Triangles: Faster and Simpler"
+            }
+          ]
+        },
+        {
+          "id": "10.4230/lipics.itcs.2026.1",
+          "title": [
+            {
+              "lang": "en",
+              "title": "Triangle Detection in H-Free Graphs"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.2511.17224",
+          "title": [
+            {
+              "title": "Triangle Detection in H-Free Graphs"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.2211.07033",
+          "title": [
+            {
+              "title": "Directed graphs with lower orientation Ramsey thresholds"
+            }
+          ]
+        },
+        {
+          "id": "10.4230/lipics.icalp.2020.5",
+          "title": [
+            {
+              "lang": "en",
+              "title": "On the Fine-Grained Complexity of Parity Problems"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.1404.0799",
+          "title": [
+            {
+              "title": "Threesomes, Degenerates, and Love Triangles"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.1702.06548",
+          "title": [
+            {
+              "title": "Parameterized Aspects of Triangle Enumeration"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.2002.07415",
+          "title": [
+            {
+              "title": "On the Fine-Grained Complexity of Parity Problems"
+            }
+          ]
+        },
+        {
+          "id": "10.48550/arxiv.2012.15775",
+          "title": [
+            {
+              "title": "A simple combinatorial algorithm for restricted 2-matchings in subcubic graphs -- via half-edges"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "zenodo_zombie_retry",
+      "url": "https://zenodo.org/api/records?q=%22zombie+damage%22&size=25",
+      "at": "2026-09-09T14:50:50.293418+00:00",
+      "status": 200,
+      "file": "zenodo_zombie_retry.response",
+      "bytes": 445,
+      "sha256": "90054fbb1e48b7e334cff9b59859a39d8c36dc9386b9355afe806ae9f7c15a78",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "hal_zombie",
+      "url": "https://api.archives-ouvertes.fr/search/?q=%22zombie+damage%22&wt=json&rows=100",
+      "at": "2026-09-09T14:50:50.441252+00:00",
+      "status": 200,
+      "file": "hal_zombie.response",
+      "bytes": 116,
+      "sha256": "316b596864c92e18c8f6688107ad49ecfc3fe632ebdc85efe82c65ed28ba8064",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0
+    },
+    {
+      "key": "openalex_forward_davila",
+      "url": "https://api.openalex.org/works?filter=cites%3AW7169878461&per-page=100",
+      "at": "2026-09-09T14:50:50.609082+00:00",
+      "status": 200,
+      "file": "openalex_forward_davila.response",
+      "bytes": 380,
+      "sha256": "f5221514eee599542a78acd55c60fc8711fe4a2029a0e7edb93bb7798c23d63b",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "semantic_davila",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/ARXIV:2607.16382?fields=title%2Cauthors%2Cyear%2CcitationCount%2Ccitations.title%2Ccitations.url%2Creferences.title",
+      "at": "2026-09-09T14:50:50.869198+00:00",
+      "status": 429,
+      "error": "HTTP Error 429: "
+    },
+    {
+      "key": "davila_repos",
+      "url": "https://api.github.com/users/RandyRDavila/repos?per_page=100&sort=updated",
+      "at": "2026-09-09T14:50:50.884031+00:00",
+      "status": 200,
+      "file": "davila_repos.response",
+      "bytes": 200430,
+      "sha256": "65870e6dc40c9beba31b81c8c4e1606f967cf94df12ebc10b9f38815a2005381",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "upstream_tree",
+      "url": "https://api.github.com/repos/RandyRDavila/TxGraffiti2/git/trees/main?recursive=1",
+      "at": "2026-09-09T14:50:51.006508+00:00",
+      "status": 200,
+      "file": "upstream_tree.response",
+      "bytes": 156684,
+      "sha256": "d55be93ddbecacdd724627535df70d69994b421469e4270a8f00137c4e88af71",
+      "same_bytes_as_1404_sweep": true,
+      "sha": "e37126da53b84150d142a5d61202b61f78521fcc"
+    },
+    {
+      "key": "upstream_branches",
+      "url": "https://api.github.com/repos/RandyRDavila/TxGraffiti2/branches?per_page=100",
+      "at": "2026-09-09T14:50:51.101501+00:00",
+      "status": 200,
+      "file": "upstream_branches.response",
+      "bytes": 6654,
+      "sha256": "499246c051b5abc1c500c2a1906ae74367dde7e98162b31cd4edd0e2f2da0ae3",
+      "same_bytes_as_1404_sweep": true,
+      "branches": [
+        "2025_directory_structure",
+        "jne-alter-accuracy-score",
+        "jne-boolean-hypothesis",
+        "jne-convex-hull-generator",
+        "jne-dalmatian-heuristic",
+        "jne-directory-changes",
+        "jne-edit-docs",
+        "jne-expression-tree-generator",
+        "jne-heuristic-tests",
+        "jne-issue-template",
+        "jne-polytope-unit-tests",
+        "jne-sql-translation",
+        "main",
+        "rrd-add-graph-sample-data",
+        "rrd-add-heuristics-postprocessing",
+        "rrd-add-sql-exporting",
+        "rrd-doc-cicd-setup",
+        "rrd-dummy-branch",
+        "rrd-equalities",
+        "rrd-hazel-heuristic",
+        "rrd-if-and-only-if-conjectures",
+        "rrd-joss-paper",
+        "rrd-lean4-export-module",
+        "rrd-lean4-upgrade-v1",
+        "rrd-lp-generator",
+        "rrd-major-change",
+        "rrd-major-changes-before-new-version",
+        "rrd-rename",
+        "rrd-update-docs-12july",
+        "rrd-update-predicate-class"
+      ]
+    },
+    {
+      "key": "upstream_commits",
+      "url": "https://api.github.com/repos/RandyRDavila/TxGraffiti2/commits?per_page=100",
+      "at": "2026-09-09T14:50:51.164566+00:00",
+      "status": 200,
+      "file": "upstream_commits.response",
+      "bytes": 200568,
+      "sha256": "8c0bb04a38d8cae005bd18b51f161b92b2ac70f8e331e83e7fe8e50cc72e8768",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "formal_tree",
+      "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/git/trees/main?recursive=1",
+      "at": "2026-09-09T14:50:51.205708+00:00",
+      "status": 200,
+      "file": "formal_tree.response",
+      "bytes": 452270,
+      "sha256": "0a6d94f669bb6771e048b65e3967c09af5615b6bc6d61d2bc30ce4418bfde6d8",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "formal_branches",
+      "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/branches?per_page=100",
+      "at": "2026-09-09T14:50:51.242928+00:00",
+      "status": 200,
+      "file": "formal_branches.response",
+      "bytes": 6830,
+      "sha256": "ae2bf4cc3bc3ac725e1edbe701da7bd85490ba73f7230518baed11e22444aa5b",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "mathlib_tree",
+      "url": "https://api.github.com/repos/leanprover-community/mathlib4/git/trees/master?recursive=1",
+      "at": "2026-09-09T14:50:51.317738+00:00",
+      "status": 200,
+      "file": "mathlib_tree.response",
+      "bytes": 2778208,
+      "sha256": "00cd41f788f60626484179408293f03b86d477750598a6d8d6622240db7f7d21",
+      "same_bytes_as_1404_sweep": true,
+      "sha": "a4c8ef0a69f52ec80525d5086bb3542f4660faaf"
+    },
+    {
+      "key": "davila_author_page",
+      "url": "https://raw.githubusercontent.com/RandyRDavila/Data-Science-Machine-Learning-Fall-2026/main/site/instructor.html",
+      "at": "2026-09-09T14:50:51.341160+00:00",
+      "status": 200,
+      "file": "davila_author_page.response",
+      "bytes": 23493,
+      "sha256": "e9d773dfb3443d29cca118ced256ed48407c42ff22617c31a66ddf233a6663e4",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "crossref_title_retry",
+      "url": "https://api.crossref.org/works?query.title=The+Zombie+Damage+Number+of+a+Graph&rows=20",
+      "at": "2026-09-09T14:50:51.487955+00:00",
+      "status": 200,
+      "file": "crossref_title_retry.response",
+      "bytes": 83048,
+      "sha256": "46b489584c3c1ce706f5c4d1278314365129406c11cae10f16c94f489e4bde81",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "zenodo_title_retry",
+      "url": "https://zenodo.org/api/records?q=%22Short-Cycle+Decompositions%22&size=10",
+      "at": "2026-09-09T14:50:51.493051+00:00",
+      "status": 200,
+      "file": "zenodo_title_retry.response",
+      "bytes": 458,
+      "sha256": "b5f65f8a81a5e273a641e60df87f7def5799fc133a5a19a4d87c01d03c78044e",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "cushing_forward",
+      "url": "https://api.openalex.org/works?filter=cites%3AW2772063712&per-page=100",
+      "at": "2026-09-09T14:50:51.539462+00:00",
+      "status": 200,
+      "file": "cushing_forward.response",
+      "bytes": 135048,
+      "sha256": "7e4c8a732b6be9beb91d59c643dd831dac1d154d528b0aafa2094fde24a46c59",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "davila_abs",
+      "url": "https://arxiv.org/abs/2607.16382",
+      "at": "2026-09-09T14:50:51.711193+00:00",
+      "status": 200,
+      "file": "davila_abs.response",
+      "bytes": 41589,
+      "sha256": "d692e49915d5c1ed4a8ecbc593fdbbdb9422f83e28116520060e387cc93058ab",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "provider_updates",
+      "url": "https://firstprinciples.com/",
+      "at": "2026-09-09T14:50:51.713576+00:00",
+      "status": 200,
+      "file": "provider_updates.response",
+      "bytes": 173579,
+      "sha256": "e37f340abfeee543210320c0c0f016f0a958d9e298a95181b15a42e06f56b795",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "ring_publisher",
+      "url": "https://combinatorialpress.com/jcmcc-articles/volume-119/computing-metric-dimension-of-two-types-of-claw-free-cubic-graphs-with-applications/",
+      "at": "2026-09-09T14:50:51.777193+00:00",
+      "status": 200,
+      "file": "ring_publisher.response",
+      "bytes": 152800,
+      "sha256": "113078f9cc6c2c14fed3b6ae815424a859448d9e55fca65c57bf1a6dcb7b5702",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "datacite_zenodo_zombie",
+      "url": "https://api.datacite.org/dois?client-id=cern.zenodo&query=%22zombie%20damage%22&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:51.843041+00:00",
+      "status": 200,
+      "file": "datacite_zenodo_zombie.response",
+      "bytes": 182,
+      "sha256": "0f2587d15fad15e8a194d247f7250d57661b8a4bd41a1920ce6af2134d2d6f16",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "datacite_zenodo_original_title",
+      "url": "https://api.datacite.org/dois?client-id=cern.zenodo&query=titles.title%3A%22The%20Zombie%20Damage%20Number%20of%20a%20Graph%22&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:51.931149+00:00",
+      "status": 200,
+      "file": "datacite_zenodo_original_title.response",
+      "bytes": 229,
+      "sha256": "854a35a8dd25b6e8692c43833b9f5aa9b9170d6569c0f220de575c2767fa5368",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "datacite_zenodo_release_title",
+      "url": "https://api.datacite.org/dois?client-id=cern.zenodo&query=titles.title%3A%22Short-Cycle%20Decompositions%20and%20Full%20Zombie%20Damage%20in%20Cubic%20Graphs%22&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:52.108130+00:00",
+      "status": 200,
+      "file": "datacite_zenodo_release_title.response",
+      "bytes": 263,
+      "sha256": "edafb467b7faf5681a75e9d20251235a4a1411d8b1c6b4e597cd0813338d76d7",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "datacite_zenodo_control",
+      "url": "https://api.datacite.org/dois?client-id=cern.zenodo&query=10.5281/zenodo.20433056&page%5Bsize%5D=100",
+      "at": "2026-09-09T14:50:52.112808+00:00",
+      "status": 200,
+      "file": "datacite_zenodo_control.response",
+      "bytes": 5439,
+      "sha256": "ab89ac98d200fa01b38007f14a269f41caf38c946cd6f8c30c81e5ef8c588eea",
+      "same_bytes_as_1404_sweep": true,
+      "total": 2,
+      "records": [
+        {
+          "id": "10.5281/zenodo.20433056",
+          "title": [
+            {
+              "title": "A REGULAÇÃO DO HOMESCHOOLING NO BRASIL: UMA ANÁLISE JURÍDICO-CONSTITUCIONAL"
+            }
+          ]
+        },
+        {
+          "id": "10.5281/zenodo.20433057",
+          "title": [
+            {
+              "title": "A REGULAÇÃO DO HOMESCHOOLING NO BRASIL: UMA ANÁLISE JURÍDICO-CONSTITUCIONAL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "crossref_zombie",
+      "url": "https://api.crossref.org/works?query.bibliographic=%22zombie+damage%22&rows=50",
+      "at": "2026-09-09T14:50:52.190354+00:00",
+      "status": 200,
+      "file": "crossref_zombie.response",
+      "bytes": 145111,
+      "sha256": "2af0cddeaa519794b5915e52e279025e9c0726209b35858d95faebab45cf1761",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "crossref_original",
+      "url": "https://api.crossref.org/works?query=The+Zombie+Damage+Number+of+a+Graph&rows=30",
+      "at": "2026-09-09T14:50:52.264806+00:00",
+      "status": 429,
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "key": "zenodo_original",
+      "url": "https://zenodo.org/api/records?q=%22The+Zombie+Damage+Number+of+a+Graph%22&size=25",
+      "at": "2026-09-09T14:50:52.488753+00:00",
+      "status": 200,
+      "file": "zenodo_original.response",
+      "bytes": 467,
+      "sha256": "a042846a85cdf909c85eb937d4f4381707b6eaabd814349b3f29a77034002aab",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "zenodo_exact_title",
+      "url": "https://zenodo.org/api/records?q=%22Short-Cycle+Decompositions+and+Full+Zombie+Damage+in+Cubic+Graphs%22&size=25",
+      "at": "2026-09-09T14:50:52.504121+00:00",
+      "status": 200,
+      "file": "zenodo_exact_title.response",
+      "bytes": 497,
+      "sha256": "065d0c4fc7d83ee07bc603a18683b73040323c62f7f28282183796e955e4c628",
+      "same_bytes_as_1404_sweep": true,
+      "total": 0,
+      "records": []
+    },
+    {
+      "key": "ordinary_damage_html",
+      "url": "https://arxiv.org/html/2608.15226v1",
+      "at": "2026-09-09T14:50:52.639930+00:00",
+      "status": 200,
+      "file": "ordinary_damage_html.response",
+      "bytes": 658891,
+      "sha256": "e0ae14357e6c9bf954cc544dfa21101b64f3d80d4894cc6557e8f2478dfbcd59",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "cushing_abs",
+      "url": "https://arxiv.org/abs/1712.03033",
+      "at": "2026-09-09T14:50:52.661899+00:00",
+      "status": 200,
+      "file": "cushing_abs.response",
+      "bytes": 40987,
+      "sha256": "925a8d513e8aab9aff45ea288a79a4a1f52e91593af81d5a3f3b91287c469cb2",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "semantic_ring",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.61091/jcmcc119-17?fields=title,citationCount,citations.title,citations.url",
+      "at": "2026-09-09T14:50:52.735189+00:00",
+      "status": 200,
+      "file": "semantic_ring.response",
+      "bytes": 189,
+      "sha256": "df5e4e3f5246e883aceb684737b6ca017a621deaee3055a248c987a9ec5692a3",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "openalex_ring",
+      "url": "https://api.openalex.org/works/https://doi.org/10.61091/jcmcc119-17",
+      "at": "2026-09-09T14:50:52.781286+00:00",
+      "status": 200,
+      "file": "openalex_ring.response",
+      "bytes": 19284,
+      "sha256": "5618bdb738b756d9354138e81120077d7f3642109a094657d30ceae69f54cd3b",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "mathlib_branches",
+      "url": "https://api.github.com/repos/leanprover-community/mathlib4/branches?per_page=100",
+      "at": "2026-09-09T14:50:52.816181+00:00",
+      "status": 200,
+      "file": "mathlib_branches.response",
+      "bytes": 22396,
+      "sha256": "856a5fad9cd03c831e3c10f82c10aad1898b835f59afafa3ebdd5cb71b3b1b98",
+      "same_bytes_as_1404_sweep": true,
+      "branches": [
+        "ACL/AdjoinRoot",
+        "ACL/Dickson",
+        "ACL/DirectedSystem",
+        "ACL/Groebner-degrevlex",
+        "ACLFN/Valued",
+        "ACLMIdFF/DirectedLimit_FG",
+        "ACLMIdFF/DirectedLimit_Small",
+        "ACLMIdFF/Pure",
+        "AD_AdicTopology",
+        "AD_FiniteAdeleRing",
+        "AD_KrullTopology",
+        "AD_algebra_filter_bases",
+        "AD_finitelyFibered",
+        "AD_lower_pi",
+        "AD_openIdentityComponent",
+        "AD_semicontinuous_evolved",
+        "AD_stone_cech_universe",
+        "AD_stoneCech_spectrum",
+        "AD_test_abbrev_mkOfBound",
+        "AD_uniform_convex",
+        "AHE_synthetic_geometry",
+        "AT-abs-gal-fix",
+        "AT-explain",
+        "AT-functor-of-points",
+        "Amice_TransForm",
+        "AnthonyBordg_covering_families",
+        "CM_IOI2024",
+        "CM_IsTree",
+        "CM_frmulval",
+        "CM_lintest",
+        "CM_mulderiv2",
+        "Calculation-of-Gradients",
+        "CharredLee/PowerObjects",
+        "CommRing.Pic",
+        "CommandMaster_GrayCode",
+        "CommandMaster_adicValuation",
+        "CommandMaster_removeTrunc",
+        "CommandMaster_simpleExtension",
+        "CommandMaster_topTypeclasses",
+        "CompletionSMulPriority",
+        "ContDiffMapSupportedIn",
+        "Convex_Function",
+        "DeltaGeneratedSpace-instances",
+        "DivisionPolynomial_smul",
+        "EllCurve/universal",
+        "EllCurve/universal+",
+        "EllNet_from_evenOdd",
+        "ExprWithLevels",
+        "FGHomogeneousIdeal",
+        "FR_SMulCommClass_instance_priority",
+        "FR_algebra_instance_priority",
+        "FR_binary",
+        "FR_carrier_warpper",
+        "FR_covariance_instance",
+        "FR_delta",
+        "FR_deprecate_quotient_lemmas1",
+        "FR_funlike_actionhom",
+        "FR_funlike_instance",
+        "FR_funlike_linear",
+        "FR_funlike_semilinear_outparam",
+        "FR_induction",
+        "FR_instance_priority_high",
+        "FR_lower_semilinearMaptoAddHomClass",
+        "FR_mul_smul_higher",
+        "FR_mulmono",
+        "FR_normed_lower",
+        "FR_normed_mixin",
+        "FR_normed_mixin2",
+        "FR_normed_mixin3",
+        "FR_normed_mixin4",
+        "FR_order_generalize",
+        "FR_order_refactor18'",
+        "FR_order_refactor18''",
+        "FR_ordered_extends",
+        "FR_ordered_withzero_deprecate",
+        "FR_priority_higher",
+        "FR_quot",
+        "FR_quotient_pi",
+        "FR_real_quotientgroup_defeqabuse",
+        "FR_remove_quotient_notation",
+        "FR_ring_priority",
+        "FR_simp_low_map",
+        "FR_simp_map",
+        "FR_split_kummer",
+        "FR_test_quotient_mkabbrev",
+        "FR_test_quotient_setoid",
+        "FR_use_quotlike",
+        "FR_withone_lower",
+        "FR_zeroone_priority",
+        "FR_2905",
+        "FR_2905_1",
+        "FR_13755_instance",
+        "Finsupp-fin-tuple",
+        "GradeZeroModule",
+        "GuoZiXun/Galois.IsFraction",
+        "GuoZiXun/staffs",
+        "HM-gcongr-forward",
+        "HM-golf-nlinarith",
+        "HM-linear-combination-golf",
+        "HM-linear-combination-golf-3"
+      ]
+    },
+    {
+      "key": "formal_commits",
+      "url": "https://api.github.com/repos/google-deepmind/formal-conjectures/commits?per_page=100",
+      "at": "2026-09-09T14:50:52.856568+00:00",
+      "status": 200,
+      "file": "formal_commits.response",
+      "bytes": 669983,
+      "sha256": "ba9a373fc6a72ac38f99fe1fcc7c2fed1835e8a7ab3c72dca1deab57d846323a",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "mathlib_commits",
+      "url": "https://api.github.com/repos/leanprover-community/mathlib4/commits?per_page=100",
+      "at": "2026-09-09T14:50:52.869372+00:00",
+      "status": 200,
+      "file": "mathlib_commits.response",
+      "bytes": 390141,
+      "sha256": "125472458cf632f8e38638c5e95746ae4692e649994585d302270e4c22ab816a",
+      "same_bytes_as_1404_sweep": true
+    },
+    {
+      "key": "liu_miller",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FUN.2026.30",
+      "at": "2026-09-09T14:50:53.028037+00:00",
+      "status": 200,
+      "file": "liu_miller.response",
+      "bytes": 104877,
+      "sha256": "7a914284a94e39dc50d06ade1d18eca3c45f198e8e265da42348e71b180b32b8",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "ordinary_abs",
+      "url": "https://arxiv.org/abs/2608.15226",
+      "at": "2026-09-09T14:50:53.048365+00:00",
+      "status": 200,
+      "file": "ordinary_abs.response",
+      "bytes": 39483,
+      "sha256": "b7a442fb30b68591083429638b4ab5236434443449fcf632c004c91178858596",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "multi_robber",
+      "url": "https://arxiv.org/html/2209.10965v4",
+      "at": "2026-09-09T14:50:53.054762+00:00",
+      "status": 200,
+      "file": "multi_robber.response",
+      "bytes": 417151,
+      "sha256": "35b3a0218abb03c315bf9a8844e25222c04d36401f03dd118a6b48f8dcc72338",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "cartesian_abs",
+      "url": "https://arxiv.org/abs/2308.09645",
+      "at": "2026-09-09T14:50:53.185732+00:00",
+      "status": 200,
+      "file": "cartesian_abs.response",
+      "bytes": 40004,
+      "sha256": "6844339143a568bfbf205e422d1ee4856ffafc3f9798d9d14978eeed93ff496c",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "cox_sanaei",
+      "url": "https://ajc.maths.uq.edu.au/pdf/75/ajc_v75_p001.pdf",
+      "at": "2026-09-09T14:50:53.322733+00:00",
+      "status": 200,
+      "file": "cox_sanaei.response",
+      "bytes": 152207,
+      "sha256": "cd8db86a156d642027caa94e65c1a778d826251cce8a9ee24818cfe47cb384e3",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "cartesian_published",
+      "url": "https://ajc.maths.uq.edu.au/pdf/88/ajc_v88_p362.pdf",
+      "at": "2026-09-09T14:50:53.327041+00:00",
+      "status": 200,
+      "file": "cartesian_published.response",
+      "bytes": 1095042,
+      "sha256": "a5e13eda9f05c1c7e3605190a2cf3231a7bdb9758ab77ef1bc0fb292bed3aeee",
+      "same_bytes_as_1404_sweep": false
+    },
+    {
+      "key": "cartesian_corrigendum",
+      "url": "https://ajc.maths.uq.edu.au/pdf/91/ajc_v91_p217.pdf",
+      "at": "2026-09-09T14:50:53.340481+00:00",
+      "status": 200,
+      "file": "cartesian_corrigendum.response",
+      "bytes": 59024,
+      "sha256": "1ce13c0ba771e4e719ca7703e5bf08532f1ba40dc038ac13b882f6bccc1f2558",
+      "same_bytes_as_1404_sweep": false
+    }
+  ],
+  "followup-results.json": [
+    {
+      "key": "liu_html",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol366-fun2026/html/LIPIcs.FUN.2026.30/LIPIcs.FUN.2026.30.html",
+      "at": "2026-09-09T15:01:03.245335+00:00",
+      "status": 200,
+      "bytes": 234688,
+      "sha256": "4bff0216869eaa7011b593ba52d01cce59f62483aa0202ffc6d8736f325ad0e9"
+    },
+    {
+      "key": "liu_bibtex",
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FUN.2026.30/metadata/bibtex",
+      "at": "2026-09-09T15:01:03.245525+00:00",
+      "status": 200,
+      "bytes": 44710,
+      "sha256": "bf9dca113613c387d9e214bd197803f17800ad7c702af58e0fd0eaa35f78be04"
+    },
+    {
+      "key": "liu_pdf",
+      "url": "https://drops.dagstuhl.de/storage/00lipics/lipics-vol366-fun2026/LIPIcs.FUN.2026.30/LIPIcs.FUN.2026.30.pdf",
+      "at": "2026-09-09T15:01:03.245598+00:00",
+      "status": 200,
+      "bytes": 820820,
+      "sha256": "259f6d93b41354a4653b9922ffe377aad6b64f3134ab9a8efc894bb9148ebbf1"
+    },
+    {
+      "key": "multi_crossref",
+      "url": "https://api.crossref.org/works/10.1137/24S1699371",
+      "at": "2026-09-09T15:01:03.245660+00:00",
+      "status": 200,
+      "bytes": 1414,
+      "sha256": "7f305d76d9c40e01b50e1d758f3903baf6e54326412c1dfa8e72dc0d2e5de692"
+    }
+  ],
+  "methodology-request.json": {
+    "url": "https://www.researchgate.net/publication/412137606_From_Counterexamples_to_Theorems_The_Theo-Conjecture_Loop_in_Scientific_Discovery",
+    "at": "2026-09-09T15:02:59.892637+00:00",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "arxiv_queries": [
+    "all:\"zombie\" AND all:\"damage\"",
+    "au:\"Davila_Randy\"",
+    "ti:\"Short-Cycle Decompositions\"",
+    "ti:\"damage number\""
+  ],
+  "arxiv_access_date": "2026-09-09",
+  "arxiv_endpoint": "https://export.arxiv.org/api/query",
+  "arxiv_order": "submittedDate descending; max_results=100",
+  "github_queries": [
+    "user:RandyRDavila zombie is:pr",
+    "user:RandyRDavila zombie is:issue",
+    "user:RandyRDavila zdmg is:pr",
+    "user:RandyRDavila zdmg is:issue",
+    "repo:google-deepmind/formal-conjectures zombie is:pr",
+    "repo:google-deepmind/formal-conjectures zombie is:issue",
+    "repo:leanprover-community/mathlib4 zombie is:pr",
+    "repo:leanprover-community/mathlib4 zombie is:issue",
+    "zombie; author code",
+    "zdmg; related repositories",
+    "zombie OR zdmg OR 2607.16382; commits"
+  ],
+  "source_reading": "HTML/MathML or publisher PDF, not title-only equivalence assessment"
+}

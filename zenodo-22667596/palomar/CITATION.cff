@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: Please cite the associated paper when using this formalization. The zombie
+  damage number and original conjecture are due to Randy Davila.
+type: software
+title: Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs
+authors:
+- family-names: Rudolph
+  given-names: Lennart
+  orcid: https://orcid.org/0009-0009-0198-085X
+version: 1.0.0
+date-released: '2026-09-09'
+license: MIT
+identifiers:
+- type: doi
+  value: 10.5281/zenodo.22667596
+  description: Reserved DOI for the associated paper and formalization artifacts

@@ -1,0 +1,15 @@
+{
+  "status": "local-render-core-passed",
+  "checked_utc": "2026-09-09T16:29:19.586600+00:00",
+  "source": "/Users/lennartrudolph/.codex/worktrees/35cf/Arxiv Math/palomar-formalizations/zenodo-22667596/palomar",
+  "challenge_sha256": "24409a2acade562c18753964d6d4c29fba2af674db891652d6ba5ff12db4fa42",
+  "challenge_lines": 973,
+  "challenge_bytes": 53053,
+  "advisory_large_review_surface": true,
+  "declarations": 42,
+  "palomar_submission": "ef2fa1eadcb246c2346ddba39b52eaa53d4bb763",
+  "verso": "e09d21a5f7f66c9fc985b73197708298569bf583",
+  "lean": "leanprover/lean4:v4.32.0",
+  "entrypoint": "/private/tmp/palomar-policy-22667596.6yw8SV/render-result-20260909T162853Z/clean/Challenge/index.html",
+  "limitation": "Local macOS replay of trusted configuration, core-notation audit, Verso, and sanitizer; the Linux Landrun/systemd hosted confinement wrapper was not run."
+}

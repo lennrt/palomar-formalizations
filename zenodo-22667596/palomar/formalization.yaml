@@ -1,0 +1,371 @@
+# formalization.yaml v0.4; Palomar profile 4
+version: v0.4
+project:
+  name: Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs
+  description: Full formalization of Randy Davila’s one-zombie damage game and the complete proof of his
+    Conjecture 24. The game includes shortest-walk geodesic replies, adversarial choices, start and turn
+    order, survivor passes, capture, distinct-vertex damage, bounded and eventual strategies, and an explicit
+    numerical damage value. For every finite simple connected bridgeless cubic graph of order n at least
+    10, the survivor can force damage to all n vertices within 2n(n+1) survivor moves. The project also
+    proves the four-exception characterization, structural classification, routing, recurrence and related
+    bounds. All proof sources are included in one Lake project. Supporting distance-shell observation
+    obstructions and diamond-ring sensor bounds are included with explicit attribution to earlier work.
+  authors:
+  - Lennart Rudolph
+  responsible_maintainers:
+  - Lennart Rudolph
+  license: MIT
+classification:
+  arxiv:
+  - math.CO
+  - cs.LO
+  msc2020:
+  - 05C57
+  - 05C75
+  - 68V20
+sources:
+- title: Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs
+  authors:
+  - Lennart Rudolph
+  type: paper
+  location: https://doi.org/10.5281/zenodo.22667596
+  relationship: formalizes
+  note: End-to-end formalization of the main arbitrary-graph theorem, its exact bound and graph-to-strategy
+    dependencies, with the recurrent-coverage, structural and expansion results. Author manuscript,
+    to be deposited at the associated DOI; the manuscript is not yet publicly accessible and its files
+    are not included in this repository.
+  license: CC-BY-4.0
+  author_endorsement: participated
+  id: doi:10.5281/zenodo.22667596
+- title: The Zombie Damage Number of a Graph
+  authors:
+  - Randy Davila
+  id: arxiv:2607.16382v1
+  type: paper
+  location: https://arxiv.org/abs/2607.16382v1
+  relationship: formalizes
+  note: Randy Davila introduced the zombie damage number and the one-zombie game in Definition 1 and posed
+    Conjecture 24. Lennart Rudolph formalized those rules and developed the complete conjecture proof
+    with disclosed AI assistance. The numerical value is the maximal forceable damage score; its connection
+    to the full-damage predicate and eventual semantics is proved. SOURCE_THEORY.md identifies the original
+    source results formalized here. This project does not claim to formalize every theorem in the original
+    paper.
+  author_endorsement: not-contacted
+- title: 'Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing'
+  authors:
+  - Lennart Rudolph
+  id: doi:10.5281/zenodo.22404456
+  type: paper
+  relationship: background
+  location: https://doi.org/10.5281/zenodo.22404456
+  license: CC-BY-4.0
+  note: Section 2 defines multiplicity-preserving labelled shell observations and bounded recovery. The
+    new source encodes those semantics using lists modulo permutation and shortest-walk radii; no grid
+    theorem is imported.
+- title: Computing Metric Dimension of Two Types of Claw-free Cubic Graphs with Applications
+  authors:
+  - Muhammad Shoaib Sardar
+  - Shou-Jun Xu
+  - Murat Cancan
+  - Mohammad Reza Farahani
+  - Mehdi Alaeiyan
+  - Shobha V. Patil
+  id: doi:10.61091/jcmcc119-17
+  type: paper
+  location: https://doi.org/10.61091/jcmcc119-17
+  relationship: background
+  note: Theorem 2 already gives metric dimension t for the ring of t>=3 diamonds and hence the paper's
+    sensor lower bound. The central-pair formalization is supporting formalization of known mathematics,
+    not a new sensor-bound priority claim.
+  author_endorsement: not-contacted
+- title: The Graph Curvature Calculator and the curvatures of cubic graphs
+  authors:
+  - D. Cushing
+  - R. Kangaslampi
+  - V. Lipiäinen
+  - S. Liu
+  - G. W. Stagg
+  id: doi:10.1080/10586458.2019.1660740
+  type: paper
+  location: https://doi.org/10.1080/10586458.2019.1660740
+  relationship: background
+  note: The closed cubic classification is already known. Lemma 5.1 and Corollary 5.4 in arXiv:1712.03033v2
+    identify prisms and Möbius ladders via the curvature criterion. That closed classification and the
+    earlier ring sensor bound are credited rather than claimed as new.
+  author_endorsement: not-contacted
+- title: The damage number of a graph
+  authors:
+  - Danielle Cox
+  - Asiyeh Sanaei
+  type: paper
+  location: https://ajc.maths.uq.edu.au/pdf/75/ajc_v75_p001.pdf
+  relationship: background
+  note: Original ordinary-damage game, AJC 75(1), 1–16 (2019). Randy Davila introduced the zombie-restricted
+    damage parameter. No ordinary-damage theorem is assumed by the proof.
+  author_endorsement: not-contacted
+- title: Replacing Cops with Zombies
+  authors:
+  - Fengyi Liu
+  - Avery Miller
+  type: paper
+  location: https://doi.org/10.4230/LIPIcs.FUN.2026.30
+  relationship: background
+  note: Related geodesic pursuit with a capture objective, FUN 2026, LIPIcs 366, 30:1–30:12. It does not
+    resolve the damaged-vertex objective.
+  author_endorsement: not-contacted
+- title: On the damage number of graphs
+  authors:
+  - Valentin Gledel
+  - William B. Kinnersley
+  - Balázs Patkós
+  - Miloš Stojaković
+  type: paper
+  location: https://arxiv.org/abs/2608.15226v1
+  relationship: background
+  note: Ordinary one-cop damage, arXiv v1 of 15 August 2026; graph-family and complexity results. Cop
+    moves are not constrained to be geodesic.
+  author_endorsement: not-contacted
+- title: On the multi-robber damage number
+  authors:
+  - Miloš Stojaković
+  - Lasse Wulf
+  type: paper
+  location: https://arxiv.org/abs/2209.10965v4
+  relationship: background
+  note: Ordinary cop/multiple-robber damage; first posted in 2022, v4 revised 22 June 2026. Background
+    only.
+  author_endorsement: not-contacted
+- title: The damage number of the Cartesian product of graphs
+  authors:
+  - Melissa A. Huggan
+  - Margaret-Ellen Messinger
+  - Amanda Porter
+  type: paper
+  location: https://ajc.maths.uq.edu.au/pdf/88/ajc_v88_p362.pdf
+  relationship: background
+  note: Ordinary-damage background, AJC 88(3), 362–384 (2024); read together with the 2025 corrigendum.
+  author_endorsement: not-contacted
+- title: 'Corrigendum to: The damage number of the Cartesian product of graphs'
+  authors:
+  - Melissa A. Huggan
+  - Margaret-Ellen Messinger
+  - Amanda Porter
+  type: paper
+  location: https://ajc.maths.uq.edu.au/pdf/91/ajc_v91_p217.pdf
+  relationship: background
+  note: AJC 91(1), 217–218 (2025). Corrects domination definitions and affected ordinary-damage statements.
+    No corrected theorem is a premise here.
+  author_endorsement: not-contacted
+status:
+  scope: Full formalization of Randy Davila’s one-zombie damage game and the complete proof of his Conjecture
+    24. The game includes shortest-walk geodesic replies, adversarial choices, start and turn order, survivor
+    passes, capture, distinct-vertex damage, bounded and eventual strategies, and an explicit numerical
+    damage value. For every finite simple connected bridgeless cubic graph of order n at least 10, the
+    survivor can force damage to all n vertices within 2n(n+1) survivor moves. The project also proves
+    the four-exception characterization, structural classification, routing, recurrence and related bounds.
+    All proof sources are included in one Lake project. This includes the complete game semantics and
+    the stated results, not every theorem or a numerical solver for arbitrary graphs in Davila’s paper.
+    Supporting distance-shell observation obstructions and diamond-ring sensor bounds are included with
+    explicit attribution to earlier work. The paper's degree-independent arbitrary-game interface theorem
+    (Theorem 13) remains a written abstraction; Lean proves its complete cubic-zombie application directly.
+    Remark 19's ring-structure connection to recurrence remains written-only; its observation obstruction
+    and sensor lower bound are formalized. Computational census counts and historical regression checks
+    are tests, not additional formal theorem claims.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  sorry_count_scope: Solution and all its dependencies have no proof holes. Challenge independently states
+    all 42 selected results with 42 deliberate statement holes and imports only Std and Mathlib. The isolated
+    GameChallenge retains the additional 24-statement comparison. Neither challenge is imported by any proof.
+  axiom_audit_status: All 42 root selections and all 24 independently stated game results passed Comparator
+    and NanoDa locally. All 276 axiom roots (263 supplied declarations plus 13 interface wrappers) report only propext, Quot.sound and Classical.choice. No registry
+    submission or registration has occurred.
+  main_results:
+  - declaration: PalomarVerified.full_damage_within_iff
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.full_damage_iff
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.davila_conjecture_24
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.full_damage_of_clean_edge
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.recurrent_coverage_of_clean_edge
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: ZombieMain.mobius_recurrent_coverage
+    file: ZombieMain/PeriodicCoverage.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.four_boundary_edges
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.short_component_expansion
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: ZombieMain.diamond_ring_sensor_bound
+    file: ZombieMain/SensorCounting.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.four_port_principle
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.cycle_union_classification
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff
+    file: ZombieMain/GameValue.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  - declaration: PalomarVerified.davila_conjecture_24_damage_number
+    file: PalomarWrappers.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Lean, Comparator and NanoDa passed locally
+  axioms:
+  - propext
+  - Quot.sound
+  - Classical.choice
+automation:
+  methods:
+  - method: manual
+    description: Lennart Rudolph selected the mathematical statements, directed the research and preparation,
+      supplied the manuscript and formalization, and is responsible for the result and any future submission.
+  - method: agent
+    models:
+    - OpenAI ChatGPT
+    - OpenAI Codex (Astra)
+    - Anthropic Fable 5.1
+    framework: Human-directed AI assistance in mathematics, drafting, literature search, verification
+      and release preparation
+    tool_setup: Lean 4.32.0 and Mathlib v4.32.0 at immutable commit 81a5d257c8e410db227a6665ed08f64fea08e997;
+      276 axiom roots (263 supplied, 13 presentation wrappers); 42 root Comparator selections and a separate independently stated 24-theorem game
+      comparison. The scripts require real pinned Comparator, lean4export, NanoDa and Landrun. All 132
+      prior library files are retained byte-for-byte; the numerical value bridge is added in three Lean
+      modules.
+  spend_usd: not tracked
+  notes: OpenAI Codex (Astra) assisted in formalization, source review, verification and release preparation.
+    Anthropic Fable 5.1 assisted in adversarial reviews, as reported by the author. OpenAI ChatGPT also
+    assisted in the research workflow. No AI is an author. AI-produced third-party computational review
+    material is supplementary evidence in the associated Zenodo artifacts and is not represented as independent
+    human peer review.
+fidelity:
+  divergences: The graph is the actual finite simple graph; Conjecture 24 assumes connectedness, degree
+    three at every vertex, no bridges and at least ten vertices. No routing, decomposition or classification
+    hypothesis replaces a proved step. Every geodesic zombie reply is adversarial. The zombie chooses
+    first and moves first; the survivor may pass; damage is credited on departure after a survived zombie
+    turn. Entering the occupied zombie vertex is normalized to a pass, with payoff equivalence proved
+    for every damaged-set objective in OccupiedVertexNormalization.lean. The finite numerical value is
+    the maximal forceable score, and the threshold, eventual-horizon and full-damage equivalences are
+    proved. Zero is the default score where no distinct starting pair exists. The formal graph-order upper
+    bound also prevents empty-graph vacuity from creating positive scores. No claim covers every historical
+    theorem in Davila’s paper. The structural classification has an explicit one-port alternative; the
+    proof derives that this alternative cannot occur for a short-edge component in the bridgeless cubic
+    application. The general degree-independent interface theorem and the ring family's structural connection
+    to recurrence are written-only; the complete cubic application, recurrence theorem and ring sensor bound
+    are proved. No computational census or historical regression count is a formal theorem claim.
+    Thirteen selections use transparent PalomarVerified wrappers to avoid Palomar's known core-notation
+    alias bug (PalomarSubmission issue 134). Four helpers have the literal original degree, vertex-pair,
+    equality and inequality definitions; every wrapper is proved by a direct application of its original
+    theorem. The other 29 selections keep their original names. All 42 original results remain represented
+    and all 135 supplied library sources are unchanged; verification/selection-map.json records the mapping.
+review:
+  status: Locally kernel-checked; AI-assisted source and mathematical review; not independently human-refereed
+    or registered
+  reviewers: []
+  notes: The unified source was rebuilt locally. Comparator and NanoDa accepted all 42 root selections
+    and the original 24 independently reconstructed game statements; 276 axiom reports use only the three
+    standard axioms. Source and mathematical review was AI-assisted, with no independent human refereeing
+    claimed. The author will handle public submission; nothing has been published, submitted or registered
+    by this local preparation.
+alignment:
+  namespace: ZombieMain
+  statements:
+  - source: Main characterization with exact move bound
+    lean: PalomarVerified.full_damage_within_iff
+    module: PalomarWrappers
+    status: proved
+  - source: Main characterization with eventual full-damage payoff
+    lean: PalomarVerified.full_damage_iff
+    module: PalomarWrappers
+    status: proved
+  - source: Davila Conjecture 24
+    lean: PalomarVerified.davila_conjecture_24
+    module: PalomarWrappers
+    status: proved
+  - source: Clean-edge full damage within 2n(n+1) moves
+    lean: PalomarVerified.full_damage_of_clean_edge
+    module: PalomarWrappers
+    status: proved
+  - source: Infinite safe recurrent coverage from every zombie start
+    lean: PalomarVerified.recurrent_coverage_of_clean_edge
+    module: PalomarWrappers
+    status: proved
+  - source: Infinite safe Mobius-ladder coverage
+    lean: ZombieMain.mobius_recurrent_coverage
+    module: Solution
+    status: proved
+  - source: At most four exterior edges
+    lean: PalomarVerified.four_boundary_edges
+    module: PalomarWrappers
+    status: proved
+  - source: Edge-expansion corollary
+    lean: PalomarVerified.short_component_expansion
+    module: PalomarWrappers
+    status: proved
+  - source: Attributed diamond-ring sensor cardinality lower bound
+    lean: ZombieMain.diamond_ring_sensor_bound
+    module: Solution
+    status: proved
+  - source: Four-port principle
+    lean: PalomarVerified.four_port_principle
+    module: PalomarWrappers
+    status: proved
+  - source: Universal short-cycle classification
+    lean: PalomarVerified.cycle_union_classification
+    module: PalomarWrappers
+    status: proved
+  - source: 'Davila Definition 1: numerical zombie damage number'
+    lean: ZombieDamage.FullGame.canForceDamage_iff_le_number
+    module: ZombieMain.GameValue
+    status: proved
+    note: Every positive threshold is forceable exactly when it is no larger than the defined value.
+  - source: 'Davila Conjecture 24: zdmg(G)=|V(G)|'
+    lean: PalomarVerified.davila_conjecture_24_damage_number
+    module: PalomarWrappers
+    status: proved
+    note: Numerical conclusion derived from the complete bounded full-damage theorem.
+  - source: 'Davila Definition 1: arbitrary legal survivor destinations'
+    lean: ZombieDamage.FullGame.PermissiveForces.iff_normalized
+    module: ZombieDamage.OccupiedVertexNormalization
+    status: proved
+    note: Exact equivalence for damaged-set objectives, every state, phase and move budget.
+  - source: Finite bounded and eventual score semantics
+    lean: ZombieDamage.FullGame.canForceDamage_iff_eventual
+    module: ZombieMain.GameValue
+    status: proved
+acknowledgements: Lean, Mathlib, Comparator, lean4export, NanoDa, Landrun and Palomar tooling authors;
+  original mathematical sources are identified above.

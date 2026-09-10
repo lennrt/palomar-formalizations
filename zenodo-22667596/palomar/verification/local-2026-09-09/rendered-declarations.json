@@ -1,0 +1,170 @@
+[
+  {
+    "name": "PalomarVerified.full_damage_within_iff",
+    "declaration": "theorem PalomarVerified.full_damage_within_iff {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (hconn : SimpleGraph.Connected G) (hcubic : ∀ (v : V), Eq (PalomarVerified.degree G v) 3)\n  (hbridge : ∀ (u v : V), SimpleGraph.Adj G u v → Not (SimpleGraph.IsBridge G (Sym2.mk u v))) :\n  Iff\n    (ZombieDamage.FullGame.FullDamageWithin (ZombieMain.gameGraph G)\n      (HMul.hMul (HMul.hMul 2 (Fintype.card V)) (HAdd.hAdd (Fintype.card V) 1)))\n    (Not (ZombieMain.IsException G))"
+  },
+  {
+    "name": "PalomarVerified.full_damage_iff",
+    "declaration": "theorem PalomarVerified.full_damage_iff {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (hconn : SimpleGraph.Connected G) (hcubic : ∀ (v : V), Eq (PalomarVerified.degree G v) 3)\n  (hbridge : ∀ (u v : V), SimpleGraph.Adj G u v → Not (SimpleGraph.IsBridge G (Sym2.mk u v))) :\n  Iff (ZombieDamage.FullGame.FullDamage (ZombieMain.gameGraph G)) (Not (ZombieMain.IsException G))"
+  },
+  {
+    "name": "PalomarVerified.davila_conjecture_24",
+    "declaration": "theorem PalomarVerified.davila_conjecture_24 {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (hconn : SimpleGraph.Connected G) (hcubic : ∀ (v : V), Eq (PalomarVerified.degree G v) 3)\n  (hbridge : ∀ (u v : V), SimpleGraph.Adj G u v → Not (SimpleGraph.IsBridge G (Sym2.mk u v)))\n  (hn : LE.le 10 (Fintype.card V)) :\n  ZombieDamage.FullGame.FullDamageWithin (ZombieMain.gameGraph G)\n    (HMul.hMul (HMul.hMul 2 (Fintype.card V)) (HAdd.hAdd (Fintype.card V) 1))"
+  },
+  {
+    "name": "PalomarVerified.full_damage_of_clean_edge",
+    "declaration": "theorem PalomarVerified.full_damage_of_clean_edge {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (hconn : SimpleGraph.Connected G) (hcubic : ∀ (v : V), Eq (PalomarVerified.degree G v) 3)\n  (hbridge : ∀ (u v : V), SimpleGraph.Adj G u v → Not (SimpleGraph.IsBridge G (Sym2.mk u v)))\n  (hclean : Exists fun p => Exists fun q => ZombieDamage.Graph.Clean (ZombieMain.gameGraph G) p q) :\n  ZombieDamage.FullGame.FullDamageWithin (ZombieMain.gameGraph G)\n    (HMul.hMul (HMul.hMul 2 (Fintype.card V)) (HAdd.hAdd (Fintype.card V) 1))"
+  },
+  {
+    "name": "PalomarVerified.recurrent_coverage_of_clean_edge",
+    "declaration": "theorem PalomarVerified.recurrent_coverage_of_clean_edge {W : Type} {H : SimpleGraph W} [Fintype W]\n  [DecidableRel (SimpleGraph.Adj H)] (hconn : SimpleGraph.Connected H)\n  (hcubic : ∀ (v : W), Eq (PalomarVerified.degree H v) 3)\n  (hbridge : ∀ (u v : W), SimpleGraph.Adj H u v → Not (SimpleGraph.IsBridge H (Sym2.mk u v)))\n  (hclean : Exists fun p => Exists fun q => ZombieDamage.Graph.Clean (ZombieMain.gameGraph H) p q) :\n  ZombieMain.RecurrentCoverageWithin (ZombieMain.gameGraph H) (HMul.hMul 2 (Fintype.card W))"
+  },
+  {
+    "name": "ZombieMain.mobius_recurrent_coverage",
+    "declaration": "theorem ZombieMain.mobius_recurrent_coverage {m : Nat} (hm : LE.le 4 m) :\n  ZombieMain.RecurrentCoverageWithin (ZombieDamage.MobiusGame.graph hm) 0"
+  },
+  {
+    "name": "PalomarVerified.four_boundary_edges",
+    "declaration": "theorem PalomarVerified.four_boundary_edges {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (H : SimpleGraph.Subgraph G) (hconn : SimpleGraph.Connected (SimpleGraph.Subgraph.coe H))\n  (hmin :\n    ∀ (v : V),\n      Membership.mem (SimpleGraph.Subgraph.verts H) v → LE.le 2 (Set.ncard (SimpleGraph.Subgraph.neighborSet H v)))\n  (hmax : ∀ (v : V), LE.le (PalomarVerified.degree G v) 3)\n  (hshort :\n    ∀ (u v : Set.Elem (SimpleGraph.Subgraph.verts H)),\n      SimpleGraph.Adj (SimpleGraph.Subgraph.coe H) u v →\n        Exists fun C => And (ZombieMain.IsShortCycle C) (SimpleGraph.Subgraph.Adj C u v)) :\n  LE.le (Set.ncard (ZombieMain.cutPairs G (SimpleGraph.Subgraph.verts H))) 4"
+  },
+  {
+    "name": "PalomarVerified.short_component_expansion",
+    "declaration": "theorem PalomarVerified.short_component_expansion {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableRel (SimpleGraph.Adj G)]\n  (H : SimpleGraph.Subgraph G) (hconn : SimpleGraph.Connected (SimpleGraph.Subgraph.coe H))\n  (hmin :\n    ∀ (v : V),\n      Membership.mem (SimpleGraph.Subgraph.verts H) v → LE.le 2 (Set.ncard (SimpleGraph.Subgraph.neighborSet H v)))\n  (hmax : ∀ (v : V), LE.le (PalomarVerified.degree G v) 3)\n  (hshort :\n    ∀ (u v : Set.Elem (SimpleGraph.Subgraph.verts H)),\n      SimpleGraph.Adj (SimpleGraph.Subgraph.coe H) u v →\n        Exists fun C => And (ZombieMain.IsShortCycle C) (SimpleGraph.Subgraph.Adj C u v))\n  (η : Real) (hη : LT.lt 0 η) (hex : ZombieMain.HasEdgeExpansion G η) :\n  LE.le\n    (↑(Min.min (Set.ncard (SimpleGraph.Subgraph.verts H))\n        (HSub.hSub (Fintype.card V) (Set.ncard (SimpleGraph.Subgraph.verts H)))))\n    (HDiv.hDiv 4 η)"
+  },
+  {
+    "name": "ZombieMain.diamond_ring_sensor_bound",
+    "declaration": "theorem ZombieMain.diamond_ring_sensor_bound (k : Nat) (S : Finset (ZombieDamage.DiamondRing.Vertex k)) (h : Nat)\n  (hh : LE.le 1 h)\n  (hrec : ZombieDamage.Graph.Recovers (ZombieDamage.DiamondRing.graph k) (fun v => Membership.mem S v) h) :\n  LE.le (HAdd.hAdd k 3) (Finset.card S)"
+  },
+  {
+    "name": "PalomarVerified.four_port_principle",
+    "declaration": "theorem PalomarVerified.four_port_principle.{u_1} {W : Type u_1} [Fintype W] {H : SimpleGraph W}\n  [DecidableRel (SimpleGraph.Adj H)] (hconn : SimpleGraph.Connected H)\n  (hmin : ∀ (v : W), LE.le 2 (PalomarVerified.degree H v)) (hmax : ∀ (v : W), LE.le (PalomarVerified.degree H v) 3)\n  (hshort :\n    ∀ (u v : W),\n      SimpleGraph.Adj H u v → Exists fun C => And (ZombieMain.IsShortCycle C) (SimpleGraph.Subgraph.Adj C u v)) :\n  And (LE.le (Finset.sum Finset.univ fun v => HSub.hSub 3 (PalomarVerified.degree H v)) 4)\n    (LE.le (Finset.card (Finset.filter (fun v => Eq (PalomarVerified.degree H v) 2) Finset.univ)) 4)"
+  },
+  {
+    "name": "PalomarVerified.cycle_union_classification",
+    "declaration": "theorem PalomarVerified.cycle_union_classification.{u_1} {W : Type u_1} [Fintype W] {H : SimpleGraph W}\n  [DecidableRel (SimpleGraph.Adj H)] (hconn : SimpleGraph.Connected H)\n  (hmin : ∀ (v : W), LE.le 2 (PalomarVerified.degree H v)) (hmax : ∀ (v : W), LE.le (PalomarVerified.degree H v) 3)\n  (hshort :\n    ∀ (u v : W),\n      SimpleGraph.Adj H u v → Exists fun C => And (ZombieMain.IsShortCycle C) (SimpleGraph.Subgraph.Adj C u v)) :\n  ZombieMain.ClassifiedSubgraph Top.top"
+  },
+  {
+    "name": "ZombieDamage.Graph.geodesicReply_iff_commonNeighbor",
+    "declaration": "theorem ZombieDamage.Graph.geodesicReply_iff_commonNeighbor {V : Type} (G : ZombieDamage.Graph V) {u w x : V}\n  (h : ZombieDamage.Graph.TwoApart G u w) :\n  Iff (ZombieDamage.Graph.GeodesicReply G u w x) (And (ZombieDamage.Graph.adj G u x) (ZombieDamage.Graph.adj G x w))"
+  },
+  {
+    "name": "ZombieDamage.Graph.cleanEdge_forces_reply",
+    "declaration": "theorem ZombieDamage.Graph.cleanEdge_forces_reply {V : Type} (G : ZombieDamage.Graph V) {u v w x : V}\n  (hc : ZombieDamage.Graph.Clean G v w) (huv : ZombieDamage.Graph.adj G u v) (huw : Ne u w) :\n  Iff (ZombieDamage.Graph.GeodesicReply G u w x) (Eq x v)"
+  },
+  {
+    "name": "ZombieDamage.Graph.short_twoStep_closed",
+    "declaration": "theorem ZombieDamage.Graph.short_twoStep_closed {V : Type} (G : ZombieDamage.Graph V) {u v w : V}\n  (huv : ZombieDamage.Graph.ShortAdj G u v) (hvw : ZombieDamage.Graph.ShortAdj G v w) (hne : Ne u w) :\n  And (ZombieDamage.Graph.adj G u w → ZombieDamage.Graph.ShortAdj G u w)\n    (∀ (x : V),\n      ZombieDamage.Graph.adj G u x →\n        ZombieDamage.Graph.adj G x w → And (ZombieDamage.Graph.ShortAdj G u x) (ZombieDamage.Graph.ShortAdj G x w))"
+  },
+  {
+    "name": "ZombieDamage.Verified.finite_component_routing",
+    "declaration": "theorem ZombieDamage.Verified.finite_component_routing (g : ZombieDamage.Gadget) :\n  And\n    (∀ (p q : ZombieDamage.Gadget.Vertex g),\n      Eq (ZombieDamage.Gadget.port g p) Bool.true →\n        Eq (ZombieDamage.Gadget.port g q) Bool.true → Ne p q → ZombieDamage.Gadget.RouteExit g p q)\n    (∀ (p t : ZombieDamage.Gadget.Vertex g),\n      Eq (ZombieDamage.Gadget.port g p) Bool.true →\n        Eq (ZombieDamage.Gadget.inside g t) Bool.true → ZombieDamage.Gadget.RouteTarget g p t)"
+  },
+  {
+    "name": "ZombieDamage.Graph.involution_blocks_recovery",
+    "declaration": "theorem ZombieDamage.Graph.involution_blocks_recovery {V : Type} (G : ZombieDamage.Graph V) (f : V → V)\n  (hinv : ∀ (v : V), Eq (f (f v)) v)\n  (hmap : ∀ (u v : V), ZombieDamage.Graph.adj G u v → ZombieDamage.Graph.adj G (f u) (f v)) (S : V → Prop)\n  (hfix : ∀ (s : V), S s → Eq (f s) s) (a b : V) (hne : Ne a b) (hab : Eq (f a) b) (h : Nat) (hh : LE.le 1 h) :\n  Not (ZombieDamage.Graph.Recovers G S h)"
+  },
+  {
+    "name": "PalomarVerified.central_pair_sensor",
+    "declaration": "theorem PalomarVerified.central_pair_sensor (k : Nat) (S : ZombieDamage.DiamondRing.Vertex k → Prop) (h : Nat) (hh : LE.le 1 h)\n  (hrec : ZombieDamage.Graph.Recovers (ZombieDamage.DiamondRing.graph k) S h) (i : Fin (HAdd.hAdd k 3)) :\n  Or (S (PalomarVerified.diamondVertex k i ZombieDamage.DiamondRing.Role.a))\n    (S (PalomarVerified.diamondVertex k i ZombieDamage.DiamondRing.Role.b))"
+  },
+  {
+    "name": "PalomarVerified.metric_exit_contract",
+    "declaration": "theorem PalomarVerified.metric_exit_contract (m : Nat) (hm : LE.le 2 m) (left right : Bool)\n  (entry q : ZombieDamage.OpenStrip.Port) (hin : ZombieDamage.OpenStrip.Active left right entry)\n  (hq : ZombieDamage.OpenStrip.Active left right q) (hne : Ne q entry) :\n  ZombieDamage.Task.MetricForcesWithin\n    (ZombieDamage.OpenStrip.task m left right Option.none fun p => PalomarVerified.portEq p q)\n    (ZombieDamage.OpenStrip.task_good m hm left right Option.none fun p => PalomarVerified.portEq p q) (HMul.hMul 2 m)\n    (ZombieDamage.Position.mk Bool.false (ZombieDamage.OpenStrip.portStub m entry)\n      (ZombieDamage.OpenStrip.portVertex m hm entry))"
+  },
+  {
+    "name": "PalomarVerified.metric_target_contract",
+    "declaration": "theorem PalomarVerified.metric_target_contract (m : Nat) (hm : LE.le 2 m) (left right : Bool)\n  (entry : ZombieDamage.OpenStrip.Port) (hin : ZombieDamage.OpenStrip.Active left right entry)\n  (x : Fin (HAdd.hAdd (HMul.hMul 2 m) 8)) (hx : ZombieDamage.OpenStrip.Internal m left right x) :\n  ZombieDamage.Task.MetricForcesWithin\n    (ZombieDamage.OpenStrip.task m left right (Option.some x) fun p => PalomarVerified.portNe p entry)\n    (ZombieDamage.OpenStrip.task_good m hm left right (Option.some x) fun p => PalomarVerified.portNe p entry)\n    (HMul.hMul 2 m)\n    (ZombieDamage.Position.mk Bool.false (ZombieDamage.OpenStrip.portStub m entry)\n      (ZombieDamage.OpenStrip.portVertex m hm entry))"
+  },
+  {
+    "name": "ZombieDamage.TriangleRoute.prescribed_exit",
+    "declaration": "theorem ZombieDamage.TriangleRoute.prescribed_exit (p q : Fin 3) (hne : Ne p q) (s : ZombieDamage.FullGame.State (Fin 6))\n  (hz : Eq (ZombieDamage.FullGame.State.zombie s) (ZombieDamage.TriangleRoute.stub p))\n  (hs : Eq (ZombieDamage.FullGame.State.survivor s) (ZombieDamage.TriangleRoute.vertex p)) :\n  ZombieDamage.FullGame.ForcesWithin ZombieDamage.TriangleRoute.graph\n    (fun phase t =>\n      And (Eq phase ZombieDamage.FullGame.Phase.survivor)\n        (And (Eq (ZombieDamage.FullGame.State.zombie t) (ZombieDamage.TriangleRoute.vertex q))\n          (And (Eq (ZombieDamage.FullGame.State.survivor t) (ZombieDamage.TriangleRoute.stub q))\n            (And (ZombieDamage.FullGame.State.damaged t (ZombieDamage.TriangleRoute.vertex p))\n              (ZombieDamage.FullGame.State.damaged t (ZombieDamage.TriangleRoute.vertex q))))))\n    2 ZombieDamage.FullGame.Phase.survivor s"
+  },
+  {
+    "name": "ZombieDamage.TriangleRoute.target_route",
+    "declaration": "theorem ZombieDamage.TriangleRoute.target_route (p a : Fin 3) (s : ZombieDamage.FullGame.State (Fin 6))\n  (hz : Eq (ZombieDamage.FullGame.State.zombie s) (ZombieDamage.TriangleRoute.stub p))\n  (hs : Eq (ZombieDamage.FullGame.State.survivor s) (ZombieDamage.TriangleRoute.vertex p)) :\n  ZombieDamage.FullGame.ForcesWithin ZombieDamage.TriangleRoute.graph\n    (fun phase t =>\n      And (Eq phase ZombieDamage.FullGame.Phase.survivor)\n        (Exists fun q =>\n          And (Ne q p)\n            (And (Eq (ZombieDamage.FullGame.State.zombie t) (ZombieDamage.TriangleRoute.vertex q))\n              (And (Eq (ZombieDamage.FullGame.State.survivor t) (ZombieDamage.TriangleRoute.stub q))\n                (ZombieDamage.FullGame.State.damaged t (ZombieDamage.TriangleRoute.vertex a))))))\n    2 ZombieDamage.FullGame.Phase.survivor s"
+  },
+  {
+    "name": "ZombieDamage.DiamondRoute.target_route",
+    "declaration": "theorem ZombieDamage.DiamondRoute.target_route (p : Bool) (a : Fin 6) (ha : LT.lt (↑a) 4)\n  (s : ZombieDamage.FullGame.State (Fin 6))\n  (hz : Eq (ZombieDamage.FullGame.State.zombie s) (ZombieDamage.DiamondRoute.stub p))\n  (hs : Eq (ZombieDamage.FullGame.State.survivor s) (ZombieDamage.DiamondRoute.port p)) :\n  ZombieDamage.FullGame.ForcesWithin ZombieDamage.DiamondRoute.graph\n    (fun phase t =>\n      And (Eq phase ZombieDamage.FullGame.Phase.survivor)\n        (And (Eq (ZombieDamage.FullGame.State.zombie t) (ZombieDamage.DiamondRoute.port (Bool.not p)))\n          (And (Eq (ZombieDamage.FullGame.State.survivor t) (ZombieDamage.DiamondRoute.stub (Bool.not p)))\n            (ZombieDamage.FullGame.State.damaged t a))))\n    3 ZombieDamage.FullGame.Phase.survivor s"
+  },
+  {
+    "name": "ZombieDamage.Task.fullGame_metricForcesWithin",
+    "declaration": "theorem ZombieDamage.Task.fullGame_metricForcesWithin {N : Nat} (T : ZombieDamage.Task N) (hg : ZombieDamage.Task.GoodGraph T)\n  (hl : ZombieDamage.Task.BoundaryLeaves T) (b : Nat) (s : ZombieDamage.Position N) (D : Fin N → Prop)\n  (hinside : Eq (ZombieDamage.Task.inside T (ZombieDamage.Position.survivor s)) Bool.true)\n  (hadj : Eq (ZombieDamage.Task.adj T (ZombieDamage.Position.zombie s) (ZombieDamage.Position.survivor s)) Bool.true)\n  (hflag : ZombieDamage.Task.FlagComplete T s D)\n  (h :\n    ZombieDamage.FullGame.ForcesWithin (ZombieDamage.Task.graph T hg) (ZombieDamage.Task.FullExit T) b\n      ZombieDamage.FullGame.Phase.survivor (ZombieDamage.Task.fullState s D)) :\n  ZombieDamage.Task.MetricForcesWithin T hg b s"
+  },
+  {
+    "name": "ZombieDamage.FullGame.fullDamage_iff_eventual",
+    "declaration": "theorem ZombieDamage.FullGame.fullDamage_iff_eventual {V : Type} (G : ZombieDamage.Graph V) (vs : List V)\n  (hevery : ∀ (v : V), Membership.mem vs v) :\n  Iff (ZombieDamage.FullGame.FullDamage G) (ZombieDamage.FullGame.EventualFullDamage G)"
+  },
+  {
+    "name": "ZombieDamage.Graph.MetricCertificate.distance",
+    "declaration": "theorem ZombieDamage.Graph.MetricCertificate.distance {V : Type} {G : ZombieDamage.Graph V}\n  (M : ZombieDamage.Graph.MetricCertificate G) (u v : V) :\n  ZombieDamage.Graph.Distance G (ZombieDamage.Graph.MetricCertificate.value M u v) u v"
+  },
+  {
+    "name": "ZombieDamage.Task.metricForcesWithin_fullGame",
+    "declaration": "theorem ZombieDamage.Task.metricForcesWithin_fullGame {N : Nat} (T : ZombieDamage.Task N) (hg : ZombieDamage.Task.GoodGraph T)\n  {b : Nat} {s : ZombieDamage.Position N} (h : ZombieDamage.Task.MetricForcesWithin T hg b s) (D : Fin N → Prop)\n  (hs : ZombieDamage.Task.FlagSound T s D) :\n  ZombieDamage.FullGame.ForcesWithin (ZombieDamage.Task.graph T hg) (ZombieDamage.Task.FullExit T) b\n    ZombieDamage.FullGame.Phase.survivor (ZombieDamage.Task.fullState s D)"
+  },
+  {
+    "name": "ZombieDamage.FullGame.fullDamage_of_contract",
+    "declaration": "theorem ZombieDamage.FullGame.fullDamage_of_contract {V : Type} (G : ZombieDamage.Graph V)\n  (I : ZombieDamage.FullGame.State V → Prop) (cost startCost : Nat) (targets : List V)\n  (hevery : ∀ (v : V), Membership.mem targets v) (hc : ZombieDamage.FullGame.TargetContract G I cost)\n  (hinit :\n    ∀ (z : V),\n      Exists fun v =>\n        And (Ne z v)\n          (ZombieDamage.FullGame.ForcesWithin G (fun p t => And (Eq p ZombieDamage.FullGame.Phase.survivor) (I t))\n            startCost ZombieDamage.FullGame.Phase.zombie (ZombieDamage.FullGame.initial z v))) :\n  ZombieDamage.FullGame.FullDamageWithin G (HAdd.hAdd startCost (HMul.hMul (List.length targets) cost))"
+  },
+  {
+    "name": "ZombieDamage.FullGame.universal_vertex_not_fullDamage",
+    "declaration": "theorem ZombieDamage.FullGame.universal_vertex_not_fullDamage {V : Type} (G : ZombieDamage.Graph V) (u : V)\n  (hu : ∀ (v : V), Ne u v → ZombieDamage.Graph.adj G u v) : Not (ZombieDamage.FullGame.FullDamage G)"
+  },
+  {
+    "name": "ZombieDamage.FullGame.pass_damages_source",
+    "declaration": "theorem ZombieDamage.FullGame.pass_damages_source {V : Type} (G : ZombieDamage.Graph V) (s : ZombieDamage.FullGame.State V)\n  (hne : Ne (ZombieDamage.FullGame.State.zombie s) (ZombieDamage.FullGame.State.survivor s)) :\n  ZombieDamage.FullGame.ForcesWithin G\n    (fun x t => ZombieDamage.FullGame.State.damaged t (ZombieDamage.FullGame.State.survivor s)) 1\n    ZombieDamage.FullGame.Phase.survivor s"
+  },
+  {
+    "name": "ZombieDamage.CycleGame.full_damage",
+    "declaration": "theorem ZombieDamage.CycleGame.full_damage {n : Nat} (hn : LE.le 5 n) :\n  ZombieDamage.FullGame.FullDamageWithin (ZombieDamage.CycleGame.graph hn) n"
+  },
+  {
+    "name": "ZombieDamage.MobiusGame.full_damage",
+    "declaration": "theorem ZombieDamage.MobiusGame.full_damage {m : Nat} (hm : LE.le 4 m) :\n  ZombieDamage.FullGame.FullDamageWithin (ZombieDamage.MobiusGame.graph hm) (HMul.hMul 2 m)"
+  },
+  {
+    "name": "ZombieDamage.PrismGame.full_damage",
+    "declaration": "theorem ZombieDamage.PrismGame.full_damage {m : Nat} (hm : LE.le 5 m) :\n  ZombieDamage.FullGame.FullDamageWithin (ZombieDamage.PrismGame.graph hm) (HMul.hMul 2 m)"
+  },
+  {
+    "name": "ZombieDamage.Exceptions.not_full_damage",
+    "declaration": "theorem ZombieDamage.Exceptions.not_full_damage (g : ZombieDamage.Exceptions.Kind) :\n  Not (ZombieDamage.FullGame.FullDamage (ZombieDamage.Exceptions.graph g))"
+  },
+  {
+    "name": "ZombieDamage.GraphIso.fullDamage_iff",
+    "declaration": "theorem ZombieDamage.GraphIso.fullDamage_iff {V W : Type} {G : ZombieDamage.Graph V} {H : ZombieDamage.Graph W}\n  (F : ZombieDamage.GraphIso G H) : Iff (ZombieDamage.FullGame.FullDamage G) (ZombieDamage.FullGame.FullDamage H)"
+  },
+  {
+    "name": "ZombieDamage.ShortComponentModel.metricForcesWithin_ambient",
+    "declaration": "theorem ZombieDamage.ShortComponentModel.metricForcesWithin_ambient {N : Nat} {V : Type} {T : ZombieDamage.Task N}\n  {G : ZombieDamage.Graph V} (M : ZombieDamage.ShortComponentModel T G) (hg : ZombieDamage.Task.GoodGraph T) {b : Nat}\n  {s : ZombieDamage.Position N} (h : ZombieDamage.Task.MetricForcesWithin T hg b s) (D : V → Prop)\n  (hD : ZombieDamage.ShortComponentModel.FlagSound M s D) :\n  ZombieDamage.FullGame.ForcesWithin G (ZombieDamage.ShortComponentModel.Exit M) b ZombieDamage.FullGame.Phase.survivor\n    (ZombieDamage.ShortComponentModel.state M s D)"
+  },
+  {
+    "name": "ZombieDamage.FullGame.PermissiveForces.iff_normalized",
+    "declaration": "theorem ZombieDamage.FullGame.PermissiveForces.iff_normalized {V : Type} {G : ZombieDamage.Graph V}\n  {objective : (V → Prop) → Prop} {b : Nat} {p : ZombieDamage.FullGame.Phase} {s : ZombieDamage.FullGame.State V} :\n  Iff (ZombieDamage.FullGame.PermissiveForces G objective b p s)\n    (ZombieDamage.FullGame.ForcesWithin G (fun x t => objective (ZombieDamage.FullGame.State.damaged t)) b p s)"
+  },
+  {
+    "name": "ZombieDamage.FullGame.fullDamage_iff_permissive",
+    "declaration": "theorem ZombieDamage.FullGame.fullDamage_iff_permissive {V : Type} (G : ZombieDamage.Graph V) :\n  Iff (ZombieDamage.FullGame.FullDamage G)\n    (Exists fun b =>\n      ∀ (z : V),\n        Exists fun v =>\n          And (Ne z v)\n            (ZombieDamage.FullGame.PermissiveForces G (fun D => ∀ (x : V), D x) b ZombieDamage.FullGame.Phase.zombie\n              (ZombieDamage.FullGame.initial z v)))"
+  },
+  {
+    "name": "ZombieDamage.FullGame.zombieDamageNumber_le_card",
+    "declaration": "theorem ZombieDamage.FullGame.zombieDamageNumber_le_card {V : Type} [Fintype V] {G : ZombieDamage.Graph V} :\n  LE.le (ZombieDamage.FullGame.zombieDamageNumber G) (Fintype.card V)"
+  },
+  {
+    "name": "ZombieDamage.FullGame.canForceDamage_iff_le_number",
+    "declaration": "theorem ZombieDamage.FullGame.canForceDamage_iff_le_number {V : Type} [Fintype V] {G : ZombieDamage.Graph V} {k : Nat}\n  (hk : LT.lt 0 k) :\n  Iff (ZombieDamage.FullGame.CanForceDamage G k) (LE.le k (ZombieDamage.FullGame.zombieDamageNumber G))"
+  },
+  {
+    "name": "ZombieDamage.FullGame.canForceDamage_iff_eventual",
+    "declaration": "theorem ZombieDamage.FullGame.canForceDamage_iff_eventual {V : Type} [Fintype V] {G : ZombieDamage.Graph V} (k : Nat) :\n  Iff (ZombieDamage.FullGame.CanForceDamage G k)\n    (And (LE.le k (Fintype.card V))\n      (∀ (z : V),\n        Exists fun v =>\n          And (Ne z v)\n            (ZombieDamage.FullGame.ForcesEventually G (fun x s => LE.le k (ZombieDamage.FullGame.damageCount s))\n              ZombieDamage.FullGame.Phase.zombie (ZombieDamage.FullGame.initial z v))))"
+  },
+  {
+    "name": "ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff",
+    "declaration": "theorem ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff {V : Type} [Fintype V] {G : ZombieDamage.Graph V}\n  (hn : LT.lt 0 (Fintype.card V)) :\n  Iff (Eq (ZombieDamage.FullGame.zombieDamageNumber G) (Fintype.card V)) (ZombieDamage.FullGame.FullDamage G)"
+  },
+  {
+    "name": "PalomarVerified.davila_conjecture_24_damage_number",
+    "declaration": "theorem PalomarVerified.davila_conjecture_24_damage_number {V : Type} [Fintype V] {G : SimpleGraph V}\n  [DecidableRel (SimpleGraph.Adj G)] (hconn : SimpleGraph.Connected G)\n  (hcubic : ∀ (v : V), Eq (PalomarVerified.degree G v) 3)\n  (hbridge : ∀ (u v : V), SimpleGraph.Adj G u v → Not (SimpleGraph.IsBridge G (Sym2.mk u v)))\n  (hn : LE.le 10 (Fintype.card V)) :\n  Eq (ZombieDamage.FullGame.zombieDamageNumber (ZombieMain.gameGraph G)) (Fintype.card V)"
+  }
+]

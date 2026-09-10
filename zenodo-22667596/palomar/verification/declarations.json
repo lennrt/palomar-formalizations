@@ -1,0 +1,338 @@
+[
+  {
+    "declaration": "ZombieMain.full_damage_within_iff",
+    "file": "ZombieMain/MainTheorem.lean",
+    "line": 64,
+    "meaning": "Four-exception characterization with the explicit move bound",
+    "selected_declaration": "PalomarVerified.full_damage_within_iff",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.full_damage_iff",
+    "file": "ZombieMain/MainTheorem.lean",
+    "line": 78,
+    "meaning": "Four-exception characterization for full damage",
+    "selected_declaration": "PalomarVerified.full_damage_iff",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.davila_conjecture_24",
+    "file": "ZombieMain/MainTheorem.lean",
+    "line": 88,
+    "meaning": "Complete Conjecture 24 with the explicit move bound",
+    "selected_declaration": "PalomarVerified.davila_conjecture_24",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.full_damage_of_clean_edge",
+    "file": "ZombieMain/CleanFullDamage.lean",
+    "line": 10,
+    "meaning": "Full damage from an actual clean edge",
+    "selected_declaration": "PalomarVerified.full_damage_of_clean_edge",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.recurrent_coverage_of_clean_edge",
+    "file": "ZombieMain/RecurrentCoverage.lean",
+    "line": 32,
+    "meaning": "Fixed-controller infinite safe recurrent coverage",
+    "selected_declaration": "PalomarVerified.recurrent_coverage_of_clean_edge",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.mobius_recurrent_coverage",
+    "file": "ZombieMain/PeriodicCoverage.lean",
+    "line": 69,
+    "meaning": "Infinite safe recurrent coverage on Möbius ladders",
+    "selected_declaration": "ZombieMain.mobius_recurrent_coverage",
+    "selected_file": "ZombieMain/PeriodicCoverage.lean"
+  },
+  {
+    "declaration": "ZombieMain.four_boundary_edges",
+    "file": "ZombieMain/Boundary.lean",
+    "line": 51,
+    "meaning": "At most four exterior edges of a short-cycle union",
+    "selected_declaration": "PalomarVerified.four_boundary_edges",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.short_component_expansion",
+    "file": "ZombieMain/Expansion.lean",
+    "line": 48,
+    "meaning": "Expansion bound for a short-cycle component",
+    "selected_declaration": "PalomarVerified.short_component_expansion",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.diamond_ring_sensor_bound",
+    "file": "ZombieMain/SensorCounting.lean",
+    "line": 9,
+    "meaning": "Attributed ring sensor cardinality lower bound",
+    "selected_declaration": "ZombieMain.diamond_ring_sensor_bound",
+    "selected_file": "ZombieMain/SensorCounting.lean"
+  },
+  {
+    "declaration": "ZombieMain.four_port_principle",
+    "file": "ZombieMain/CycleCapacity.lean",
+    "line": 123,
+    "meaning": "Universal four-port inequality",
+    "selected_declaration": "PalomarVerified.four_port_principle",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieMain.cycle_union_classification",
+    "file": "ZombieMain/Classification.lean",
+    "line": 62,
+    "meaning": "Closed and at-least-two-port classification, with an explicit one-port alternative",
+    "selected_declaration": "PalomarVerified.cycle_union_classification",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Graph.geodesicReply_iff_commonNeighbor",
+    "file": "ZombieDamage/Graph.lean",
+    "line": 69,
+    "meaning": "Geodesic replies at distance two are precisely common neighbors",
+    "selected_declaration": "ZombieDamage.Graph.geodesicReply_iff_commonNeighbor",
+    "selected_file": "ZombieDamage/Graph.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Graph.cleanEdge_forces_reply",
+    "file": "ZombieDamage/Graph.lean",
+    "line": 99,
+    "meaning": "A clean edge forces the unique geodesic reply",
+    "selected_declaration": "ZombieDamage.Graph.cleanEdge_forces_reply",
+    "selected_file": "ZombieDamage/Graph.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Graph.short_twoStep_closed",
+    "file": "ZombieDamage/Graph.lean",
+    "line": 126,
+    "meaning": "Internal two-step replies stay in the short-edge graph",
+    "selected_declaration": "ZombieDamage.Graph.short_twoStep_closed",
+    "selected_file": "ZombieDamage/Graph.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Verified.finite_component_routing",
+    "file": "ZombieDamage/Routing.lean",
+    "line": 487,
+    "meaning": "All prescribed exits and targets in the five finite gadgets",
+    "selected_declaration": "ZombieDamage.Verified.finite_component_routing",
+    "selected_file": "ZombieDamage/Routing.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Graph.involution_blocks_recovery",
+    "file": "ZombieDamage/Observation.lean",
+    "line": 74,
+    "meaning": "Involution collision obstructs observation recovery",
+    "selected_declaration": "ZombieDamage.Graph.involution_blocks_recovery",
+    "selected_file": "ZombieDamage/Observation.lean"
+  },
+  {
+    "declaration": "ZombieDamage.DiamondRing.central_pair_sensor",
+    "file": "ZombieDamage/DiamondRing.lean",
+    "line": 97,
+    "meaning": "Every central diamond pair needs a sensor; attributed supporting result",
+    "selected_declaration": "PalomarVerified.central_pair_sensor",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieDamage.OpenStrip.metric_exit_contract",
+    "file": "ZombieDamage/OpenStripMetricContract.lean",
+    "line": 10,
+    "meaning": "All-parameter open-strip exit routing",
+    "selected_declaration": "PalomarVerified.metric_exit_contract",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieDamage.OpenStrip.metric_target_contract",
+    "file": "ZombieDamage/OpenStripMetricContract.lean",
+    "line": 42,
+    "meaning": "All-parameter open-strip target routing",
+    "selected_declaration": "PalomarVerified.metric_target_contract",
+    "selected_file": "PalomarWrappers.lean"
+  },
+  {
+    "declaration": "ZombieDamage.TriangleRoute.prescribed_exit",
+    "file": "ZombieDamage/TriangleRoute.lean",
+    "line": 31,
+    "meaning": "Triangle prescribed-exit routing",
+    "selected_declaration": "ZombieDamage.TriangleRoute.prescribed_exit",
+    "selected_file": "ZombieDamage/TriangleRoute.lean"
+  },
+  {
+    "declaration": "ZombieDamage.TriangleRoute.target_route",
+    "file": "ZombieDamage/TriangleRoute.lean",
+    "line": 59,
+    "meaning": "Triangle target routing",
+    "selected_declaration": "ZombieDamage.TriangleRoute.target_route",
+    "selected_file": "ZombieDamage/TriangleRoute.lean"
+  },
+  {
+    "declaration": "ZombieDamage.DiamondRoute.target_route",
+    "file": "ZombieDamage/DiamondRoute.lean",
+    "line": 75,
+    "meaning": "Diamond target routing",
+    "selected_declaration": "ZombieDamage.DiamondRoute.target_route",
+    "selected_file": "ZombieDamage/DiamondRoute.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Task.fullGame_metricForcesWithin",
+    "file": "ZombieDamage/FullGameConverse.lean",
+    "line": 60,
+    "meaning": "Full-game strategies imply the faithful local metric contract",
+    "selected_declaration": "ZombieDamage.Task.fullGame_metricForcesWithin",
+    "selected_file": "ZombieDamage/FullGameConverse.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.fullDamage_iff_eventual",
+    "file": "ZombieDamage/EventualGame.lean",
+    "line": 84,
+    "meaning": "Bounded and eventual full-damage semantics agree",
+    "selected_declaration": "ZombieDamage.FullGame.fullDamage_iff_eventual",
+    "selected_file": "ZombieDamage/EventualGame.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Graph.MetricCertificate.distance",
+    "file": "ZombieDamage/FiniteMetric.lean",
+    "line": 44,
+    "meaning": "Checked metric values equal actual shortest-walk distance",
+    "selected_declaration": "ZombieDamage.Graph.MetricCertificate.distance",
+    "selected_file": "ZombieDamage/FiniteMetric.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Task.metricForcesWithin_fullGame",
+    "file": "ZombieDamage/FullGameBridge.lean",
+    "line": 39,
+    "meaning": "Local metric strategies transfer to the full game",
+    "selected_declaration": "ZombieDamage.Task.metricForcesWithin_fullGame",
+    "selected_file": "ZombieDamage/FullGameBridge.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.fullDamage_of_contract",
+    "file": "ZombieDamage/Covering.lean",
+    "line": 48,
+    "meaning": "Initialization and routing compose to give full damage",
+    "selected_declaration": "ZombieDamage.FullGame.fullDamage_of_contract",
+    "selected_file": "ZombieDamage/Covering.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.universal_vertex_not_fullDamage",
+    "file": "ZombieDamage/OriginalGameChecks.lean",
+    "line": 27,
+    "meaning": "A universal vertex prevents full damage",
+    "selected_declaration": "ZombieDamage.FullGame.universal_vertex_not_fullDamage",
+    "selected_file": "ZombieDamage/OriginalGameChecks.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.pass_damages_source",
+    "file": "ZombieDamage/OriginalGameChecks.lean",
+    "line": 38,
+    "meaning": "Passing credits the current departure source",
+    "selected_declaration": "ZombieDamage.FullGame.pass_damages_source",
+    "selected_file": "ZombieDamage/OriginalGameChecks.lean"
+  },
+  {
+    "declaration": "ZombieDamage.CycleGame.full_damage",
+    "file": "ZombieDamage/CycleGame.lean",
+    "line": 77,
+    "meaning": "Full damage on cycles of length at least five; Davila Theorem 6",
+    "selected_declaration": "ZombieDamage.CycleGame.full_damage",
+    "selected_file": "ZombieDamage/CycleGame.lean"
+  },
+  {
+    "declaration": "ZombieDamage.MobiusGame.full_damage",
+    "file": "ZombieDamage/MobiusGame.lean",
+    "line": 102,
+    "meaning": "Full damage on Möbius ladders with parameter at least four",
+    "selected_declaration": "ZombieDamage.MobiusGame.full_damage",
+    "selected_file": "ZombieDamage/MobiusGame.lean"
+  },
+  {
+    "declaration": "ZombieDamage.PrismGame.full_damage",
+    "file": "ZombieDamage/PrismGame.lean",
+    "line": 265,
+    "meaning": "Full damage on prisms with rim length at least five",
+    "selected_declaration": "ZombieDamage.PrismGame.full_damage",
+    "selected_file": "ZombieDamage/PrismGame.lean"
+  },
+  {
+    "declaration": "ZombieDamage.Exceptions.not_full_damage",
+    "file": "ZombieDamage/ExceptionTraps.lean",
+    "line": 48,
+    "meaning": "Explicit traps prevent full damage in the four exceptions",
+    "selected_declaration": "ZombieDamage.Exceptions.not_full_damage",
+    "selected_file": "ZombieDamage/ExceptionTraps.lean"
+  },
+  {
+    "declaration": "ZombieDamage.GraphIso.fullDamage_iff",
+    "file": "ZombieDamage/Isomorphism.lean",
+    "line": 123,
+    "meaning": "Graph isomorphisms preserve full damage",
+    "selected_declaration": "ZombieDamage.GraphIso.fullDamage_iff",
+    "selected_file": "ZombieDamage/Isomorphism.lean"
+  },
+  {
+    "declaration": "ZombieDamage.ShortComponentModel.metricForcesWithin_ambient",
+    "file": "ZombieDamage/Ambient.lean",
+    "line": 131,
+    "meaning": "Faithful component models transfer to the actual ambient graph",
+    "selected_declaration": "ZombieDamage.ShortComponentModel.metricForcesWithin_ambient",
+    "selected_file": "ZombieDamage/Ambient.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.PermissiveForces.iff_normalized",
+    "file": "ZombieDamage/OccupiedVertexNormalization.lean",
+    "line": 65,
+    "meaning": "Every damaged-set objective is unchanged by occupied-vertex normalization",
+    "selected_declaration": "ZombieDamage.FullGame.PermissiveForces.iff_normalized",
+    "selected_file": "ZombieDamage/OccupiedVertexNormalization.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.fullDamage_iff_permissive",
+    "file": "ZombieDamage/OccupiedVertexNormalization.lean",
+    "line": 74,
+    "meaning": "Original permissive and normalized full-damage rules agree",
+    "selected_declaration": "ZombieDamage.FullGame.fullDamage_iff_permissive",
+    "selected_file": "ZombieDamage/OccupiedVertexNormalization.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.zombieDamageNumber_le_card",
+    "file": "ZombieMain/GameValue.lean",
+    "line": 42,
+    "meaning": "The numerical value is at most the graph order",
+    "selected_declaration": "ZombieDamage.FullGame.zombieDamageNumber_le_card",
+    "selected_file": "ZombieMain/GameValue.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.canForceDamage_iff_le_number",
+    "file": "ZombieMain/GameValue.lean",
+    "line": 51,
+    "meaning": "Positive score thresholds are forceable exactly below the value",
+    "selected_declaration": "ZombieDamage.FullGame.canForceDamage_iff_le_number",
+    "selected_file": "ZombieMain/GameValue.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.canForceDamage_iff_eventual",
+    "file": "ZombieMain/GameValue.lean",
+    "line": 73,
+    "meaning": "Bounded and eventual score guarantees agree on finite graphs",
+    "selected_declaration": "ZombieDamage.FullGame.canForceDamage_iff_eventual",
+    "selected_file": "ZombieMain/GameValue.lean"
+  },
+  {
+    "declaration": "ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff",
+    "file": "ZombieMain/GameValue.lean",
+    "line": 97,
+    "meaning": "The numerical endpoint equals the full-damage predicate",
+    "selected_declaration": "ZombieDamage.FullGame.zombieDamageNumber_eq_card_iff",
+    "selected_file": "ZombieMain/GameValue.lean"
+  },
+  {
+    "declaration": "ZombieMain.davila_conjecture_24_damage_number",
+    "file": "ZombieMain/NumericalConjecture.lean",
+    "line": 10,
+    "meaning": "Conjecture 24 as the numerical equality zdmg(G)=n",
+    "selected_declaration": "PalomarVerified.davila_conjecture_24_damage_number",
+    "selected_file": "PalomarWrappers.lean"
+  }
+]

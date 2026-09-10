@@ -1,0 +1,36 @@
+{
+  "challenge_module": "GameChallenge",
+  "solution_module": "ZombieDamage",
+  "theorem_names": [
+    "ZombieDamage.Graph.geodesicReply_iff_commonNeighbor",
+    "ZombieDamage.Graph.cleanEdge_forces_reply",
+    "ZombieDamage.Graph.short_twoStep_closed",
+    "ZombieDamage.Verified.finite_component_routing",
+    "ZombieDamage.Graph.involution_blocks_recovery",
+    "ZombieDamage.DiamondRing.central_pair_sensor",
+    "ZombieDamage.OpenStrip.metric_exit_contract",
+    "ZombieDamage.OpenStrip.metric_target_contract",
+    "ZombieDamage.TriangleRoute.prescribed_exit",
+    "ZombieDamage.TriangleRoute.target_route",
+    "ZombieDamage.DiamondRoute.target_route",
+    "ZombieDamage.Task.fullGame_metricForcesWithin",
+    "ZombieDamage.FullGame.fullDamage_iff_eventual",
+    "ZombieDamage.Graph.MetricCertificate.distance",
+    "ZombieDamage.Task.metricForcesWithin_fullGame",
+    "ZombieDamage.FullGame.fullDamage_of_contract",
+    "ZombieDamage.FullGame.universal_vertex_not_fullDamage",
+    "ZombieDamage.FullGame.pass_damages_source",
+    "ZombieDamage.CycleGame.full_damage",
+    "ZombieDamage.MobiusGame.full_damage",
+    "ZombieDamage.PrismGame.full_damage",
+    "ZombieDamage.Exceptions.not_full_damage",
+    "ZombieDamage.GraphIso.fullDamage_iff",
+    "ZombieDamage.ShortComponentModel.metricForcesWithin_ambient"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

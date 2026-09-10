@@ -1,0 +1,14 @@
+{
+  "exit_code": 0,
+  "elapsed_seconds": 116.84,
+  "project": "/private/tmp/palomar-zombie-build.hjmcJZ/project",
+  "config": "/private/tmp/palomar-zombie-build.hjmcJZ/project/comparator.json",
+  "config_sha256": "747bb6031bd08898a5f432e71d5fcd69d03e98b857bb5d24db46a2677cd35d89",
+  "comparator": "575674928e239f5bc452aab72d1dd7b0f1326494",
+  "lean4export": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+  "nanoda": "68d5ca9db226849b41a6fff59d796ff19d0a8840",
+  "landrun": "811cfff51ceaf3d9843708aa6d22e9b84ccac8b4",
+  "hosted_submission": false,
+  "proof_inputs_unchanged": true,
+  "checked_input_files": 146
+}

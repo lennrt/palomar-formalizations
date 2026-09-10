@@ -1,0 +1,36 @@
+Building GameChallenge
+⚠ [2/3] Replayed GameChallenge
+warning: GameChallenge.lean:222:8: declaration uses `sorry`
+warning: GameChallenge.lean:227:8: declaration uses `sorry`
+warning: GameChallenge.lean:232:8: declaration uses `sorry`
+warning: GameChallenge.lean:243:8: declaration uses `sorry`
+warning: GameChallenge.lean:325:8: declaration uses `sorry`
+warning: GameChallenge.lean:335:8: declaration uses `sorry`
+warning: GameChallenge.lean:809:8: declaration uses `sorry`
+warning: GameChallenge.lean:821:8: declaration uses `sorry`
+warning: GameChallenge.lean:833:8: declaration uses `sorry`
+warning: GameChallenge.lean:845:8: declaration uses `sorry`
+warning: GameChallenge.lean:857:8: declaration uses `sorry`
+warning: GameChallenge.lean:869:8: declaration uses `sorry`
+warning: GameChallenge.lean:882:8: declaration uses `sorry`
+warning: GameChallenge.lean:891:8: declaration uses `sorry`
+warning: GameChallenge.lean:899:8: declaration uses `sorry`
+warning: GameChallenge.lean:910:8: declaration uses `sorry`
+warning: GameChallenge.lean:923:8: declaration uses `sorry`
+warning: GameChallenge.lean:932:8: declaration uses `sorry`
+warning: GameChallenge.lean:941:8: declaration uses `sorry`
+warning: GameChallenge.lean:949:8: declaration uses `sorry`
+warning: GameChallenge.lean:957:8: declaration uses `sorry`
+warning: GameChallenge.lean:965:8: declaration uses `sorry`
+warning: GameChallenge.lean:974:8: declaration uses `sorry`
+warning: GameChallenge.lean:983:8: declaration uses `sorry`
+Build completed successfully (3 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, ZombieDamage.Graph.geodesicReply_iff_commonNeighbor, ZombieDamage.Graph.cleanEdge_forces_reply, ZombieDamage.Graph.short_twoStep_closed, ZombieDamage.Verified.finite_component_routing, ZombieDamage.Graph.involution_blocks_recovery, ZombieDamage.DiamondRing.central_pair_sensor, ZombieDamage.OpenStrip.metric_exit_contract, ZombieDamage.OpenStrip.metric_target_contract, ZombieDamage.TriangleRoute.prescribed_exit, ZombieDamage.TriangleRoute.target_route, ZombieDamage.DiamondRoute.target_route, ZombieDamage.Task.fullGame_metricForcesWithin, ZombieDamage.FullGame.fullDamage_iff_eventual, ZombieDamage.Graph.MetricCertificate.distance, ZombieDamage.Task.metricForcesWithin_fullGame, ZombieDamage.FullGame.fullDamage_of_contract, ZombieDamage.FullGame.universal_vertex_not_fullDamage, ZombieDamage.FullGame.pass_damages_source, ZombieDamage.CycleGame.full_damage, ZombieDamage.MobiusGame.full_damage, ZombieDamage.PrismGame.full_damage, ZombieDamage.Exceptions.not_full_damage, ZombieDamage.GraphIso.fullDamage_iff, ZombieDamage.ShortComponentModel.metricForcesWithin_ambient, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from GameChallenge
+Building ZombieDamage
+Build completed successfully (51 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, ZombieDamage.Graph.geodesicReply_iff_commonNeighbor, ZombieDamage.Graph.cleanEdge_forces_reply, ZombieDamage.Graph.short_twoStep_closed, ZombieDamage.Verified.finite_component_routing, ZombieDamage.Graph.involution_blocks_recovery, ZombieDamage.DiamondRing.central_pair_sensor, ZombieDamage.OpenStrip.metric_exit_contract, ZombieDamage.OpenStrip.metric_target_contract, ZombieDamage.TriangleRoute.prescribed_exit, ZombieDamage.TriangleRoute.target_route, ZombieDamage.DiamondRoute.target_route, ZombieDamage.Task.fullGame_metricForcesWithin, ZombieDamage.FullGame.fullDamage_iff_eventual, ZombieDamage.Graph.MetricCertificate.distance, ZombieDamage.Task.metricForcesWithin_fullGame, ZombieDamage.FullGame.fullDamage_of_contract, ZombieDamage.FullGame.universal_vertex_not_fullDamage, ZombieDamage.FullGame.pass_damages_source, ZombieDamage.CycleGame.full_damage, ZombieDamage.MobiusGame.full_damage, ZombieDamage.PrismGame.full_damage, ZombieDamage.Exceptions.not_full_damage, ZombieDamage.GraphIso.fullDamage_iff, ZombieDamage.ShortComponentModel.metricForcesWithin_ambient, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from ZombieDamage
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
