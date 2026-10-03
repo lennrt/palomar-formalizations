@@ -1,0 +1,1686 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers and literal distance bags",
+  "leaf_star_placements": [
+    {
+      "m": 1,
+      "n": 3,
+      "sensors": 6,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 2,
+      "n": 4,
+      "sensors": 8,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 3,
+      "n": 5,
+      "sensors": 9,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 4,
+      "n": 6,
+      "sensors": 11,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 5,
+      "n": 7,
+      "sensors": 12,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 6,
+      "n": 8,
+      "sensors": 14,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 7,
+      "n": 9,
+      "sensors": 15,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": true
+    },
+    {
+      "m": 8,
+      "n": 10,
+      "sensors": 17,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 9,
+      "n": 11,
+      "sensors": 18,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 10,
+      "n": 12,
+      "sensors": 20,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 11,
+      "n": 13,
+      "sensors": 21,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 12,
+      "n": 14,
+      "sensors": 23,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 13,
+      "n": 15,
+      "sensors": 24,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 14,
+      "n": 16,
+      "sensors": 26,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 15,
+      "n": 17,
+      "sensors": 27,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 16,
+      "n": 18,
+      "sensors": 29,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 17,
+      "n": 19,
+      "sensors": 30,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 18,
+      "n": 20,
+      "sensors": 32,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 19,
+      "n": 21,
+      "sensors": 33,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 20,
+      "n": 22,
+      "sensors": 35,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 21,
+      "n": 23,
+      "sensors": 36,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 22,
+      "n": 24,
+      "sensors": 38,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 23,
+      "n": 25,
+      "sensors": 39,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 24,
+      "n": 26,
+      "sensors": 41,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 25,
+      "n": 27,
+      "sensors": 42,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 26,
+      "n": 28,
+      "sensors": 44,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 27,
+      "n": 29,
+      "sensors": 45,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 28,
+      "n": 30,
+      "sensors": 47,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 29,
+      "n": 31,
+      "sensors": 48,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 30,
+      "n": 32,
+      "sensors": 50,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 31,
+      "n": 33,
+      "sensors": 51,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 32,
+      "n": 34,
+      "sensors": 53,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 33,
+      "n": 35,
+      "sensors": 54,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 34,
+      "n": 36,
+      "sensors": 56,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 35,
+      "n": 37,
+      "sensors": 57,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 36,
+      "n": 38,
+      "sensors": 59,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 37,
+      "n": 39,
+      "sensors": 60,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 38,
+      "n": 40,
+      "sensors": 62,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 39,
+      "n": 41,
+      "sensors": 63,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    },
+    {
+      "m": 40,
+      "n": 42,
+      "sensors": 65,
+      "minimum_interval_cut": 2,
+      "literal_recovery_checked": false
+    }
+  ],
+  "exhaustive_corner_optima": [
+    {
+      "m": 1,
+      "exhaustive_corner_optimum": 6
+    },
+    {
+      "m": 2,
+      "exhaustive_corner_optimum": 8
+    },
+    {
+      "m": 3,
+      "exhaustive_corner_optimum": 9
+    }
+  ],
+  "corner_dipole_detectors_checked_for_n": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "unrestricted_optima": [
+    {
+      "n": 3,
+      "unrestricted_optimum": 4,
+      "proved_lower_bound": 3,
+      "corner_constrained_optimum": 6,
+      "boundary_sensors": 2,
+      "corner_sensors": 2,
+      "charging_slack": 0,
+      "optimality": "exhaustive enumeration of all smaller placements",
+      "placement": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 4,
+      "unrestricted_optimum": 5,
+      "proved_lower_bound": 4,
+      "corner_constrained_optimum": 8,
+      "boundary_sensors": 4,
+      "corner_sensors": 1,
+      "charging_slack": 0,
+      "optimality": "exhaustive enumeration of all smaller placements",
+      "placement": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "n": 5,
+      "unrestricted_optimum": 6,
+      "proved_lower_bound": 6,
+      "corner_constrained_optimum": 9,
+      "boundary_sensors": 6,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ]
+    },
+    {
+      "n": 6,
+      "unrestricted_optimum": 8,
+      "proved_lower_bound": 8,
+      "corner_constrained_optimum": 11,
+      "boundary_sensors": 5,
+      "corner_sensors": 0,
+      "charging_slack": 3,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          5
+        ]
+      ]
+    },
+    {
+      "n": 7,
+      "unrestricted_optimum": 9,
+      "proved_lower_bound": 9,
+      "corner_constrained_optimum": 12,
+      "boundary_sensors": 6,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    {
+      "n": 8,
+      "unrestricted_optimum": 10,
+      "proved_lower_bound": 10,
+      "corner_constrained_optimum": 14,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 9,
+      "unrestricted_optimum": 12,
+      "proved_lower_bound": 12,
+      "corner_constrained_optimum": 15,
+      "boundary_sensors": 6,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          2
+        ]
+      ]
+    },
+    {
+      "n": 10,
+      "unrestricted_optimum": 14,
+      "proved_lower_bound": 14,
+      "corner_constrained_optimum": 17,
+      "boundary_sensors": 5,
+      "corner_sensors": 0,
+      "charging_slack": 3,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          8
+        ]
+      ]
+    },
+    {
+      "n": 11,
+      "unrestricted_optimum": 15,
+      "proved_lower_bound": 15,
+      "corner_constrained_optimum": 18,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 2,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          7
+        ]
+      ]
+    },
+    {
+      "n": 12,
+      "unrestricted_optimum": 16,
+      "proved_lower_bound": 16,
+      "corner_constrained_optimum": 20,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          11,
+          6
+        ]
+      ]
+    },
+    {
+      "n": 13,
+      "unrestricted_optimum": 18,
+      "proved_lower_bound": 18,
+      "corner_constrained_optimum": 21,
+      "boundary_sensors": 6,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          9
+        ]
+      ]
+    },
+    {
+      "n": 14,
+      "unrestricted_optimum": 20,
+      "proved_lower_bound": 20,
+      "corner_constrained_optimum": 23,
+      "boundary_sensors": 5,
+      "corner_sensors": 0,
+      "charging_slack": 3,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          7
+        ]
+      ]
+    },
+    {
+      "n": 15,
+      "unrestricted_optimum": 21,
+      "proved_lower_bound": 21,
+      "corner_constrained_optimum": 24,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 2,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          13
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          9
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          4
+        ]
+      ]
+    },
+    {
+      "n": 16,
+      "unrestricted_optimum": 22,
+      "proved_lower_bound": 22,
+      "corner_constrained_optimum": 26,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          7,
+          13
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          3
+        ]
+      ]
+    },
+    {
+      "n": 17,
+      "unrestricted_optimum": 24,
+      "proved_lower_bound": 24,
+      "corner_constrained_optimum": 27,
+      "boundary_sensors": 6,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          16
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          3
+        ],
+        [
+          16,
+          15
+        ]
+      ]
+    },
+    {
+      "n": 18,
+      "unrestricted_optimum": 26,
+      "proved_lower_bound": 26,
+      "corner_constrained_optimum": 29,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 4,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          17,
+          15
+        ]
+      ]
+    },
+    {
+      "n": 19,
+      "unrestricted_optimum": 27,
+      "proved_lower_bound": 27,
+      "corner_constrained_optimum": 30,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 2,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          18
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          3
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          16,
+          9
+        ],
+        [
+          16,
+          13
+        ],
+        [
+          16,
+          14
+        ],
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          16
+        ]
+      ]
+    },
+    {
+      "n": 20,
+      "unrestricted_optimum": 28,
+      "proved_lower_bound": 28,
+      "corner_constrained_optimum": 32,
+      "boundary_sensors": 4,
+      "corner_sensors": 0,
+      "charging_slack": 0,
+      "optimality": "proved lower bound attained",
+      "placement": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          18
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          19
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          18
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          16,
+          2
+        ],
+        [
+          17,
+          14
+        ],
+        [
+          17,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          3
+        ]
+      ]
+    }
+  ],
+  "unrestricted_lower_bound_attained_for_n": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ]
+}

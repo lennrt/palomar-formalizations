@@ -1,0 +1,296 @@
+{
+  "assessment_type": "independent_local_editorial_self_assessment",
+  "assessment_date": "2026-10-03",
+  "authority": {
+    "official_palomar_review": false,
+    "submitted_to_palomar_service": false,
+    "external_reviewer_approval": false,
+    "statement": "This is a local assessment prepared for repository submission work. It is not an official Palomar review, registration decision, peer review, endorsement, or prediction of a service outcome."
+  },
+  "policy": {
+    "repository": "https://github.com/PalomarRegistry/PalomarPolicy",
+    "commit": "96b034cc31a72a63d4f4041911dce337a85c9a04",
+    "files": [
+      "CONTRIBUTING.md",
+      "rubric.json",
+      "prompts/04-literature-notability.md"
+    ],
+    "relevant_requirements": [
+      "Assess the actual mathematics in the selected Challenge declarations, rather than proof length, formalization effort, polish, or novelty alone.",
+      "For each distinct result group, identify both a plausible research-paper or serious-note contribution and a credible specialist audience. Related corollaries can be grouped.",
+      "Novelty is not required. Disclosed source-access and priority limitations must not be converted into unsupported historical claims."
+    ]
+  },
+  "scope": {
+    "source_publication": "https://doi.org/10.5281/zenodo.23125523",
+    "challenge": "Challenge.lean",
+    "comparator": "comparator.json",
+    "compared_definitions_are_fully_specified": true,
+    "unspecified_definition_names": [],
+    "selected_declaration_count": 14,
+    "distinct_research_groups": 6,
+    "process": "Read the initial 33 selected declarations and their independent definitions, the revised manuscript, the current editorial policy, and primary literature. Recommended a focused selection; inspected the resulting 14-name comparator configuration.",
+    "exclusions": [
+      "No new proof-kernel or Comparator run was performed as part of this literature assessment.",
+      "The stronger paper-only moment capacity, moment report-distance, quantitative balancing, quotient-cardinality, rigidity, and finite computational optimality results do not supply missing content to weaker formal statements.",
+      "This bounded source check does not establish first-discovery priority, present open status, or the absence of unindexed corrections."
+    ]
+  },
+  "local_conclusion": {
+    "outcome": "no_local_significance_blocker_identified_for_focused_selection",
+    "rationale": "The selected declarations now express exact graph-recovery theorems, a dimension-uniform equidistant-dimension improvement, and exact corrections or a proof of precisely sourced conjectured statements. Each of the six groups has an identifiable specialist research audience and a plausible paper or serious-note contribution. The claim is modest specialist relevance, not exceptional breadth or independently verified novelty.",
+    "material_deficiencies_identified": [],
+    "caveat": "This judgment is conditional on faithful accompanying provenance and scope descriptions. It does not replace independent semantic review or mechanical verification."
+  },
+  "declarations_checked": [
+    "PalomarResults.Grid.gridRobust_iff_intervalCuts",
+    "PalomarResults.Grid.gridMomentRobust_iff_gridRobust",
+    "PalomarResults.Grid.grid_robust_sensor_lower_bound",
+    "PalomarResults.Grid.exact_corner_grid_robust_minimum_all",
+    "PalomarResults.Hypercube.infinite_counterexample_family",
+    "PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover",
+    "PalomarResults.Hypercube.equidistant_dimension_within_one",
+    "PalomarResults.Bishop.exact_two_domination",
+    "PalomarResults.Petersen11.exact_domination",
+    "PalomarResults.Petersen16.exact_domination",
+    "PalomarResults.Fractional.graph_connected",
+    "PalomarResults.Fractional.counterexample",
+    "PalomarResults.Rectangle.gridRobust_iff_intervalCuts",
+    "PalomarResults.Rectangle.exact_long_rectangle_robust_minimum"
+  ],
+  "groups": [
+    {
+      "id": "square_population_recovery",
+      "declarations": [
+        "PalomarResults.Grid.gridRobust_iff_intervalCuts",
+        "PalomarResults.Grid.gridMomentRobust_iff_gridRobust",
+        "PalomarResults.Grid.grid_robust_sensor_lower_bound",
+        "PalomarResults.Grid.exact_corner_grid_robust_minimum_all"
+      ],
+      "actual_mathematics": "For labelled sensors observing distance bags of natural-valued populations of mass at most two on the actual path-product graph, characterize one-erasure recovery by equal-length interval XOR cuts when all corners are present. Prove equivalent recovery using full corner bags and distance sums elsewhere, an unrestricted strict three-halves lower bound, and the exact corner-constrained optimum at every side length at least three.",
+      "credible_audience": "Researchers in graph localization, discrete tomography, fault-tolerant metric sensing, and extremal graph domination.",
+      "paper_or_note_basis": "The criterion identifies all relevant geometric ambiguities and supports an exact all-order optimization theorem and a report-compression theorem. This is more than a numerical restatement of a rook-graph domination bound.",
+      "antecedent_limit": "The three-halves coefficient, three-leaf-star patterns, and rook total-domination mechanism are known. The independent Challenge adds the full population observation contract, actual path-grid distance, boundary incidences, and all-interval requirement.",
+      "sources": [
+        "kazemi2018"
+      ],
+      "assessment": "Plausible substantive specialist research contribution as a coherent group."
+    },
+    {
+      "id": "hypercube_equalization",
+      "declarations": [
+        "PalomarResults.Hypercube.infinite_counterexample_family",
+        "PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover",
+        "PalomarResults.Hypercube.equidistant_dimension_within_one"
+      ],
+      "actual_mathematics": "For every positive dimension 4q, bound the graph equidistant dimension between 2^(4q-1)+2q-1 and 2^(4q-1)+2q, and characterize the remaining antipodal covering condition after selecting the odd parity class. For q at least three the upper witness contradicts the exponential correction in the printed conjecture.",
+      "credible_audience": "Researchers studying graph distance parameters, Hamming graphs, balancing families, and orthogonality-graph covering.",
+      "paper_or_note_basis": "The bounds improve the literature's exponential additive upper term to a linear term and determine the parameter within one throughout an infinite family. This directly addresses a precisely published conjecture.",
+      "antecedent_limit": "Full-parity containment, prefix balancing, and the orthogonality quotient are classical or previously published ingredients. The selected theorem does not by itself formalize quotient cardinalities or exact finite optimality at dimensions eight, twelve, or sixteen.",
+      "sources": [
+        "gispert2026",
+        "alon1988",
+        "boutin2021"
+      ],
+      "assessment": "The strongest independently identifiable research group in the focused selection."
+    },
+    {
+      "id": "even_bishop_two_domination",
+      "declarations": [
+        "PalomarResults.Bishop.exact_two_domination"
+      ],
+      "actual_mathematics": "On every positive even square board, ordinary two-domination in the bishop graph has exact value twice the board side length. The Challenge uses diagonal adjacency and requires two selected neighbors only for unselected vertices.",
+      "credible_audience": "Researchers in chessboard domination, geometric graph domination, and k-domination.",
+      "paper_or_note_basis": "The exact infinite-family theorem settles the statement of Burchett's Conjecture 5.1, with a boundary-parity lower-bound argument.",
+      "antecedent_limit": "The numerical upper bound was already proved by Burchett. The contribution is the matching lower bound; the boundary-column upper construction is supplementary.",
+      "sources": [
+        "burchett2025"
+      ],
+      "assessment": "Plausible serious specialist note independently of the rest of the package."
+    },
+    {
+      "id": "petersen_double_total_domination",
+      "declarations": [
+        "PalomarResults.Petersen11.exact_domination",
+        "PalomarResults.Petersen16.exact_domination"
+      ],
+      "actual_mathematics": "The explicitly defined generalized Petersen graphs P(11,4) and P(16,5) have double total domination numbers sixteen and twenty-four, respectively.",
+      "credible_audience": "Researchers in multiple total domination, open packing, and domination on regular graph families.",
+      "paper_or_note_basis": "The two exact finite values contradict two separately printed general conjectured formulas. Inspectable modular certificates and attaining sets make the correction mathematically explanatory rather than a bare numerical claim.",
+      "antecedent_limit": "Sun and Shao's 2016 article concerns the relevant parameter but its complete parameter scope remains unavailable in the existing audit. Therefore this is an exact contradiction of printed formulas, not an established first refutation or a claim that the conjectures remained open.",
+      "sources": [
+        "zhao2017"
+      ],
+      "assessment": "Plausible correction note when the two examples and their source limitations are presented together."
+    },
+    {
+      "id": "fractional_optimal_faces",
+      "declarations": [
+        "PalomarResults.Fractional.graph_connected",
+        "PalomarResults.Fractional.counterexample"
+      ],
+      "actual_mathematics": "A concrete connected six-vertex graph has intersecting, mutually noncontaining optimal fractional domination and packing faces, but no vertex whose coordinate vanishes throughout both faces. The Challenge quantifies over the full real-valued optimum faces.",
+      "credible_audience": "Researchers in fractional graph domination, packing, optimal-face classifications, and forced-zero coordinates of graph linear programs.",
+      "paper_or_note_basis": "The graph directly contradicts Rubalcaba's dissertation Conjecture 5.2.5 and gives a compact connected example explaining the failure of the proposed implication. Connectivity is grouped with the counterexample, not treated as an independent contribution.",
+      "antecedent_limit": "The disconnected graph P3 disjoint-union P4 already gives an elementary inferred counterexample from classifications in the dissertation. This limits any claim of historical difficulty. First-refutation priority and an inaccessible later glossary remain unresolved.",
+      "sources": [
+        "rubalcaba2005"
+      ],
+      "assessment": "Plausible modest correction note; no claim of a deep or longstanding difficult problem is warranted."
+    },
+    {
+      "id": "rectangular_population_recovery",
+      "declarations": [
+        "PalomarResults.Rectangle.gridRobust_iff_intervalCuts",
+        "PalomarResults.Rectangle.exact_long_rectangle_robust_minimum"
+      ],
+      "actual_mathematics": "Extend the exact interval-cut criterion to rectangular path products and determine the corner-constrained one-erasure optimum as 2N+4 when N is at most M and 5N is at most 3M, with side lengths M+2 and N+2.",
+      "credible_audience": "The same discrete-tomography and extremal-sensing audience as the square-grid group, with additional interest in aspect-ratio effects.",
+      "paper_or_note_basis": "This gives an exact anisotropic sensing theorem under the same population contract and a simple attaining design; it is a substantive continuation of the grid characterization.",
+      "antecedent_limit": "The five-thirds ratio and two-column design already occur in rook-graph double total domination. The contribution is their boundary-sensitive transfer with all-interval sufficiency. Rigidity is proved in the paper but is not asserted by these selected declarations.",
+      "sources": [
+        "kazemi2018"
+      ],
+      "assessment": "Plausible research contribution in conjunction with the square-grid group, not a claimed new rook-domination phenomenon."
+    }
+  ],
+  "selection_changes": {
+    "rationale": "The retained set emphasizes actual mathematical endpoints. Removing a declaration from Comparator selection does not remove its proof from the library or declare it incorrect. Related subsidiary results may legitimately be grouped by policy; this narrowing reduces ambiguity about which research contributions are being registered.",
+    "unselected_groups": [
+      {
+        "declarations": [
+          "PalomarResults.Grid.exact_corner_grid_robust_minimum",
+          "PalomarResults.Grid.exists_grid_robust_placement",
+          "PalomarResults.Grid.all_orders_grid_robust_bounds"
+        ],
+        "reason": "Earlier residue-class or weaker asymptotic forms are superseded by the all-order exact theorem and unrestricted lower bound."
+      },
+      {
+        "declarations": [
+          "PalomarResults.Hypercube.prefixEqualizer_isDistanceEqualizer",
+          "PalomarResults.Hypercube.prefixEqualizer_card",
+          "PalomarResults.Hypercube.dimension_twelve_counterexample",
+          "PalomarResults.Hypercube.equalizer_contains_parity_class",
+          "PalomarResults.Hypercube.evenPrefix_distance",
+          "PalomarResults.Hypercube.evenPrefix_orthogonal_iff",
+          "PalomarResults.Hypercube.evenPrefix_unique_orthogonal_partner",
+          "PalomarResults.Hypercube.equalizer_card_lower_bound"
+        ],
+        "reason": "Construction ingredients, a known parity fact, elementary prefix arithmetic, and consequences already represented by the stronger combined theorem."
+      },
+      {
+        "declarations": [
+          "PalomarResults.Hypercube.three_even_words_common_middle_graph",
+          "PalomarResults.Hypercube.four_word_no_common_graph_distance"
+        ],
+        "reason": "Interesting secondary geometric lemmas, but this assessment did not independently establish paper-worthiness of this pair apart from the main equalization development. Omission avoids promoting them as a separate research contribution."
+      },
+      {
+        "declarations": [
+          "PalomarResults.AdditiveFields.recovers_iff_connected",
+          "PalomarResults.AdditiveFields.tolerates_erasures_iff"
+        ],
+        "reason": "The actual selected statements concern abstract additive row-column fields. They are standard graph-potential recovery and elementary minimum-support facts; the stronger population reconstruction application is not in these statements."
+      },
+      {
+        "declarations": [
+          "PalomarResults.Moments.tensor_detector",
+          "PalomarResults.Moments.first_surviving_moment",
+          "PalomarResults.BooleanSampling.lower_ball_sampling"
+        ],
+        "reason": "Polynomial-product nonvanishing, the binomial first-surviving-moment identity, and triangular subset-sum inversion are useful routine tools. The paper's population capacity and report-distance theorems are substantially stronger and cannot be credited to these endpoints."
+      },
+      {
+        "declarations": [
+          "PalomarResults.Syndrome.syndrome_packing_bound"
+        ],
+        "reason": "The general endpoint is an elementary incidence-conservation and counting implication once the small-defect syndrome exclusion is assumed. Its substantive graph instantiations remain selected as the Petersen results."
+      }
+    ]
+  },
+  "inspected_primary_sources": [
+    {
+      "id": "gispert2026",
+      "title": "Equidistant dimension of Cartesian product graphs",
+      "url": "https://link.springer.com/article/10.1007/s40840-026-02088-4",
+      "inspected": "Publisher full HTML: definitions, Proposition 1.1, Theorem 3.1, and Conjecture 1.",
+      "relevance": "Defines the same outside-pair distance-equalizer parameter and explicitly conjectures 2^(n-1)+2^(n/2-2) for dimensions divisible by four."
+    },
+    {
+      "id": "burchett2025",
+      "title": "k-domination and k-tuple total domination for some chessboard graphs",
+      "url": "https://combinatorialpress.com/um-articles/vol-124/k-domination-and-k-tuple-total-domination-for-some-chessboard-graphs/",
+      "inspected": "Publisher full HTML: parameter definitions, upper-bound context, and Conjecture 5.1.",
+      "relevance": "States exact ordinary bishop two-domination value 2n as a conjecture for even board orders."
+    },
+    {
+      "id": "zhao2017",
+      "title": "Double Total Domination on Generalized Petersen Graphs",
+      "url": "https://www.m-hikari.com/ams/ams-2017/ams-17-20-2017/p/zhaoAMS17-20-2017.pdf",
+      "inspected": "Publisher PDF, especially Section 3 on printed page 912.",
+      "relevance": "Conjectures 3.1 and 3.2 specialize to fifteen for P(11,4) and twenty-two for P(16,5); the selected exact values contradict those formulas."
+    },
+    {
+      "id": "rubalcaba2005",
+      "title": "Fractional Domination, Fractional Packings, and Fractional Isomorphisms of Graphs",
+      "url": "https://holocron.lib.auburn.edu/bitstream/handle/10415/1030/RUBALCABA_ROBERT_56.pdf?isAllowed=y&sequence=1",
+      "inspected": "Institutional dissertation PDF: optimal-face context, Theorem 3.4.4, and Conjecture 5.2.5 on printed page 83.",
+      "relevance": "Supplies the precise Class I nullity conjecture and elementary path-classification context limiting claims of difficulty."
+    },
+    {
+      "id": "kazemi2018",
+      "title": "Cartesian Product Graphs and k-Tuple Total Domination",
+      "url": "https://www.pmf.ni.ac.rs/filomat-content/2018/32-19/32-19-16-4805.pdf",
+      "inspected": "Publisher PDF, Propositions 3.8 and 3.9, printed pages 6727-6729.",
+      "relevance": "Provides the prior three-halves coefficient, elongated-board regime, and two-column patterns. It concerns rook adjacency rather than anonymous path-distance bags."
+    },
+    {
+      "id": "alon1988",
+      "title": "Balancing sets of vectors",
+      "url": "https://www-users.cse.umn.edu/~odlyzko/doc/arch/balancing.vectors.pdf",
+      "inspected": "Author-hosted manuscript and its balancing/parity context.",
+      "relevance": "Classical balancing and parity-polynomial ingredients must not be relabelled as new."
+    },
+    {
+      "id": "boutin2021",
+      "title": "Distinguishing orthogonality graphs",
+      "url": "https://arxiv.org/pdf/2001.00092",
+      "inspected": "Author preprint and quotient-graph context.",
+      "relevance": "The antipodal orthogonality quotient is an existing graph, even when its use in the present equidistant reduction is different."
+    },
+    {
+      "id": "gopalan2008",
+      "title": "List-Decoding Reed-Muller Codes over Small Fields",
+      "url": "https://www.cs.utexas.edu/~diz/pubs/gkz.pdf",
+      "inspected": "Author PDF, preliminary discussion on PDF page 3.",
+      "relevance": "Records lower Hamming-ball interpolation over F2. The Challenge's rational subset-sum version is elementary triangular inversion, not the population-moment theorem."
+    },
+    {
+      "id": "valyuzhenich2021",
+      "title": "Eigenfunctions and minimum 1-perfect bitrades in the Hamming graph",
+      "url": "https://arxiv.org/pdf/2003.01571",
+      "inspected": "Author preprint, Theorem 3 on PDF page 9.",
+      "relevance": "Sharp binary spectral-support bounds belong to existing theory. The manuscript acknowledges this; none of the reduced selected endpoints claims that theorem or the full moment-capacity bridge."
+    }
+  ],
+  "additional_searches_this_pass": [
+    "\"Equidistant dimension of Cartesian product graphs\" \"counterexample\"",
+    "\"bishop\" \"Conjecture 5.1\" \"2n\""
+  ],
+  "search_limits": "These narrow searches located the primary conjecture context but did not establish exhaustive priority. The earlier detailed audit notes were read as background; inaccessible sources were not represented as newly inspected.",
+  "bibliographic_or_scope_actions": [
+    "Retain the explicit Sun-Shao parameter-scope uncertainty and the fractional first-refutation uncertainty.",
+    "Attribute known rook patterns, balancing ingredients, and polynomial tools rather than using formalization as evidence of novelty.",
+    "Present connectivity and the fractional-face negation as one result group.",
+    "Do not describe the exact finite hypercube lower bounds or the full moment-capacity theorem as established by this focused Challenge.",
+    "Update declaration counts and scope prose consistently after changing the selected configuration."
+  ],
+  "automation": {
+    "tool": "OpenAI Codex",
+    "method": "Independent literature-analysis agent applying the published rubric"
+  },
+  "input_sha256": {
+    "Challenge.lean": "2824c1fefd47404e28f6507cf8921e003af51d092a0eec00d126586675dc6642",
+    "comparator.json": "30d893b349952fd6cea0a0675f2ac43c333846659030dd30604b74eb8438f0d3"
+  }
+}

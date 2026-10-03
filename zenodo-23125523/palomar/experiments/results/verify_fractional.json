@@ -1,0 +1,245 @@
+{
+  "graph": {
+    "order": 6,
+    "edges": [
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "connected": true,
+    "closed_neighborhood_matrix": [
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ]
+  },
+  "fractional_optimality_certificate": {
+    "partition_rows": [
+      3,
+      5
+    ],
+    "row_sum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "domination_mass_lower_bound": 2,
+    "packing_mass_upper_bound": 2,
+    "valid_for_all_real_feasible_vectors": true
+  },
+  "witnesses": {
+    "efficient": {
+      "support": [
+        3,
+        5
+      ],
+      "vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "mass": 2,
+      "closed_neighborhood_loads": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum_fractional_dominating": true,
+      "maximum_fractional_packing": true
+    },
+    "domination_only": {
+      "support": [
+        0,
+        4
+      ],
+      "vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "mass": 2,
+      "closed_neighborhood_loads": [
+        2,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "minimum_fractional_dominating": true,
+      "maximum_fractional_packing": false
+    },
+    "packing_only": {
+      "support": [
+        1,
+        5
+      ],
+      "vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "mass": 2,
+      "closed_neighborhood_loads": [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "minimum_fractional_dominating": false,
+      "maximum_fractional_packing": true
+    },
+    "packing_other": {
+      "support": [
+        2,
+        5
+      ],
+      "vector": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "mass": 2,
+      "closed_neighborhood_loads": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "minimum_fractional_dominating": false,
+      "maximum_fractional_packing": true
+    }
+  },
+  "class_I": {
+    "faces_intersect": true,
+    "minimum_face_not_subset_of_maximum_face": true,
+    "maximum_face_not_subset_of_minimum_face": true
+  },
+  "coordinate_nonnull_witnesses": {
+    "0": {
+      "witness": "domination_only",
+      "face": "minimum_fractional_domination",
+      "coordinate": 1
+    },
+    "1": {
+      "witness": "packing_only",
+      "face": "maximum_fractional_packing",
+      "coordinate": 1
+    },
+    "2": {
+      "witness": "packing_other",
+      "face": "maximum_fractional_packing",
+      "coordinate": 1
+    },
+    "3": {
+      "witness": "efficient",
+      "face": "minimum_fractional_domination",
+      "coordinate": 1
+    },
+    "4": {
+      "witness": "domination_only",
+      "face": "minimum_fractional_domination",
+      "coordinate": 1
+    },
+    "5": {
+      "witness": "efficient",
+      "face": "minimum_fractional_domination",
+      "coordinate": 1
+    }
+  },
+  "no_joint_domination_and_packing_null_vertex": true,
+  "refutes": "Rubalcaba (2005), Conjecture 5.2.5",
+  "source": "https://etd.auburn.edu/handle/10415/1030"
+}

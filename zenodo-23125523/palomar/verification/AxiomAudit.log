@@ -1,0 +1,67 @@
+'ShellObservability.correctsBlocks_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.toleratesErasures_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.correctsBags_iff_tradeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.erasureBags_iff_tradeWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.mass_two_iff_pairConfig' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.skinny_trade_detector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.parallelogram_detected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.skinny_trade_moment_detector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.parallelogram_moment_detected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.corner_collision_hasIntervalDetector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.grid_cross_sensor_lower_bound_refined' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.gridRobust_iff_intervalCuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.OrderedStars.splitPlacement_interval_cut_ge_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.GridTheorems.exact_corner_grid_robust_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.GridTheorems.all_orders_grid_robust_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.gridMomentRobust_iff_intervalCuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.gridMomentRobust_iff_gridRobust' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.cube_dist_eq_hamming' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.exists_odd_graph_bisector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.card_oddWords' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.evenPrefix_balances' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.evenPrefix_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.evenPrefix_orthogonal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.evenPrefix_unique_orthogonal_partner' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.prefixEqualizer_isDistanceEqualizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.prefixEqualizer_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.infinite_counterexample_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.dimension_twelve_counterexample' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.equalizer_contains_parity_class' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.odd_union_equalizer_iff_antipodal_cover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.BishopParity.two_domination_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.BishopParity.outerColumns_twoDominates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.BishopParity.exact_two_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.no_single_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Petersen.domination_iff_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Petersen.exact_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Petersen.conjectured_value_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.PetersenSecond.domination_iff_graph' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.PetersenSecond.exact_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.PetersenSecond.conjectured_value_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.FractionalCounterexample.graph_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.FractionalCounterexample.load_eq_closed_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.FractionalCounterexample.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.residual_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.packing_defect_syndrome' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.no_packing_with_defect_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.regular_packing_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.syndrome_packing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.syndrome_excludes_packing_card' depends on axioms: [propext, Classical.choice, Quot.sound]

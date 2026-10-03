@@ -1,0 +1,647 @@
+{
+  "status": "passed",
+  "registered": false,
+  "service_verification": false,
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "python": "3.14.7",
+  "build_seconds": 6.501,
+  "audited_declarations": {
+    "ShellObservability.correctsBlocks_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.toleratesErasures_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.correctsBags_iff_tradeWeight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.erasureBags_iff_tradeWeight": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.mass_two_iff_pairConfig": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.skinny_trade_detector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.parallelogram_detected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.skinny_trade_moment_detector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.parallelogram_moment_detected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.corner_collision_hasIntervalDetector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.grid_cross_sensor_lower_bound_refined": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.gridRobust_iff_intervalCuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.OrderedStars.splitPlacement_interval_cut_ge_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.GridTheorems.exact_corner_grid_robust_minimum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.GridTheorems.all_orders_grid_robust_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.gridMomentRobust_iff_intervalCuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.gridMomentRobust_iff_gridRobust": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.cube_dist_eq_hamming": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.exists_odd_graph_bisector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.card_oddWords": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.evenPrefix_balances": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.evenPrefix_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.evenPrefix_orthogonal_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.evenPrefix_unique_orthogonal_partner": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.prefixEqualizer_isDistanceEqualizer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.prefixEqualizer_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.infinite_counterexample_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.dimension_twelve_counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.equalizer_contains_parity_class": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.odd_union_equalizer_iff_antipodal_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.BishopParity.two_domination_lower": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.BishopParity.outerColumns_twoDominates": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.BishopParity.exact_two_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.no_single_defect": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Petersen.domination_iff_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Petersen.exact_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Petersen.conjectured_value_false": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.PetersenSecond.domination_iff_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.PetersenSecond.exact_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.PetersenSecond.conjectured_value_false": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.FractionalCounterexample.graph_connected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.FractionalCounterexample.load_eq_closed_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.FractionalCounterexample.counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.residual_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.packing_defect_syndrome": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.no_packing_with_defect_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.regular_packing_count": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.syndrome_packing_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.syndrome_excludes_packing_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.gridRobust_iff_intervalCuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.exact_long_rectangle_robust_minimum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.optimal_long_rectangle_rigidity": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.AdditiveFields.recovers_iff_connected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.AdditiveFields.tolerates_erasures_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.AdditiveFields.exists_minimum_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.momentField_isAdditive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.momentField_eq_bag_sum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.momentField_connected_recovery": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Rectangle.momentField_erasure_recovery": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.three_even_words_common_middle_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.four_word_no_common_graph_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.CubeSupport.support_card_ge_of_fiber_moments": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.CubeSupport.cube_support_lower_bound_of_moments": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.CubeSupport.isolate_support_bound_of_moments": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.TensorMoments.profile_tensor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.TensorMoments.profile_tensor_ne_zero_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.TensorMoments.moment_tensor": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.TensorMoments.moment_tensor_leading": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.TensorMoments.moment_tensor_leading_ne_zero": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.BooleanSampling.coefficients_eq_of_lower_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.BooleanSampling.field_eq_of_lower_ball": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.gridRobust_iff_intervalCuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.gridMomentRobust_iff_gridRobust": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.grid_robust_sensor_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.exact_corner_grid_robust_minimum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.exists_grid_robust_placement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.all_orders_grid_robust_bounds": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.prefixEqualizer_isDistanceEqualizer": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.prefixEqualizer_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.infinite_counterexample_family": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.dimension_twelve_counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.equalizer_contains_parity_class": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.evenPrefix_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.evenPrefix_orthogonal_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.evenPrefix_unique_orthogonal_partner": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Bishop.exact_two_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Petersen11.exact_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Petersen16.exact_domination": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Fractional.graph_connected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Fractional.counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Syndrome.syndrome_packing_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.three_even_words_common_middle_graph": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.four_word_no_common_graph_distance": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Rectangle.gridRobust_iff_intervalCuts": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Rectangle.exact_long_rectangle_robust_minimum": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.AdditiveFields.recovers_iff_connected": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.AdditiveFields.tolerates_erasures_iff": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Moments.tensor_detector": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Moments.first_surviving_moment": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.BooleanSampling.lower_ball_sampling": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.parityChar_orthogonal_low_degree": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.antipodal_cover_card_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.equalizer_card_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.Hypercube.equidistant_dimension_within_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.LeafStars.leafPlacement_interval_cut_ge_two": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.LeafStars.all_orders_optimal_interval_placement": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.GridTheorems.grid_robust_corner_lower_bound_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "ShellObservability.GridTheorems.exact_corner_grid_robust_minimum_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Grid.exact_corner_grid_robust_minimum_all": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.equalizer_card_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "PalomarResults.Hypercube.equidistant_dimension_within_one": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "audit_count": 112,
+  "experiments": {
+    "verify_grid": {
+      "status": "passed",
+      "seconds": 5.275,
+      "sha256": "2e1982ee664cccc6eb5dccbbee693df93538f6c5d8c991c894c34b8e57b944dd"
+    },
+    "verify_hypercube": {
+      "status": "passed",
+      "seconds": 3.542,
+      "sha256": "4a760280485cdfbefabf17a6f713571ca797dc8f6d06f9770a0cfc1c27b36579"
+    },
+    "verify_bishop": {
+      "status": "passed",
+      "seconds": 0.114,
+      "sha256": "378fd7f12c6c483405bd21d7947b6484971836329deaca27d639b0619337ebd9"
+    },
+    "verify_petersen11": {
+      "status": "passed",
+      "seconds": 0.081,
+      "sha256": "a093c0123bddd55f0b1a3a21de07ef2911e35ae32dd5540354094a7d6831789e"
+    },
+    "verify_petersen16": {
+      "status": "passed",
+      "seconds": 0.03,
+      "sha256": "bc168b25562efc5074d774838c0e5fe88433af337e5234928486e2d177021140"
+    },
+    "verify_fractional": {
+      "status": "passed",
+      "seconds": 0.025,
+      "sha256": "fc1b317a77633d7b1e7e6d6263ebf1304f9d0b85e2911d469b633432ab98722e"
+    },
+    "defect_certificates": {
+      "status": "passed",
+      "seconds": 0.038,
+      "sha256": "ff53c321b345de38e163bb7a63a35e6e8f4bc62028d5d22e3004b6eb4fc70e97"
+    },
+    "verify_moments": {
+      "status": "passed",
+      "seconds": 0.468,
+      "sha256": "1b90016c434ada723e35beff38abd9da37f159a0aad549f468f2583e95dc120b"
+    },
+    "verify_rectangles": {
+      "status": "passed",
+      "seconds": 0.087,
+      "sha256": "61993d47a0cb47bbd91900be62824a9eaeb321854a5d2f40c673d60ba03e4127"
+    },
+    "verify_folded_cube12": {
+      "status": "passed",
+      "seconds": 5.56,
+      "sha256": "c6d4a27189c882ca67c2655ea7ef9d4a5dcaaa096ebe0310dab4827cae33822c"
+    },
+    "verify_cube_bounds": {
+      "status": "passed",
+      "seconds": 5.338,
+      "sha256": "7101433a72d663ed45b5fab2372ef17d131257be64000577a937fe928dad671c"
+    },
+    "verify_folded_cube16": {
+      "status": "passed",
+      "seconds": 221.903,
+      "sha256": "e9d9837a87323da98ab87a6d6501125c3a1f3358a2f536f334d6e13515a0db88"
+    },
+    "verify_grid_all_orders": {
+      "status": "passed",
+      "seconds": 11.034,
+      "sha256": "aa1dc59919e6af08d24c8c5ded6261ec2f4368a1106d1894fdd92628265772fb"
+    },
+    "grid_detector_census": {
+      "status": "passed",
+      "seconds": 2.459,
+      "sha256": "921cde4bd34363be3163a9e1754a41af4ec204cfd5747eb4d37ba6c3a83f287e"
+    }
+  },
+  "comparison_record_status": "passed",
+  "comparison_input_mismatches": [],
+  "selected_comparison_declarations": 14,
+  "local_verification_mode": "disabled_local_mode"
+}

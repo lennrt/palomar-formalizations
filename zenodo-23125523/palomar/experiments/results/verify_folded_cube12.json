@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers",
+  "scope": "complete finite orbit enumeration, not kernel-checked Lean",
+  "source_sha256": "fc71a7fb68026342c734f1d80ce59501c997e063e314f4cf648f164e8ecf72e1",
+  "methods": [
+    {
+      "method": "recursive_bitset",
+      "n": 12,
+      "maximum_centers": 5,
+      "compositions": 17383860,
+      "even_row_compositions": 1088100,
+      "minimum_uncovered_classes": 20,
+      "witness_centers": [
+        0,
+        3510,
+        3591,
+        3640,
+        4032
+      ],
+      "witness_pattern_counts": [
+        0,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "method": "stars_bars_literal",
+      "n": 12,
+      "maximum_centers": 5,
+      "compositions": 17383860,
+      "even_row_compositions": 1088100,
+      "verified_uncovered_lower_bound": 20
+    }
+  ],
+  "witness_uncovered_representatives": [
+    3,
+    5,
+    15,
+    24,
+    40,
+    57,
+    71,
+    120,
+    192,
+    320,
+    447,
+    449,
+    456,
+    503,
+    510,
+    519,
+    568,
+    960,
+    1535,
+    1536
+  ],
+  "six_center_upper_witness": [
+    0,
+    3,
+    15,
+    63,
+    255,
+    1023
+  ],
+  "folded_domination_number": 6,
+  "cube_equidistant_dimension": 2054
+}

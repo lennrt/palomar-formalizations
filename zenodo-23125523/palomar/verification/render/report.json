@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "mode": "local macOS rendering; hosted Bubblewrap confinement not exercised",
+  "service_verification": false,
+  "registered": false,
+  "official_tools_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
+  "renderer_revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "official_source_sha256": {
+    "scripts/render_challenge.py": "9f702f736c87133a9535aa19b89e073ae84c45edf8b165d417bf34709232f9c1",
+    "scripts/core_notation_audit.lean": "47ee22447f312db83e764e8eab015a0db49b7317d2fccb4314f52b6a6cad2e3d",
+    "scripts/verify_submission.py": "1c1b4b7c8319bd31960d4484e747d23eb6664d6bf7e4e901bc724aacf34f282d"
+  },
+  "input_sha256": {
+    "Challenge.lean": "2824c1fefd47404e28f6507cf8921e003af51d092a0eec00d126586675dc6642",
+    "Solution.lean": "cdc402cda1c3b7b4bf63d86d314e07cc9cd406a7789ac39c5aa4a90ea8cd87b5",
+    "comparator.json": "30d893b349952fd6cea0a0675f2ac43c333846659030dd30604b74eb8438f0d3",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "lakefile.toml": "17b69808fd567ac5483acf2d3a6575b09aba1c64869a2884ee1ae0d9af4be821",
+    "lake-manifest.json": "4abda5db49b7904af12bd067475cc84fda853925599edb468dd5eff6398f0a47"
+  },
+  "inputs_unchanged": true,
+  "compiler_module_headers": 45,
+  "core_notation_declarations": 14,
+  "rendered_declarations": 14,
+  "literate": {
+    "exit_code": 0,
+    "command": [
+      "lake",
+      "build",
+      "Challenge:literate"
+    ],
+    "build_jobs": 9246
+  },
+  "html": {
+    "exit_code": 0,
+    "seconds": 19.68,
+    "command": [
+      "lake",
+      "exe",
+      "verso-html",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/.lake/build/literate",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/.lake/build/palomar-render-raw"
+    ]
+  },
+  "sanitize": {
+    "exit_code": 0,
+    "seconds": 3.467,
+    "command": [
+      "lake",
+      "env",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/.venv/bin/python",
+      "-B",
+      "/private/tmp/palomar-current-tools/scripts/render_challenge.py",
+      "sanitize",
+      "--input-dir",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/.lake/build/palomar-render-raw",
+      "--output-dir",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/.lake/build/palomar-render-clean-final",
+      "--challenge",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/Challenge.lean",
+      "--solution",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/Solution.lean",
+      "--comparator",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/comparator.json",
+      "--challenge-module",
+      "Challenge",
+      "--lean",
+      "/Users/lennartrudolph/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean",
+      "--diagnostic-out",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/.lake/local-render/workspace/.lake/build/palomar-render-clean-final/.palomar-sanitize-diagnostic.json",
+      "--audit-declarations",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/palomar-zenodo-23125523/zenodo-23125523/palomar/verification/render/audit-declarations.json"
+    ]
+  },
+  "render_workspace": ".lake/local-render/workspace",
+  "render_entrypoint": ".lake/local-render/workspace/.lake/build/palomar-render-clean-final/Challenge/index.html",
+  "entrypoint_sha256": "4dfb182dd6e7954f97543476139144bd5619a145de8a44e185328921a41ff733",
+  "entrypoint_bytes": 638332,
+  "renderer_dependencies": [
+    {
+      "name": "Cli",
+      "repository": "https://github.com/leanprover/lean4-cli",
+      "revision": "2842b9871b04862f944c032e34052cb9448ccb71"
+    },
+    {
+      "name": "LeanSearchClient",
+      "repository": "https://github.com/leanprover-community/LeanSearchClient",
+      "revision": "95e037bfdc31d3916ac615446847fb01960e2719"
+    },
+    {
+      "name": "MD4Lean",
+      "repository": "https://github.com/acmepjz/md4lean",
+      "revision": "31907cc18f48a95384f99cee5582c00fb39e0f67"
+    },
+    {
+      "name": "Qq",
+      "repository": "https://github.com/leanprover-community/quote4",
+      "revision": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334"
+    },
+    {
+      "name": "aesop",
+      "repository": "https://github.com/leanprover-community/aesop",
+      "revision": "75d936c7af167cc93fac0d31237682fc2204591d"
+    },
+    {
+      "name": "batteries",
+      "repository": "https://github.com/leanprover-community/batteries",
+      "revision": "ed9b316aabe389fec1ef43c3326ab48c7e59be42"
+    },
+    {
+      "name": "illuminate",
+      "repository": "https://github.com/leanprover/illuminate",
+      "revision": "68a463c484e24708627b8761e8730e76b295d1e2"
+    },
+    {
+      "name": "importGraph",
+      "repository": "https://github.com/leanprover-community/import-graph",
+      "revision": "10930f8138f0462dbd744a91fc03a16fae0e046f"
+    },
+    {
+      "name": "mathlib",
+      "repository": "https://github.com/leanprover-community/mathlib4",
+      "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+    },
+    {
+      "name": "plausible",
+      "repository": "https://github.com/leanprover-community/plausible",
+      "revision": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912"
+    },
+    {
+      "name": "proofwidgets",
+      "repository": "https://github.com/leanprover-community/ProofWidgets4",
+      "revision": "4c70ac059693669e5756e32a7a94b57ee1e99dc5"
+    },
+    {
+      "name": "subverso",
+      "repository": "https://github.com/leanprover/subverso",
+      "revision": "d047cb484b2f3598187450935dbcc84d078cb581"
+    },
+    {
+      "name": "verso",
+      "repository": "https://github.com/leanprover/verso.git",
+      "revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d"
+    }
+  ],
+  "manifest_warning_explanation": "The trusted renderer Lakefile uses the exact Mathlib commit and canonical .git URL, while the preserved input manifest retains the release-tag inputRev and original URL spelling. Every materialized dependency HEAD matches its pinned manifest revision; no dependency upgrade was performed.",
+  "final_source_refresh": {
+    "reason": "Solution trailing whitespace removed; umbrella source attribution comment clarified; proof content unchanged.",
+    "compiler_headers_rechecked": [
+      "Solution.lean",
+      "ShellObservability.lean"
+    ],
+    "previous_sha256": {
+      "Solution.lean": "497857781e1955320303edbe11acfaf6c808e88f00b5ba740ba3d5228c857488",
+      "ShellObservability.lean": "60412e75d02675b0e72d4ed69b14b09d6e94cdff9f57038e4c6c3983a751cda7"
+    },
+    "final_sha256": {
+      "Solution.lean": "cdc402cda1c3b7b4bf63d86d314e07cc9cd406a7789ac39c5aa4a90ea8cd87b5",
+      "ShellObservability.lean": "5a91ce82fa03586e6681afe5e83dd17fd85b910ef255284b935f9b6d79dba561"
+    },
+    "challenge_and_config_unchanged": true,
+    "literate_and_core_notation_checks_reused": true,
+    "raw_html_files_unchanged": true,
+    "raw_entrypoint_sha256": "608ad179c3157e5a59a22d65de85199a3be50213d696f745c0a5c78cf7a0a765",
+    "sanitized_entrypoint_unchanged": true,
+    "sanitizer_rerun_with_final_solution": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "scope": "new project only; existing registered sibling projects remain frozen",
+  "official_checker_repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+  "official_checker_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
+  "formalization_sha256": "2a1c298dcc7a35957e839fdabf3f008b8c6724fb8d0d02f6f23eeabc58a41bdb",
+  "metadata": "passed",
+  "project_authors": [
+    "Lennart Rudolph"
+  ],
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "source_requirements": {
+    "schema_version": 1,
+    "module_required": true,
+    "maximum_lines": 10000,
+    "files_checked": 45
+  },
+  "source_errors": [],
+  "repository_wide_source_check": {
+    "status": "blocked",
+    "files_checked": 303,
+    "issue_count": 258,
+    "issue_codes": {
+      "source.module_required": 258
+    },
+    "affected_projects": {
+      "zenodo-21890733": 3,
+      "zenodo-21892986": 5,
+      "zenodo-21892995": 4,
+      "zenodo-21892997": 9,
+      "zenodo-21925458": 3,
+      "zenodo-21925574": 11,
+      "zenodo-21925578": 5,
+      "zenodo-21925582": 41,
+      "zenodo-21986230": 4,
+      "zenodo-22264675": 8,
+      "zenodo-22404456": 24,
+      "zenodo-22667596": 141
+    }
+  },
+  "service_verification": false,
+  "editorial_review": false,
+  "registered": false
+}

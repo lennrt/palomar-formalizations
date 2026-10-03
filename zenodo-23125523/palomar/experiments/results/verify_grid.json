@@ -1,0 +1,287 @@
+{
+  "status": "passed",
+  "construction": "split-edge reversed stars",
+  "literal_all_mass_at_most_two_n6": {
+    "populations": 703,
+    "pairs": 246753,
+    "minimum_separation": 2,
+    "hybrid_moment_minimum_separation": 2
+  },
+  "orders": [
+    {
+      "robust": true,
+      "sensor_count": 11,
+      "interval_pairs": 30,
+      "minimum_interval_separation": 2,
+      "n": 6,
+      "skinny_bag_checks": 30,
+      "corner_collision_pairs": 50
+    },
+    {
+      "robust": true,
+      "sensor_count": 15,
+      "interval_pairs": 55,
+      "minimum_interval_separation": 2,
+      "n": 7,
+      "skinny_bag_checks": 55,
+      "corner_collision_pairs": 105
+    },
+    {
+      "robust": true,
+      "sensor_count": 19,
+      "interval_pairs": 91,
+      "minimum_interval_separation": 2,
+      "n": 8,
+      "skinny_bag_checks": 91,
+      "corner_collision_pairs": 196
+    },
+    {
+      "robust": true,
+      "sensor_count": 23,
+      "interval_pairs": 140,
+      "minimum_interval_separation": 2,
+      "n": 9,
+      "skinny_bag_checks": 140,
+      "corner_collision_pairs": 336
+    },
+    {
+      "robust": true,
+      "sensor_count": 17,
+      "interval_pairs": 204,
+      "minimum_interval_separation": 2,
+      "n": 10,
+      "skinny_bag_checks": 204,
+      "corner_collision_pairs": 540
+    },
+    {
+      "robust": true,
+      "sensor_count": 21,
+      "interval_pairs": 285,
+      "minimum_interval_separation": 2,
+      "n": 11,
+      "skinny_bag_checks": 285,
+      "corner_collision_pairs": 825
+    },
+    {
+      "robust": true,
+      "sensor_count": 25,
+      "interval_pairs": 385,
+      "minimum_interval_separation": 2,
+      "n": 12,
+      "skinny_bag_checks": 385,
+      "corner_collision_pairs": 1210
+    },
+    {
+      "robust": true,
+      "sensor_count": 29,
+      "interval_pairs": 506,
+      "minimum_interval_separation": 2,
+      "n": 13,
+      "skinny_bag_checks": 506,
+      "corner_collision_pairs": 1716
+    },
+    {
+      "robust": true,
+      "sensor_count": 23,
+      "interval_pairs": 650,
+      "minimum_interval_separation": 2,
+      "n": 14,
+      "skinny_bag_checks": 650,
+      "corner_collision_pairs": 2366
+    },
+    {
+      "robust": true,
+      "sensor_count": 27,
+      "interval_pairs": 819,
+      "minimum_interval_separation": 2,
+      "n": 15,
+      "skinny_bag_checks": 819
+    },
+    {
+      "robust": true,
+      "sensor_count": 31,
+      "interval_pairs": 1015,
+      "minimum_interval_separation": 2,
+      "n": 16,
+      "skinny_bag_checks": 1015
+    },
+    {
+      "robust": true,
+      "sensor_count": 35,
+      "interval_pairs": 1240,
+      "minimum_interval_separation": 2,
+      "n": 17,
+      "skinny_bag_checks": 1240
+    },
+    {
+      "robust": true,
+      "sensor_count": 29,
+      "interval_pairs": 1496,
+      "minimum_interval_separation": 2,
+      "n": 18,
+      "skinny_bag_checks": 1496
+    },
+    {
+      "robust": true,
+      "sensor_count": 33,
+      "interval_pairs": 1785,
+      "minimum_interval_separation": 2,
+      "n": 19,
+      "skinny_bag_checks": 1785
+    },
+    {
+      "robust": true,
+      "sensor_count": 37,
+      "interval_pairs": 2109,
+      "minimum_interval_separation": 2,
+      "n": 20,
+      "skinny_bag_checks": 2109
+    },
+    {
+      "robust": true,
+      "sensor_count": 41,
+      "interval_pairs": 2470,
+      "minimum_interval_separation": 2,
+      "n": 21,
+      "skinny_bag_checks": 2470
+    },
+    {
+      "robust": true,
+      "sensor_count": 35,
+      "interval_pairs": 2870,
+      "minimum_interval_separation": 2,
+      "n": 22,
+      "skinny_bag_checks": 2870
+    },
+    {
+      "robust": true,
+      "sensor_count": 39,
+      "interval_pairs": 3311,
+      "minimum_interval_separation": 2,
+      "n": 23,
+      "skinny_bag_checks": 3311
+    },
+    {
+      "robust": true,
+      "sensor_count": 43,
+      "interval_pairs": 3795,
+      "minimum_interval_separation": 2,
+      "n": 24,
+      "skinny_bag_checks": 3795
+    },
+    {
+      "robust": true,
+      "sensor_count": 47,
+      "interval_pairs": 4324,
+      "minimum_interval_separation": 2,
+      "n": 25,
+      "skinny_bag_checks": 4324
+    },
+    {
+      "robust": true,
+      "sensor_count": 41,
+      "interval_pairs": 4900,
+      "minimum_interval_separation": 2,
+      "n": 26,
+      "skinny_bag_checks": 4900
+    },
+    {
+      "robust": true,
+      "sensor_count": 45,
+      "interval_pairs": 5525,
+      "minimum_interval_separation": 2,
+      "n": 27,
+      "skinny_bag_checks": 5525
+    },
+    {
+      "robust": true,
+      "sensor_count": 49,
+      "interval_pairs": 6201,
+      "minimum_interval_separation": 2,
+      "n": 28,
+      "skinny_bag_checks": 6201
+    },
+    {
+      "robust": true,
+      "sensor_count": 53,
+      "interval_pairs": 6930,
+      "minimum_interval_separation": 2,
+      "n": 29,
+      "skinny_bag_checks": 6930
+    },
+    {
+      "robust": true,
+      "sensor_count": 47,
+      "interval_pairs": 7714,
+      "minimum_interval_separation": 2,
+      "n": 30,
+      "skinny_bag_checks": 7714
+    },
+    {
+      "robust": true,
+      "sensor_count": 51,
+      "interval_pairs": 8555,
+      "minimum_interval_separation": 2,
+      "n": 31,
+      "skinny_bag_checks": 8555
+    },
+    {
+      "robust": true,
+      "sensor_count": 55,
+      "interval_pairs": 9455,
+      "minimum_interval_separation": 2,
+      "n": 32,
+      "skinny_bag_checks": 9455
+    },
+    {
+      "robust": true,
+      "sensor_count": 59,
+      "interval_pairs": 10416,
+      "minimum_interval_separation": 2,
+      "n": 33,
+      "skinny_bag_checks": 10416
+    },
+    {
+      "robust": true,
+      "sensor_count": 53,
+      "interval_pairs": 11440,
+      "minimum_interval_separation": 2,
+      "n": 34,
+      "skinny_bag_checks": 11440
+    }
+  ],
+  "missing_anchors_counterexample": {
+    "robust": false,
+    "intervals": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "detectors": 1,
+    "positive": [
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "negative": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        3
+      ]
+    ]
+  }
+}

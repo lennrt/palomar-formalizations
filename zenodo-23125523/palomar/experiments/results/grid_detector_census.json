@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers",
+  "census": [
+    {
+      "n": 5,
+      "interval_detectors": 14,
+      "minimal_dipole_or_interval_detectors": 52,
+      "two_target_detector_sets": 1747,
+      "two_target_sets_containing_no_dipole_or_interval_detector": 95,
+      "inclusion_minimal_among_them": 77,
+      "symmetry_classes": 12,
+      "smallest_size": 12
+    },
+    {
+      "n": 6,
+      "interval_detectors": 30,
+      "minimal_dipole_or_interval_detectors": 88,
+      "two_target_detector_sets": 6352,
+      "two_target_sets_containing_no_dipole_or_interval_detector": 264,
+      "inclusion_minimal_among_them": 216,
+      "symmetry_classes": 28,
+      "smallest_size": 18
+    },
+    {
+      "n": 7,
+      "interval_detectors": 55,
+      "minimal_dipole_or_interval_detectors": 137,
+      "two_target_detector_sets": 18059,
+      "two_target_sets_containing_no_dipole_or_interval_detector": 609,
+      "inclusion_minimal_among_them": 469,
+      "symmetry_classes": 62,
+      "smallest_size": 18
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+name = "geometricCertificates"
+version = "0.1.0"
+defaultTargets = ["ShellObservability", "Expansion", "Challenge", "Solution"]
+
+[[lean_lib]]
+name = "ShellTomography"
+
+[[lean_lib]]
+name = "ShellObservability"
+
+[[lean_lib]]
+name = "Expansion"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0-rc2"

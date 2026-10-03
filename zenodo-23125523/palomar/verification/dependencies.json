@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "scope": "local pinned dependency checkouts",
+  "manifest_sha256": "4abda5db49b7904af12bd067475cc84fda853925599edb468dd5eff6398f0a47",
+  "packages": [
+    {
+      "name": "mathlib",
+      "repository": "https://github.com/leanprover-community/mathlib4",
+      "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "plausible",
+      "repository": "https://github.com/leanprover-community/plausible",
+      "revision": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "repository": "https://github.com/leanprover-community/LeanSearchClient",
+      "revision": "95e037bfdc31d3916ac615446847fb01960e2719",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "importGraph",
+      "repository": "https://github.com/leanprover-community/import-graph",
+      "revision": "10930f8138f0462dbd744a91fc03a16fae0e046f",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "repository": "https://github.com/leanprover-community/ProofWidgets4",
+      "revision": "4c70ac059693669e5756e32a7a94b57ee1e99dc5",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "aesop",
+      "repository": "https://github.com/leanprover-community/aesop",
+      "revision": "75d936c7af167cc93fac0d31237682fc2204591d",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "Qq",
+      "repository": "https://github.com/leanprover-community/quote4",
+      "revision": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "batteries",
+      "repository": "https://github.com/leanprover-community/batteries",
+      "revision": "ed9b316aabe389fec1ef43c3326ab48c7e59be42",
+      "tracked_sources_clean": true
+    },
+    {
+      "name": "Cli",
+      "repository": "https://github.com/leanprover/lean4-cli",
+      "revision": "2842b9871b04862f944c032e34052cb9448ccb71",
+      "tracked_sources_clean": true
+    }
+  ],
+  "service_verification": false
+}

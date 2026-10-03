@@ -1,0 +1,482 @@
+# formalization.yaml v0.4; focused geometric-certificates project
+---
+version: v0.4
+project:
+  name: 'Distance-Shell Tomography: Geometric Certificates for Fault-Tolerant Sensing,
+    Moment Compression, and Hypercube Equalization'
+  description: Substantive Lean development for labelled distance-shell observations
+    of anonymous integer populations. The focused 14-statement interface covers six
+    result groups. Square grids have an exact four-corner interval-cut characterization
+    of recovery of all populations of mass at most two after one erased report, an
+    equivalent distance-sum compression contract, and exact corner-constrained optimum
+    ceil(3(n+1)/2) for every n at least 3. For every positive q, the actual-distance
+    equalizer cardinality of Q_(4q) lies between 2^(4q-1)+2q-1 and 2^(4q-1)+2q; explicit
+    prefixes also give the infinite contradiction to the sourced exponential formula.
+    Further selected results prove the long-rectangle optimum, ordinary 2-domination
+    on every positive even bishop board, two exact Petersen double-total-domination
+    values, and a connected real fractional-face counterexample. The complete library
+    is included, not an external or assumption-based wrapper. Supporting algebra and
+    geometric lemmas remain proved but unselected. The public README explains mathematical
+    scope, antecedents, and limitations without treating known ingredients or all
+    supporting lemmas as separate original results.
+  authors:
+  - Lennart Rudolph
+  responsible_maintainers:
+  - Lennart Rudolph
+  license: MIT
+classification:
+  arxiv:
+  - math.CO
+  - cs.IT
+  msc2020:
+  - 05C12
+  - 05C69
+sources:
+- title: 'Distance-Shell Tomography: Geometric Certificates for Fault-Tolerant Sensing,
+    Moment Compression, and Hypercube Equalization'
+  authors:
+  - Lennart Rudolph
+  type: paper
+  location: https://doi.org/10.5281/zenodo.23125523
+  relationship: formalizes
+  author_endorsement: participated
+  note: Published preprint and supporting-material archive. This repository contains
+    the substantive formal development; the 14 selected statements and their original
+    proof modules are explained in DECLARATIONS.md. The manuscript and full publication
+    materials are available at the DOI, not as local paper files in this Lean project.
+    The general polynomial balancing theorem, exact finite folded-cube values, stronger
+    unrestricted grid bound, and full moment-capacity results extend beyond the selected
+    formal scope.
+  id: doi:10.5281/zenodo.23125523
+- title: 'Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing'
+  authors:
+  - Lennart Rudolph
+  type: paper
+  id: doi:10.5281/zenodo.22404456
+  location: https://doi.org/10.5281/zenodo.22404456
+  relationship: adapts
+  author_endorsement: participated
+  note: Supplies the anonymous multiplicity-preserving population model, integer-trade
+    framework, graph-distance foundations, erasure-free grid result, and Problem 18
+    on redundancy. This project adapts the foundations and proves the stated one-erasure
+    results; imported predecessor results are prior work.
+- title: Equidistant dimension of Cartesian product graphs
+  authors:
+  - Adrià Gispert-Fernández
+  - Juan A. Rodríguez-Velázquez
+  - Ismael G. Yero
+  type: paper
+  id: doi:10.1007/s40840-026-02088-4
+  location: https://doi.org/10.1007/s40840-026-02088-4
+  relationship: other
+  author_endorsement: not-contacted
+  note: Source of Conjecture 1 in Section 6, published 20 April 2026. The explicit
+    construction refutes its formula for every multiple of four at least twelve. At
+    n=12 it gives 2054 vertices instead of the predicted 2064. The outside-set quantifier
+    in distance equalization is retained. Existing parity facts and the source's common-coordinate
+    argument are credited, not claimed as new.
+- title: k-domination and k-tuple total domination for some chessboard graphs
+  authors:
+  - Paul A. Burchett
+  type: paper
+  id: doi:10.61091/um124-04
+  location: https://doi.org/10.61091/um124-04
+  relationship: other
+  author_endorsement: not-contacted
+  note: Source of Conjecture 5.1, positively proved here for every positive even board
+    size. The source already supplies the upper bound 2n in Theorem 2.12. The new
+    contribution is the matching lower bound from boundary equality and reflection
+    parity. Ordinary 2-domination requires two selected neighbors only outside the
+    selected set; it is not double total domination. The source uses center columns
+    for the upper bound; this manuscript gives an outer-column realization.
+- title: Double Total Domination on Generalized Petersen Graphs
+  authors:
+  - Chengye Zhao
+  - Linlin Wei
+  type: paper
+  id: doi:10.12988/ams.2017.7114
+  location: https://www.m-hikari.com/ams/ams-2017/ams-17-20-2017/p/zhaoAMS17-20-2017.pdf
+  relationship: other
+  author_endorsement: not-contacted
+  note: Conjectures 3.1 and 3.2 on page 912 predict respectively 15 for P(11,4) and
+    22 for P(16,5). Exact values 16 and 24 contradict those formulas. The graph labels
+    may interchange the source's outer and inner vertex letters, but the edges and
+    double-total-domination parameter are identical. These are valid mathematical
+    contradictions; first-refutation priority is not asserted. Its introductory ≤k
+    on page 906 is a typo relative to the abstract and proofs. The equivalent aliases
+    P(11,3) and P(16,3) were included in the priority search.
+- title: On Double Domination Numbers of Generalized Petersen Graphs
+  authors:
+  - Minhong Sun
+  - Zehui Shao
+  type: paper
+  id: doi:10.1166/jctn.2016.5595
+  location: https://doi.org/10.1166/jctn.2016.5595
+  relationship: background
+  author_endorsement: not-contacted
+  note: This 2016 predecessor creates an unresolved priority limitation. Bibliographic
+    and citation metadata were inspected, but its full parameter scope could not be
+    read from accessible full-text sources. Neither Petersen example is claimed to
+    be the first refutation or the resolution of a problem confirmed open in 2026.
+- title: Fractional Domination, Fractional Packings, and Fractional Isomorphisms of
+    Graphs
+  authors:
+  - Roberto Ramon Rubalcaba
+  type: other
+  id: https://etd.auburn.edu/handle/10415/1030
+  location: Auburn University PhD dissertation, 2005; Conjecture 5.2.5, printed page
+    83
+  relationship: other
+  author_endorsement: not-contacted
+  note: Source of the Class I conjecture. A connected six-vertex graph has intersecting
+    but incomparable optimal fractional domination and packing faces, and no vertex
+    is identically zero on both faces. The proof covers real-valued functions in [0,1]^V,
+    not only integral optima. This is explicitly a dissertation conjecture; it is
+    not presented as a conjecture restated in a subsequent journal article.
+- title: Minimum fractional dominating functions and maximum fractional packing functions
+  authors:
+  - R. Rubalcaba
+  - M. Walsh
+  type: paper
+  id: doi:10.1016/j.disc.2008.09.049
+  location: https://doi.org/10.1016/j.disc.2008.09.049
+  relationship: background
+  author_endorsement: not-contacted
+  note: Journal follow-up on the fractional faces; inspected for attribution and priority,
+    without claiming it restates the target conjecture.
+- title: The Equidistant Dimension of Graphs
+  authors:
+  - A. González
+  - C. Hernando
+  - M. Mora
+  type: paper
+  id: doi:10.1007/s40840-022-01295-z
+  location: https://doi.org/10.1007/s40840-022-01295-z
+  relationship: background
+  author_endorsement: not-contacted
+  note: Prior equidistant-dimension and full-parity-class facts; the new work does
+    not claim their discovery.
+- title: Efficient balanced codes
+  authors:
+  - Donald E. Knuth
+  type: paper
+  id: doi:10.1109/TIT.1986.1057136
+  location: https://doi.org/10.1109/TIT.1986.1057136
+  relationship: background
+  author_endorsement: not-contacted
+  note: Classical prefix-balancing antecedent; the parity-restricted hypercube application
+    is the contribution here.
+- title: Balancing sets of vectors
+  authors:
+  - Noga Alon
+  - Ernest E. Bergmann
+  - Don Coppersmith
+  - Andrew M. Odlyzko
+  type: paper
+  id: doi:10.1109/18.2610
+  location: https://doi.org/10.1109/18.2610
+  relationship: background
+  author_endorsement: not-contacted
+  note: Classical balancing-set context, credited separately from the new graph application.
+- title: Cartesian Product Graphs and k-Tuple Total Domination
+  authors:
+  - Adel P. Kazemi
+  - Behnaz Pahlavsay
+  - Rebecca J. Stones
+  type: paper
+  id: doi:10.2298/FIL1819713K
+  location: https://doi.org/10.2298/FIL1819713K
+  relationship: background
+  author_endorsement: not-contacted
+  note: The 3/2 coefficient and K1,3/K3,1 star components are already present in rook-graph
+    double total domination. The new sensing results require all equal-length interval
+    cuts, their exact ambiguity interpretation, and an ordering controlling long cuts.
+    Propositions 3.8–3.9 already give the elongated 5/3 rook regime and two full columns;
+    these patterns are not new here.
+- title: Total k-domination in Cartesian product of complete graphs
+  authors:
+  - Walter Carballosa
+  - Justin Wisby
+  type: paper
+  id: doi:10.1016/j.dam.2023.04.008
+  location: https://doi.org/10.1016/j.dam.2023.04.008
+  relationship: background
+  author_endorsement: not-contacted
+  note: Further rook-graph total-domination antecedent; singleton cut constraints
+    alone do not prove the population-sensing theorem.
+- title: Distinguishing orthogonality graphs
+  authors:
+  - Debra Boutin
+  - Sally Cockburn
+  type: paper
+  id: doi:10.1002/jgt.22704
+  location: https://doi.org/10.1002/jgt.22704
+  relationship: background
+  author_endorsement: not-contacted
+  note: Section 4 already defines the antipodal quotient and its parity components;
+    the graph, order, and degree are prior work.
+- title: On the equidistant dimension of Hamming graphs
+  authors:
+  - Jozef J. Kratica
+  - Aleksandar Lj. Savić
+  - Zoran Lj. Maksimović
+  - Milena S. Bogdanović
+  type: paper
+  id: doi:10.57016/MV-ZooS4049
+  location: https://doi.org/10.57016/MV-ZooS4049
+  relationship: background
+  author_endorsement: not-contacted
+  note: Theorem 2.2 treats dimensions not divisible by four; it does not settle the
+    manuscript’s residue class.
+related_formalizations:
+- title: Distance-Shell Tomography on Graphs companion Lean development
+  authors:
+  - Lennart Rudolph
+  id: https://github.com/lennrt/palomar-formalizations/tree/9437c5e5ba09d6ba95285eaac4532414a84923e1/zenodo-22404456/palomar
+  location: zenodo-22404456/palomar
+  revision: 9437c5e5ba09d6ba95285eaac4532414a84923e1
+  relationship: builds-on
+  note: Foundations.lean, Product.lean, and Grid.lean supply prior population and
+    actual-distance foundations. Their required sources are included locally under
+    ShellTomography and ported to the pinned toolchain; no adjacent project or prebuilt
+    object files are needed. These imported foundations are prior work.
+status:
+  scope: The 14 selected declarations and their actual graph/observation definitions
+    are independently stated in Challenge.lean. Solution.lean proves them by direct
+    application of substantive local theorems. DECLARATIONS.md gives a plain-language
+    account and original proof path for every compared declaration. All 39 library
+    files remain included; secondary prefix geometry, additive-field, tensor-moment,
+    interpolation, and generic syndrome results are retained but unselected. The four-corner
+    square minimum is all-order, not only a residue-class result. Hypercube bounds
+    concern actual graph distances and the original outside-set equalizer quantifier.
+    This is a source-based development of the associated preprint, combining its proof
+    contributions with explicitly attributed classical and imported ingredients.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  sorry_count_scope: Solution and its substantive dependencies contain no proof holes.
+    Only the independent Challenge has deliberate statement holes, one per selected
+    result; no proof imports Challenge.
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  verification_status: Snapshot-specific local build, full-development axiom audits,
+    comparison, and exact-program evidence are recorded under verification and experiments/results.
+    Historical comparison results do not establish a changed selection. The local
+    comparison script checks with Lean, NanoDa, and con-ron; its documented macOS
+    mode is not the service Linux sandbox. Local significance assessment is advisory,
+    not official Palomar editorial approval. Current repository-wide module-header
+    requirements remain blocked by 258 pre-existing sibling Lean files outside this
+    project; the new project does not alter those files. No service verification or
+    registry registration is claimed.
+  main_results:
+  - declaration: PalomarResults.Grid.gridRobust_iff_intervalCuts
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Grid.gridMomentRobust_iff_gridRobust
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Grid.grid_robust_sensor_lower_bound
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Grid.exact_corner_grid_robust_minimum_all
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Hypercube.infinite_counterexample_family
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Hypercube.equidistant_dimension_within_one
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Bishop.exact_two_domination
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Petersen11.exact_domination
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Petersen16.exact_domination
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Fractional.graph_connected
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Fractional.counterexample
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Rectangle.gridRobust_iff_intervalCuts
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+  - declaration: PalomarResults.Rectangle.exact_long_rectangle_robust_minimum
+    file: Solution.lean
+    sorry_count: 0
+    comparator_config: comparator.json
+    build_status: Proved in the local substantive library; see snapshot-specific verification
+      records
+automation:
+  methods:
+  - method: manual
+    tool_setup: Lennart Rudolph directed the research objective and scope and is the
+      human author and responsible maintainer. Human expert review and the decision
+      to publish or submit remain separate from the automated work.
+  - method: agent
+    models:
+    - OpenAI Codex
+    framework: Human-directed multi-agent research and formalization
+    tool_setup: Codex assisted the version dated 2026-10-02 with literature searches,
+      exploratory computations, constructions and counterexamples, mathematical proof
+      development, manuscript drafting and revision, Lean proofs, adversarial checks,
+      and reproducibility scripts.
+  - method: agent
+    models:
+    - Anthropic Claude (Claude Code)
+    framework: Human-directed agentic review and revision
+    tool_setup: Claude assisted the revision dated 2026-10-03 with a mathematical
+      review of the manuscript, the quantitative balancing theorem and hypercube lower
+      bound, the sixteen-dimensional enumeration, leaf-star designs and the all-order
+      grid optimum, the unrestricted grid lower bound and corner-free placements,
+      the corresponding Lean proofs, new exact programs, and the manuscript reorganization.
+      The independent final Python and C++ certificate programs use exact arithmetic
+      and standard libraries; an integer-programming solver was used only to locate
+      placements that are then re-verified exactly. Lean and Mathlib versions are
+      pinned in the submitted toolchain and manifest.
+  spend_usd: not tracked
+  notes: Lennart Rudolph is the sole project author and responsible maintainer. OpenAI
+    Codex assisted the first version with research, mathematical proofs, Lean formalization,
+    verification, writing, and final repository preparation. Anthropic Claude (Claude
+    Code) assisted the revision of 3 October 2026, including the stronger cube lower
+    bound, leaf-star design, all-order grid optimum, and new exact searches. No AI
+    system is an author, and automated reviews are not independent human peer review.
+    No model attribution is imported from unrelated projects.
+fidelity:
+  divergences: Grid reports preserve multiplicity and sensor labels. Populations have
+    natural occupancies and mass at most two, including empty and repeated-target
+    cases. The erased final report is identified as missing; internal communication
+    loss and noisy acquisition are outside this theorem. Compression retains full
+    reports at four corners and scalar total distances elsewhere. The exact square
+    count assumes those corners; the stronger unrestricted lower bound and its attained
+    finite placements in the paper are not selected Lean statements. Hypercube equalization
+    quantifies over distinct vertices outside the selected set using actual shortest-path
+    distance. Its within-one endpoint gives an explicit upper witness and a lower
+    bound for every equalizer; it does not formalize the quotient domination number
+    as a separate object. The bishop parameter is ordinary 2-domination; the Petersen
+    parameter requires two selected neighbors at every vertex. The fractional counterexample
+    uses full real-valued optimal faces. Exact folded-cube values in dimensions 8,
+    12, and 16 are exhaustive computations, not kernel certificates. The general quantitative
+    polynomial balancing theorem and the full moment capacity/report-distance results
+    are paper-level statements beyond the selected interface; their supporting formal
+    lemmas do not conceal those missing bridges. No first-refutation priority is asserted
+    for the Petersen examples. Existing parity geometry, balancing, rook patterns,
+    and imported tomography foundations are credited as prior work.
+review:
+  status: No completed independent human peer review or Palomar editorial review claimed
+  reviewers: []
+  notes: Local mathematical, source, and significance reviews are advisory. Proof
+    checking certifies stated propositions, not publication priority, source fidelity
+    in unformalized prose, or editorial significance. SUBMISSION.md records the repository-wide
+    compatibility issue outside the new project. Automation is disclosed only in the
+    automation section.
+alignment:
+  namespace: PalomarResults
+  statements:
+  - source: Four-corner square-grid interval-cut characterization
+    lean: PalomarResults.Grid.gridRobust_iff_intervalCuts
+    module: Solution
+    status: proved
+  - source: Full-corner and scalar-interior report equivalence
+    lean: PalomarResults.Grid.gridMomentRobust_iff_gridRobust
+    module: Solution
+    status: proved
+  - source: Unrestricted square-grid strict lower bound 3m < 2|S|
+    lean: PalomarResults.Grid.grid_robust_sensor_lower_bound
+    module: Solution
+    status: proved
+  - source: Exact corner-constrained square-grid optimum at every positive interior
+      size
+    lean: PalomarResults.Grid.exact_corner_grid_robust_minimum_all
+    module: Solution
+    status: proved
+  - source: Explicit infinite family below the conjectured hypercube equalizer cardinality
+    lean: PalomarResults.Hypercube.infinite_counterexample_family
+    module: Solution
+    status: proved
+  - source: Actual-distance equalization equivalent to the antipodal cover condition
+    lean: PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover
+    module: Solution
+    status: proved
+  - source: Hypercube equalizer cardinality lower bound and upper witness within one
+    lean: PalomarResults.Hypercube.equidistant_dimension_within_one
+    module: Solution
+    status: proved
+  - source: Ordinary 2-domination optimum for every positive even bishop board
+    lean: PalomarResults.Bishop.exact_two_domination
+    module: Solution
+    status: proved
+  - source: Exact double-total-domination number 16 for P(11,4)
+    lean: PalomarResults.Petersen11.exact_domination
+    module: Solution
+    status: proved
+  - source: Exact double-total-domination number 24 for P(16,5)
+    lean: PalomarResults.Petersen16.exact_domination
+    module: Solution
+    status: proved
+  - source: Connectedness of the six-vertex fractional-face counterexample
+    lean: PalomarResults.Fractional.graph_connected
+    module: Solution
+    status: proved
+  - source: Class I real fractional faces with no vertex null on both faces
+    lean: PalomarResults.Fractional.counterexample
+    module: Solution
+    status: proved
+  - source: Rectangular-grid interval-cut characterization
+    lean: PalomarResults.Rectangle.gridRobust_iff_intervalCuts
+    module: Solution
+    status: proved
+  - source: Exact long-rectangle corner-constrained optimum 2N+4
+    lean: PalomarResults.Rectangle.exact_long_rectangle_robust_minimum
+    module: Solution
+    status: proved
+acknowledgements: Lean, Mathlib, Comparator, NanoDa, con-ron, and Palomar tooling
+  authors. Mathematical source authorship and prior formalizations are identified
+  separately above.

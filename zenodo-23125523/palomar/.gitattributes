@@ -1,0 +1,3 @@
+# Preserve raw verifier output, including diagnostic trailing spaces.
+verification/**/*.log -whitespace
+verification/*.log -whitespace

@@ -1,0 +1,27 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarResults.Grid.gridRobust_iff_intervalCuts",
+    "PalomarResults.Grid.gridMomentRobust_iff_gridRobust",
+    "PalomarResults.Grid.grid_robust_sensor_lower_bound",
+    "PalomarResults.Grid.exact_corner_grid_robust_minimum_all",
+    "PalomarResults.Hypercube.infinite_counterexample_family",
+    "PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover",
+    "PalomarResults.Hypercube.equidistant_dimension_within_one",
+    "PalomarResults.Bishop.exact_two_domination",
+    "PalomarResults.Petersen11.exact_domination",
+    "PalomarResults.Petersen16.exact_domination",
+    "PalomarResults.Fractional.graph_connected",
+    "PalomarResults.Fractional.counterexample",
+    "PalomarResults.Rectangle.gridRobust_iff_intervalCuts",
+    "PalomarResults.Rectangle.exact_long_rectangle_robust_minimum"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

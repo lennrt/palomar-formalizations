@@ -1,0 +1,486 @@
+{
+  "status": "passed",
+  "files_checked": 45,
+  "command": "lake env lean --deps-json FILE",
+  "parser": "PalomarSubmission scripts/verify_submission.py:parse_lean_header",
+  "official_tools_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
+  "service_verification": false,
+  "files": [
+    {
+      "file": "Challenge.lean",
+      "sha256": "2824c1fefd47404e28f6507cf8921e003af51d092a0eec00d126586675dc6642",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "Expansion.lean",
+      "sha256": "a5652106b50c191232a77b848a1aa0f64409013149426e929ba8d1cb373d7c0f",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.AdditiveFields",
+        "ShellObservability.BooleanSampling",
+        "ShellObservability.CubeExpansion",
+        "ShellObservability.CubeLowerBound",
+        "ShellObservability.CubeTriple",
+        "ShellObservability.GridAllOrders",
+        "ShellObservability.RectangleTheorems",
+        "ShellObservability.TensorMoments"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/AdditiveFields.lean",
+      "sha256": "6dab0bd3d9d6efe8117982c065035ac8ed0537e7ef8575fae43823e2c9a8cd60",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.RectangleGeometry",
+        "ShellObservability.Robust"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/BishopBoundaryCount.lean",
+      "sha256": "86ae171300acd939eabcfde91ca53c0f9e6b14652cc6f8ac0b528ffcebcb5047",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/BishopParity.lean",
+      "sha256": "cd951a9290b8b1eb4a6f93d4485af42ace0c1424a43d842727e59e0c0247290e",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Finite",
+        "Mathlib.Tactic",
+        "ShellObservability.BishopBoundaryCount",
+        "ShellObservability.BishopReflection"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/BishopReflection.lean",
+      "sha256": "975d6d8a1f92cf36dcb52a5aac5e625101c4a05c5dd875fd00871f5f1e7fd925",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/BishopUpper.lean",
+      "sha256": "405f8c20e0412e93dfcd511a57b0648e0169c5250f28b477e4cc67c9f79c531c",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.BishopParity"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/BooleanSampling.lean",
+      "sha256": "52918409c99099453d1f97155e611520dae8ae508e44bdc91829c4c9b555aad0",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/CornerReduction.lean",
+      "sha256": "c8bb3a239a00cac60db2ab35fcfa83aa2cd84bc4292121ea22e28f7ac1d4630b",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridTrades"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/CubeExpansion.lean",
+      "sha256": "0f5a2e36b16e2af5e114daa5abb970bcaf9c253a2b70f4f94244b4470de6eeb5",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeGeometry"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/CubeLowerBound.lean",
+      "sha256": "3963205d74eb936c5fc21c6fa97cf9d8d10e39be51482a133bf725ad42c54f46",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeReduction"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/CubeTriple.lean",
+      "sha256": "3b37b1d7ea61d99cb688867616bd07de635010a8875086518b08a6b696ba5e17",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.CubeExpansion"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/CycleShell.lean",
+      "sha256": "9f84aa16abe47e8568eb42455f993518053ece6e203dbc045bd7eb5ef8d67d0a",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Metric",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Tactic",
+        "ShellTomography.Foundations"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/DefectSyndrome.lean",
+      "sha256": "c1f5b2793e4d02b989cd8be700e4520c3b50e16693d38e6216416326580a007d",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Data.Matrix.Mul",
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/FractionalCounterexample.lean",
+      "sha256": "abde8210395a477dfa29cb70a5932bbda2fdc3bbde576f7021336725f9896fbc",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Basic.Real.Basic",
+        "Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite",
+        "Mathlib.Combinatorics.SimpleGraph.Finite",
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/GridAllOrders.lean",
+      "sha256": "24e14ca245100ddd27ac1379b304dfd0dbc31cfc14c69647ff4624b6c5155450",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridTheorems",
+        "ShellObservability.LeafStars"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/GridMomentRecovery.lean",
+      "sha256": "8049d5f697d05679f914275350102e6869ec6456ca96339a799eef82fdc5f7d2",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridRecovery"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/GridRecovery.lean",
+      "sha256": "8239ba8a1805cf3ec265f58c3c6d522a904e2fb6e4de85cefa10fbfa3b0628f4",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.CornerReduction",
+        "ShellObservability.Populations"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/GridTheorems.lean",
+      "sha256": "9bf464124a6614fa2547dd62124c00c5b277ec3537adbccc07f1b79b534cc854",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridRecovery",
+        "ShellObservability.LowerBound",
+        "ShellObservability.OrderedStars"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/GridTrades.lean",
+      "sha256": "0f24ad1614a4deff36a8ad278c6137a078598017f39c26977a8c32b91bbf02e1",
+      "is_module": true,
+      "imports": [
+        "ShellTomography.Grid"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/HypercubeBasic.lean",
+      "sha256": "e16841fc4d004f651d594f18ab92892225aaf90e00e8b18d2d359e2c41082cd2",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/HypercubeCounterexample.lean",
+      "sha256": "cfe6dbf81dd26821597874335357d2f462526c09dcd3c791c636739a6a817694",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeGeometry",
+        "ShellObservability.HypercubePrefixes"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/HypercubeGeometry.lean",
+      "sha256": "04ae9731338ebddc81253fd472049d03bcc63f9b077c5a76aeedd3b1fc02a4f5",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeBasic",
+        "ShellObservability.Robust"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/HypercubePrefixes.lean",
+      "sha256": "0f98136aa8b2311bfbb034eadc42688a1436832fa2072006081241a885cb62c7",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeBasic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/HypercubeReduction.lean",
+      "sha256": "588ffe0f7b08e6bfb93cdaa3181219ea5dd356d790b4203da1446693ec4ece98",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.HypercubeCounterexample"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/LeafStars.lean",
+      "sha256": "d0e6936568913fb21bba7805e08042cf5ccb4f7619c860faf774f9fe67d989bf",
+      "is_module": true,
+      "imports": [
+        "Mathlib",
+        "ShellObservability.OrderedStars"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/LowerBound.lean",
+      "sha256": "10e58e4e984f55935726b0a9b5636dec752ec7e5951e55b688ed7e3e300c3742",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/ModularObstruction.lean",
+      "sha256": "f92812fd03b3a2bb16d35fd3465d4b9200c7f35d9458cf0c8683e028efbdea50",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Data.Matrix.Mul",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/OrderedStars.lean",
+      "sha256": "00f20318ed0afc66bf1ddecc7deb277d1950d4a23dff8ab2a17f78b2e3d2b436",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/PetersenCounterexample.lean",
+      "sha256": "ce1bb9e8cca69d739a82f461d41fb30e76b7616c6d48a7db8037d3fa27486d0a",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Finite",
+        "ShellObservability.ModularObstruction"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/PetersenSecond.lean",
+      "sha256": "4fef373fefe0048b9c0496e9af5e8f39259668d069f472ada614e1f8d5c72d2d",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Finite",
+        "ShellObservability.ModularObstruction"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/Populations.lean",
+      "sha256": "ec990a62aa988eb605b62d98e86d409fb3fdfd1e18b61b64c54e163409c509b5",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.Robust"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/RectangleBounds.lean",
+      "sha256": "7aec528bc5d5ef52521c4cc23ed732b62a518890344112453b231b8d8de376a2",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.LowerBound"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/RectangleGeometry.lean",
+      "sha256": "97ce913ced49ced755895e46ba6c16a9fe1db34f1beb42039eb72f604e6a772b",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridRecovery"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/RectangleRecovery.lean",
+      "sha256": "1a06da75de2292ea21651389fa7ea2cfdcda62551f3143e9aa5858cb07e5311b",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.Populations",
+        "ShellObservability.RectangleGeometry"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/RectangleTheorems.lean",
+      "sha256": "e017ec29d1cfc07b23d350056d070a4338aacac5d451294764ede737a0ad2b73",
+      "is_module": true,
+      "imports": [
+        "ShellObservability.GridTheorems",
+        "ShellObservability.RectangleBounds",
+        "ShellObservability.RectangleRecovery"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/Robust.lean",
+      "sha256": "13133852f152ee75257407c13bfd3e6acf07db47395c3c71d45253953dda060f",
+      "is_module": true,
+      "imports": [
+        "Mathlib.InformationTheory.Hamming",
+        "Mathlib.Tactic",
+        "ShellTomography.Foundations"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability/TensorMoments.lean",
+      "sha256": "51e14947fee420e5529697d2096417cc4dd1eb9ff49f20b8be509f38e40cfe13",
+      "is_module": true,
+      "imports": [
+        "Mathlib"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellObservability.lean",
+      "sha256": "5a91ce82fa03586e6681afe5e83dd17fd85b910ef255284b935f9b6d79dba561",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Metric",
+        "Mathlib.Tactic",
+        "ShellObservability.BishopUpper",
+        "ShellObservability.CycleShell",
+        "ShellObservability.DefectSyndrome",
+        "ShellObservability.FractionalCounterexample",
+        "ShellObservability.GridMomentRecovery",
+        "ShellObservability.GridRecovery",
+        "ShellObservability.GridTheorems",
+        "ShellObservability.GridTrades",
+        "ShellObservability.HypercubeReduction",
+        "ShellObservability.LowerBound",
+        "ShellObservability.PetersenCounterexample",
+        "ShellObservability.PetersenSecond",
+        "ShellObservability.Robust",
+        "ShellTomography.Foundations"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellTomography/Foundations.lean",
+      "sha256": "7966309720c9b5ae8c9bdf087aa6ade252104f90dc393c5a774ad3dcba7f4043",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Data.Matrix.Mul",
+        "Mathlib.Data.Multiset.Replicate",
+        "Mathlib.Tactic"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellTomography/Grid.lean",
+      "sha256": "7c1ed2a04b80ae67f3b7e5f918cc3939a786b4c536d4daf110f25a55824b2669",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected",
+        "Mathlib.Combinatorics.SimpleGraph.Metric",
+        "ShellTomography.Product"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "ShellTomography/Product.lean",
+      "sha256": "59f8315e47f7851442836b9d4aea968318860f1083e612019a2065e757493afc",
+      "is_module": true,
+      "imports": [
+        "Mathlib.Algebra.Polynomial.Basic",
+        "Mathlib.Algebra.Polynomial.Eval.Defs",
+        "Mathlib.Combinatorics.SimpleGraph.Prod",
+        "Mathlib.LinearAlgebra.Matrix.Nondegenerate",
+        "ShellTomography.Foundations"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "Solution.lean",
+      "sha256": "cdc402cda1c3b7b4bf63d86d314e07cc9cd406a7789ac39c5aa4a90ea8cd87b5",
+      "is_module": true,
+      "imports": [
+        "Expansion",
+        "ShellObservability.BishopUpper",
+        "ShellObservability.DefectSyndrome",
+        "ShellObservability.FractionalCounterexample",
+        "ShellObservability.GridMomentRecovery",
+        "ShellObservability.GridTheorems",
+        "ShellObservability.HypercubeReduction",
+        "ShellObservability.PetersenCounterexample",
+        "ShellObservability.PetersenSecond"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "verification/AxiomAudit.lean",
+      "sha256": "0e6aec2dde62710703c5635ec852b1bd137ab336a645a46cb80271842fa32679",
+      "is_module": true,
+      "imports": [
+        "ShellObservability"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "verification/ExpansionAudit.lean",
+      "sha256": "5185e26e6678680aefb67d1c1aa05a18e9b91553b8e9a00a7a734a0e9aa2e643",
+      "is_module": true,
+      "imports": [
+        "Expansion",
+        "Solution"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "refreshed_files": [
+    "Solution.lean",
+    "ShellObservability.lean"
+  ]
+}

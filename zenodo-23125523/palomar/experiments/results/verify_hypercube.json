@@ -1,0 +1,20 @@
+{
+  "dimension": 12,
+  "prefix_centers": [
+    0,
+    3,
+    15,
+    63,
+    255,
+    1023
+  ],
+  "equalizer_size": 2054,
+  "conjectured_size": 2064,
+  "outside_pairs_checked": 2083861,
+  "balancing_dimensions_checked": [
+    4,
+    8,
+    12,
+    16
+  ]
+}

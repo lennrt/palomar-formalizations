@@ -1,0 +1,12 @@
+{
+  "minimum_component_checks": {
+    "2": 2,
+    "4": 56,
+    "6": 8568
+  },
+  "upper_bound_even_orders_checked": [
+    2,
+    40
+  ],
+  "boundary_count_and_fixed_point_parity_checked": true
+}

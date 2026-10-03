@@ -1,0 +1,29 @@
+warning: manifest out of date: git url of dependency 'mathlib' changed; use `lake update mathlib` to update it
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+⚠ [98/317] Replayed Verso.Parser
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+✔ [312/317] Built VersoLiterateCode (3.7s)
+✔ [313/317] Built VersoLiterateCode:c.o (2.6s)
+✔ [314/317] Built VersoLiterateCode:shared (156ms)
+✔ [315/317] Built VersoHtmlMain (1.6s)
+✔ [316/317] Built VersoHtmlMain:c.o (964ms)
+✔ [317/317] Built «verso-html»:exe (1.8s)
