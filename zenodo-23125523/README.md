@@ -2,13 +2,14 @@
 
 Lennart Rudolph · 3 October 2026
 
-Paper: [10.5281/zenodo.23125523](https://doi.org/10.5281/zenodo.23125523) ·
+Paper: [PDF](Distance-Shell-Tomography.pdf) · [10.5281/zenodo.23125523](https://doi.org/10.5281/zenodo.23125523) ·
 [ResearchGate](https://www.researchgate.net/publication/415199103_Distance-Shell_Tomography_Geometric_Certificates_for_Fault-Tolerant_Sensing_Moment_Compression_and_Hypercube_Equalization)
 
 This directory contains the substantive Lean development and a focused
 Palomar interface for *Distance-Shell Tomography: Geometric Certificates for
 Fault-Tolerant Sensing, Moment Compression, and Hypercube Equalization*.
-The manuscript and full publication archive are available at the DOI above.
+The manuscript PDF is included here. The full publication archive is available
+at the DOI above.
 
 - [Mathematical scope, related work, and build instructions](palomar/README.md).
 - [The 14 selected declarations and original proofs](palomar/DECLARATIONS.md).
