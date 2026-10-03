@@ -1,0 +1,189 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers",
+  "scope": "complete finite enumeration by two programs, not kernel-checked Lean",
+  "theorem_used": "a dominating set with fewer than n/2 classes has an isolated selected class",
+  "source_sha256": {
+    "folded_cube_anchored.cpp": "ca21909efa5b28041823782d8cca8bf517f41c9483ada7aeae96f824a46e1b37",
+    "folded_cube_pair_audit.cpp": "b82c2ddde17ae8eaeb6738d267207eab2465fcd54a59f1d1a566d57d085b1149"
+  },
+  "runs": {
+    "n8_three_centres": {
+      "method": "anchored_bitset",
+      "n": 8,
+      "centres": 3,
+      "anchored": 0,
+      "classes": 64,
+      "closed_neighbourhood": 36,
+      "compositions": 0,
+      "even_row_compositions": 0,
+      "row_orbits": 1,
+      "second_last_centre_candidates": 36,
+      "completions_found": 0,
+      "least_uncovered_before_last_centre": 12
+    },
+    "n8_four_centres_anchored": {
+      "method": "anchored_bitset",
+      "n": 8,
+      "centres": 4,
+      "anchored": 1,
+      "classes": 64,
+      "closed_neighbourhood": 36,
+      "compositions": 9,
+      "even_row_compositions": 5,
+      "row_orbits": 1,
+      "second_last_centre_candidates": 16,
+      "completions_found": 16,
+      "least_uncovered_before_last_centre": 4,
+      "partial_example": [
+        0,
+        192,
+        6
+      ]
+    },
+    "n8_four_centres_pair_audit": {
+      "method": "pair_cover_stars_bars",
+      "n": 8,
+      "centres": 4,
+      "forced_weight": 2,
+      "pattern_tuples": 6435,
+      "row_families": 16,
+      "branch_nodes": 0,
+      "families_with_completion": 2,
+      "example_rows": [
+        12,
+        48,
+        192
+      ]
+    },
+    "n12_five_centres": {
+      "method": "anchored_bitset",
+      "n": 12,
+      "centres": 5,
+      "anchored": 0,
+      "classes": 1024,
+      "closed_neighbourhood": 463,
+      "compositions": 455,
+      "even_row_compositions": 119,
+      "row_orbits": 30,
+      "second_last_centre_candidates": 13890,
+      "completions_found": 0,
+      "least_uncovered_before_last_centre": 78
+    },
+    "n12_six_centres": {
+      "method": "anchored_bitset",
+      "n": 12,
+      "centres": 6,
+      "anchored": 0,
+      "classes": 1024,
+      "closed_neighbourhood": 463,
+      "compositions": 50388,
+      "even_row_compositions": 6372,
+      "row_orbits": 695,
+      "second_last_centre_candidates": 321785,
+      "completions_found": 123,
+      "least_uncovered_before_last_centre": 20,
+      "partial_example": [
+        0,
+        48,
+        60,
+        4032,
+        255
+      ]
+    },
+    "n12_six_centres_anchored": {
+      "method": "anchored_bitset",
+      "n": 12,
+      "centres": 6,
+      "anchored": 1,
+      "classes": 1024,
+      "closed_neighbourhood": 463,
+      "compositions": 50388,
+      "even_row_compositions": 6372,
+      "row_orbits": 153,
+      "second_last_centre_candidates": 37197,
+      "completions_found": 0,
+      "least_uncovered_before_last_centre": 31
+    },
+    "n12_five_centres_pair_audit": {
+      "method": "pair_cover_stars_bars",
+      "n": 12,
+      "centres": 5,
+      "forced_weight": 4,
+      "pattern_tuples": 50388,
+      "row_families": 81,
+      "branch_nodes": 0,
+      "families_with_completion": 0
+    },
+    "n12_six_centres_pair_audit": {
+      "method": "pair_cover_stars_bars",
+      "n": 12,
+      "centres": 6,
+      "forced_weight": 4,
+      "pattern_tuples": 50388,
+      "row_families": 81,
+      "branch_nodes": 20493,
+      "families_with_completion": 0
+    },
+    "n16_seven_centres_anchored": {
+      "method": "anchored_bitset",
+      "n": 16,
+      "centres": 7,
+      "anchored": 1,
+      "classes": 16384,
+      "closed_neighbourhood": 6436,
+      "compositions": 300540195,
+      "even_row_compositions": 18789795,
+      "row_orbits": 104742,
+      "second_last_centre_candidates": 385260636,
+      "completions_found": 0,
+      "least_uncovered_before_last_centre": 564
+    },
+    "n16_seven_centres_pair_audit": {
+      "method": "pair_cover_stars_bars",
+      "n": 16,
+      "centres": 7,
+      "forced_weight": 6,
+      "pattern_tuples": 300540195,
+      "row_families": 74959,
+      "branch_nodes": 280418188,
+      "families_with_completion": 0
+    }
+  },
+  "prefix_upper_witnesses": {
+    "8": [
+      0,
+      3,
+      15,
+      63
+    ],
+    "12": [
+      0,
+      3,
+      15,
+      63,
+      255,
+      1023
+    ],
+    "16": [
+      0,
+      3,
+      15,
+      63,
+      255,
+      1023,
+      4095,
+      16383
+    ]
+  },
+  "folded_domination_numbers": {
+    "8": 4,
+    "12": 6,
+    "16": 8
+  },
+  "cube_equidistant_dimensions": {
+    "8": 132,
+    "12": 2054,
+    "16": 32776
+  }
+}

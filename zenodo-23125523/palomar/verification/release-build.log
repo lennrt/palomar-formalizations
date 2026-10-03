@@ -1,0 +1,245 @@
+⚠ [8930/8977] Replayed ShellTomography.Foundations
+warning: ShellTomography/Foundations.lean:164:0: automatically included section variable(s) unused in theorem `ShellTomography.parts_ne_of_ne_zero`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Foundations.lean:253:0: automatically included section variable(s) unused in theorem `ShellTomography.difference_parts`:
+  [Fintype V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8935/8977] Replayed ShellTomography.Product
+warning: ShellTomography/Product.lean:29:0: automatically included section variable(s) unused in theorem `ShellTomography.coeff_response`:
+  [Fintype S]
+  [DecidableEq G]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq G] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Product.lean:57:0: automatically included section variable(s) unused in theorem `ShellTomography.mixing_coeff_zero`:
+  [Fintype G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Product.lean:94:0: automatically included section variable(s) unused in theorem `ShellTomography.response_product_decompose`:
+  [Fintype S]
+  [DecidableEq G]
+  [DecidableEq H]
+  [DecidableEq S]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype S] [DecidableEq G] [DecidableEq H] [DecidableEq S] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Product.lean:129:0: automatically included section variable(s) unused in theorem `ShellTomography.slice_mass_le`:
+  [DecidableEq G]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq G] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Product.lean:174:0: automatically included section variable(s) unused in theorem `ShellTomography.boxProd_dist`:
+  [Fintype G]
+  [Fintype H]
+  [DecidableEq G]
+  [DecidableEq H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype G] [Fintype H] [DecidableEq G] [DecidableEq H] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellTomography/Product.lean:199:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8939/8977] Replayed ShellObservability.Populations
+warning: ShellObservability/Populations.lean:81:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8940/8977] Replayed ShellObservability.GridRecovery
+warning: ShellObservability/GridRecovery.lean:205:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8941/8977] Replayed ShellObservability.GridMomentRecovery
+warning: ShellObservability/GridMomentRecovery.lean:195:54: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: ShellObservability/GridMomentRecovery.lean:200:54: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: ShellObservability/GridMomentRecovery.lean:326:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8942/8977] Replayed ShellObservability.ModularObstruction
+warning: ShellObservability/ModularObstruction.lean:28:50: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: ShellObservability/ModularObstruction.lean:62:20: `if_false` has been deprecated: Use `ite_false` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵f̵a̵l̵s̵e̵i̲t̲e̲_̲f̲a̲l̲s̲e̲
+⚠ [8947/8977] Replayed ShellObservability.RectangleRecovery
+warning: ShellObservability/RectangleRecovery.lean:205:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8948/8977] Replayed ShellObservability.RectangleBounds
+warning: ShellObservability/RectangleBounds.lean:107:0: automatically included section variable(s) unused in theorem `ShellObservability.RectangleBounds.short_direction_accounting`:
+  [Fintype R]
+  [DecidableEq R]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [DecidableEq R] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8949/8977] Replayed ShellObservability.AdditiveFields
+warning: ShellObservability/AdditiveFields.lean:20:0: automatically included section variable(s) unused in theorem `ShellObservability.AdditiveFields.zero_isAdditive`:
+  [Fintype R]
+  [Fintype C]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [Fintype C] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellObservability/AdditiveFields.lean:23:0: automatically included section variable(s) unused in theorem `ShellObservability.AdditiveFields.IsAdditive.sub`:
+  [Fintype R]
+  [Fintype C]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [Fintype C] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellObservability/AdditiveFields.lean:85:0: automatically included section variable(s) unused in theorem `ShellObservability.AdditiveFields.rectangle_identity`:
+  [Fintype R]
+  [Fintype C]
+  [DecidableEq A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [Fintype C] [DecidableEq A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellObservability/AdditiveFields.lean:169:8: automatically included section variable(s) unused in theorem `_private.ShellObservability.AdditiveFields.0.ShellObservability.AdditiveFields.edge_constant_walk`:
+  [AddCommGroup A]
+  [DecidableEq A]
+  [Nontrivial A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [AddCommGroup A] [DecidableEq A] [Nontrivial A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ShellObservability/AdditiveFields.lean:176:8: automatically included section variable(s) unused in theorem `_private.ShellObservability.AdditiveFields.0.ShellObservability.AdditiveFields.connected_iff_cross`:
+  [Fintype R]
+  [Fintype C]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype R] [Fintype C] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8956/8977] Replayed ShellObservability.BishopReflection
+warning: ShellObservability/BishopReflection.lean:60:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ShellObservability/BishopReflection.lean:63:8: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ShellObservability/BishopReflection.lean:63:28: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [8958/8977] Replayed ShellObservability.BishopParity
+warning: ShellObservability/BishopParity.lean:52:28: This simp argument is unused:
+  Adj
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [graph]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8960/8977] Replayed ShellObservability.OrderedStars
+warning: ShellObservability/OrderedStars.lean:463:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ShellObservability/OrderedStars.lean:463:35: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ShellObservability/OrderedStars.lean:479:24: `if_true` has been deprecated: Use `ite_true` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵t̵r̵u̵e̵i̲t̲e̲_̲t̲r̲u̲e̲
+warning: ShellObservability/OrderedStars.lean:482:10: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: ShellObservability/OrderedStars.lean:489:10: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: ShellObservability/OrderedStars.lean:498:24: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [8964/8977] Replayed ShellObservability.RectangleTheorems
+warning: ShellObservability/RectangleTheorems.lean:109:13: This simp argument is unused:
+  GridHasCorners
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mem_insert, mem_singleton] at hp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ShellObservability/RectangleTheorems.lean:123:56: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ShellObservability/RectangleTheorems.lean:123:56: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8968/8977] Replayed ShellObservability.BooleanSampling
+warning: ShellObservability/BooleanSampling.lean:28:0: automatically included section variable(s) unused in theorem `ShellObservability.BooleanSampling.coefficients_zero_of_lower_ball`:
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8974/8977] Replayed Challenge
+warning: Challenge.lean:248:8: declaration uses `sorry`
+warning: Challenge.lean:254:8: declaration uses `sorry`
+warning: Challenge.lean:260:8: declaration uses `sorry`
+warning: Challenge.lean:266:8: declaration uses `sorry`
+warning: Challenge.lean:279:8: declaration uses `sorry`
+warning: Challenge.lean:285:8: declaration uses `sorry`
+warning: Challenge.lean:293:8: declaration uses `sorry`
+warning: Challenge.lean:304:8: declaration uses `sorry`
+warning: Challenge.lean:315:8: declaration uses `sorry`
+warning: Challenge.lean:326:8: declaration uses `sorry`
+warning: Challenge.lean:337:8: declaration uses `sorry`
+warning: Challenge.lean:341:8: declaration uses `sorry`
+warning: Challenge.lean:373:8: declaration uses `sorry`
+warning: Challenge.lean:377:8: declaration uses `sorry`
+Build completed successfully (8977 jobs).

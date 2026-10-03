@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers",
+  "parity_orthogonality_cases": 108,
+  "odd_points_never_balanced": true,
+  "quantitative_balancing": {
+    "4": [
+      {
+        "centres": 0,
+        "bound": 4,
+        "exact_minimum_unbalanced_classes": 4,
+        "witness": []
+      },
+      {
+        "centres": 1,
+        "bound": 1,
+        "exact_minimum_unbalanced_classes": 1,
+        "witness": [
+          0
+        ]
+      }
+    ],
+    "8": [
+      {
+        "centres": 0,
+        "bound": 64,
+        "exact_minimum_unbalanced_classes": 64,
+        "witness": []
+      },
+      {
+        "centres": 1,
+        "bound": 29,
+        "exact_minimum_unbalanced_classes": 29,
+        "witness": [
+          0
+        ]
+      },
+      {
+        "centres": 2,
+        "bound": 8,
+        "exact_minimum_unbalanced_classes": 12,
+        "witness": [
+          0,
+          15
+        ]
+      },
+      {
+        "centres": 3,
+        "bound": 1,
+        "exact_minimum_unbalanced_classes": 4,
+        "witness": [
+          0,
+          15,
+          51
+        ]
+      }
+    ],
+    "12": [
+      {
+        "centres": 0,
+        "bound": 1024,
+        "exact_minimum_unbalanced_classes": 1024,
+        "witness": []
+      },
+      {
+        "centres": 1,
+        "bound": 562,
+        "exact_minimum_unbalanced_classes": 562,
+        "witness": [
+          0
+        ]
+      },
+      {
+        "centres": 2,
+        "bound": 232,
+        "exact_minimum_unbalanced_classes": 300,
+        "witness": [
+          0,
+          63
+        ]
+      }
+    ]
+  },
+  "omega8_domination": [
+    {
+      "centres": 1,
+      "minimum_undominated": 28,
+      "witness": [
+        0
+      ]
+    },
+    {
+      "centres": 2,
+      "minimum_undominated": 12,
+      "witness": [
+        0,
+        3
+      ]
+    },
+    {
+      "centres": 3,
+      "minimum_undominated": 4,
+      "witness": [
+        0,
+        3,
+        12
+      ]
+    },
+    {
+      "centres": 4,
+      "minimum_undominated": 0,
+      "witness": [
+        0,
+        3,
+        5,
+        6
+      ]
+    }
+  ],
+  "gamma_omega4": 1,
+  "gamma_omega8": 4,
+  "omega8_independent_minimum_dominating_set": [
+    0,
+    3,
+    5,
+    6
+  ],
+  "omega8_dominating_four_sets_checked_for_isolate_identity": 4116,
+  "deficit_one_rigidity_dimension_four": true
+}

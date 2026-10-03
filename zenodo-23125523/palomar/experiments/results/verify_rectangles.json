@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "arithmetic": "exact integers and rational ranks",
+  "literal_population_checks": [
+    {
+      "M": 0,
+      "N": 0,
+      "vertices": 4,
+      "sensors": 4,
+      "populations_mass_at_most_two": 15,
+      "erasure_patterns": 4,
+      "interval_cuts": 0
+    },
+    {
+      "M": 2,
+      "N": 1,
+      "vertices": 12,
+      "sensors": 6,
+      "populations_mass_at_most_two": 91,
+      "erasure_patterns": 6,
+      "interval_cuts": 2
+    },
+    {
+      "M": 4,
+      "N": 2,
+      "vertices": 24,
+      "sensors": 8,
+      "populations_mass_at_most_two": 325,
+      "erasure_patterns": 8,
+      "interval_cuts": 11
+    },
+    {
+      "M": 5,
+      "N": 3,
+      "vertices": 35,
+      "sensors": 10,
+      "populations_mass_at_most_two": 666,
+      "erasure_patterns": 10,
+      "interval_cuts": 26
+    },
+    {
+      "M": 8,
+      "N": 4,
+      "vertices": 60,
+      "sensors": 12,
+      "populations_mass_at_most_two": 1891,
+      "erasure_patterns": 12,
+      "interval_cuts": 70
+    },
+    {
+      "M": 12,
+      "N": 2,
+      "vertices": 56,
+      "sensors": 8,
+      "populations_mass_at_most_two": 1653,
+      "erasure_patterns": 8,
+      "interval_cuts": 35
+    }
+  ],
+  "exhaustive_minimum_checks": [
+    {
+      "M": 0,
+      "N": 0,
+      "minimum": 4,
+      "smaller_placements_exhausted": 0,
+      "optimal_placements_rigidity_checked": 0
+    },
+    {
+      "M": 2,
+      "N": 1,
+      "minimum": 6,
+      "smaller_placements_exhausted": 8,
+      "optimal_placements_rigidity_checked": 1
+    },
+    {
+      "M": 3,
+      "N": 1,
+      "minimum": 6,
+      "smaller_placements_exhausted": 11,
+      "optimal_placements_rigidity_checked": 1
+    },
+    {
+      "M": 4,
+      "N": 2,
+      "minimum": 8,
+      "smaller_placements_exhausted": 1140,
+      "optimal_placements_rigidity_checked": 20
+    }
+  ],
+  "additive_field_topology": [
+    {
+      "rows": 1,
+      "columns": 1,
+      "observation_patterns": 2,
+      "minimum_disconnecting_erasure": 1
+    },
+    {
+      "rows": 1,
+      "columns": 3,
+      "observation_patterns": 8,
+      "minimum_disconnecting_erasure": 1
+    },
+    {
+      "rows": 2,
+      "columns": 2,
+      "observation_patterns": 16,
+      "minimum_disconnecting_erasure": 2
+    },
+    {
+      "rows": 2,
+      "columns": 3,
+      "observation_patterns": 64,
+      "minimum_disconnecting_erasure": 2
+    },
+    {
+      "rows": 3,
+      "columns": 3,
+      "observation_patterns": 512,
+      "minimum_disconnecting_erasure": 3
+    }
+  ]
+}

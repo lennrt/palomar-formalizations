@@ -1,0 +1,105 @@
+'ShellObservability.Rectangle.gridRobust_iff_intervalCuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Rectangle.exact_long_rectangle_robust_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Rectangle.optimal_long_rectangle_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.AdditiveFields.recovers_iff_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.AdditiveFields.tolerates_erasures_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.AdditiveFields.exists_minimum_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Rectangle.momentField_isAdditive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Rectangle.momentField_eq_bag_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Rectangle.momentField_connected_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Rectangle.momentField_erasure_recovery' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.three_even_words_common_middle_graph' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.four_word_no_common_graph_distance' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.CubeSupport.support_card_ge_of_fiber_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.CubeSupport.cube_support_lower_bound_of_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.CubeSupport.isolate_support_bound_of_moments' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.TensorMoments.profile_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.TensorMoments.profile_tensor_ne_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.TensorMoments.moment_tensor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.TensorMoments.moment_tensor_leading' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.TensorMoments.moment_tensor_leading_ne_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.BooleanSampling.coefficients_eq_of_lower_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.BooleanSampling.field_eq_of_lower_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.gridRobust_iff_intervalCuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.gridMomentRobust_iff_gridRobust' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.grid_robust_sensor_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.exact_corner_grid_robust_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.exists_grid_robust_placement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Grid.all_orders_grid_robust_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.prefixEqualizer_isDistanceEqualizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.Hypercube.prefixEqualizer_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.infinite_counterexample_family' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.dimension_twelve_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.equalizer_contains_parity_class' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.odd_union_equalizer_iff_antipodal_cover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.Hypercube.evenPrefix_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.evenPrefix_orthogonal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.evenPrefix_unique_orthogonal_partner' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.Bishop.exact_two_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Petersen11.exact_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Petersen16.exact_domination' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Fractional.graph_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Fractional.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Syndrome.syndrome_packing_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.three_even_words_common_middle_graph' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.Hypercube.four_word_no_common_graph_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Rectangle.gridRobust_iff_intervalCuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Rectangle.exact_long_rectangle_robust_minimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.AdditiveFields.recovers_iff_connected' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.AdditiveFields.tolerates_erasures_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Moments.tensor_detector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Moments.first_surviving_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.BooleanSampling.lower_ball_sampling' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.parityChar_orthogonal_low_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.antipodal_cover_card_lower_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.Hypercube.equalizer_card_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShellObservability.Hypercube.equidistant_dimension_within_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.LeafStars.leafPlacement_interval_cut_ge_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.LeafStars.all_orders_optimal_interval_placement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.GridTheorems.grid_robust_corner_lower_bound_all' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ShellObservability.GridTheorems.exact_corner_grid_robust_minimum_all' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PalomarResults.Grid.exact_corner_grid_robust_minimum_all' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.equalizer_card_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarResults.Hypercube.equidistant_dimension_within_one' depends on axioms: [propext, Classical.choice, Quot.sound]
