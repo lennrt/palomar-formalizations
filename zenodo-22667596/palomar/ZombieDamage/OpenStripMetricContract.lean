@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStripTask
-import ZombieDamage.Ambient
+module
+
+public import ZombieDamage.OpenStripTask
+public import ZombieDamage.Ambient
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

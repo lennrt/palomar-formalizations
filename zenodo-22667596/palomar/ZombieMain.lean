@@ -1,8 +1,12 @@
-import ZombieMain.MainTheorem
-import ZombieMain.RecurrentCoverage
-import ZombieMain.PeriodicCoverage
-import ZombieMain.Expansion
-import ZombieMain.SensorCounting
+module
+
+public import ZombieMain.MainTheorem
+public import ZombieMain.RecurrentCoverage
+public import ZombieMain.PeriodicCoverage
+public import ZombieMain.Expansion
+public import ZombieMain.SensorCounting
+
+@[expose] public section
 
 /-!
 The main arbitrary-graph theorem and Davila Conjecture 24 are now proved in

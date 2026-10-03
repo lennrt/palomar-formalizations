@@ -8,13 +8,16 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Combinatorics.SimpleGraph.Basic
-import Mathlib.Data.Fin.Pigeonhole
-import Mathlib.Data.Fintype.Powerset
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Data.Nat.Bitwise
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Order
+module
+public import Mathlib.Combinatorics.SimpleGraph.Basic
+public import Mathlib.Data.Fin.Pigeonhole
+public import Mathlib.Data.Fintype.Powerset
+public import Mathlib.Data.Nat.Choose.Basic
+public import Mathlib.Data.Nat.Bitwise
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Order
+
+@[expose] public section
 
 /-!
 # Uniform two-word π-representability and the explicit obstruction

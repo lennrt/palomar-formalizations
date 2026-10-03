@@ -1,6 +1,10 @@
-import MainSolution
-import ZombieDamage
-import ZombieMain.NumericalConjecture
+module
+
+public import MainSolution
+public import ZombieDamage
+public import ZombieMain.NumericalConjecture
+
+@[expose] public section
 
 /-! Faithful renderer-compatible interfaces for thirteen existing results.
 The four transparent helpers spell ordinary degree, vertex pairs, and equality

@@ -9,7 +9,10 @@ literature searches, algebraic exploration, proof and checker drafting, the Lean
 formalization, and adversarial review; the author accepts full responsibility for
 the claims, and no AI system is an author.
 -/
-import GKEvenNet
+module
+public import GKEvenNet
+
+@[expose] public section
 
 /-!
 # Proved solution

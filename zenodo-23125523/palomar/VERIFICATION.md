@@ -11,7 +11,7 @@ had no tracked source changes.
 | Selected statements | All 14 passed Comparator with Lean, NanoDa, and con-ron; all 49 input hashes match. [Report](verification/comparison.json). |
 | Full-development axiom audits | 112 declarations use only `propext`, `Classical.choice`, and `Quot.sound`. [Report](verification/release.json). |
 | Exact finite programs | All 14 passed, including the dimension-16 exhaustive enumeration. [Results](experiments/results) and [run record](verification/release.json). |
-| Official metadata and source inspection | Passed for this new project; [report](verification/palomar-preflight.json). |
+| Official metadata and source inspection | Passed for this project and repository-wide source policy; [report](verification/palomar-preflight.json). |
 | Compiler module-header inspection | All 45 source files passed. [Record](verification/render/module-headers.json). |
 | Independent statement rendering | All 14 selected signatures passed the trusted core-notation audit, Verso rendering, and official sanitizer. [Report and method](verification/render/README.md). |
 | Local significance assessment | No blocker identified across the six selected result groups under the pinned published rubric. [Assessment](verification/local-significance.json). |
@@ -26,10 +26,10 @@ mode does not reproduce the service's Linux sandbox. The significance
 assessment is an automated local review, not official Palomar editorial
 review, independent human peer review, or registration.
 
-Current repository-wide inspection separately reports 258 legacy files
-without module headers. The older registered projects and shared scripts
-remain unchanged. This project's success does not erase that external
-submission blocker; see [SUBMISSION.md](SUBMISSION.md).
+The repository-wide module migration covers the 258 older Lean files.
+[MODULE-MIGRATION.md](../../MODULE-MIGRATION.md) records its source-policy
+and build checks. This project's Lean sources and Comparator selection are
+unchanged by that migration; their recorded proof-input hashes still apply.
 
 Reproduction commands and the pinned official-tool checkout are in
 [README.md](README.md#build-and-verify). Generated renderer assets and local

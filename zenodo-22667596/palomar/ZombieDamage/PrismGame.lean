@@ -1,5 +1,9 @@
-import ZombieDamage.CycleGame
-import ZombieDamage.ForcedTraceRoute
+module
+
+public import ZombieDamage.CycleGame
+public import ZombieDamage.ForcedTraceRoute
+
+@[expose] public section
 
 namespace ZombieDamage.PrismGame
 open Cyclic FullGame

@@ -1,4 +1,8 @@
-import ZombieMain.RealizeCases
+module
+
+public import ZombieMain.RealizeCases
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

@@ -1,4 +1,8 @@
-import ZombieMain.Diagram
+module
+
+public import ZombieMain.Diagram
+
+@[expose] public section
 
 namespace ZombieMain.Diagram
 

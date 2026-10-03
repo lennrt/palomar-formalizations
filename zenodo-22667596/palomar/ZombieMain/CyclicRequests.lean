@@ -1,4 +1,8 @@
-import ZombieMain.GameMetric
+module
+
+public import ZombieMain.GameMetric
+
+@[expose] public section
 
 namespace ZombieMain
 variable {V : Type} [Fintype V]

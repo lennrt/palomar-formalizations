@@ -6,7 +6,10 @@ literature searches, algebraic exploration, proof and checker drafting, the Lean
 formalization, and adversarial review; the author accepts full responsibility for
 the claims, and no AI system is an author.
 -/
-import Mathlib.Tactic
+module
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Fixed-width bit reversal

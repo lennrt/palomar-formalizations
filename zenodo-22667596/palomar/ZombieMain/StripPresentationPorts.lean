@@ -1,4 +1,8 @@
-import ZombieMain.StripPresentationGeometry
+module
+
+public import ZombieMain.StripPresentationGeometry
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

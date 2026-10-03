@@ -24,7 +24,7 @@ this Lean project. Bibliographic and authorship metadata are in
 [formalization.yaml](formalization.yaml), and the selected mathematical
 statements are explained in [DECLARATIONS.md](DECLARATIONS.md).
 
-## Checks and present limitation
+## Checks and submission scope
 
 Run the build, audits, comparison, and exact verification commands in
 [README.md](README.md#build-and-verify). Retain their results together with
@@ -35,18 +35,18 @@ rerun the comparison rather than citing a previous selection's success.
 The project-specific `scripts/check_snapshot.py` checks the local structure.
 Run `scripts/verify_palomar.py --submission-tools /path/to/PalomarSubmission`
 with PyYAML and the clean official tooling checkout pinned in that script
-for metadata and source-policy inspection. Its report separates local
-project success from repository-wide issues. The frozen repository-level
-layout script predates this project and is not its validation entry point.
+for metadata and source-policy inspection. Its report records project and
+repository-wide results separately, and either scope failing makes the command
+fail. The repository-level `ruby scripts/check-layout.rb` now covers all 13
+projects and checks module headers and the per-file source limit.
 
 The [current Palomar submission instructions](https://palomar-registry.org/how-to-submit)
 require module headers and a size limit for every regular Lean source file
-in the submitted repository, including unused sibling projects. At this
-revision, 258 pre-existing sibling Lean files lack the required module header.
-The present change is restricted to the index and this new project and leaves
-those files untouched. Therefore passing this project's local checks is not
-a claim that the repository meets all service requirements. Repository-wide
-compatibility must be resolved before submission of such a snapshot.
+in the submitted repository, including unused sibling projects. The older
+projects have been migrated while retaining their existing build pins;
+[MODULE-MIGRATION.md](../../MODULE-MIGRATION.md) records the checks.
+Submit a commit containing that migration. This project's Lean sources,
+14 selected statements, and 4.35.0-rc2 toolchain remain unchanged.
 
 The [local significance assessment](verification/local-significance.json) is
 an advisory review of the selected statements. It is not Palomar's editorial

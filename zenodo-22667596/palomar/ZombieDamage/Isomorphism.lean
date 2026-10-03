@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-! Relabelling invariance of the FULL game, including arbitrary geodesic
 replies, starting positions, damage sets, and survivor-move budgets. -/

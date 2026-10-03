@@ -33,9 +33,9 @@ claims.
 
 The project path is `zenodo-23125523/palomar`, pinned to Lean 4.35.0-rc2.
 Local verification does not establish service acceptance or registration.
-Older sibling projects currently have 258 Lean files without the module
-headers required by Palomar's repository-wide policy; those projects are
-unchanged by this addition. See [SUBMISSION.md](palomar/SUBMISSION.md).
+The repository-wide module migration and source-policy checks are documented
+in [MODULE-MIGRATION.md](../MODULE-MIGRATION.md). See
+[SUBMISSION.md](palomar/SUBMISSION.md) for the submission entry point.
 
 Lean source and repository scaffolding use the repository-root
 [MIT license](../LICENSE). Lennart Rudolph is the sole project author and

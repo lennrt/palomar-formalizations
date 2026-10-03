@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -9,41 +11,43 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import OneTwoSobolT5.Census.Windows00
-import OneTwoSobolT5.Census.Windows01
-import OneTwoSobolT5.Census.Windows02
-import OneTwoSobolT5.Census.Windows03
-import OneTwoSobolT5.Census.Windows04
-import OneTwoSobolT5.Census.Windows05
-import OneTwoSobolT5.Census.Windows06
-import OneTwoSobolT5.Census.Windows07
-import OneTwoSobolT5.Census.Windows08
-import OneTwoSobolT5.Census.Windows09
-import OneTwoSobolT5.Census.Windows10
-import OneTwoSobolT5.Census.Windows11
-import OneTwoSobolT5.Census.Windows12
-import OneTwoSobolT5.Census.Windows13
-import OneTwoSobolT5.Census.Windows14
-import OneTwoSobolT5.Census.Windows15
-import OneTwoSobolT5.Census.Windows16
-import OneTwoSobolT5.Census.Windows17
-import OneTwoSobolT5.Census.Windows18
-import OneTwoSobolT5.Census.Windows19
-import OneTwoSobolT5.Census.Windows20
-import OneTwoSobolT5.Census.Windows21
-import OneTwoSobolT5.Census.Windows22
-import OneTwoSobolT5.Census.Windows23
-import OneTwoSobolT5.Census.Windows24
-import OneTwoSobolT5.Census.Windows25
-import OneTwoSobolT5.Census.Windows26
-import OneTwoSobolT5.Census.Windows27
-import OneTwoSobolT5.Census.Windows28
-import OneTwoSobolT5.Census.Windows29
-import OneTwoSobolT5.Census.Windows30
-import OneTwoSobolT5.Census.Windows31
-import OneTwoSobolT5.Census.Windows32
-import OneTwoSobolT5.Census.Windows33
-import OneTwoSobolT5.Census.Windows34
+public import OneTwoSobolT5.Census.Windows00
+public import OneTwoSobolT5.Census.Windows01
+public import OneTwoSobolT5.Census.Windows02
+public import OneTwoSobolT5.Census.Windows03
+public import OneTwoSobolT5.Census.Windows04
+public import OneTwoSobolT5.Census.Windows05
+public import OneTwoSobolT5.Census.Windows06
+public import OneTwoSobolT5.Census.Windows07
+public import OneTwoSobolT5.Census.Windows08
+public import OneTwoSobolT5.Census.Windows09
+public import OneTwoSobolT5.Census.Windows10
+public import OneTwoSobolT5.Census.Windows11
+public import OneTwoSobolT5.Census.Windows12
+public import OneTwoSobolT5.Census.Windows13
+public import OneTwoSobolT5.Census.Windows14
+public import OneTwoSobolT5.Census.Windows15
+public import OneTwoSobolT5.Census.Windows16
+public import OneTwoSobolT5.Census.Windows17
+public import OneTwoSobolT5.Census.Windows18
+public import OneTwoSobolT5.Census.Windows19
+public import OneTwoSobolT5.Census.Windows20
+public import OneTwoSobolT5.Census.Windows21
+public import OneTwoSobolT5.Census.Windows22
+public import OneTwoSobolT5.Census.Windows23
+public import OneTwoSobolT5.Census.Windows24
+public import OneTwoSobolT5.Census.Windows25
+public import OneTwoSobolT5.Census.Windows26
+public import OneTwoSobolT5.Census.Windows27
+public import OneTwoSobolT5.Census.Windows28
+public import OneTwoSobolT5.Census.Windows29
+public import OneTwoSobolT5.Census.Windows30
+public import OneTwoSobolT5.Census.Windows31
+public import OneTwoSobolT5.Census.Windows32
+public import OneTwoSobolT5.Census.Windows33
+public import OneTwoSobolT5.Census.Windows34
+
+@[expose] public section
 
 /-!
 # The complete pair-aligned window census

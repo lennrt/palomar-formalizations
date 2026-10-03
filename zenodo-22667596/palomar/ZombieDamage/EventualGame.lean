@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-!
 Unbounded eventual forcing and its equivalence to a uniform survivor-move

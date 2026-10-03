@@ -1,4 +1,8 @@
-import ZombieDamage.ExecutableGame
+module
+
+public import ZombieDamage.ExecutableGame
+
+@[expose] public section
 
 /-! Transparent semantic bridge for the actual executable input format.
 `Good` is checked by ordinary kernel reduction on the retained fixtures.

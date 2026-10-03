@@ -1,4 +1,8 @@
-import ZombieMain.ComponentMass
+module
+
+public import ZombieMain.ComponentMass
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage ZombieDamage.FullGame

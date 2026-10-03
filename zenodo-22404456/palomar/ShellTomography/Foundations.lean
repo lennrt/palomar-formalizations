@@ -1,7 +1,10 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Multiset.Replicate
-import Mathlib.Data.Matrix.Mul
-import Mathlib.Tactic
+module
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Data.Multiset.Replicate
+public import Mathlib.Data.Matrix.Mul
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 Distance-shell tomography: finite configurations, literal distance bags and integer trades.

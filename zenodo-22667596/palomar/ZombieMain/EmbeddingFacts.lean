@@ -1,5 +1,9 @@
-import ZombieMain.Diagram
-import ZombieMain.CycleCapacity
+module
+
+public import ZombieMain.Diagram
+public import ZombieMain.CycleCapacity
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

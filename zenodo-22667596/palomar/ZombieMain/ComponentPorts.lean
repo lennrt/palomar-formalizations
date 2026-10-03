@@ -1,5 +1,9 @@
-import ZombieMain.ShortComponents
-import ZombieMain.BridgePorts
+module
+
+public import ZombieMain.ShortComponents
+public import ZombieMain.BridgePorts
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

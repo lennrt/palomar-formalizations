@@ -8,11 +8,14 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import G2Companion
-import Mathlib.Data.Fintype.Powerset
-import Mathlib.Data.Fintype.Vector
-import Mathlib.Data.Nat.Bitwise
-import Mathlib.Tactic
+module
+public import G2Companion
+public import Mathlib.Data.Fintype.Powerset
+public import Mathlib.Data.Fintype.Vector
+public import Mathlib.Data.Nat.Bitwise
+public import Mathlib.Tactic
+
+@[expose] public section
 
 namespace PalomarG2
 

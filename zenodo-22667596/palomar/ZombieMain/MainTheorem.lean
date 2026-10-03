@@ -1,6 +1,10 @@
-import ZombieMain.CleanFullDamage
-import ZombieMain.ClosedLabels
-import ZombieMain.ExceptionLabels
+module
+
+public import ZombieMain.CleanFullDamage
+public import ZombieMain.ClosedLabels
+public import ZombieMain.ExceptionLabels
+
+@[expose] public section
 
 /-! Source conjecture: Randy Davila, "The Zombie Damage Number of a Graph",
 arXiv:2607.16382v1, Conjecture 24. The zombie damage parameter and game are

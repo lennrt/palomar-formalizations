@@ -15,8 +15,6 @@ project:
     polynomial X^(24n)(X-1/64)^n(X-1/32)^n(X-1/16)^n(X-1/8)^n.
   authors:
     - "Lennart Rudolph"
-    - "Sol"
-    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -29,8 +27,6 @@ sources:
   - title: "Exact Spectra of Generalized Cubic Subdivision Matrices"
     authors:
       - "Lennart Rudolph"
-      - "Sol"
-      - "Fable"
     id: "doi:10.5281/zenodo.21925578"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21925578"
@@ -111,10 +107,10 @@ review:
   reviewers:
     - "OpenAI Codex (Sol)"
   notes: >-
-    OpenAI Codex (Sol), acting as a co-author, checked every encoded outer row
+    OpenAI Codex (Sol), acting as an automated assistant, checked every encoded outer row
     against the pinned released routine and checked the theorem statements
     against the rendered preprint while developing and mechanically testing the
-    proofs. This was automated co-author self-review; no independent human peer
+    proofs. This was automated self-review; no independent human peer
     review has been performed.
 
 alignment:

@@ -1,4 +1,8 @@
-import ZombieMain.AmbientModel
+module
+
+public import ZombieMain.AmbientModel
+
+@[expose] public section
 
 namespace ZombieDamage.ShortComponentModel
 variable {N : Nat} {V : Type} {T : Task N} {G : Graph V}

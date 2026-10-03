@@ -1,5 +1,9 @@
-import ZombieMain.StripPresentation
-import ZombieDamage.OpenStripMetricContract
+module
+
+public import ZombieMain.StripPresentation
+public import ZombieDamage.OpenStripMetricContract
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.OpenStrip

@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStripTarget
-import ZombieDamage.FullGameBounds
+module
+
+public import ZombieDamage.OpenStripTarget
+public import ZombieDamage.FullGameBounds
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

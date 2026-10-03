@@ -8,12 +8,15 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Data.Multiset.Basic
-import Mathlib.Data.Multiset.Filter
-import Mathlib.Data.Multiset.MapFold
-import Mathlib.Data.Multiset.ZeroCons
-import Mathlib.Data.Nat.Dist
-import Lean.Elab.Tactic.Omega
+module
+public import Mathlib.Data.Multiset.Basic
+public import Mathlib.Data.Multiset.Filter
+public import Mathlib.Data.Multiset.MapFold
+public import Mathlib.Data.Multiset.ZeroCons
+public import Mathlib.Data.Nat.Dist
+public import Lean.Elab.Tactic.Omega
+
+@[expose] public section
 
 set_option maxHeartbeats 4000000
 

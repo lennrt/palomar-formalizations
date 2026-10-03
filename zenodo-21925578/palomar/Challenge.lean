@@ -3,11 +3,14 @@ Authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 DOI: https://doi.org/10.5281/zenodo.21925578 -/
 
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.LinearAlgebra.Matrix.Block
-import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
-import Mathlib.Logic.Equiv.Fin.Rotate
-import Mathlib.Tactic
+module
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.LinearAlgebra.Matrix.Block
+public import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
+public import Mathlib.Logic.Equiv.Fin.Rotate
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-! Every outer row literally translates source rows `2,...,29`; the selected
 results prove the reindexing, triangular block, and characteristic polynomial. -/

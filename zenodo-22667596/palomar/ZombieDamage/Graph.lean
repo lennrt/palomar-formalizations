@@ -1,4 +1,8 @@
-import Std
+module
+
+public import Std
+
+@[expose] public section
 
 /-!
 Graph semantics for the local certificate language. This file is source, not

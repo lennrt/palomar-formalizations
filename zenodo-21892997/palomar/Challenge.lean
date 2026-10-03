@@ -9,7 +9,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # Actual F₂ flag homology for the dense extremal family

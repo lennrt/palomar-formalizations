@@ -1,4 +1,7 @@
-import ShellTomography.UniformGridBridge
+module
+public import ShellTomography.UniformGridBridge
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 set_option maxRecDepth 2000

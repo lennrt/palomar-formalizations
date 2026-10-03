@@ -1,5 +1,9 @@
-import ZombieMain.CycleUnion
-import Mathlib.Combinatorics.SimpleGraph.DegreeSum
+module
+
+public import ZombieMain.CycleUnion
+public import Mathlib.Combinatorics.SimpleGraph.DegreeSum
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

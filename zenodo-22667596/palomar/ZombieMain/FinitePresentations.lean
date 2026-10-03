@@ -1,7 +1,11 @@
-import ZombieMain.PortedPresentation
-import ZombieDamage.Gadgets
-import ZombieDamage.TriangleRoute
-import ZombieDamage.DiamondRoute
+module
+
+public import ZombieMain.PortedPresentation
+public import ZombieDamage.Gadgets
+public import ZombieDamage.TriangleRoute
+public import ZombieDamage.DiamondRoute
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

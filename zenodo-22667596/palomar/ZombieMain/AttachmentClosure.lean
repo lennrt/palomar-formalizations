@@ -1,6 +1,10 @@
-import ZombieMain.FiniteAttachments
-import ZombieMain.TailAttachments
-import ZombieMain.ClosedDegree
+module
+
+public import ZombieMain.FiniteAttachments
+public import ZombieMain.TailAttachments
+public import ZombieMain.ClosedDegree
+
+@[expose] public section
 
 namespace ZombieMain
 

@@ -1,5 +1,9 @@
-import ZombieMain.Families
-import ZombieMain.DiagramDegree
+module
+
+public import ZombieMain.Families
+public import ZombieMain.DiagramDegree
+
+@[expose] public section
 
 namespace ZombieMain
 

@@ -1,5 +1,9 @@
-import ZombieDamage.ShortGraph
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.ShortGraph
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 namespace ZombieDamage.Graph
 variable {V : Type} (G : Graph V)

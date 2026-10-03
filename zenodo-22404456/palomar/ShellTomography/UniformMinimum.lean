@@ -1,6 +1,9 @@
-import ShellTomography.UniformReconstruction
-import ShellTomography.UniformRowBounds
-import ShellTomography.UniformBoundary
+module
+public import ShellTomography.UniformReconstruction
+public import ShellTomography.UniformRowBounds
+public import ShellTomography.UniformBoundary
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

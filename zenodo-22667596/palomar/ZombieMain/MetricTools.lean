@@ -1,4 +1,8 @@
-import ZombieMain.PortedPresentation
+module
+
+public import ZombieMain.PortedPresentation
+
+@[expose] public section
 
 namespace ZombieDamage.Task
 variable {N : Nat} {T : Task N} {hg : T.GoodGraph}

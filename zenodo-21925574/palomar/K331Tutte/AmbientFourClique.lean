@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -7,7 +9,9 @@ Formalization: Lennart Rudolph, the responsible author, with the automated
 assistants Sol (OpenAI Codex) and Fable (Anthropic Claude)
 -/
 
-import K331Tutte.FiniteHomologyProofs
+public import K331Tutte.FiniteHomologyProofs
+
+@[expose] public section
 
 set_option autoImplicit true
 

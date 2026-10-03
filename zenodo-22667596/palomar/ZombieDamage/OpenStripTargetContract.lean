@@ -1,4 +1,8 @@
-import ZombieDamage.OpenStripExitContract
+module
+
+public import ZombieDamage.OpenStripExitContract
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

@@ -1,4 +1,8 @@
-import ZombieDamage.Observation
+module
+
+public import ZombieDamage.Observation
+
+@[expose] public section
 
 /-!
 The observation half of the ring-of-diamonds proposition, symbolic in the

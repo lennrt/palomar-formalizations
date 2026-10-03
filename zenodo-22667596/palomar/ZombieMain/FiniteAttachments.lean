@@ -1,4 +1,8 @@
-import ZombieMain.AttachmentCertificate
+module
+
+public import ZombieMain.AttachmentCertificate
+
+@[expose] public section
 
 /-! Generated explicit permutations for the 13 finite attachment rows.
 Every entry and all finite-row coverage are checked by ordinary `decide`.

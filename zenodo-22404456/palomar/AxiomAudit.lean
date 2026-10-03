@@ -1,4 +1,7 @@
-import Solution
+module
+public import Solution
+
+@[expose] public section
 
 #print axioms ShellTomography.Verified.trade_criterion
 #print axioms ShellTomography.Verified.product_kernel

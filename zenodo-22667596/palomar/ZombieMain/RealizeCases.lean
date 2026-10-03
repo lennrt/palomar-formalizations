@@ -1,4 +1,8 @@
-import ZombieMain.AttachmentRealization
+module
+
+public import ZombieMain.AttachmentRealization
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

@@ -1,4 +1,8 @@
-import ZombieMain.AmbientMap
+module
+
+public import ZombieMain.AmbientMap
+
+@[expose] public section
 
 namespace ZombieMain.PortedPresentation
 open SimpleGraph ZombieDamage

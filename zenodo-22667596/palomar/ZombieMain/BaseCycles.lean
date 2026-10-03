@@ -1,6 +1,10 @@
-import ZombieMain.CycleFrames
-import ZombieMain.PortTransport
-import Mathlib.Data.Fin.VecNotation
+module
+
+public import ZombieMain.CycleFrames
+public import ZombieMain.PortTransport
+public import Mathlib.Data.Fin.VecNotation
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

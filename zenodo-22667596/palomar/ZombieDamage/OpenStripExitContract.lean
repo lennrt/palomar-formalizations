@@ -1,4 +1,8 @@
-import ZombieDamage.OpenStripPorts
+module
+
+public import ZombieDamage.OpenStripPorts
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs
 Authors: Lennart Rudolph, Sol, Fable
@@ -8,8 +10,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Data.Fintype.Card
-import Mathlib.Data.List.Nodup
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Data.List.Nodup
+
+@[expose] public section
 
 /-!
 # Exact fixed-endpoint regular-path enumeration

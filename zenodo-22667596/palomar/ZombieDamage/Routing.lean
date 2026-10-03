@@ -1,5 +1,9 @@
-import ZombieDamage.Data
-import ZombieDamage.Gadgets
+module
+
+public import ZombieDamage.Data
+public import ZombieDamage.Gadgets
+
+@[expose] public section
 
 /-! Generated mathematical-to-certificate bridges. See the generator
 and the independent graph definitions in Gadgets.lean. -/

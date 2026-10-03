@@ -1,6 +1,10 @@
-import ZombieMain.PortedPresentation
-import ZombieMain.StripStructure
-import ZombieDamage.OpenStripTask
+module
+
+public import ZombieMain.PortedPresentation
+public import ZombieMain.StripStructure
+public import ZombieDamage.OpenStripTask
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

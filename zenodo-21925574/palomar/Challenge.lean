@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -6,8 +8,10 @@ DOI: https://doi.org/10.5281/zenodo.21925574
 Formalization: Lennart Rudolph, the responsible author, with the automated
 assistants Sol (OpenAI Codex) and Fable (Anthropic Claude)
 -/
-import Mathlib.Combinatorics.SimpleGraph.Clique
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+public import Mathlib.Combinatorics.SimpleGraph.Clique
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+
+@[expose] public section
 
 /-!
 # The `K₃,₃,₁` exclusion is redundant for tetrahedral balls: the combinatorial core

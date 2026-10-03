@@ -1,5 +1,9 @@
-import ZombieMain.SingletonRouting
-import ZombieMain.FamilyRoutes
+module
+
+public import ZombieMain.SingletonRouting
+public import ZombieMain.FamilyRoutes
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage

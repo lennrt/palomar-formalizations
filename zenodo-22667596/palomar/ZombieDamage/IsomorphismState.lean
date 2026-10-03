@@ -1,4 +1,8 @@
-import ZombieDamage.Isomorphism
+module
+
+public import ZombieDamage.Isomorphism
+
+@[expose] public section
 
 namespace ZombieDamage.GraphIso
 variable {V W : Type} {G : Graph V} {H : Graph W} (F : GraphIso G H)

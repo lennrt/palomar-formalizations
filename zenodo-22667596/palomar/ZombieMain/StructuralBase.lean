@@ -1,6 +1,10 @@
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph
-import Mathlib.Combinatorics.SimpleGraph.Finite
-import Mathlib.Tactic
+module
+
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Tactic
+
+@[expose] public section
 
 namespace ZombieStructure
 

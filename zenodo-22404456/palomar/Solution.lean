@@ -1,4 +1,7 @@
-import ShellTomography.UniformRecovery
+module
+public import ShellTomography.UniformRecovery
+
+@[expose] public section
 
 namespace ShellTomography.Verified
 

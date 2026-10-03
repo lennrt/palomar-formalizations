@@ -1,4 +1,8 @@
-import ZombieMain.InfiniteRounds
+module
+
+public import ZombieMain.InfiniteRounds
+
+@[expose] public section
 
 namespace ZombieMain.RouteMemory
 open ZombieDamage ZombieDamage.FullGame

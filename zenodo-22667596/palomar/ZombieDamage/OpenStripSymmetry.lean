@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStrip
-import ZombieDamage.Isomorphism
+module
+
+public import ZombieDamage.OpenStrip
+public import ZombieDamage.Isomorphism
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 variable (m : Nat)

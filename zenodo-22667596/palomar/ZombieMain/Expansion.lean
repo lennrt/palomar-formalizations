@@ -1,5 +1,9 @@
-import ZombieMain.Boundary
-import Mathlib.Data.Real.Basic
+module
+
+public import ZombieMain.Boundary
+public import Mathlib.Data.Real.Basic
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

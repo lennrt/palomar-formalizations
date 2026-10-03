@@ -1,5 +1,9 @@
-import ZombieDamage.Certificates
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.Certificates
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-! Connects the already checked finite-routing strategies to the full game.
 The flag is related to the actual damaged-vertex set, and terminal exits

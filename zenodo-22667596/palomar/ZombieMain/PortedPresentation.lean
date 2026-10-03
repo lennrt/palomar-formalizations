@@ -1,6 +1,10 @@
-import ZombieMain.ComponentPorts
-import ZombieDamage.Ambient
-import ZombieDamage.FullGameConverse
+module
+
+public import ZombieMain.ComponentPorts
+public import ZombieDamage.Ambient
+public import ZombieDamage.FullGameConverse
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

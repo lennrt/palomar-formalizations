@@ -1,5 +1,9 @@
-import ZombieMain.AttachOneVertex
-import Mathlib.Data.Fin.VecNotation
+module
+
+public import ZombieMain.AttachOneVertex
+public import Mathlib.Data.Fin.VecNotation
+
+@[expose] public section
 
 namespace ZombieMain.Diagram.Embedding
 open SimpleGraph

@@ -1,7 +1,11 @@
-import ZombieMain.QuotientRouting
-import ZombieMain.GameMetric
-import ZombieMain.DamageIrrelevance
-import ZombieDamage.FullGameBounds
+module
+
+public import ZombieMain.QuotientRouting
+public import ZombieMain.GameMetric
+public import ZombieMain.DamageIrrelevance
+public import ZombieDamage.FullGameBounds
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage ZombieDamage.FullGame

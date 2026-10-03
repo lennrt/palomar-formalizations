@@ -1,6 +1,10 @@
-import ZombieMain.MainDefinitions
-import ZombieDamage.EventualGame
-import Mathlib.Data.Finset.Max
+module
+
+public import ZombieMain.MainDefinitions
+public import ZombieDamage.EventualGame
+public import Mathlib.Data.Finset.Max
+
+@[expose] public section
 
 /-!
 Randy Davila introduced the zombie damage number in Definition 1 of

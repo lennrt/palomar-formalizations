@@ -1,4 +1,8 @@
-import ZombieDamage.OpenStripReversal
+module
+
+public import ZombieDamage.OpenStripReversal
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

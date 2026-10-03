@@ -1,5 +1,9 @@
-import ZombieMain.RecurrentDefinitions
-import ZombieDamage.MobiusGame
+module
+
+public import ZombieMain.RecurrentDefinitions
+public import ZombieDamage.MobiusGame
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.FullGame ZombieDamage.Cyclic

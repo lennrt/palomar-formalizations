@@ -9,14 +9,17 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Analysis.SpecialFunctions.Sqrt
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.Topology.Order.IntermediateValue
-import Mathlib.Tactic.FunProp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
+module
+public import Mathlib.Analysis.SpecialFunctions.Sqrt
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.Topology.Order.IntermediateValue
+public import Mathlib.Tactic.FunProp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 # Arithmetic and monotonicity checks for the signed-circulant counterexample

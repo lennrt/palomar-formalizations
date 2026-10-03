@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -10,8 +12,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import OneTwoSobolT5.Core
-import OneTwoSobolT5.Census
+public import OneTwoSobolT5.Core
+public import OneTwoSobolT5.Census
+
+@[expose] public section
 
 #print axioms OneTwoSobolT5.source_directions_to_rows
 #print axioms OneTwoSobolT5.compositions_11_count

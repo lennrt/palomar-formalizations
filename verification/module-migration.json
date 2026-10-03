@@ -1,0 +1,440 @@
+{
+  "format_version": 1,
+  "status": "passed_with_requested_expensive_build_limits",
+  "checked_at_utc": "2026-10-03T23:49:55.572507+00:00",
+  "base_commit": "de12e3709a6a503c512d547edd9028094edccfe9",
+  "service_verification": false,
+  "registered": false,
+  "comparators_rerun": false,
+  "exhaustive_experiments_rerun": false,
+  "official_tools": {
+    "repository": "https://github.com/PalomarRegistry/PalomarSubmission",
+    "revision": "65f0154ed776cd26c224254aa57b379137f28b0d"
+  },
+  "source_policy": {
+    "status": "passed",
+    "schema_version": 1,
+    "module_required": true,
+    "maximum_lines": 10000,
+    "files_checked": 303,
+    "issues": 0,
+    "compiler_header_toolchain": "leanprover/lean4:v4.35.0-rc2",
+    "compiler_headers_passed": 303
+  },
+  "metadata": {
+    "projects_passed": 13,
+    "sole_project_author_and_maintainer": "Lennart Rudolph"
+  },
+  "migration": {
+    "older_files_ported": 258,
+    "already_module_files_unchanged": 45,
+    "proof_helpers_made_public": [
+      "ExtremalFlagBetti.ActualHomology.iso_cycles_map",
+      "ExtremalFlagBetti.ActualHomology.sevenTriangle_bijective"
+    ],
+    "statements_and_proof_bodies_unchanged": true,
+    "toolchains_manifests_lakefiles_comparator_selections_pdfs_unchanged": true
+  },
+  "regression_checks": {
+    "status": "passed",
+    "checks": [
+      {
+        "check": "layout_valid",
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "check": "layout_missing_header",
+        "exit_code": 1,
+        "expected": 1
+      },
+      {
+        "check": "layout_oversize",
+        "exit_code": 1,
+        "expected": 1
+      },
+      {
+        "check": "official_wrapper_rejects_sibling_violation",
+        "exit_code": 1,
+        "expected": 1
+      }
+    ],
+    "header_parser_fixtures": 13
+  },
+  "dependencies": {
+    "status": "passed",
+    "projects": 13,
+    "unique_materialized_checkouts": 28,
+    "all_heads_match_manifest": true,
+    "tracked_sources_clean": true
+  },
+  "build_scope": "Eleven projects fully built; Sobol Core, Census.Defs, and Challenge only; Barnette Challenge and Solution only. Full Sobol census and census-dependent Solution deliberately skipped; Barnette native auxiliary stopped at existing exhaustive walk enumeration. Existing auxiliary audit modules in zenodo-22404456 and zenodo-22667596 compiled.",
+  "render_scope": {
+    "projects": 13,
+    "selected_declarations": 117,
+    "method": "Matching pinned Verso literate build and HTML rendering, with the official sanitizer. Local macOS execution, not hosted sandbox verification.",
+    "selected_theorems": 110,
+    "selected_definitions": 7
+  },
+  "projects": [
+    {
+      "project": "zenodo-21890733",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 3,
+      "lean_sources_sha256": "1b01ca4b5622b1cc101b8c3f7f0d226a1d0d91ed6018d50c4aeacd89f23efc94",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "25ffbade131ccc116bfe1ec24b1dae48bc4f72c6f928dd4adea2073fab239c56",
+      "comparator_sha256": "563ff906b373b0228d8e4b5752838e22d2b828f135cbd38108c92ad40f5c741e",
+      "build": {
+        "status": "partial_auxiliary_by_user_request",
+        "command": [
+          "lake",
+          "build",
+          "Challenge",
+          "Solution"
+        ],
+        "exit_code": 0,
+        "passed": [
+          "Challenge",
+          "Solution"
+        ],
+        "skipped": "BarnettePrescribedCycle auxiliary library: existing native exhaustive walk enumeration stopped; no full auxiliary build claimed",
+        "log_sha256": "99b0a410adbf37449573ce9c7fecd85a9a26d47398daa74eb57511c7a1f75ec4"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 6,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "0441d46ed5fb2ec45897c0ea6eabd97fb6b62a1c208efa97e043e0c4030201ac"
+      }
+    },
+    {
+      "project": "zenodo-21892986",
+      "toolchain": "leanprover/lean4:v4.32.0",
+      "lean_files": 5,
+      "lean_sources_sha256": "8fc4906eb6e0f878fb9b7ed042fa257fcee0ec50f4d65c512220100bc2d7f924",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "a6d0e97291f6b10be3cf267f2b0f9e1c7bfcc0e571121a8e144b589c4551cfc4",
+      "comparator_sha256": "63ad61bd96ed0e1732e33d972f98053d9a39ead69296bdbacbc19038059c60ee",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build RegularPathDelay RegularPathDelayEnumeration RegularPathDelayTrace Challenge Solution",
+        "log_sha256": "9567a09921753942c4582891c6c757cf03a709a78508ebd1f184d34462225fe9"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 4,
+        "verso_revision": "e09d21a5f7f66c9fc985b73197708298569bf583",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "aa3c260e109a0670cee10718d79a5459bc1cc716550d8b1346c09cb24b27ded1"
+      }
+    },
+    {
+      "project": "zenodo-21892995",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 4,
+      "lean_sources_sha256": "f6ef300a1667073b73003e76e1864a045819cb08d1eb1f30172ca8ef6cf0c0d0",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "c35129d73caef00138532aa016529c705c13e3f8f2e7c58f562cf8f7c20ee1da",
+      "comparator_sha256": "a8861efca96c6b1167117f1b1d26b1d6cac16cd094b473ce21a3b71cfbb82b56",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build ArithmeticAndMonotonicity SignedCirculantFamily Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "82cce461106d057dd1526565e3fafb8fae704b6815cb5d8867e964cf0f157013"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 9,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "17f6261e308741873472ce7896bcf2757d682627823da2a430674f4a9414cb7d"
+      }
+    },
+    {
+      "project": "zenodo-21892997",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 9,
+      "lean_sources_sha256": "91611251eced909a38960f62957e00c56c629609f4bba5657799af9827a71282",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "b81006c5d07fdbfeafc88a75e70dc5b218d41b91d91f3a4eaf1f5884c385e8b9",
+      "comparator_sha256": "c0525335cf414d49af827f204d38c29e2b65a6fdc95fe042f8a2f5d5b3c33a7b",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build ExtremalFlagBetti Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "46bbd2eb1988d232ceb5ac636d0d6fc05ae9310dbe527516cb41862de8a69a68"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 4,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "63ec213931d4d1d6737d1ead979cbfe5f2c44de75d8ba1fcb6052c33ae54b852"
+      }
+    },
+    {
+      "project": "zenodo-21925458",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 3,
+      "lean_sources_sha256": "6c27fe3445923d2729a1fef0fd186c35d0c4f136c32a474ec5120acdac87b42d",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "4e259cd26e72d707be91898c8c28a8b17a2661b58b2aae2c25d90a729b687857",
+      "comparator_sha256": "0de8671783dc52a07f51d0e405aabed32d8f4e8c7a3eac2df352c03f101f557b",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build MSET25 Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "9f1bce0ddc28bffa32ceee5c73a609b9cd6b022158b03b3ac667420a656a890a"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 10,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "96ba72d60345918191fea1560c63671c051d75cfa73cae7710dc955269526a84"
+      }
+    },
+    {
+      "project": "zenodo-21925574",
+      "toolchain": "leanprover/lean4:v4.32.0",
+      "lean_files": 11,
+      "lean_sources_sha256": "eddc7912386b6ed80de786f96d6327c76bf491ffcc5965f876f8970204328971",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "a2f0089857686da207a2fab28c06c8bd7990484c799f94d75765df9cca18db4e",
+      "comparator_sha256": "4b4501d282f32236681653a75642436f703cc0f583db620de072b5749a11019c",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build K331Tutte Challenge Solution",
+        "log_sha256": "3a9e5b59f61509aeb45ca5f511fc3430677dea083a6b721ff2c774b16ecb22e3"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 6,
+        "verso_revision": "e09d21a5f7f66c9fc985b73197708298569bf583",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "96374c4b16ff70bfd62855ee6661e26237a1ec795f263e403308b3abb57e9bbf"
+      }
+    },
+    {
+      "project": "zenodo-21925578",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 5,
+      "lean_sources_sha256": "201af46ef1ceb7e9fefc978050ab2afb68223ce55cf8759c15155f42e4f04816",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "0c3c5b61a45ce6fba643b67a9c2d1d1102c7c961b9016e4705f2189aa841b38e",
+      "comparator_sha256": "9e1f342e75e27c954181f14aa5fd36a3bd424f6a09ac23b43731fc2ac8a07d08",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build CubicHalfSpectrum Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "f725d3448dae0de8f13b780772bf0f3a5bb393c0a610da5e527a216c83008c16"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 5,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "e00b447c4a56f0b14da4e6aba6a55b88705f44d509811b7dca64c8acd9684adc"
+      }
+    },
+    {
+      "project": "zenodo-21925582",
+      "toolchain": "leanprover/lean4:v4.32.0",
+      "lean_files": 41,
+      "lean_sources_sha256": "800caa42a98cfb7f16c616e5ac9930986950eec258645664c8cd9bf5be482ff0",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "09a186c84bb325b2440c92bb8ba5d23d7394bd6a1795a9aae9eacd98afaab27c",
+      "comparator_sha256": "96dc2915983a70e833223fcefc96b91360461f3f59f209aa8857b7aa93d1c8a7",
+      "build": {
+        "status": "partial_by_user_request",
+        "passed": [
+          "OneTwoSobolT5.Core",
+          "OneTwoSobolT5.Census.Defs",
+          "Challenge"
+        ],
+        "skipped": "35 expensive census certificate modules and the census-dependent umbrella/Solution; no full Solution build claimed",
+        "log_sha256": {
+          "theory-sobol-core.log": "4af61d7f4d04bc60d6286026d7d9fb614f88344ad9ccb76fabe542dd18432ca6",
+          "theory-sobol-build.log": "9be49495d28cf488c3b5feb414f8f431face84662b3790ce782463ce279a4569",
+          "theory-sobol-challenge.log": "768d41c245bf70ae3b997f8edee63573746fcbedafcbb3985cfd3389a07834b5"
+        },
+        "commands": [
+          "LEAN_NUM_THREADS=2 lake build +OneTwoSobolT5.Core",
+          "LEAN_NUM_THREADS=2 lake build +OneTwoSobolT5.Census.Defs",
+          "LEAN_NUM_THREADS=2 lake build Challenge"
+        ]
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 3,
+        "verso_revision": "e09d21a5f7f66c9fc985b73197708298569bf583",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "bbed9f1ca49cc266cd7bb9aae665435769b52b9dbcea6c6c376cdfff0743c950"
+      }
+    },
+    {
+      "project": "zenodo-21986230",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 4,
+      "lean_sources_sha256": "564a3086e64207690c39dc86557e093677868af0c31af91498afb3d39041bfa0",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "ed75e4dbf98da43373ab63ebeb6280cb93c60a357049a534fe140ab067ec040a",
+      "comparator_sha256": "1f56045fdf50b1739986f875cb5347bb54bdc5f7ac3a6e2a5c0835bde8855a6c",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build G2Companion Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "bc10ae8bf267966b2d50720b5f58d5e9189c060961a235d8a041c711f0a4d666"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 6,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "d639505ecc64d0f042ca4b8171c80561123eb44ac7e0d7d61a98fa0c95ed1968"
+      }
+    },
+    {
+      "project": "zenodo-22264675",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 8,
+      "lean_sources_sha256": "694ba39cf6de872879e6ad41ea103cdabddcad17f5f9a4d215e565c2a2df7fca",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "08939912d6edb2a8cfee932304d546b7e2b1a12636b8bfc214fa457333187f72",
+      "comparator_sha256": "3c8630bca39f812ad1887bc2c368548bcaa571a2d4df2cea61a262cc33c0ba4b",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build GKEvenNet Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "b72861004908d6e3c58234e134d0f8a0f6163829920b0d8e935eb9636088ad9c"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 3,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "aabde2a59f99ee44654c44a691c99a68e0ba90185a115e01808979044f4c1205"
+      }
+    },
+    {
+      "project": "zenodo-22404456",
+      "toolchain": "leanprover/lean4:v4.30.0",
+      "lean_files": 24,
+      "lean_sources_sha256": "2d83cf5b43a85aa6db1d04f842a48fc316dffe69637f8f8a47c84cb7ad3a6245",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "1eb175d6d712847adead8933cba7a6ade023e40101f5b746815db7cae048e14a",
+      "comparator_sha256": "20971241b4b1ce318f95b18ff63621de5c23d12c49dedcf671ea15ad3fd390ba",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build ShellTomography Challenge Solution",
+        "exit_code": 0,
+        "log_sha256": "6b0f5c121a7bd74474554c75a9d416c3bb5cb028d377142ec86d1636af6e7bce"
+      },
+      "auxiliary_build": {
+        "file": "AxiomAudit.lean",
+        "status": "passed",
+        "log_sha256": "c553d9964f9e816b68686bdd3ce3c3e66c76ab20ca741bd791a49361ba12d0ae"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 8,
+        "verso_revision": "8bcbd2b8723307c329c12997a0c16a6ac174d3e9",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "core_notation_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "846e5e9ce04ba4c1af4a11923633f17831593e937f43d1cf8cd880e20783b897"
+      }
+    },
+    {
+      "project": "zenodo-22667596",
+      "toolchain": "leanprover/lean4:v4.32.0",
+      "lean_files": 141,
+      "lean_sources_sha256": "992b90a41f92d18537bb6162136e6ddd542824ca49f2a1ff972ef3b1cb1d2938",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "ea98d0e290bdd7eefe08847c20b0f6cfc359b5926b8b3be19942888700f898cd",
+      "comparator_sha256": "f1fb8c45450c1309b0cf8cd1cf2a951ab9bad21a681b83d5e1905023b9c2741d",
+      "build": {
+        "status": "passed",
+        "command": "LEAN_NUM_THREADS=2 lake build ZombieDamage ZombieMain Challenge GameChallenge MainSolution PalomarWrappers Solution",
+        "exit_code": 0,
+        "jobs": 3165,
+        "all_140_library_oleans_present": true,
+        "log_sha256": "6c3b91c0fe1ff53800e761eacbda936077d806bc9a1a76f2358550abdc6f15a4"
+      },
+      "auxiliary_build": {
+        "file": "verification/Audit.lean",
+        "status": "passed",
+        "exit_code": 0,
+        "log_sha256": "7cde191d64b2e7cb5751a080cad0a6f09ddad606128e275c45dc1385b1cf18e9"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 39,
+        "core_notation_exit_code": 0,
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "verso_revision": "e09d21a5f7f66c9fc985b73197708298569bf583",
+        "artifact_tree_sha256": "28c46ce766d97c020daa97b43e0adb86ad757edf5f6da346b1ddc61198894f7a"
+      }
+    },
+    {
+      "project": "zenodo-23125523",
+      "toolchain": "leanprover/lean4:v4.35.0-rc2",
+      "lean_files": 45,
+      "lean_sources_sha256": "912a360a2ba38e9678d64faaa7a3ca69d590c388c72469ea20f96dcfb62d779b",
+      "fingerprint_method": "SHA-256 of UTF-8 JSON mapping project-relative Lean paths to file SHA-256, sorted keys and compact separators",
+      "formalization_sha256": "2b032b3d3dc21b41878fb553a719b29cb88a7019387b4746464170d71ddde631",
+      "comparator_sha256": "30d893b349952fd6cea0a0675f2ac43c333846659030dd30604b74eb8438f0d3",
+      "build": {
+        "status": "passed",
+        "command": "lake --rehash build",
+        "exit_code": 0,
+        "jobs": 8977,
+        "log_sha256": "ccbf4c0e6460479622ec107597b9cb50d01cda2a1473b1d6abb557a262ef4bd8"
+      },
+      "render": {
+        "status": "passed",
+        "selected_declarations": 14,
+        "verso_revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+        "literate_exit_code": 0,
+        "html_exit_code": 0,
+        "sanitizer_exit_code": 0,
+        "artifact_tree_sha256": "7c5a91583a7de9d9bfe4ff29ff01f31971e51758a10fbdee5b65e2b235ef6671"
+      }
+    }
+  ]
+}

@@ -1,7 +1,11 @@
-import ZombieMain.GadgetRoutes
-import ZombieMain.BaseRoutes
-import ZombieMain.StripRoutes
-import ZombieMain.ClosedDegree
+module
+
+public import ZombieMain.GadgetRoutes
+public import ZombieMain.BaseRoutes
+public import ZombieMain.StripRoutes
+public import ZombieMain.ClosedDegree
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

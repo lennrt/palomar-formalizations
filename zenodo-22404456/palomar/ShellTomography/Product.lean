@@ -1,8 +1,11 @@
-import ShellTomography.Foundations
-import Mathlib.Algebra.Polynomial.Basic
-import Mathlib.Algebra.Polynomial.Eval.Defs
-import Mathlib.LinearAlgebra.Matrix.Nondegenerate
-import Mathlib.Combinatorics.SimpleGraph.Prod
+module
+public import ShellTomography.Foundations
+public import Mathlib.Algebra.Polynomial.Basic
+public import Mathlib.Algebra.Polynomial.Eval.Defs
+public import Mathlib.LinearAlgebra.Matrix.Nondegenerate
+public import Mathlib.Combinatorics.SimpleGraph.Prod
+
+@[expose] public section
 
 /-! Polynomial responses and the exact full-factor Cartesian-product kernel. -/
 

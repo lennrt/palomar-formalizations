@@ -1,5 +1,9 @@
-import ZombieMain.CycleUnion
-import ZombieDamage.Graph
+module
+
+public import ZombieMain.CycleUnion
+public import ZombieDamage.Graph
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

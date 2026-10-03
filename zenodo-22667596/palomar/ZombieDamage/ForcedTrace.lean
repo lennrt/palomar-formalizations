@@ -1,4 +1,8 @@
-import ZombieDamage.OriginalGameChecks
+module
+
+public import ZombieDamage.OriginalGameChecks
+
+@[expose] public section
 
 /-! All-length forced-trace theorem, corresponding to Davila's Lemma 12.
 Each finite prefix is proved in the actual full game. Trace existence in an

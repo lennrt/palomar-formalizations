@@ -1,5 +1,9 @@
-import ZombieMain.RoutedPresentation
-import ZombieMain.PreciseAmbientExit
+module
+
+public import ZombieMain.RoutedPresentation
+public import ZombieMain.PreciseAmbientExit
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage ZombieDamage.FullGame

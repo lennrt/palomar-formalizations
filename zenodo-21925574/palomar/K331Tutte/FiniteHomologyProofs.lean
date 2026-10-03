@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -10,7 +12,9 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import K331Tutte.FiniteHomologyDefs
+public import K331Tutte.FiniteHomologyDefs
+
+@[expose] public section
 
 /-!
 # Proved four-vertex relative-homology calculation

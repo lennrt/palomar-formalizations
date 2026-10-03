@@ -1,6 +1,10 @@
-import ZombieDamage.OpenStripCappedRoutes
-import ZombieDamage.OpenStripSymmetry
-import ZombieDamage.IsomorphismState
+module
+
+public import ZombieDamage.OpenStripCappedRoutes
+public import ZombieDamage.OpenStripSymmetry
+public import ZombieDamage.IsomorphismState
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

@@ -1,6 +1,9 @@
-import ShellTomography.KernelDefinitions
-import Mathlib.Algebra.Polynomial.Laurent
-import Mathlib.Algebra.MonoidAlgebra.NoZeroDivisors
+module
+public import ShellTomography.KernelDefinitions
+public import Mathlib.Algebra.Polynomial.Laurent
+public import Mathlib.Algebra.MonoidAlgebra.NoZeroDivisors
+
+@[expose] public section
 
 /-! Uniform row-response identities for alternating boundary sensing. -/
 

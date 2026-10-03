@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Simpler Graph Conditions for Embedding Tetrahedral Meshes
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit
@@ -7,7 +9,9 @@ Formalization: Lennart Rudolph, the responsible author, with the automated
 assistants Sol (OpenAI Codex) and Fable (Anthropic Claude)
 -/
 
-import Mathlib
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # The safe clique-sum mechanism over mathlib simple graphs

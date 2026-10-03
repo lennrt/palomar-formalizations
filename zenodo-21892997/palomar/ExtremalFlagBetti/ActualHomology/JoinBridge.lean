@@ -6,9 +6,12 @@ Authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
-import ExtremalFlagBetti.ActualHomology.UnorderedJoin
-import ExtremalFlagBetti.ActualHomology.MixedFaces
-import ExtremalFlagBetti.ActualHomology.JoinAlgebra
+module
+public import ExtremalFlagBetti.ActualHomology.UnorderedJoin
+public import ExtremalFlagBetti.ActualHomology.MixedFaces
+public import ExtremalFlagBetti.ActualHomology.JoinAlgebra
+
+@[expose] public section
 
 open Finset SimpleGraph
 

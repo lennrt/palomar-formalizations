@@ -12,8 +12,6 @@ project:
     endpoints.
   authors:
     - "Lennart Rudolph"
-    - "Sol"
-    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -26,8 +24,6 @@ sources:
   - title: "An Explicit Obstruction to Uniform Two-Word π-Representability"
     authors:
       - "Lennart Rudolph"
-      - "Sol"
-      - "Fable"
     id: "10.5281/zenodo.21986230"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21986230"
@@ -95,9 +91,9 @@ review:
   reviewers:
     - "OpenAI Codex (Sol)"
   notes: >-
-    Sol, acting as a co-author, checked the upgraded definitions term by term
+    Sol, acting as an automated assistant, checked the upgraded definitions term by term
     against the rendered source and developed the Lean proofs. The earlier
-    scoped release received a Fable co-author self-audit. The upgraded
+    scoped release received a Fable automated self-audit. The upgraded
     statements have not received independent human peer review.
 
 alignment:

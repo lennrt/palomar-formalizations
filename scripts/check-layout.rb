@@ -6,6 +6,7 @@ require "find"
 require "pathname"
 require "psych"
 require "yaml"
+require "strscan"
 
 ROOT = Pathname.new(__dir__).parent.realpath
 EXPECTED = %w[
@@ -21,6 +22,7 @@ EXPECTED = %w[
   22264675
   22404456
   22667596
+  23125523
 ].freeze
 STANDARD_AXIOMS = ["propext", "Quot.sound", "Classical.choice"].freeze
 CONFIG_KEYS = %w[
@@ -70,6 +72,25 @@ def read_utf8(path)
   File.read(path.to_s, encoding: "UTF-8")
 end
 
+# Ordinary comments may precede the header; documentation comments are commands.
+# Lean's own --deps-json parser is checked separately by the migration audit.
+def module_header?(source)
+  scan = StringScanner.new(source)
+  loop do
+    scan.skip(/[ \r\n]+/)
+    next if scan.skip(/--[^\n]*(?:\n|\z)/)
+    if scan.scan(%r{/-[^!-]}m)
+      depth = 1
+      while depth.positive?
+        return false unless scan.scan_until(%r{/-|-/})
+        depth += scan.matched == "/-" ? 1 : -1
+      end
+      next
+    end
+    return !!scan.scan(/module(?![[:alnum:]_'!?]|\.)/)
+  end
+end
+
 projects = ROOT.glob("zenodo-*/palomar").select(&:directory?).sort
 actual = projects.map { |path| path.parent.basename.to_s.delete_prefix("zenodo-") }
 errors << "expected DOI directories #{EXPECTED.inspect}, found #{actual.inspect}" unless actual == EXPECTED
@@ -93,11 +114,11 @@ projects.each do |project|
   next unless %w[Challenge.lean Solution.lean comparator.json formalization.yaml lean-toolchain lake-manifest.json].all? { |name| project.join(name).file? }
 
   toolchain = read_utf8(project.join("lean-toolchain")).strip
-  match = toolchain.match(/\Aleanprover\/lean4:v(\d+)\.(\d+)\.(\d+)\z/)
+  match = toolchain.match(/\Aleanprover\/lean4:v(\d+)\.(\d+)\.(\d+)(?:-rc[1-9]\d*)?\z/)
   if match.nil?
     errors << "#{label}: malformed lean-toolchain #{toolchain.inspect}"
   elsif ([match[1].to_i, match[2].to_i] <=> [4, 28]) == -1
-    errors << "#{label}: Lean #{match[1]}.#{match[2]} is below Palomar's checked v4.28 floor"
+    errors << "#{label}: Lean #{match[1]}.#{match[2]} is below the legacy-project build floor v4.28"
   end
 
   begin
@@ -212,6 +233,13 @@ ROOT.find do |path|
   next unless path.file?
   relative = path.relative_path_from(ROOT).to_s
   next if relative.split("/").include?(".lake")
+  if path.extname == ".lean"
+    source = read_utf8(path)
+    if path.basename.to_s != "lakefile.lean" && !module_header?(source)
+      errors << "#{relative}: missing initial module header"
+    end
+    errors << "#{relative}: Lean source exceeds 10,000 lines" if source.lines.count > 10_000
+  end
   errors << "#{relative}: compiled Lean artifact outside .lake" if relative.match?(/\.(?:olean|ilean|a|bc|dll|dylib|o|obj|so|trace)\z/)
   errors << "#{relative}: Git LFS pointer detected" if path.size < 1024 && File.binread(path.to_s).start_with?("version https://git-lfs.github.com/spec/v1")
 end

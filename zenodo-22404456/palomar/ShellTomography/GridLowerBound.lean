@@ -1,5 +1,8 @@
-import ShellTomography.Grid
-import Mathlib.Order.Interval.Finset.Nat
+module
+public import ShellTomography.Grid
+public import Mathlib.Order.Interval.Finset.Nat
+
+@[expose] public section
 
 namespace ShellTomography
 

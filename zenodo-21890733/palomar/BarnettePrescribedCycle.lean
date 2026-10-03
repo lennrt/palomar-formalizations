@@ -8,7 +8,19 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib
+module
+public import Mathlib
+public meta import Mathlib.AlgebraicTopology.SimplexCategory.Basic
+public meta import Mathlib.AlgebraicTopology.SimplexCategory.Defs
+public meta import Mathlib.Combinatorics.SimpleGraph.Basic
+public meta import Mathlib.Combinatorics.SimpleGraph.Finite
+public meta import Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite
+public meta import Mathlib.Data.Finset.Powerset
+public meta import Mathlib.Data.Fintype.Basic
+public meta import Mathlib.Data.Fintype.Defs
+public meta import Mathlib.Data.Fintype.Perm
+
+@[expose] public section
 
 /-!
 # Lean certificate for prescribed-cycle recovery in a Barnette graph

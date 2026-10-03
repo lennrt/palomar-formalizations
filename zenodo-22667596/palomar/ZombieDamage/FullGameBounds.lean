@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 namespace ZombieDamage.FullGame.ForcesWithin
 variable {V : Type} {G : Graph V} {P : Phase → State V → Prop}

@@ -1,5 +1,8 @@
-import ShellTomography.UniformGridBridge
-import Mathlib.Order.Interval.Finset.Fin
+module
+public import ShellTomography.UniformGridBridge
+public import Mathlib.Order.Interval.Finset.Fin
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

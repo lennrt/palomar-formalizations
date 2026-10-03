@@ -1,4 +1,7 @@
-import ShellTomography.UniformLaurent
+module
+public import ShellTomography.UniformLaurent
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

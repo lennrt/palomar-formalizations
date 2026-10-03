@@ -1,6 +1,10 @@
-import ZombieMain.RoutedPresentation
-import ZombieMain.FinitePresentations
-import ZombieDamage.Routing
+module
+
+public import ZombieMain.RoutedPresentation
+public import ZombieMain.FinitePresentations
+public import ZombieDamage.Routing
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

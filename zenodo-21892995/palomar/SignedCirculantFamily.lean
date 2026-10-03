@@ -9,12 +9,15 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import ArithmeticAndMonotonicity
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Combinatorics.SimpleGraph.Circulant
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-import Mathlib.Analysis.Complex.Trigonometric
+module
+public import ArithmeticAndMonotonicity
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Combinatorics.SimpleGraph.Circulant
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+public import Mathlib.Analysis.Complex.Trigonometric
+
+@[expose] public section
 
 /-!
 # The period-eight signing of `C_n(1,2)` and the refutation of Suvagiya's Conjecture 3

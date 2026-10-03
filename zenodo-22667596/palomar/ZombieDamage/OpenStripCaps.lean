@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStripRouting
-import ZombieDamage.LeafSteps
+module
+
+public import ZombieDamage.OpenStripRouting
+public import ZombieDamage.LeafSteps
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

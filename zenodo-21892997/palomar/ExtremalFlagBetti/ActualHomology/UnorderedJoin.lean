@@ -6,8 +6,11 @@ Authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
-import Mathlib
-import Mathlib.LinearAlgebra.DirectSum.Finsupp
+module
+public import Mathlib
+public import Mathlib.LinearAlgebra.DirectSum.Finsupp
+
+@[expose] public section
 
 open Finset SimpleGraph
 

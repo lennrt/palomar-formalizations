@@ -1,8 +1,12 @@
-import ZombieMain.AttachOldEdges
-import ZombieMain.AttachTwoVertices
-import ZombieMain.AttachmentCapacity
-import ZombieMain.CycleFrames
-import ZombieMain.ReachabilityFacts
+module
+
+public import ZombieMain.AttachOldEdges
+public import ZombieMain.AttachTwoVertices
+public import ZombieMain.AttachmentCapacity
+public import ZombieMain.CycleFrames
+public import ZombieMain.ReachabilityFacts
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

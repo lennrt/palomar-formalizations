@@ -149,10 +149,10 @@ commit `65f0154ed776cd26c224254aa57b379137f28b0d`:
 python3 scripts/verify_palomar.py --submission-tools /path/to/PalomarSubmission
 ```
 
-This writes `verification/palomar-preflight.json`, distinguishing the new
-project from the whole repository. The new project is separate from the pre-existing module-header
-issues in 258 sibling Lean files: current Palomar policy scans the entire
-repository. [SUBMISSION.md](SUBMISSION.md) records this external blocker.
+This writes `verification/palomar-preflight.json`, checking this project
+and the whole repository separately. The sibling projects have been ported
+to the module system; [MODULE-MIGRATION.md](../../MODULE-MIGRATION.md)
+records the repository-wide checks. Either scope failing makes this command fail.
 The [local significance assessment](verification/local-significance.json)
 explains the six result groups and their specialist audiences. Local
 mathematical checks are not official significance review, service verification,

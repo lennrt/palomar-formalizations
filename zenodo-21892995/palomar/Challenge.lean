@@ -9,11 +9,14 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Data.Real.Sqrt
-import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
-import Mathlib.Data.ZMod.Basic
-import Mathlib.Combinatorics.SimpleGraph.Circulant
-import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+module
+public import Mathlib.Data.Real.Sqrt
+public import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
+public import Mathlib.Data.ZMod.Basic
+public import Mathlib.Combinatorics.SimpleGraph.Circulant
+public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+
+@[expose] public section
 
 /-!
 # Auditable statements for the periodic signing of `C_n(1,2)`

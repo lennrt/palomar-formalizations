@@ -6,7 +6,10 @@ literature searches, algebraic exploration, proof and checker drafting, the Lean
 formalization, and adversarial review; the author accepts full responsibility for
 the claims, and no AI system is an author.
 -/
-import GKEvenNet.Net
+module
+public import GKEvenNet.Net
+
+@[expose] public section
 
 /-!
 # The row-shifted tiling metric

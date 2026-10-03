@@ -1,5 +1,9 @@
-import ZombieMain.ShortCycles
-import Mathlib.Data.Real.Basic
+module
+
+public import ZombieMain.ShortCycles
+public import Mathlib.Data.Real.Basic
+
+@[expose] public section
 
 namespace ZombieMain
 variable {V : Type}

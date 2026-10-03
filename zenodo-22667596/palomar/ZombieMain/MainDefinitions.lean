@@ -1,6 +1,10 @@
-import ZombieMain.ShortCycles
-import ZombieDamage.Exceptions
-import ZombieDamage.Isomorphism
+module
+
+public import ZombieMain.ShortCycles
+public import ZombieDamage.Exceptions
+public import ZombieDamage.Isomorphism
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

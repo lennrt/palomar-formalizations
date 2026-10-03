@@ -1,6 +1,10 @@
-import ZombieMain.EmbeddingFacts
-import ZombieMain.PathAdjacency
-import Mathlib.Data.Fin.Tuple.Basic
+module
+
+public import ZombieMain.EmbeddingFacts
+public import ZombieMain.PathAdjacency
+public import Mathlib.Data.Fin.Tuple.Basic
+
+@[expose] public section
 
 namespace ZombieMain.Diagram.Embedding
 open SimpleGraph

@@ -1,6 +1,10 @@
-import ZombieMain.StripPresentationGeometry
-import ZombieDamage.PrismGame
-import ZombieDamage.MobiusGame
+module
+
+public import ZombieMain.StripPresentationGeometry
+public import ZombieDamage.PrismGame
+public import ZombieDamage.MobiusGame
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

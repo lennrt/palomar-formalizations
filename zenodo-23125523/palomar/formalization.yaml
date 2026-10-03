@@ -265,10 +265,10 @@ status:
     Historical comparison results do not establish a changed selection. The local
     comparison script checks with Lean, NanoDa, and con-ron; its documented macOS
     mode is not the service Linux sandbox. Local significance assessment is advisory,
-    not official Palomar editorial approval. Current repository-wide module-header
-    requirements remain blocked by 258 pre-existing sibling Lean files outside this
-    project; the new project does not alter those files. No service verification or
-    registry registration is claimed.
+    not official Palomar editorial approval. Repository-wide module migration and
+    source-policy checks are recorded in ../../MODULE-MIGRATION.md. This project's
+    proof sources and selection are unchanged by that migration. No service
+    verification or registry registration is claimed.
   main_results:
   - declaration: PalomarResults.Grid.gridRobust_iff_intervalCuts
     file: Solution.lean
@@ -414,9 +414,9 @@ review:
   reviewers: []
   notes: Local mathematical, source, and significance reviews are advisory. Proof
     checking certifies stated propositions, not publication priority, source fidelity
-    in unformalized prose, or editorial significance. SUBMISSION.md records the repository-wide
-    compatibility issue outside the new project. Automation is disclosed only in the
-    automation section.
+    in unformalized prose, or editorial significance. SUBMISSION.md records the
+    submission scope and repository-wide source checks. Automation is disclosed
+    only in the automation section.
 alignment:
   namespace: PalomarResults
   statements:

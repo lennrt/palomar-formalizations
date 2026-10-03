@@ -1,4 +1,8 @@
-import ZombieDamage.Certificates
+module
+
+public import ZombieDamage.Certificates
+
+@[expose] public section
 
 /-! Mathematical statement surface for the five finite short-cycle components.
 The edge lists below are specified independently of the policy JSON.

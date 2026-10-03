@@ -1,13 +1,17 @@
+module
+
 /-
 Authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
-import RegularPathDelay
-import Mathlib.Data.Fintype.Card
-import Mathlib.Data.List.Nodup
-import Lean.Elab.Tactic.Omega
-import Mathlib.Tactic.Ring
+public import RegularPathDelay
+public import Mathlib.Data.Fintype.Card
+public import Mathlib.Data.List.Nodup
+public import Lean.Elab.Tactic.Omega
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 /-!
 Implementation module for the post-paper Palomar upgrade. When integrated,

@@ -1,10 +1,14 @@
+module
+
 /-
 Authors: Lennart Rudolph, Sol, Fable
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
-import RegularPathDelayEnumeration
-import Mathlib.Tactic
+public import RegularPathDelayEnumeration
+public import Mathlib.Tactic
+
+@[expose] public section
 
 set_option linter.unusedSectionVars false
 

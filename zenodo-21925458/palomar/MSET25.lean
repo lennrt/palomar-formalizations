@@ -8,8 +8,11 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Data.Nat.Lattice
-import Mathlib.Tactic.Ring
+module
+public import Mathlib.Data.Nat.Lattice
+public import Mathlib.Tactic.Ring
+
+@[expose] public section
 
 namespace MSET25
 
