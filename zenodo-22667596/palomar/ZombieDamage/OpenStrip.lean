@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-! Literal open ladder with optional caps and individual port stubs. Inactive
 boundary slots are isolated and are not counted as internal vertices. -/

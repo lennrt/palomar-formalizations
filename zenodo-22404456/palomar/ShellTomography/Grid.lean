@@ -1,6 +1,9 @@
-import ShellTomography.Product
-import Mathlib.Combinatorics.SimpleGraph.Metric
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+module
+public import ShellTomography.Product
+public import Mathlib.Combinatorics.SimpleGraph.Metric
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+
+@[expose] public section
 
 /-! The square-grid SimpleGraph and its shortest-path/Manhattan-distance bridge. -/
 

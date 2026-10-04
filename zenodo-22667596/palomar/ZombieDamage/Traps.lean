@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-! A pursuer strategy that confines all damaged departures to a proper set.
 This proves impossibility at EVERY horizon, including arbitrary survivor

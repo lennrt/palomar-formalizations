@@ -1,6 +1,10 @@
-import ZombieMain.FinitePresentations
-import ZombieMain.MetricTools
-import ZombieDamage.Isomorphism
+module
+
+public import ZombieMain.FinitePresentations
+public import ZombieMain.MetricTools
+public import ZombieDamage.Isomorphism
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.FullGame

@@ -1,7 +1,11 @@
-import ZombieMain.RecurrentDefinitions
-import ZombieMain.InfiniteProgress
-import ZombieMain.CyclicRequests
-import ZombieMain.CleanInitialization
+module
+
+public import ZombieMain.RecurrentDefinitions
+public import ZombieMain.InfiniteProgress
+public import ZombieMain.CyclicRequests
+public import ZombieMain.CleanInitialization
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.FullGame

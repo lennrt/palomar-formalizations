@@ -1,4 +1,8 @@
-import ZombieMain.GameValueDefinitions
+module
+
+public import ZombieMain.GameValueDefinitions
+
+@[expose] public section
 
 /-! The numerical value is characterized by the same adversarial game,
 including eventual objectives and the full-damage endpoint. -/

@@ -1,4 +1,7 @@
-import ShellTomography.UniformParameters
+module
+public import ShellTomography.UniformParameters
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000

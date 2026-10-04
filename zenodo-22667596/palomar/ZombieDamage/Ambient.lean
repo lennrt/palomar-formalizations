@@ -1,5 +1,9 @@
-import ZombieDamage.ShortGraph
-import ZombieDamage.FullGameBridge
+module
+
+public import ZombieDamage.ShortGraph
+public import ZombieDamage.FullGameBridge
+
+@[expose] public section
 
 /-!
 A faithful local model of a whole short-cycle component. Internal vertices

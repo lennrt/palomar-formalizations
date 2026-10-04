@@ -1,5 +1,9 @@
-import ZombieMain.BoundaryDefinitions
-import ZombieDamage.DiamondRing
+module
+
+public import ZombieMain.BoundaryDefinitions
+public import ZombieDamage.DiamondRing
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.DiamondRing

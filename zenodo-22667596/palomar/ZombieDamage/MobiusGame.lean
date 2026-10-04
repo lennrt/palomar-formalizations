@@ -1,4 +1,8 @@
-import ZombieDamage.CycleGame
+module
+
+public import ZombieDamage.CycleGame
+
+@[expose] public section
 
 /-! The all-orders Möbius-ladder part of the manuscript, in the full game. -/
 namespace ZombieDamage.MobiusGame

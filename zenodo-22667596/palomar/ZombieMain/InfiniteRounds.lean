@@ -1,4 +1,8 @@
-import ZombieMain.QuotientRouting
+module
+
+public import ZombieMain.QuotientRouting
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.FullGame

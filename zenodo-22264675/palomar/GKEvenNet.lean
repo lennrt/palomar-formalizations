@@ -9,11 +9,14 @@ literature searches, algebraic exploration, proof and checker drafting, the Lean
 formalization, and adversarial review; the author accepts full responsibility for
 the claims, and no AI system is an author.
 -/
-import GKEvenNet.Rev
-import GKEvenNet.Net
-import GKEvenNet.Distance
-import GKEvenNet.Certificate
-import GKEvenNet.Main
+module
+public import GKEvenNet.Rev
+public import GKEvenNet.Net
+public import GKEvenNet.Distance
+public import GKEvenNet.Certificate
+public import GKEvenNet.Main
+
+@[expose] public section
 
 /-! Axiom audit of every theorem-bearing declaration. -/
 

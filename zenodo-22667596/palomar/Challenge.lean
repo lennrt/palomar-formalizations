@@ -1,9 +1,13 @@
-import Std
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph
-import Mathlib.Combinatorics.SimpleGraph.Finite
-import Mathlib.Data.Real.Basic
-import Mathlib.Data.Finset.Max
-import Mathlib.Tactic
+module
+
+public import Std
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Data.Real.Basic
+public import Mathlib.Data.Finset.Max
+public import Mathlib.Tactic
+
+@[expose] public section
 
 noncomputable def PalomarVerified.degree {V : Type*} [Fintype V]
     (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Nat := G.degree v

@@ -13,7 +13,7 @@ project:
     intersections with the complementary matching, and the instantiated final
     obstruction. The topological realization of the incidence data as a sphere
     embedding and the published algorithm's Property 1 remain external inputs.
-  authors: ["Lennart Rudolph", "Sol", "Fable"]
+  authors: ["Lennart Rudolph"]
   responsible_maintainers: ["Lennart Rudolph"]
   license: "MIT"
 
@@ -23,7 +23,7 @@ classification:
 
 sources:
   - title: "A Counterexample to Prescribed-Cycle Recovery in Barnette Graphs"
-    authors: ["Lennart Rudolph", "Sol", "Fable"]
+    authors: ["Lennart Rudolph"]
     id: "doi:10.5281/zenodo.21890733"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21890733"
@@ -84,10 +84,10 @@ review:
   status: "self-assessed"
   reviewers: ["Anthropic Claude (Fable)", "OpenAI Codex (Sol)"]
   notes: >-
-    Anthropic Claude (Fable), acting as a co-author, performed an adversarial
+    Anthropic Claude (Fable), acting as an automated assistant, performed an adversarial
     self-review of the archived preprint and its original Lean companion before
     release. After the six-theorem Palomar selection was introduced, OpenAI
-    Codex (Sol), also a co-author, performed a later read-only editorial
+    Codex (Sol), also an automated assistant, performed a later read-only editorial
     self-review on 2026-08-20 covering the preprint, compared declarations,
     their Solution proof cone, Comparator selection, and metadata. No
     independent human peer review has been performed.

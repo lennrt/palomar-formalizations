@@ -1,5 +1,9 @@
-import ZombieMain.ComponentQuotient
-import Mathlib.Combinatorics.SimpleGraph.Metric
+module
+
+public import ZombieMain.ComponentQuotient
+public import Mathlib.Combinatorics.SimpleGraph.Metric
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage

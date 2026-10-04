@@ -1,5 +1,9 @@
-import ZombieMain.PortTransport
-import ZombieMain.AttachmentCapacity
+module
+
+public import ZombieMain.PortTransport
+public import ZombieMain.AttachmentCapacity
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

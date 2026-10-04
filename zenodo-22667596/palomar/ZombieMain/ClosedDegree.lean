@@ -1,5 +1,9 @@
-import ZombieMain.DiagramDegree
-import ZombieMain.Families
+module
+
+public import ZombieMain.DiagramDegree
+public import ZombieMain.Families
+
+@[expose] public section
 
 namespace ZombieMain
 set_option maxHeartbeats 1000000

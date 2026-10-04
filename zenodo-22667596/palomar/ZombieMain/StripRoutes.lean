@@ -1,5 +1,9 @@
-import ZombieMain.RoutedPresentation
-import ZombieMain.StripRouteLabels
+module
+
+public import ZombieMain.RoutedPresentation
+public import ZombieMain.StripRouteLabels
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.OpenStrip

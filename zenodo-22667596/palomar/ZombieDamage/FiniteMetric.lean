@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-!
 A finitely checkable distance-table certificate. Its local conditions imply

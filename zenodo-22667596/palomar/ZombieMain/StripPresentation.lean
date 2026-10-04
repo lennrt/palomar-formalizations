@@ -1,4 +1,8 @@
-import ZombieMain.StripPresentationPorts
+module
+
+public import ZombieMain.StripPresentationPorts
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

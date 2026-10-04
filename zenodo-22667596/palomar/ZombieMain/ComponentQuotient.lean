@@ -1,4 +1,8 @@
-import ZombieMain.UniversalRouting
+module
+
+public import ZombieMain.UniversalRouting
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage

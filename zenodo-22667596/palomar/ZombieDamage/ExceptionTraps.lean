@@ -1,4 +1,8 @@
-import ZombieDamage.Exceptions
+module
+
+public import ZombieDamage.Exceptions
+
+@[expose] public section
 namespace ZombieDamage.Exceptions
 set_option maxRecDepth 100000
 set_option maxHeartbeats 0

@@ -1,4 +1,8 @@
-import OneTwoSobolT5.Census.Defs
+module
+
+public import OneTwoSobolT5.Census.Defs
+
+@[expose] public section
 
 namespace OneTwoSobolT5.Census
 

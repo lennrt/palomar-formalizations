@@ -11,8 +11,6 @@ project:
     intervals satisfy the paper-level depth/LCP bounds.
   authors:
     - "Lennart Rudolph"
-    - "Sol"
-    - "Fable"
   license: "MIT"
   responsible_maintainers:
     - "Lennart Rudolph"
@@ -25,8 +23,6 @@ sources:
   - title: "Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs"
     authors:
       - "Lennart Rudolph"
-      - "Sol"
-      - "Fable"
     id: "doi:10.5281/zenodo.21892986"
     type: paper
     location: "https://doi.org/10.5281/zenodo.21892986"
@@ -109,13 +105,13 @@ review:
     - "Anthropic Claude (Fable)"
     - "OpenAI Codex (Sol)"
   notes: >-
-    The earlier Fable co-author review covered the prior four-result selection.
-    A later Sol co-author review found that its fourth result bounded a path-pair
+    The earlier Fable automated review covered the prior four-result selection.
+    A later Sol automated review found that its fourth result bounded a path-pair
     proxy rather than actual evaluator intervals and required an executable
     event trace. The present trace/profile repair responds to that finding.
     Sol then re-audited the repaired result on 2026-08-20 for evaluator
     semantics, statement alignment, and definition fidelity. These were
-    co-author self-reviews; no independent human peer review has been performed.
+    automated self-reviews; no independent human peer review has been performed.
 
 alignment:
   namespace: "PalomarRegularPathDelay"

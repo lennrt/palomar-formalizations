@@ -1,4 +1,8 @@
-import ZombieMain.PortedPresentation
+module
+
+public import ZombieMain.PortedPresentation
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage

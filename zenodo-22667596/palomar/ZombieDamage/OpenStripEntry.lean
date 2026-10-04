@@ -1,4 +1,8 @@
-import ZombieDamage.OpenStripCaps
+module
+
+public import ZombieDamage.OpenStripCaps
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

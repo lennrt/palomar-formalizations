@@ -1,6 +1,10 @@
-import ZombieMain.RoutedPresentation
-import ZombieMain.TriangleMetric
-import ZombieMain.DiamondMetric
+module
+
+public import ZombieMain.RoutedPresentation
+public import ZombieMain.TriangleMetric
+public import ZombieMain.DiamondMetric
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

@@ -8,7 +8,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
 
 /-!
 # Concrete prescribed-cycle obstruction in a Barnette graph

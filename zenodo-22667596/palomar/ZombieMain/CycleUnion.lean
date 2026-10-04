@@ -1,5 +1,9 @@
-import ZombieMain.StructuralBase
-import Mathlib.Order.Preorder.Finite
+module
+
+public import ZombieMain.StructuralBase
+public import Mathlib.Order.Preorder.Finite
+
+@[expose] public section
 
 /-!
 The universal cycle-union reduction. A generated subgraph is built from actual

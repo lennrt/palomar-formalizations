@@ -1,4 +1,8 @@
-import ZombieMain.ComponentQuotient
+module
+
+public import ZombieMain.ComponentQuotient
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

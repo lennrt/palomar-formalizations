@@ -9,7 +9,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import ExtremalFlagBetti.ActualHomology
+module
+public import ExtremalFlagBetti.ActualHomology
+
+@[expose] public section
 
 /-! The imported implementation exposes the selected `d₁ ∘ d₂ = 0`
 chain identity. The wrappers below expose the three paper-level results. -/

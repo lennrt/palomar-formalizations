@@ -8,4 +8,7 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import G2Companion.OrderBridge
+module
+public import G2Companion.OrderBridge
+
+@[expose] public section

@@ -1,5 +1,9 @@
-import ZombieMain.ShortGraph
-import ZombieMain.Classification
+module
+
+public import ZombieMain.ShortGraph
+public import ZombieMain.Classification
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

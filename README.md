@@ -45,10 +45,22 @@ lake exe cache get
 lake build
 ```
 
-Each project's `lean-toolchain` pins its Lean release, currently 4.30.0 or
-4.32.0, with Mathlib at the matching tag. `ruby scripts/check-layout.rb`
-checks the repository layout, metadata, and Comparator configurations of
-every project.
+Each project's `lean-toolchain` pins its Lean release: the registered projects
+retain 4.30.0 or 4.32.0, and `zenodo-23125523` uses 4.35.0-rc2. Dependency
+revisions remain pinned in each `lake-manifest.json`.
+
+All Lean sources use the module system, including auxiliary files outside the
+default build targets. Public imports and exposed public sections preserve
+the earlier projects' exported declarations and reducible definitions.
+`ruby scripts/check-layout.rb` checks all 13 projects, including the module
+header convention and Palomar's 10,000-line source limit. `scripts/build-all.sh`
+builds their default targets. The repository-wide migration and its additional
+checks are recorded in [MODULE-MIGRATION.md](MODULE-MIGRATION.md).
+
+Palomar scans every Lean source in the repository, even when submitting only
+one Comparator configuration. A submission must also use a currently accepted
+toolchain for the selected project; preserving an older registered project's
+build pin does not assert that its old toolchain is accepted for a new submission.
 
 ## Licensing
 

@@ -1,5 +1,9 @@
-import ZombieMain.ComponentPorts
-import ZombieMain.BoundaryDefinitions
+module
+
+public import ZombieMain.ComponentPorts
+public import ZombieMain.BoundaryDefinitions
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

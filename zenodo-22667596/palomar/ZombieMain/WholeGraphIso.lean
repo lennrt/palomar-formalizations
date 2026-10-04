@@ -1,5 +1,9 @@
-import ZombieMain.ClosedClassification
-import ZombieDamage.Isomorphism
+module
+
+public import ZombieMain.ClosedClassification
+public import ZombieDamage.Isomorphism
+
+@[expose] public section
 
 namespace ZombieMain.Diagram.Embedding
 open SimpleGraph ZombieDamage

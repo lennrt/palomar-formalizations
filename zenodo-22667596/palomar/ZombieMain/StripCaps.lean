@@ -1,5 +1,9 @@
-import ZombieMain.StripTailRestrictions
-import ZombieMain.PathAdjacency
+module
+
+public import ZombieMain.StripTailRestrictions
+public import ZombieMain.PathAdjacency
+
+@[expose] public section
 
 namespace ZombieMain
 set_option maxHeartbeats 1000000

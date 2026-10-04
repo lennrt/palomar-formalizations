@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Run the pinned official metadata/source checks for this new project.
+"""Run the pinned official metadata/source checks for this project and repository snapshot.
 
 Requires PyYAML and a checkout of PalomarRegistry/PalomarSubmission at the
-revision below. Pass that checkout with --submission-tools. Existing sibling
-projects are inspected separately and never modified by this script.
+revision below. Pass that checkout with --submission-tools. All sibling
+Lean sources are inspected as part of the repository-wide intake requirements.
 This is a local preflight, not Palomar service verification or editorial review.
 """
 import argparse
@@ -54,8 +54,8 @@ def main():
     if toolchain != 'leanprover/lean4:' + minimum:
         raise RuntimeError('This snapshot must use the checked official minimum toolchain.')
     report = {
-        'status': 'passed' if not local_issues else 'failed',
-        'scope': 'new project only; existing registered sibling projects remain frozen',
+        'status': 'passed' if not local_issues and not repository_issues else 'failed',
+        'scope': 'project metadata and sources; repository-wide Lean source policy',
         'official_checker_repository': 'https://github.com/PalomarRegistry/PalomarSubmission',
         'official_checker_commit': revision,
         'formalization_sha256': digest(metadata_path),
@@ -79,8 +79,8 @@ def main():
     target = ROOT / 'verification' / 'palomar-preflight.json'
     target.write_text(json.dumps(report, indent=2) + '\n')
     print(f"New project: {report['status']}; {local['files_checked']} Lean files.")
-    print(f'Repository-wide pre-existing issues: {len(repository_issues)}.')
-    if local_issues:
+    print(f'Repository-wide source issues: {len(repository_issues)}.')
+    if local_issues or repository_issues:
         raise SystemExit(1)
 
 

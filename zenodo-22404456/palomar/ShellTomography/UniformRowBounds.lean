@@ -1,6 +1,9 @@
-import ShellTomography.UniformLift
-import ShellTomography.UniformSufficiency
-import ShellTomography.UniformNorm
+module
+public import ShellTomography.UniformLift
+public import ShellTomography.UniformSufficiency
+public import ShellTomography.UniformNorm
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

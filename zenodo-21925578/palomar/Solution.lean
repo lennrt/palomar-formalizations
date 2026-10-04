@@ -8,7 +8,10 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import CubicHalfSpectrum.ReleasedOuter
+module
+public import CubicHalfSpectrum.ReleasedOuter
+
+@[expose] public section
 
 #print axioms PalomarCubicHalfSpectrum.released_outer_source_normal_form
 #print axioms PalomarCubicHalfSpectrum.released_zero_block_strictly_upper

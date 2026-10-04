@@ -1,4 +1,8 @@
-import ZombieDamage.Graph
+module
+
+public import ZombieDamage.Graph
+
+@[expose] public section
 
 /-!
 Shortest-walk distance histograms for finite populations (lists modulo

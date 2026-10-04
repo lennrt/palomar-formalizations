@@ -1,3 +1,5 @@
+module
+
 /-
 Paper: Polynomial-Delay Enumeration of Fixed-Endpoint Vertex-Regular Paths in Skew-Symmetric Digraphs
 Authors: Lennart Rudolph, Sol, Fable
@@ -6,7 +8,9 @@ DOI: https://doi.org/10.5281/zenodo.21892986
 Preprint published: 2026-08-11. Palomar formalization upgraded: 2026-08-20.
 -/
 
-import RegularPathDelayTrace
+public import RegularPathDelayTrace
+
+@[expose] public section
 
 namespace PalomarRegularPathDelay
 

@@ -1,5 +1,9 @@
-import ZombieMain.ComponentRouting
-import ZombieDamage.LeafSteps
+module
+
+public import ZombieMain.ComponentRouting
+public import ZombieDamage.LeafSteps
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage ZombieDamage.FullGame

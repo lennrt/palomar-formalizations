@@ -1,5 +1,8 @@
-import ShellTomography.UniformSufficiency
-import ShellTomography.UniformLift
+module
+public import ShellTomography.UniformSufficiency
+public import ShellTomography.UniformLift
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000

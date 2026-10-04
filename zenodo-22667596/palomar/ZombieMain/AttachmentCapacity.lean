@@ -1,4 +1,8 @@
-import ZombieMain.EmbeddingFacts
+module
+
+public import ZombieMain.EmbeddingFacts
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

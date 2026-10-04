@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStrip
-import ZombieDamage.ShortGraph
+module
+
+public import ZombieDamage.OpenStrip
+public import ZombieDamage.ShortGraph
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

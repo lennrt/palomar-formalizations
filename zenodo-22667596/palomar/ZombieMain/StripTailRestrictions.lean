@@ -1,4 +1,8 @@
-import ZombieMain.StripStructure
+module
+
+public import ZombieMain.StripStructure
+
+@[expose] public section
 
 namespace ZombieMain
 

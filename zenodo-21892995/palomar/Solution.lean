@@ -9,10 +9,13 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import ArithmeticAndMonotonicity
-import SignedCirculantFamily
-import Mathlib.Analysis.Calculus.Deriv.MeanValue
-import Mathlib.Analysis.Calculus.Deriv.Polynomial
+module
+public import ArithmeticAndMonotonicity
+public import SignedCirculantFamily
+public import Mathlib.Analysis.Calculus.Deriv.MeanValue
+public import Mathlib.Analysis.Calculus.Deriv.Polynomial
+
+@[expose] public section
 
 open Set
 

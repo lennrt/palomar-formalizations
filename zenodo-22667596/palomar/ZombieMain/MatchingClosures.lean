@@ -1,4 +1,8 @@
-import ZombieMain.MatchingRestrictions
+module
+
+public import ZombieMain.MatchingRestrictions
+
+@[expose] public section
 
 namespace ZombieMain
 set_option maxHeartbeats 1000000

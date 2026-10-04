@@ -1,4 +1,7 @@
-import ShellTomography.UniformNecessity
+module
+public import ShellTomography.UniformNecessity
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

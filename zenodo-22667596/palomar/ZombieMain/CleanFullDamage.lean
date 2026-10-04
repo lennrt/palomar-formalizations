@@ -1,5 +1,9 @@
-import ZombieMain.CleanInitialization
-import ZombieDamage.Covering
+module
+
+public import ZombieMain.CleanInitialization
+public import ZombieDamage.Covering
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph ZombieDamage ZombieDamage.FullGame

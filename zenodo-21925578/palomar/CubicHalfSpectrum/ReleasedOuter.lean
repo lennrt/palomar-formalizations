@@ -8,12 +8,15 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import CubicHalfSpectrum.Core
-import Mathlib.Algebra.Polynomial.Roots
-import Mathlib.LinearAlgebra.Matrix.Block
-import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
-import Mathlib.Logic.Equiv.Fin.Rotate
-import Mathlib.Tactic
+module
+public import CubicHalfSpectrum.Core
+public import Mathlib.Algebra.Polynomial.Roots
+public import Mathlib.LinearAlgebra.Matrix.Block
+public import Mathlib.LinearAlgebra.Matrix.Charpoly.Basic
+public import Mathlib.Logic.Equiv.Fin.Rotate
+public import Mathlib.Tactic
+
+@[expose] public section
 
 /-!
 # Released outer matrix for generalized cubic subdivision

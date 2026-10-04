@@ -1,4 +1,8 @@
-import ZombieMain.Families
+module
+
+public import ZombieMain.Families
+
+@[expose] public section
 
 namespace ZombieMain
 variable {V : Type*} {G : SimpleGraph V}

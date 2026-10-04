@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStripTargetContract
-import ZombieDamage.FullGameConverse
+module
+
+public import ZombieDamage.OpenStripTargetContract
+public import ZombieDamage.FullGameConverse
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

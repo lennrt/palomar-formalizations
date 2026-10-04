@@ -1,4 +1,8 @@
-import ZombieDamage.LeafSteps
+module
+
+public import ZombieDamage.LeafSteps
+
+@[expose] public section
 
 namespace ZombieDamage.DiamondRoute
 open FullGame

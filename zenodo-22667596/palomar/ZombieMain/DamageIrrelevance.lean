@@ -1,5 +1,9 @@
-import ZombieDamage.FullGame
-import Mathlib.Logic.Function.Basic
+module
+
+public import ZombieDamage.FullGame
+public import Mathlib.Logic.Function.Basic
+
+@[expose] public section
 
 namespace ZombieDamage.FullGame
 variable {V : Type} {G : Graph V}

@@ -1,5 +1,9 @@
-import ZombieDamage.FullGameBridge
-import ZombieDamage.OriginalGameChecks
+module
+
+public import ZombieDamage.FullGameBridge
+public import ZombieDamage.OriginalGameChecks
+
+@[expose] public section
 
 /-! Completeness of the local routing language for post-zombie exit goals on
 leaf-augmented components. Adjacency is the ordinary full-game invariant;

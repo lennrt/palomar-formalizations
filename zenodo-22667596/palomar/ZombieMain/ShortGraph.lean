@@ -1,4 +1,8 @@
-import ZombieMain.ShortCycles
+module
+
+public import ZombieMain.ShortCycles
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

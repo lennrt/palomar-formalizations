@@ -1,5 +1,9 @@
-import ZombieDamage.OpenStripTrailing
-import ZombieDamage.OpenStripEntry
+module
+
+public import ZombieDamage.OpenStripTrailing
+public import ZombieDamage.OpenStripEntry
+
+@[expose] public section
 
 namespace ZombieDamage.OpenStrip
 open FullGame

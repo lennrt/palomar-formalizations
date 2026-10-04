@@ -9,9 +9,12 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import ExtremalFlagBetti
-import Mathlib.Combinatorics.SimpleGraph.Clique
-import Mathlib.Tactic
+module
+public import ExtremalFlagBetti
+public import Mathlib.Combinatorics.SimpleGraph.Clique
+public import Mathlib.Tactic
+
+@[expose] public section
 
 set_option maxHeartbeats 2000000
 

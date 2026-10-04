@@ -1,4 +1,8 @@
-import ZombieDamage.ForcedTrace
+module
+
+public import ZombieDamage.ForcedTrace
+
+@[expose] public section
 
 namespace ZombieDamage.Cyclic
 variable {n : Nat}

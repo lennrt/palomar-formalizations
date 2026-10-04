@@ -1,6 +1,9 @@
-import ShellTomography.UniformMinimum
-import ShellTomography.UniformAttainer
-import ShellTomography.GridLowerBound
+module
+public import ShellTomography.UniformMinimum
+public import ShellTomography.UniformAttainer
+public import ShellTomography.GridLowerBound
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 noncomputable section

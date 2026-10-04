@@ -1,4 +1,7 @@
-import ShellTomography.Grid
+module
+public import ShellTomography.Grid
+
+@[expose] public section
 
 /-!
 Explicit alternating-boundary sensor placement and integer coefficient formulas.

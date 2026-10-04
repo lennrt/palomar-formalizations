@@ -9,9 +9,12 @@ Codex) and Fable (Anthropic Claude)
 ORCID (Lennart Rudolph): https://orcid.org/0009-0009-0198-085X
 -/
 
-import ExtremalFlagBetti
-import ExtremalFlagBetti.Homology
-import ExtremalFlagBetti.ActualHomology.JoinBridge
+module
+public import ExtremalFlagBetti
+public import ExtremalFlagBetti.Homology
+public import ExtremalFlagBetti.ActualHomology.JoinBridge
+
+@[expose] public section
 
 open Finset SimpleGraph
 
@@ -640,7 +643,7 @@ private lemma iso_flagD2 (e : G ≃g H) (c : FlagChain2 G) :
     simp [flagD2, isoTriangleChains, iso_triangleBoundary]
   exact LinearMap.congr_fun hmap c
 
-private lemma iso_cycles_map (e : G ≃g H) :
+lemma iso_cycles_map (e : G ≃g H) :
     (FlagCycleSubmodule G).map (isoEdgeChains G e).toLinearMap =
       FlagCycleSubmodule H := by
   ext y
@@ -3429,7 +3432,7 @@ def sevenWitnessEdge (i : Fin 7) : FlagEdge SevenGraph := by
   refine ⟨s(i, i + 4), ?_⟩
   fin_cases i <;> decide
 
-private theorem sevenTriangle_bijective :
+theorem sevenTriangle_bijective :
     Function.Bijective sevenTriangle := by
   decide
 

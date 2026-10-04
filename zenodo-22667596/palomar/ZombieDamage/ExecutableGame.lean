@@ -1,4 +1,8 @@
-import ZombieDamage.FiniteMetric
+module
+
+public import ZombieDamage.FiniteMetric
+
+@[expose] public section
 
 /-!
 Executable regression oracle for the SAME move and payoff rules. Its metric

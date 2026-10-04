@@ -1,5 +1,9 @@
-import ZombieMain.MainTheorem
-import ZombieMain.GameValue
+module
+
+public import ZombieMain.MainTheorem
+public import ZombieMain.GameValue
+
+@[expose] public section
 
 /-! Randy Davila's Conjecture 24 in its numerical form. This is a direct
 corollary of the existing complete proof and the formal damage-value bridge. -/

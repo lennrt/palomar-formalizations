@@ -1,6 +1,9 @@
-import Mathlib.Tactic
-import Mathlib.Data.Multiset.Replicate
-import Mathlib.Combinatorics.SimpleGraph.Prod
+module
+public import Mathlib.Tactic
+public import Mathlib.Data.Multiset.Replicate
+public import Mathlib.Combinatorics.SimpleGraph.Prod
+
+@[expose] public section
 
 /-!
 # Distance-shell tomography: selected paper theorems

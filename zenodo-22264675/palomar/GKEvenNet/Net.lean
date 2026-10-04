@@ -6,7 +6,10 @@ literature searches, algebraic exploration, proof and checker drafting, the Lean
 formalization, and adversarial review; the author accepts full responsibility for
 the claims, and no AI system is an author.
 -/
-import GKEvenNet.Rev
+module
+public import GKEvenNet.Rev
+
+@[expose] public section
 
 /-!
 # The even-order construction is a `(0, m, 2)`-net for every even `m ≥ 4`

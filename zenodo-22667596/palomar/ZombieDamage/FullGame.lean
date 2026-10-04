@@ -1,4 +1,8 @@
-import ZombieDamage.Graph
+module
+
+public import ZombieDamage.Graph
+
+@[expose] public section
 
 /-!
 Source theory: Randy Davila introduced the zombie damage number and this game

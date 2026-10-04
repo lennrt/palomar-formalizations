@@ -1,3 +1,7 @@
+module
+
+@[expose] public section
+
 /-
 Paper: Exact Projection Quality of OneTwo Sobol' Sequences at 65,536 Points
 Paper author: Lennart Rudolph, the sole author of record on the Zenodo deposit

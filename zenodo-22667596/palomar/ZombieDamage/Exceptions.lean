@@ -1,5 +1,9 @@
-import ZombieDamage.Traps
-import ZombieDamage.FiniteMetric
+module
+
+public import ZombieDamage.Traps
+public import ZombieDamage.FiniteMetric
+
+@[expose] public section
 
 namespace ZombieDamage.Exceptions
 open FullGame

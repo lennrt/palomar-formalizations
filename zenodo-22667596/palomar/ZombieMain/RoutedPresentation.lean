@@ -1,4 +1,8 @@
-import ZombieMain.MetricTools
+module
+
+public import ZombieMain.MetricTools
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

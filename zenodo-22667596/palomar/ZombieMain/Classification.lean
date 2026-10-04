@@ -1,7 +1,11 @@
-import ZombieMain.TriangleRealization
-import ZombieMain.SquareRealization
-import ZombieMain.BaseCycles
-import ZombieMain.AttachmentClosure
+module
+
+public import ZombieMain.TriangleRealization
+public import ZombieMain.SquareRealization
+public import ZombieMain.BaseCycles
+public import ZombieMain.AttachmentClosure
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

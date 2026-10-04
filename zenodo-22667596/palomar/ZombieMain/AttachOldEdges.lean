@@ -1,5 +1,9 @@
-import ZombieMain.EmbeddingFacts
-import ZombieMain.PathAdjacency
+module
+
+public import ZombieMain.EmbeddingFacts
+public import ZombieMain.PathAdjacency
+
+@[expose] public section
 
 namespace ZombieMain.Diagram.Embedding
 open SimpleGraph

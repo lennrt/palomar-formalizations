@@ -1,6 +1,10 @@
-import ZombieMain.WholeGraphIso
-import ZombieMain.MainDefinitions
-import ZombieDamage.ExceptionTraps
+module
+
+public import ZombieMain.WholeGraphIso
+public import ZombieMain.MainDefinitions
+public import ZombieDamage.ExceptionTraps
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage

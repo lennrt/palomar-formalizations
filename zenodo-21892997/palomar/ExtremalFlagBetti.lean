@@ -9,15 +9,24 @@ AI/agentic usage disclosure: OpenAI Codex (Sol) and Anthropic Claude (Fable)
 were used for formalization and adversarial analysis.
 -/
 
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
-import Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite
-import Mathlib.Combinatorics.SimpleGraph.DegreeSum
-import Mathlib.Combinatorics.SimpleGraph.Finite
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Data.Nat.Choose.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Lean.Elab.Tactic.Omega
+module
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
+public import Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite
+public import Mathlib.Combinatorics.SimpleGraph.DegreeSum
+public import Mathlib.Combinatorics.SimpleGraph.Finite
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Data.Nat.Choose.Basic
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Lean.Elab.Tactic.Omega
+public meta import Mathlib.Combinatorics.SimpleGraph.Basic
+public meta import Mathlib.Combinatorics.SimpleGraph.Finite
+public meta import Mathlib.Combinatorics.SimpleGraph.Connectivity.Finite
+public meta import Mathlib.Data.Finset.Powerset
+public meta import Mathlib.Data.Fintype.Basic
+public meta import Mathlib.Data.Fintype.Defs
+
+@[expose] public section
 
 /-!
 # Certified graph core for the extremal flag-Betti counterexample

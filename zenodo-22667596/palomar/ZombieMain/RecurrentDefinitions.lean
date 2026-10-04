@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 namespace ZombieMain
 open ZombieDamage ZombieDamage.FullGame

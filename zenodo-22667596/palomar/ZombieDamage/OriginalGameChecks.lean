@@ -1,4 +1,8 @@
-import ZombieDamage.FullGame
+module
+
+public import ZombieDamage.FullGame
+
+@[expose] public section
 
 /-! All-graph checks of two original-paper conventions. No numerical solver
 or finite enumeration is used in these proofs. -/

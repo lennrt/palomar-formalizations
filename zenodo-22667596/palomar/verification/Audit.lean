@@ -1,4 +1,8 @@
-import Solution
+module
+
+public import Solution
+
+@[expose] public section
 #print axioms ZombieMain.full_damage_within_iff
 #print axioms ZombieMain.full_damage_iff
 #print axioms ZombieMain.davila_conjecture_24

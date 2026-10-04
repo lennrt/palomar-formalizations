@@ -1,6 +1,9 @@
-import ShellTomography.UniformReconstruction
-import ShellTomography.UniformNorm
-import ShellTomography.UniformRowBounds
+module
+public import ShellTomography.UniformReconstruction
+public import ShellTomography.UniformNorm
+public import ShellTomography.UniformRowBounds
+
+@[expose] public section
 
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000

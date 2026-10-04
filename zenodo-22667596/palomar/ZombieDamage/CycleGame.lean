@@ -1,4 +1,8 @@
-import ZombieDamage.Cyclic
+module
+
+public import ZombieDamage.Cyclic
+
+@[expose] public section
 
 /-! Davila's full-damage cycle result for EVERY n ≥ 5, with the original
 initial move order and exactly n survivor departures. -/

@@ -1,6 +1,10 @@
-import ZombieMain.EmbeddingFacts
-import ZombieMain.Families
-import ZombieMain.ClassificationDefinitions
+module
+
+public import ZombieMain.EmbeddingFacts
+public import ZombieMain.Families
+public import ZombieMain.ClassificationDefinitions
+
+@[expose] public section
 
 namespace ZombieMain
 open SimpleGraph

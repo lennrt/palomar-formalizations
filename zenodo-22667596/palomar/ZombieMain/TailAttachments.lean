@@ -1,7 +1,11 @@
-import ZombieMain.StripCaps
-import ZombieMain.StripExtensions
-import ZombieMain.SingleCapExtension
-import ZombieMain.MatchingClosures
+module
+
+public import ZombieMain.StripCaps
+public import ZombieMain.StripExtensions
+public import ZombieMain.SingleCapExtension
+public import ZombieMain.MatchingClosures
+
+@[expose] public section
 
 namespace ZombieMain
 

@@ -1,4 +1,8 @@
-import ZombieMain.StripTailRestrictions
+module
+
+public import ZombieMain.StripTailRestrictions
+
+@[expose] public section
 
 namespace ZombieMain
 set_option maxHeartbeats 1000000
