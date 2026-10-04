@@ -33,7 +33,7 @@ project claims to formalize its paper end to end.
 | [zenodo-22264675/](zenodo-22264675/) | The Even-Order Grünschloß–Keller Permutation Nets Are (0,m,2)-Nets | [10.5281/zenodo.22264675](https://doi.org/10.5281/zenodo.22264675) | [PALOMAR-2026-09-04-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-09-04-000001&version=1) | [RG](https://www.researchgate.net/publication/414060821_The_Even-Order_Grunschloss-Keller_Permutation_Nets_Are_0m2-Nets) |
 | [zenodo-22404456/](zenodo-22404456/) | Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing | [10.5281/zenodo.22404456](https://doi.org/10.5281/zenodo.22404456) | [PALOMAR-2026-09-07-000003](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-07-000003&version=1) | [RG](https://www.researchgate.net/publication/414060424_Distance-Shell_Tomography_on_Graphs_Integer_Trades_and_Optimal_Grid_Sensing) |
 | [zenodo-22667596/](zenodo-22667596/) | Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs | [10.5281/zenodo.22667596](https://doi.org/10.5281/zenodo.22667596) | [PALOMAR-2026-09-10-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-09-10-000001&version=1) | [RG](https://www.researchgate.net/publication/414150361_Short-Cycle_Decompositions_and_Full_Zombie_Damage_in_Cubic_Graphs) |
-| [zenodo-23125523/](zenodo-23125523/) | Distance-Shell Tomography: Geometric Certificates for Fault-Tolerant Sensing, Moment Compression, and Hypercube Equalization | [10.5281/zenodo.23125523](https://doi.org/10.5281/zenodo.23125523) | -- | [RG](https://www.researchgate.net/publication/415199103_Distance-Shell_Tomography_Geometric_Certificates_for_Fault-Tolerant_Sensing_Moment_Compression_and_Hypercube_Equalization) |
+| [zenodo-23125523/](zenodo-23125523/) | Distance-Shell Tomography: Geometric Certificates for Fault-Tolerant Sensing, Moment Compression, and Hypercube Equalization | [10.5281/zenodo.23125523](https://doi.org/10.5281/zenodo.23125523) | [PALOMAR-2026-10-04-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-10-04-000001&version=1) | [RG](https://www.researchgate.net/publication/415199103_Distance-Shell_Tomography_Geometric_Certificates_for_Fault-Tolerant_Sensing_Moment_Compression_and_Hypercube_Equalization) |
 
 ## Verifying a project
 
@@ -76,8 +76,8 @@ The papers are authored by Lennart Rudolph
 ([ORCID 0009-0009-0198-085X](https://orcid.org/0009-0009-0198-085X)) alone;
 each paper's own declaration states that no AI system is listed as an author.
 
-The formalizations are by Lennart Rudolph, with the automated assistants Sol
-(OpenAI Codex) and Fable (Anthropic Claude). Sol and Fable contributed
+The formalizations are by Lennart Rudolph, with the automated assistants Astra, Sol
+(OpenAI Codex) and Fable (Anthropic Claude). Astra, Sol, and Fable contributed
 formalization and adversarial analysis; Lennart Rudolph selected the statements, reviewed the proofs, and
 takes responsibility for the results.
 Every compared theorem is checked by the Lean kernel, and each
