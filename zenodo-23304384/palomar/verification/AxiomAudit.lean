@@ -1,0 +1,13 @@
+module
+import Solution
+
+#print axioms PalomarResults.LossyShell.endpoint_trace_equivalence
+#print axioms PalomarResults.LossyShell.probability_endpoints
+#print axioms PalomarResults.LossyShell.mean_eq_iff_fold_eq
+#print axioms PalomarResults.LossyShell.legs_eq_of_mean_covariance
+#print axioms PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse
+#print axioms PalomarResults.LossyShell.twoLegLaw_eq_iff
+#print axioms PalomarResults.LossyShell.variance_sensitive_bounds
+#print axioms PalomarResults.LossyShell.fold_recovery
+#print axioms PalomarResults.LossyShell.difference_recovery
+#print axioms PalomarResults.LossyShell.all_length_designed_lower_bound

@@ -1,0 +1,28 @@
+WARNING: Sandbox disabled, this run is not trustworthy.
+Resolving dependencies
+Building Challenge
+⚠ [8931/8932] Replayed Challenge
+warning: Challenge.lean:155:8: declaration uses `sorry`
+warning: Challenge.lean:161:8: declaration uses `sorry`
+warning: Challenge.lean:167:8: declaration uses `sorry`
+warning: Challenge.lean:172:8: declaration uses `sorry`
+warning: Challenge.lean:180:8: declaration uses `sorry`
+warning: Challenge.lean:191:8: declaration uses `sorry`
+warning: Challenge.lean:198:8: declaration uses `sorry`
+warning: Challenge.lean:210:8: declaration uses `sorry`
+warning: Challenge.lean:220:8: declaration uses `sorry`
+warning: Challenge.lean:234:8: declaration uses `sorry`
+Build completed successfully (8932 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarResults.LossyShell.endpoint_trace_equivalence, PalomarResults.LossyShell.probability_endpoints, PalomarResults.LossyShell.mean_eq_iff_fold_eq, PalomarResults.LossyShell.legs_eq_of_mean_covariance, PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse, PalomarResults.LossyShell.twoLegLaw_eq_iff, PalomarResults.LossyShell.variance_sensitive_bounds, PalomarResults.LossyShell.fold_recovery, PalomarResults.LossyShell.difference_recovery, PalomarResults.LossyShell.all_length_designed_lower_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+Build completed successfully (3109 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarResults.LossyShell.endpoint_trace_equivalence, PalomarResults.LossyShell.probability_endpoints, PalomarResults.LossyShell.mean_eq_iff_fold_eq, PalomarResults.LossyShell.legs_eq_of_mean_covariance, PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse, PalomarResults.LossyShell.twoLegLaw_eq_iff, PalomarResults.LossyShell.variance_sensitive_bounds, PalomarResults.LossyShell.fold_recovery, PalomarResults.LossyShell.difference_recovery, PalomarResults.LossyShell.all_length_designed_lower_bound, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running con-ron kernel on solution
+con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
+con-ron: accepted 16579 declarations (--verified)
+con-ron kernel accepts the solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution
+Lean default kernel accepts the solution
+Your solution is okay!

@@ -1,0 +1,48 @@
+{
+  "status": "pass",
+  "arithmetic": "fractions.Fraction; no floating-point assertions",
+  "n_range": [
+    1,
+    100
+  ],
+  "counts": {
+    "prefix_scale_inequalities": 30300,
+    "rational_design_bounds": 100,
+    "finite_tail_sums": 500,
+    "bernstein_denominators": 90900,
+    "batch_budget_coefficients": 600,
+    "lower_overlap_identities": 100
+  },
+  "sample_design_values": [
+    {
+      "n": 1,
+      "p": "2/3",
+      "design_coefficient_verified": true
+    },
+    {
+      "n": 2,
+      "p": "4/5",
+      "design_coefficient_verified": true
+    },
+    {
+      "n": 10,
+      "p": "20/21",
+      "design_coefficient_verified": true
+    },
+    {
+      "n": 100,
+      "p": "200/201",
+      "design_coefficient_verified": true
+    }
+  ],
+  "claims_checked": [
+    "(1-p^k) >= (k/n)(1-p^n)",
+    "bounded-variable Bernstein denominator constants",
+    "p=2n/(2n+1) gives 1/2 < p^n <= 2/3",
+    "p^(2n)(1-p^n) >= 1/8 for the rational design",
+    "16000 h^4 n log(1+8/delta) dominates the general batch bound",
+    "finite geometric union of index-dependent tails is <=delta/2 per batch",
+    "common-law mass exceeds p^2 and rational log-bound coefficient equals1/n"
+  ],
+  "limitations": "Finite algebraic checks only. Bernstein concentration, infinite-tail summation, rounding correctness, and the general sample theorem require the written proof; this script does not establish universal or Lean claims."
+}

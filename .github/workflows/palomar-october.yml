@@ -1,0 +1,33 @@
+name: Palomar October companions
+
+# Verify immutable candidate commits before moving them to main. This calls
+# Palomar's complete mechanical verifier; it does not submit or register work.
+on:
+  push:
+    branches: [codex/palomar-october-companions]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mechanical:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - request_id: z23304384pre
+            options: >-
+              {"project_path":"zenodo-23304384/palomar","comparator_config_path":"zenodo-23304384/palomar/comparator.json","formalization_metadata_path":"zenodo-23304384/palomar/formalization.yaml"}
+          - request_id: z23346565pre
+            options: >-
+              {"project_path":"zenodo-23346565/palomar","comparator_config_path":"zenodo-23346565/palomar/comparator.json","formalization_metadata_path":"zenodo-23346565/palomar/formalization.yaml"}
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+    with:
+      repository: ${{ github.repository }}
+      commit: ${{ github.sha }}
+      pipeline_commit: d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
+      request_id: ${{ matrix.request_id }}
+      mode: full
+      execution_profile: palomar-standard-v1
+      options: ${{ matrix.options }}

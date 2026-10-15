@@ -1,0 +1,202 @@
+# formalization.yaml v0.4; canonical paper DOI 10.5281/zenodo.23252713
+version: v0.4
+project:
+  name: 'Lossy Distance-Shell Tomography on Paths: Recovery from Mean and Covariance'
+  description: >-
+    A substantive Lean development of two-leg identifiability under independent
+    relay deletion and nearest-surviving-ancestor bypass. An interior path sensor
+    observes anonymous counts at each contracted hop, superimposing both legs.
+    For every known real survival probability strictly between zero and one, the
+    mean and covariance identify the unordered pair of natural-valued leg
+    populations. A sparse interface needs only the covariance diagonal and one
+    adaptively selected column. The concrete law is a finite sum over independent
+    Bernoulli relay masks. Ten selected statements additionally establish mean/fold
+    equivalence, endpoint trace and degenerate-probability semantics, actual-model
+    variance bounds, conditional integer reconstruction recurrences, and a
+    logarithmic randomized-testing lower bound for actual paths of every length
+    at least two. The full finite-sample probability guarantee is not claimed.
+  authors:
+    - Lennart Rudolph
+  responsible_maintainers:
+    - Lennart Rudolph
+  license: MIT
+classification:
+  arxiv:
+    - math.CO
+    - cs.IT
+  msc2020:
+    - 05C12
+    - 94A08
+sources:
+  - title: 'Lossy Distance-Shell Tomography on Paths: Recovery from Mean and Covariance'
+    authors:
+      - Lennart Rudolph
+    type: paper
+    id: doi:10.5281/zenodo.23252713
+    location: https://doi.org/10.5281/zenodo.23252713
+    relationship: formalizes
+    author_endorsement: participated
+    note: >-
+      Canonical all-versions DOI supplied by the author. The inspected manuscript
+      and supplemental Lean sources are version 2.0.0, archived at
+      https://zenodo.org/records/23304384. Section 7 explicitly distinguishes the
+      complete exact-recovery proofs from partially formalized sample analysis.
+      The central selected claims correspond to Theorem 5.4 and Corollary 5.9.
+      The endpoint, path-mean, variance, rounding and testing claims are supporting
+      results, not independent claims that all ingredients are new. The all-length
+      formal testing bound has coefficient n/2, as expressly documented in Section
+      7, rather than the sharper coefficient n in Theorem 5.12. No independent
+      human peer review or journal acceptance is claimed.
+related_formalizations:
+  - id: https://zenodo.org/records/23304384
+    relationship: adapts
+    note: >-
+      The author's supplied version 2.0.0 supplement contains the substantive
+      LossyShell, ShellResearch and ShellSampling proofs and exact Python decoder
+      checks. They are included locally and migrated to Lean public modules.
+      The independently stated Challenge and selected interface are prepared for
+      this repository; no adjacent repository's proof sources are imported.
+status:
+  scope: >-
+    Ten independently compared real-valued endpoints with natural populations:
+    full and sparse covariance recovery, exact law equivalence up to leg exchange,
+    mean/fold equivalence, endpoint trace and probability endpoint semantics,
+    variance and centered-product bounds, fold and oriented-difference rounding
+    under explicit accuracy hypotheses, and the factor-two-weaker all-length
+    designed-rate testing lower bound. All thirteen supplied library modules
+    are retained. Empty and zero populations are admitted; all compared legs
+    have common length. No formal claim of the full concentration or minimax
+    upper-bound theorem, arbitrary-tree recovery, calibration, spider obstruction,
+    imported trace-complexity results, or conjecture is made.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  sorry_count_scope: >-
+    The Solution and substantive proof libraries. The independent Challenge has
+    ten deliberate theorem holes and is never imported by a proof module.
+  axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  verification_status: >-
+    Snapshot-specific local checks are recorded under verification and by the
+    repository release checker. Only completed successful reports for unchanged
+    inputs establish their respective checks. No Palomar service execution,
+    editorial acceptance, registration or independent human review is claimed.
+  main_results:
+    - declaration: PalomarResults.LossyShell.legs_eq_of_mean_covariance
+      file: Solution.lean
+      sorry_count: 0
+    - declaration: PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse
+      file: Solution.lean
+      sorry_count: 0
+    - declaration: PalomarResults.LossyShell.all_length_designed_lower_bound
+      file: Solution.lean
+      sorry_count: 0
+      note: Actual paths of arbitrary length n at least two; lower-bound coefficient n/2.
+automation:
+  methods:
+    - method: manual
+      tool_setup: >-
+        Lennart Rudolph directed the research and is its sole named human author
+        and responsible maintainer.
+    - method: agent
+      models:
+        - Anthropic Claude (Opus)
+        - OpenAI ChatGPT/Codex
+      framework: Human-directed mathematical development and formalization
+      tool_setup: >-
+        The manuscript credits both systems with literature review, model and
+        proof development, exact computations, Lean formalization and writing.
+        OpenAI Codex additionally assisted the version 2 variance-sensitive
+        sampling analysis, lower bound, implementation and formalization.
+    - method: agent
+      models:
+        - OpenAI Codex
+      framework: Human-directed repository preparation and multi-agent review
+      tool_setup: >-
+        Adapted the supplied proof library to public modules, prepared an
+        independent Challenge and explicit Solution interface, documented source
+        fidelity and motivation, and ran local build and validation tools.
+  spend_usd: not tracked
+  notes: >-
+    No AI system is an author. Automated mathematical review and proof checking
+    are not independent human peer review. Model provenance for the original
+    work is taken from the supplied manuscript's acknowledgments.
+fidelity:
+  divergences: >-
+    The selected probabilities and moments are real; supporting exact-recovery
+    theorems are more general over linearly ordered fields. Populations have
+    natural entries and all compared legs have equal finite length. No separate
+    cross-length padding theorem is asserted. The endpoint trace converse
+    requires the surviving horizon. The mean theorem covers paths, not the
+    paper's arbitrary-tree generalization. Difference rounding is conditional
+    on correct deepest-index and positive-magnitude identification and explicit
+    covariance-column accuracy. Bernstein concentration, simultaneous good-event
+    probability, sample-splitting independence, and the complete minimax
+    composition remain written proofs. The all-length testing lower bound has
+    coefficient n/2 rather than the paper's sharper n; its actual report
+    experiments and randomized tests are fully explicit. The general-tree
+    landing and recursion formulas, unknown-rate calibration, spider moment
+    obstruction, imported trace-reconstruction complexity and simulation transfer,
+    derivative-based optimization and tree conjecture are not formalized.
+review:
+  status: No completed independent human peer review or Palomar editorial review claimed
+  reviewers: []
+  notes: >-
+    Source and statement checks are local and advisory. Kernel checks certify
+    the stated propositions; they do not establish publication priority,
+    mathematical notability, completeness relative to all manuscript results,
+    or Palomar service acceptance. Verification reports are tied to their inputs.
+alignment:
+  namespace: PalomarResults.LossyShell
+  statements:
+    - source: 'Proposition 3.1: endpoint report and deletion trace'
+      lean: PalomarResults.LossyShell.endpoint_trace_equivalence
+      module: Solution
+      status: proved
+    - source: 'Section 7 endpoint semantics at p = 0 and p = 1'
+      lean: PalomarResults.LossyShell.probability_endpoints
+      module: Solution
+      status: proved
+    - source: 'Theorem 4.1, restricted to the two-leg path model'
+      lean: PalomarResults.LossyShell.mean_eq_iff_fold_eq
+      module: Solution
+      status: adapted
+      note: Equal means iff equal folds at positive p; no arbitrary-tree theorem.
+    - source: 'Theorem 5.4: recovery from the mean and covariance'
+      lean: PalomarResults.LossyShell.legs_eq_of_mean_covariance
+      module: Solution
+      status: proved
+    - source: 'Corollary 5.9: sparse adaptive covariance recovery'
+      lean: PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse
+      module: Solution
+      status: proved
+    - source: 'Theorem 5.4 and exchange symmetry'
+      lean: PalomarResults.LossyShell.twoLegLaw_eq_iff
+      module: Solution
+      status: proved
+    - source: 'Version 2 sample-analysis variance components, Section 7'
+      lean: PalomarResults.LossyShell.variance_sensitive_bounds
+      module: Solution
+      status: proved
+      note: Actual-model variance and centered-product second moment; no concentration guarantee.
+    - source: 'Proposition 5.6 deterministic fold-reconstruction component, Section 7'
+      lean: PalomarResults.LossyShell.fold_recovery
+      module: Solution
+      status: proved
+      note: Conditional on the displayed accuracy and nearest-integer equations.
+    - source: 'Proposition 5.6 deterministic difference-reconstruction component, Section 7'
+      lean: PalomarResults.LossyShell.difference_recovery
+      module: Solution
+      status: proved
+      note: Conditional on the correct deepest entry and displayed column accuracy.
+    - source: 'Section 7 weaker all-length formal counterpart of Theorem 5.12'
+      lean: PalomarResults.LossyShell.all_length_designed_lower_bound
+      module: Solution
+      status: adapted
+      note: Proves coefficient n/2, not the paper's sharper coefficient n.
+acknowledgements: >-
+  Lean, Mathlib, Comparator, NanoDa, con-ron, and Palomar tooling contributors.
+  The manuscript's cited earlier mathematical work supplies the literature
+  context; standard quadratic algebra, triangular elimination and testing
+  methods are not claimed as new independent contributions.

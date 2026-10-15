@@ -1,0 +1,23 @@
+name = "lossyShellTomography"
+version = "0.2.0"
+defaultTargets = ["LossyShell", "ShellResearch", "ShellSampling", "Challenge", "Solution"]
+
+[[lean_lib]]
+name = "LossyShell"
+
+[[lean_lib]]
+name = "ShellResearch"
+
+[[lean_lib]]
+name = "ShellSampling"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0-rc2"

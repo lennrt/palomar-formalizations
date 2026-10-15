@@ -1,0 +1,8 @@
+'PalomarDecompression.cubicCapacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.oddDegreeCapacity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.markedAdviceCodec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.informationLowerBound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.largeComponentPartition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.arbitraryLabelCellGeometry' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.boundedCellStability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PalomarDecompression.graphMarkerReconstruction' depends on axioms: [propext, Classical.choice, Quot.sound]

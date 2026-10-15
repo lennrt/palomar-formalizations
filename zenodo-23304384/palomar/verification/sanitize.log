@@ -1,0 +1,2 @@
+warning: manifest out of date: git url of dependency 'mathlib' changed; use `lake update mathlib` to update it
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it

@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "exact_empirical_distribution_cases": 76,
+  "implementation": "decoder.recover_two_batches",
+  "scope": "Deterministic reconstruction with exact empirical moments, including the selected covariance column. These repeated-law fixtures are not an iid sampling experiment."
+}

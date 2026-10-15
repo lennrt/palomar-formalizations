@@ -1,0 +1,12 @@
+⚠ [8952/8953] Replayed Challenge
+warning: Challenge.lean:155:8: declaration uses `sorry`
+warning: Challenge.lean:161:8: declaration uses `sorry`
+warning: Challenge.lean:167:8: declaration uses `sorry`
+warning: Challenge.lean:172:8: declaration uses `sorry`
+warning: Challenge.lean:180:8: declaration uses `sorry`
+warning: Challenge.lean:191:8: declaration uses `sorry`
+warning: Challenge.lean:198:8: declaration uses `sorry`
+warning: Challenge.lean:210:8: declaration uses `sorry`
+warning: Challenge.lean:220:8: declaration uses `sorry`
+warning: Challenge.lean:234:8: declaration uses `sorry`
+Build completed successfully (8953 jobs).

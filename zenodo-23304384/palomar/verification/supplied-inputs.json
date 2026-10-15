@@ -1,0 +1,17 @@
+{
+  "source": "user-supplied publication files",
+  "paper_doi": "10.5281/zenodo.23252713",
+  "version_record": "https://zenodo.org/records/23304384",
+  "files": [
+    {
+      "file": "lossy-shell-tomography-v2.pdf",
+      "sha256": "1334c6f24f4aae05ed9ca1f5509e7313121fe91611bad9f61659a9cc4ef7636a",
+      "bytes": 267877
+    },
+    {
+      "file": "lossy-shell-tomography-v2-supplemental-materials.zip",
+      "sha256": "f02f84a4d8a20d9b348e99d8ff4449acfda87e95b25698986b4df08e20ad7268",
+      "bytes": 49908
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarResults.LossyShell.endpoint_trace_equivalence",
+    "PalomarResults.LossyShell.probability_endpoints",
+    "PalomarResults.LossyShell.mean_eq_iff_fold_eq",
+    "PalomarResults.LossyShell.legs_eq_of_mean_covariance",
+    "PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse",
+    "PalomarResults.LossyShell.twoLegLaw_eq_iff",
+    "PalomarResults.LossyShell.variance_sensitive_bounds",
+    "PalomarResults.LossyShell.fold_recovery",
+    "PalomarResults.LossyShell.difference_recovery",
+    "PalomarResults.LossyShell.all_length_designed_lower_bound"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

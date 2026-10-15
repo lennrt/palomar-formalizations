@@ -1,0 +1,19 @@
+name = "localDecompression"
+defaultTargets = ["LocalDecompression", "Statement", "Solution", "Challenge"]
+
+[[lean_lib]]
+name = "LocalDecompression"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.35.0-rc2"
+
+[[lean_lib]]
+name = "Statement"
+
+[[lean_lib]]
+name = "Solution"
+
+[[lean_lib]]
+name = "Challenge"

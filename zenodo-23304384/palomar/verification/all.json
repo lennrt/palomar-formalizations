@@ -1,0 +1,344 @@
+{
+  "status": "passed",
+  "stage": "all",
+  "host": "Darwin",
+  "service_verification": false,
+  "editorial_review": false,
+  "registered": false,
+  "not_exercised": [
+    "hosted Linux confinement and resource controls",
+    "hosted canonical Challenge compilation and transitive dependency audit",
+    "hosted positive/negative verifier controls",
+    "fresh download of dependency build caches",
+    "hosted licence/ORCID/network provenance checks",
+    "Palomar editorial judgments"
+  ],
+  "official_tools_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "input_sha256": {
+    "Challenge.lean": "edc90676a930cbaeb24bb06860b3417e71c865cf4f1e53020ee55727e4f66a01",
+    "LossyShell/Basic.lean": "88ae04dd3e3016acaf6661f00afd8209f0a957fd2cb72bf4b4843dcde7a9a6eb",
+    "LossyShell/Landing.lean": "ba2c92c0882664634d383becd15821f180bdd119fbd66c0b048354e8516f1b4f",
+    "LossyShell/Main.lean": "dbdc4e39a0d373337ff7c6c9c99ca15e3918c06dbb280967cf45672963d9eca7",
+    "LossyShell/Moments.lean": "5126017cb7a74cf5cdc11033bb615634359ded668f1919612f57b5f857441f51",
+    "LossyShell/Recovery.lean": "827f03cb4c8f8a2a08ebfbe90101ffaf325f1b47fb19002ebf06ac7a8f02b93a",
+    "LossyShell/Trace.lean": "52cfaeb4f35cebc9d1cc33f73b95a0597f0359a4f10e80ef1673b33b72684dcc",
+    "LossyShell.lean": "694de32cc72f1d4460131d4b867885fc9f334912bc3cd7419d73322ad871dae8",
+    "ShellResearch/Deterministic.lean": "3da319c46c3e3fd53f0fb9889bd35e82a50937d8d8891d0a65fb5ad5a66eec30",
+    "ShellResearch/FiniteSample.lean": "78fee5a2e625ce62a24550bf69e172935e690e74ba45333c3614e994072a528e",
+    "ShellResearch/Pipeline.lean": "58c0ebab77af47ddcc5d208b7ab3f74a2e73707737a42fbea232983638fa8081",
+    "ShellResearch/TailBudget.lean": "4d944b3699d57cdf2e716108d4b373d8dd3c31ac0684cc46d61378eb942c489d",
+    "ShellResearch.lean": "b4f58b59dde5d404f5bcb195331801311aedc63c680cf3bc274b8099fecf9609",
+    "ShellSampling/AllLengthLower.lean": "74a2f9bd34c2e8166f1011f7040d07f4ef730b13e6dbe9d534616087a6799244",
+    "ShellSampling/Geometric.lean": "7e0cc7225073e047ee4a75581857aef4f57563018c7c2c789f44bbf55f8fd0a0",
+    "ShellSampling/LowerBound.lean": "f4fdfa8373539856d71060f05dce3c8845930089c96e639b99c9d861d0f59746",
+    "ShellSampling.lean": "03aa78409ac43102af3c7b4424054b9503801ca362a5d753f4db403c45e6ffd3",
+    "Solution.lean": "0ae9d0c1cc57f9da50ca13c46690950e281b84ed5319f28e772520b17596530d",
+    "comparator.json": "24f0c4305dd4feba16a866356daa15afb57f3734e837f0a267ea4c47ae20bee4",
+    "formalization.yaml": "168f029462f75a9601d1eb2d6a326fc99d57c54a67b59fc9b3bad792321e0044",
+    "lake-manifest.json": "f349b4ed11f3491ddf0291c7e4be2fd7a101cc734df4b091672e67f6ddf33c7c",
+    "lakefile.toml": "dd821c8f58dd822cc50c6644350b9cff792efc6649f79c694f60d4acc75a3471",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "verification/AxiomAudit.lean": "33672fed2088bc1150e99c1adf93f9da2efb16ed85345d3a5358a349eb943a2c"
+  },
+  "verifier_sha256": "3dafe0feea0c0bcfee9076f0228979ba8c0f747dab664aab5164f8ae45671be1",
+  "official_source_sha256": {
+    "scripts/render_challenge.py": "0cde8c3082a672fe99435ed0bed237b719e8041288e4ffa535cebbfbdb1395b9",
+    "scripts/core_notation_audit.lean": "47ee22447f312db83e764e8eab015a0db49b7317d2fccb4314f52b6a6cad2e3d",
+    "scripts/source_requirements.py": "971950a45500ad8ba8c9061eb51716bc1c38f411ff877c447b6de527b23d2c6d",
+    "scripts/submission_contract.py": "724f82211ef702e2d1b4e5012183e532bd8f8ba03ba676022e4722a420c5be75"
+  },
+  "preflight": {
+    "metadata": "passed",
+    "repository_source_policy": {
+      "schema_version": 1,
+      "module_required": true,
+      "maximum_lines": 10000,
+      "files_checked": 341
+    },
+    "compiler_module_headers": 19,
+    "project_name": "Lossy Distance-Shell Tomography on Paths: Recovery from Mean and Covariance",
+    "toolchain": "leanprover/lean4:v4.35.0-rc2",
+    "comparator_configuration": "passed",
+    "selected_theorems": 10,
+    "verified_dependency_sources": [
+      {
+        "name": "mathlib",
+        "manifest_name": "mathlib",
+        "repository": "leanprover-community/mathlib4",
+        "url": "https://github.com/leanprover-community/mathlib4",
+        "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+      },
+      {
+        "name": "plausible",
+        "manifest_name": "plausible",
+        "repository": "leanprover-community/plausible",
+        "url": "https://github.com/leanprover-community/plausible",
+        "revision": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912"
+      },
+      {
+        "name": "LeanSearchClient",
+        "manifest_name": "LeanSearchClient",
+        "repository": "leanprover-community/LeanSearchClient",
+        "url": "https://github.com/leanprover-community/LeanSearchClient",
+        "revision": "95e037bfdc31d3916ac615446847fb01960e2719"
+      },
+      {
+        "name": "importGraph",
+        "manifest_name": "importGraph",
+        "repository": "leanprover-community/import-graph",
+        "url": "https://github.com/leanprover-community/import-graph",
+        "revision": "10930f8138f0462dbd744a91fc03a16fae0e046f"
+      },
+      {
+        "name": "proofwidgets",
+        "manifest_name": "proofwidgets",
+        "repository": "leanprover-community/ProofWidgets4",
+        "url": "https://github.com/leanprover-community/ProofWidgets4",
+        "revision": "4c70ac059693669e5756e32a7a94b57ee1e99dc5"
+      },
+      {
+        "name": "aesop",
+        "manifest_name": "aesop",
+        "repository": "leanprover-community/aesop",
+        "url": "https://github.com/leanprover-community/aesop",
+        "revision": "75d936c7af167cc93fac0d31237682fc2204591d"
+      },
+      {
+        "name": "Qq",
+        "manifest_name": "Qq",
+        "repository": "leanprover-community/quote4",
+        "url": "https://github.com/leanprover-community/quote4",
+        "revision": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334"
+      },
+      {
+        "name": "batteries",
+        "manifest_name": "batteries",
+        "repository": "leanprover-community/batteries",
+        "url": "https://github.com/leanprover-community/batteries",
+        "revision": "ed9b316aabe389fec1ef43c3326ab48c7e59be42"
+      },
+      {
+        "name": "Cli",
+        "manifest_name": "Cli",
+        "repository": "leanprover/lean4-cli",
+        "url": "https://github.com/leanprover/lean4-cli",
+        "revision": "2842b9871b04862f944c032e34052cb9448ccb71"
+      }
+    ]
+  },
+  "build": {
+    "command": [
+      "lake",
+      "build"
+    ],
+    "exit_code": 0,
+    "seconds": 4.817
+  },
+  "kernel_replay": {
+    "command": [
+      "lake",
+      "env",
+      "leanchecker",
+      "--fresh",
+      "Solution"
+    ],
+    "exit_code": 0,
+    "seconds": 270.697
+  },
+  "comparison": {
+    "command": [
+      "lake",
+      "comparator",
+      "--config",
+      "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-verification/comparator.json",
+      "--inadvisably-no-sandbox"
+    ],
+    "exit_code": 0,
+    "seconds": 63.175,
+    "status": "passed",
+    "tool_sha256": {
+      "lean": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+      "lake": "d2d63c80ca10bd2cc9557d11d59221b95c6eefb078c9652a11ef887ab8a068a5",
+      "leanexport": "f533d8829d2f6507816a3c784055bf2eb8f9a7e53a3134affbe320eba5dc27c1",
+      "leanchecker": "41662275cb7d624d0f0fdf8cb3dc7d5c15e99b233be3ebec576a5c38df181844",
+      "nanoda_bin": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+      "con-ron": "7e04504e38276e0e2edb9b4fa992a9206424091b3cfa509ebe8024696b4ad8b0"
+    },
+    "selected_theorems": 10,
+    "configuration": {
+      "challenge_module": "Challenge",
+      "solution_module": "Solution",
+      "theorem_names": [
+        "PalomarResults.LossyShell.endpoint_trace_equivalence",
+        "PalomarResults.LossyShell.probability_endpoints",
+        "PalomarResults.LossyShell.mean_eq_iff_fold_eq",
+        "PalomarResults.LossyShell.legs_eq_of_mean_covariance",
+        "PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse",
+        "PalomarResults.LossyShell.twoLegLaw_eq_iff",
+        "PalomarResults.LossyShell.variance_sensitive_bounds",
+        "PalomarResults.LossyShell.fold_recovery",
+        "PalomarResults.LossyShell.difference_recovery",
+        "PalomarResults.LossyShell.all_length_designed_lower_bound"
+      ],
+      "definition_names": [],
+      "permitted_axioms": [
+        "propext",
+        "Quot.sound",
+        "Classical.choice"
+      ],
+      "external_kernels": {
+        "nanoda": [
+          "/Users/lennartrudolph/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/nanoda_bin"
+        ],
+        "con-ron": [
+          "/Users/lennartrudolph/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/con-ron"
+        ]
+      }
+    },
+    "comparison_sandbox": "disabled_local_macos"
+  },
+  "render": {
+    "status": "passed",
+    "core_notation": {
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--run",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/PalomarSubmission/scripts/core_notation_audit.lean",
+        "Challenge",
+        "theorem",
+        "PalomarResults.LossyShell.endpoint_trace_equivalence",
+        "theorem",
+        "PalomarResults.LossyShell.probability_endpoints",
+        "theorem",
+        "PalomarResults.LossyShell.mean_eq_iff_fold_eq",
+        "theorem",
+        "PalomarResults.LossyShell.legs_eq_of_mean_covariance",
+        "theorem",
+        "PalomarResults.LossyShell.legs_eq_of_mean_covariance_sparse",
+        "theorem",
+        "PalomarResults.LossyShell.twoLegLaw_eq_iff",
+        "theorem",
+        "PalomarResults.LossyShell.variance_sensitive_bounds",
+        "theorem",
+        "PalomarResults.LossyShell.fold_recovery",
+        "theorem",
+        "PalomarResults.LossyShell.difference_recovery",
+        "theorem",
+        "PalomarResults.LossyShell.all_length_designed_lower_bound"
+      ],
+      "exit_code": 0,
+      "seconds": 46.195
+    },
+    "literate": {
+      "command": [
+        "lake",
+        "build",
+        "Challenge:literate"
+      ],
+      "exit_code": 0,
+      "seconds": 45.211
+    },
+    "html": {
+      "command": [
+        "lake",
+        "exe",
+        "verso-html",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/.lake/build/literate",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/.lake/build/palomar-render-raw"
+      ],
+      "exit_code": 0,
+      "seconds": 4.132
+    },
+    "sanitize": {
+      "command": [
+        "lake",
+        "env",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-02/a-new-graph-theory-paper-and/.venv/bin/python",
+        "-B",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/PalomarSubmission/scripts/render_challenge.py",
+        "sanitize",
+        "--input-dir",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/.lake/build/palomar-render-raw",
+        "--output-dir",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/.lake/build/palomar-render-clean",
+        "--challenge",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/Challenge.lean",
+        "--solution",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/Solution.lean",
+        "--comparator",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/.lake/local-render/workspace/comparator.json",
+        "--challenge-module",
+        "Challenge",
+        "--lean",
+        "/Users/lennartrudolph/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/lean",
+        "--diagnostic-out",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/verification/sanitize-diagnostic.json",
+        "--audit-declarations",
+        "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23304384/palomar/verification/audit-declarations.json"
+      ],
+      "exit_code": 0,
+      "seconds": 3.892
+    },
+    "rendered_declarations": 10,
+    "renderer_revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+    "renderer_dependencies": [
+      {
+        "name": "Cli",
+        "revision": "2842b9871b04862f944c032e34052cb9448ccb71"
+      },
+      {
+        "name": "LeanSearchClient",
+        "revision": "95e037bfdc31d3916ac615446847fb01960e2719"
+      },
+      {
+        "name": "MD4Lean",
+        "revision": "31907cc18f48a95384f99cee5582c00fb39e0f67"
+      },
+      {
+        "name": "Qq",
+        "revision": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334"
+      },
+      {
+        "name": "aesop",
+        "revision": "75d936c7af167cc93fac0d31237682fc2204591d"
+      },
+      {
+        "name": "batteries",
+        "revision": "ed9b316aabe389fec1ef43c3326ab48c7e59be42"
+      },
+      {
+        "name": "illuminate",
+        "revision": "68a463c484e24708627b8761e8730e76b295d1e2"
+      },
+      {
+        "name": "importGraph",
+        "revision": "10930f8138f0462dbd744a91fc03a16fae0e046f"
+      },
+      {
+        "name": "mathlib",
+        "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+      },
+      {
+        "name": "plausible",
+        "revision": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912"
+      },
+      {
+        "name": "proofwidgets",
+        "revision": "4c70ac059693669e5756e32a7a94b57ee1e99dc5"
+      },
+      {
+        "name": "subverso",
+        "revision": "d047cb484b2f3598187450935dbcc84d078cb581"
+      },
+      {
+        "name": "verso",
+        "revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d"
+      }
+    ],
+    "entrypoint": ".lake/local-render/workspace/.lake/build/palomar-render-clean/Challenge/index.html",
+    "entrypoint_sha256": "5fc22a0e2b2a5fa6800f4a6ffefddcd2c5803afbf85809f729b7fd02224e7d61"
+  },
+  "inputs_unchanged": true
+}

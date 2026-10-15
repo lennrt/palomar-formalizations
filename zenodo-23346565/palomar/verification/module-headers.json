@@ -1,0 +1,179 @@
+[
+  {
+    "path": "Challenge.lean",
+    "imports": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Metric",
+      "Mathlib.Data.Finset.Sort"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression.lean",
+    "imports": [
+      "LocalDecompression.BoundedCells",
+      "LocalDecompression.BoundedPacket",
+      "LocalDecompression.Decoder",
+      "LocalDecompression.Encoding",
+      "LocalDecompression.GraphLayout",
+      "LocalDecompression.GraphPresentation",
+      "LocalDecompression.GraphReduction",
+      "LocalDecompression.Layout",
+      "LocalDecompression.LocalView",
+      "LocalDecompression.Main",
+      "LocalDecompression.MarkerLocality",
+      "LocalDecompression.Ownership",
+      "LocalDecompression.Padding",
+      "LocalDecompression.Partition",
+      "LocalDecompression.QuotientOrientation"
+    ],
+    "module": true
+  },
+  {
+    "path": "Solution.lean",
+    "imports": [
+      "LocalDecompression",
+      "Statement"
+    ],
+    "module": true
+  },
+  {
+    "path": "Statement.lean",
+    "imports": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Metric",
+      "Mathlib.Data.Finset.Sort"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/BoundedCells.lean",
+    "imports": [
+      "LocalDecompression.MarkerLocality"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/BoundedPacket.lean",
+    "imports": [
+      "LocalDecompression.BoundedCells",
+      "LocalDecompression.Decoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Decoder.lean",
+    "imports": [
+      "LocalDecompression.Main"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Encoding.lean",
+    "imports": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/GraphLayout.lean",
+    "imports": [
+      "LocalDecompression.Layout",
+      "LocalDecompression.Partition"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/GraphPresentation.lean",
+    "imports": [
+      "LocalDecompression.Ownership",
+      "Mathlib.Data.Sym.Sym2.Order"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/GraphReduction.lean",
+    "imports": [
+      "LocalDecompression.Decoder",
+      "LocalDecompression.QuotientOrientation"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Layout.lean",
+    "imports": [
+      "Mathlib.Data.Fintype.EquivFin",
+      "Mathlib.Data.Fintype.Option",
+      "Mathlib.Logic.Equiv.Basic",
+      "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/LocalView.lean",
+    "imports": [
+      "LocalDecompression.Partition"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Main.lean",
+    "imports": [
+      "LocalDecompression.Encoding",
+      "LocalDecompression.GraphLayout",
+      "LocalDecompression.GraphPresentation",
+      "LocalDecompression.LocalView",
+      "Mathlib.Data.Finset.Sort",
+      "Mathlib.Logic.Equiv.Option"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/MarkerLocality.lean",
+    "imports": [
+      "LocalDecompression.GraphLayout",
+      "LocalDecompression.GraphPresentation",
+      "LocalDecompression.LocalView",
+      "LocalDecompression.Main"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Ownership.lean",
+    "imports": [
+      "Mathlib.Algebra.BigOperators.Fin",
+      "Mathlib.Combinatorics.SimpleGraph.DegreeSum",
+      "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Padding.lean",
+    "imports": [
+      "LocalDecompression.LocalView",
+      "Mathlib.Combinatorics.SimpleGraph.Sum"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/Partition.lean",
+    "imports": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Metric",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/QuotientOrientation.lean",
+    "imports": [
+      "LocalDecompression.Main",
+      "Mathlib.Data.Fintype.Fin"
+    ],
+    "module": true
+  }
+]

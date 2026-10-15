@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "packet_cases": 160,
+  "graph_cases": [
+    {
+      "graph": "isolated",
+      "identifiers": "increasing",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "isolated",
+      "identifiers": "permuted",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "K4",
+      "identifiers": "increasing",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "K4",
+      "identifiers": "permuted",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "K3,3",
+      "identifiers": "increasing",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "K3,3",
+      "identifiers": "permuted",
+      "large_cells": 0,
+      "small_components": 1
+    },
+    {
+      "graph": "path500",
+      "identifiers": "increasing",
+      "large_cells": 6,
+      "small_components": 0
+    },
+    {
+      "graph": "path500",
+      "identifiers": "permuted",
+      "large_cells": 4,
+      "small_components": 0
+    },
+    {
+      "graph": "cycle300",
+      "identifiers": "increasing",
+      "large_cells": 3,
+      "small_components": 0
+    },
+    {
+      "graph": "cycle300",
+      "identifiers": "permuted",
+      "large_cells": 2,
+      "small_components": 0
+    },
+    {
+      "graph": "prism600",
+      "identifiers": "increasing",
+      "large_cells": 3,
+      "small_components": 0
+    },
+    {
+      "graph": "prism600",
+      "identifiers": "permuted",
+      "large_cells": 2,
+      "small_components": 0
+    },
+    {
+      "graph": "mixed",
+      "identifiers": "increasing",
+      "large_cells": 6,
+      "small_components": 3
+    },
+    {
+      "graph": "mixed",
+      "identifiers": "permuted",
+      "large_cells": 5,
+      "small_components": 3
+    },
+    {
+      "graph": "degree5",
+      "identifiers": "increasing",
+      "large_cells": 1,
+      "small_components": 0
+    },
+    {
+      "graph": "degree5",
+      "identifiers": "permuted",
+      "large_cells": 1,
+      "small_components": 0
+    }
+  ],
+  "scope": "Finite checks of geometry, capacity and codec; no implementation of the LOCAL orientation oracle."
+}

@@ -1,0 +1,170 @@
+version: "v0.4"
+project:
+  name: "Optimal Local Decompression: Finite Reduction and Graph Geometry"
+  description: >-
+    Finite reconstruction and geometric foundations of a counting-optimal
+    vertex-label scheme for arbitrary edge subsets at fixed odd maximum
+    degree 2k-1. On each connected component with more than 16(k+1) vertices,
+    a single decoder, chosen before the roots and advice,
+    reconstructs every edge-bit assignment and the exact marker set from
+    k bits per vertex, conditional on an explicit boundary outdegree bound.
+    An explicit ordered packet reader recovers the supplied advice from the
+    same labels. The same decoder has physical label radius (4r+1)T+8r+2
+    for roots covering within 2r and T-local orientation on the actual cell
+    quotient, with physical topology and marker set fixed in the comparison.
+    Eight selected statements cover the marked advice-first codec, explicit
+    odd-degree capacity, complete-graph counting lower bound, existence of
+    bounded connected nearest-root partitions, and bounded-cell geometry and
+    stability on arbitrary labels. All substantive proof modules are included.
+    The manuscript's full unconditional synchronous LOCAL theorem remains
+    partially mechanized: the published orientation algorithm and its
+    operational simulation and totalization are documented dependencies,
+    not Lean axioms or claimed formal endpoints.
+  authors:
+    - "Lennart Rudolph"
+  responsible_maintainers:
+    - "Lennart Rudolph"
+  license: "MIT"
+classification:
+  arxiv: ["cs.DC", "math.CO"]
+  msc2020: ["68W15", "05C85"]
+sources:
+  - title: "Optimal Local Decompression on Graphs of Odd Maximum Degree"
+    authors: ["Lennart Rudolph"]
+    type: "paper"
+    relationship: "formalizes"
+    id: "doi:10.5281/zenodo.23346565"
+    location: "https://doi.org/10.5281/zenodo.23346565"
+    author_endorsement: "participated"
+    note: >-
+      Author-supplied manuscript dated October 13, 2026 and accompanying Lean
+      sources. Partial mechanization of Theorem 1, as explicitly documented
+      in Section 7: selected endpoints formalize the finite coding reduction,
+      Lemmas 4, 5 and 8, and the integer counting lower bound. The selected
+      graph reconstruction theorem is uniform over root sets and advice on
+      one physical graph and combines roundtrip with conditional quantitative
+      fixed-marker locality of the same decoder. It does not assert the unconditional operational
+      LOCAL theorem or replace its external mathematical dependencies.
+  - title: "Distributed Computation with Local Advice"
+    authors:
+      - "Alkida Balliu"
+      - "Sebastian Brandt"
+      - "Fabian Kuhn"
+      - "Krzysztof Nowicki"
+      - "Dennis Olivetti"
+      - "Eva Rotenberg"
+      - "Jukka Suomela"
+    id: "doi:10.4230/LIPIcs.DISC.2025.12"
+    location: "https://doi.org/10.4230/LIPIcs.DISC.2025.12"
+    type: "paper"
+    relationship: "background"
+    author_endorsement: "not-contacted"
+    note: >-
+      Section 1.8, Question 4 poses the cubic two-bit local-decompression
+      question addressed by the manuscript. Section 1.4.1 gives the preceding
+      orientation-based encoding bound and counting argument. The advice
+      model and those ingredients are credited rather than claimed as new.
+  - title: "Distributed Computation with Local Advice, full version"
+    authors:
+      - "Alkida Balliu"
+      - "Sebastian Brandt"
+      - "Fabian Kuhn"
+      - "Krzysztof Nowicki"
+      - "Dennis Olivetti"
+      - "Eva Rotenberg"
+      - "Jukka Suomela"
+    id: "arxiv:2405.04519v2"
+    location: "https://arxiv.org/abs/2405.04519v2"
+    type: "paper"
+    relationship: "background"
+    author_endorsement: "not-contacted"
+    note: >-
+      Appendix B, Corollary 15 supplies the one-bit almost-balanced-orientation
+      theorem used by the written proof, not formalized or introduced as a
+      Lean axiom here. Appendices C.1 and E contain predecessors employing
+      recognizable markers, clustering and ordered storage. The submitted
+      finite theorem only assumes the sufficient one-sided boundary bound;
+      it does not equate that bound with full almost balance.
+related_formalizations: []
+status:
+  scope: >-
+    Eight independently stated selected theorems, proved from the included
+    LocalDecompression library and pinned Mathlib. The graph theorem fixes
+    actual topology, identifiers and orientation family, then chooses one
+    decoder before all root sets, advice and edge payloads. It proves exact
+    marker recovery and all-payload roundtrip under a one-sided boundary
+    orientation bound, and exact recovery of the supplied advice from those
+    same labels by a specified ordered packet reader at every covering radius.
+    The same decoder satisfies the physical label-locality
+    radius (4r+1)T+8r+2 at an edge's smaller endpoint when roots cover within 2r
+    and orientation depends only on radius-T advice in the actual cell quotient.
+    This applies to all labels with the fixed marker set, including malformed
+    payloads. The quotient has edges exactly at physical cell crossings;
+    locality uses quotient walks rather than totalized natural distance.
+    Partition existence, geodesic connectivity, degree-only
+    cardinality bounds and arbitrary-label radius-2R cell stability are
+    selected, alongside capacity, codec and counting endpoints. The retained
+    library additionally proves the canonical graph presentation, residual
+    simple quotient, parallel-edge pairing and orientation lift, fixed-marker
+    assembled decoder locality, across-marker packet stability, bounded
+    ordered advice readers, small-component recognition and exact virtual
+    padding parameters. Challenge's eight intentional placeholders are not
+    dependencies of any proved declaration. The full operational distributed
+    theorem, external orientation algorithm, cross-topology simulation,
+    totalization and mixed-component assembly remain paper-level arguments.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-6"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Lean 4, pinned Mathlib, compiler checks and parallel implementation
+        and adversarial review. The supplied manuscript and proof library
+        disclose extensive ChatGPT/Codex assistance. This repository revision
+        adds independent graph statements and submission documentation.
+      prompting_notes: >-
+        Preserve the paper's mathematical assumptions, expose substantial
+        graph-native endpoints, avoid importing Challenge into Solution,
+        verify proof dependencies, and disclose remaining operational gaps.
+  spend_usd: "not tracked"
+  notes: >-
+    Automated assistance is not authorship, independent human peer review,
+    a novelty certificate, or evidence of Palomar service acceptance.
+fidelity:
+  divergences: >-
+    This is a partial formalization of the paper's headline theorem, not a
+    complete formal LOCAL implementation. The selected reconstruction
+    theorem assumes a boundary-orientation family with sufficient good advice;
+    the library proves its residual-quotient lift but not the published
+    algorithm. Its decoder is uniform over root sets on a fixed graph, while
+    the selected quantitative locality conclusion fixes the marker set.
+    Correctness and locality use one decoder witness; advice recovery uses
+    the independently defined ordered packet-parity reader on the same labels.
+    Such an extensional
+    fixed-topology function may use global precomputation; the theorem does
+    not assert uniform operational behavior across different graphs.
+    Separate cell
+    and packet results permit changing markers on that fixed topology.
+    Supplied linear orders determine storage order independently of the
+    injective identifiers used to break distance ties; the manuscript uses
+    identifier-induced orders. No premise assumes recovery of edge labels.
+review:
+  status: "AI-assisted internal review; no independent human review recorded"
+  reviewers: []
+  notes: >-
+    The independent Challenge and declaration map distinguish the graph
+    reconstruction result from its arithmetic ingredients. Source relationships,
+    quantifier order, same-decoder correctness and locality, explicit
+    same-label advice recovery, actual cell
+    adjacency, physical radius accounting, actual-graph degree consistency,
+    absent-marker behavior and partial-LOCAL scope were reviewed. Local verification is not official
+    significance review, service verification or registration.
+alignment:
+  namespace: "PalomarDecompression"
+acknowledgements: >-
+  Lean and Mathlib contributors; Balliu, Brandt, Kuhn, Nowicki, Olivetti,
+  Rotenberg and Suomela for the advice model, open question and orientation
+  theorem; OpenAI Codex for research, formalization and writing assistance.

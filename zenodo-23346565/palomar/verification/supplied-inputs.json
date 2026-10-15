@@ -1,0 +1,17 @@
+{
+  "source": "user-supplied publication files",
+  "paper_doi": "10.5281/zenodo.23346565",
+  "version_record": "https://zenodo.org/records/23346565",
+  "files": [
+    {
+      "file": "optimal-local-decompression.pdf",
+      "sha256": "25aeccf1bb888005d4f240196623afddc04fda43df9751a20762a787e164a108",
+      "bytes": 120768
+    },
+    {
+      "file": "optimal-local-decompression-supplemental-materials.zip",
+      "sha256": "6811b0bc47a0209fd3f4a4a75ff8aa8dec7214f07270002922ba152e539b94bc",
+      "bytes": 72629
+    }
+  ]
+}

@@ -34,6 +34,8 @@ project claims to formalize its paper end to end.
 | [zenodo-22404456/](zenodo-22404456/) | Distance-Shell Tomography on Graphs: Integer Trades and Optimal Grid Sensing | [10.5281/zenodo.22404456](https://doi.org/10.5281/zenodo.22404456) | [PALOMAR-2026-09-07-000003](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-07-000003&version=1) | [RG](https://www.researchgate.net/publication/414060424_Distance-Shell_Tomography_on_Graphs_Integer_Trades_and_Optimal_Grid_Sensing) |
 | [zenodo-22667596/](zenodo-22667596/) | Short-Cycle Decompositions and Full Zombie Damage in Cubic Graphs | [10.5281/zenodo.22667596](https://doi.org/10.5281/zenodo.22667596) | [PALOMAR-2026-09-10-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-09-10-000001&version=1) | [RG](https://www.researchgate.net/publication/414150361_Short-Cycle_Decompositions_and_Full_Zombie_Damage_in_Cubic_Graphs) |
 | [zenodo-23125523/](zenodo-23125523/) | Distance-Shell Tomography: Geometric Certificates for Fault-Tolerant Sensing, Moment Compression, and Hypercube Equalization | [10.5281/zenodo.23125523](https://doi.org/10.5281/zenodo.23125523) | [PALOMAR-2026-10-04-000001](https://palomar-registry.org/entry?id=PALOMAR-2026-10-04-000001&version=1) | [RG](https://www.researchgate.net/publication/415199103_Distance-Shell_Tomography_Geometric_Certificates_for_Fault-Tolerant_Sensing_Moment_Compression_and_Hypercube_Equalization) |
+| [zenodo-23304384/](zenodo-23304384/) | Lossy Distance-Shell Tomography on Paths: Recovery from Mean and Covariance | [10.5281/zenodo.23252713](https://doi.org/10.5281/zenodo.23252713) (v2 record [23304384](https://zenodo.org/records/23304384)) | -- | -- |
+| [zenodo-23346565/](zenodo-23346565/) | Optimal Local Decompression on Graphs of Odd Maximum Degree | [10.5281/zenodo.23346565](https://doi.org/10.5281/zenodo.23346565) | -- | -- |
 
 ## Verifying a project
 
@@ -52,10 +54,13 @@ revisions remain pinned in each `lake-manifest.json`.
 All Lean sources use the module system, including auxiliary files outside the
 default build targets. Public imports and exposed public sections preserve
 the earlier projects' exported declarations and reducible definitions.
-`ruby scripts/check-layout.rb` checks all 13 projects, including the module
+`ruby scripts/check-layout.rb` checks all 15 projects, including the module
 header convention and Palomar's 10,000-line source limit. `scripts/build-all.sh`
 builds their default targets. The repository-wide migration and its additional
 checks are recorded in [MODULE-MIGRATION.md](MODULE-MIGRATION.md).
+The two October additions also have a reproducible
+[local verification workflow](LOCAL-VERIFICATION.md), including independent
+kernel replay, Comparator and sanitized Challenge rendering.
 
 Palomar scans every Lean source in the repository, even when submitting only
 one Comparator configuration. A submission must also use a currently accepted

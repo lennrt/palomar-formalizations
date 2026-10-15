@@ -1,0 +1,175 @@
+[
+  {
+    "path": "Challenge.lean",
+    "imports": [
+      "Mathlib"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell.lean",
+    "imports": [
+      "LossyShell.Basic",
+      "LossyShell.Landing",
+      "LossyShell.Main",
+      "LossyShell.Moments",
+      "LossyShell.Recovery",
+      "LossyShell.Trace"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellResearch.lean",
+    "imports": [
+      "ShellResearch.Deterministic",
+      "ShellResearch.FiniteSample",
+      "ShellResearch.Pipeline",
+      "ShellResearch.TailBudget",
+      "ShellSampling.AllLengthLower",
+      "ShellSampling.Geometric",
+      "ShellSampling.LowerBound"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellSampling.lean",
+    "imports": [
+      "ShellSampling.AllLengthLower",
+      "ShellSampling.Geometric",
+      "ShellSampling.LowerBound"
+    ],
+    "module": true
+  },
+  {
+    "path": "Solution.lean",
+    "imports": [
+      "LossyShell",
+      "ShellResearch",
+      "ShellSampling"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Basic.lean",
+    "imports": [
+      "Mathlib.Algebra.BigOperators.Ring.Finset",
+      "Mathlib.Algebra.Order.Field.Basic",
+      "Mathlib.Data.Fin.VecNotation",
+      "Mathlib.Data.Fintype.BigOperators",
+      "Mathlib.Data.List.FinRange"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Landing.lean",
+    "imports": [
+      "LossyShell.Basic",
+      "Mathlib.Order.Interval.Finset.Fin",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity",
+      "Mathlib.Tactic.Ring"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Main.lean",
+    "imports": [
+      "LossyShell.Recovery",
+      "LossyShell.Trace",
+      "Mathlib.Data.Fin.VecNotation"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Moments.lean",
+    "imports": [
+      "LossyShell.Landing"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Recovery.lean",
+    "imports": [
+      "LossyShell.Moments",
+      "Mathlib.Data.Finset.Max",
+      "Mathlib.Tactic.LinearCombination"
+    ],
+    "module": true
+  },
+  {
+    "path": "LossyShell/Trace.lean",
+    "imports": [
+      "LossyShell.Landing",
+      "Mathlib.Algebra.BigOperators.Fin"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellResearch/Deterministic.lean",
+    "imports": [
+      "ShellResearch.FiniteSample"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellResearch/FiniteSample.lean",
+    "imports": [
+      "LossyShell.Main",
+      "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellResearch/Pipeline.lean",
+    "imports": [
+      "ShellResearch.Deterministic"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellResearch/TailBudget.lean",
+    "imports": [
+      "Mathlib.Tactic",
+      "ShellSampling.Geometric"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellSampling/AllLengthLower.lean",
+    "imports": [
+      "ShellResearch.FiniteSample",
+      "ShellSampling.LowerBound"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellSampling/Geometric.lean",
+    "imports": [
+      "Mathlib.Algebra.Order.GroupWithZero.Basic",
+      "Mathlib.Algebra.Ring.GeomSum",
+      "Mathlib.Basic.Real.Basic",
+      "Mathlib.Tactic.Linarith",
+      "Mathlib.Tactic.Positivity",
+      "ShellSampling.LowerBound"
+    ],
+    "module": true
+  },
+  {
+    "path": "ShellSampling/LowerBound.lean",
+    "imports": [
+      "LossyShell.Main",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+      "Mathlib.Basic.Real.Basic",
+      "Mathlib.Tactic.FinCases"
+    ],
+    "module": true
+  },
+  {
+    "path": "verification/AxiomAudit.lean",
+    "imports": [
+      "Solution"
+    ],
+    "module": true
+  }
+]

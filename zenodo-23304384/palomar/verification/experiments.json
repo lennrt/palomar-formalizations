@@ -1,0 +1,14 @@
+{
+  "scope": "included finite experiments; separate from Lean proof checks",
+  "program_sha256": {
+    "experiments/check_design_bounds.py": "bb1d43a89f993418a8582548b347786c0d0bd6e221ca18045e2b862f18cc7773",
+    "experiments/check_sampling.py": "9a2caff49769fb879d2c6bb7ab8805f0e240448a35ccc76b88d0c8f2fb3c8a74",
+    "experiments/check_streaming.py": "e4ff880dccfa580e5ae5c2d8fee115d70d7282c542532ab8a807bdaea3c94422",
+    "experiments/decoder.py": "060affa47aea58a5ae548bde318536ef0139e7a7f00de6e17e0d0fe7c9625675"
+  },
+  "logs": {
+    "verification/check-design-bounds.log": "5d47eb2f66458b7d4a4aa0141352f9752b4f20250aaabc2da5363e0338dcfbb3",
+    "verification/check-sampling.log": "8706e94a4af1ae7dc73ef1cef864a0b14c120ad90b0750e46e33e2a9fd37733f",
+    "verification/check-streaming.log": "8ab04e1ae6e4f2a842abdf0b953e5689141dc654b847fb2df70dd6d11d899d7b"
+  }
+}

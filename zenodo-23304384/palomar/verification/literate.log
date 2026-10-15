@@ -1,0 +1,40 @@
+warning: manifest out of date: git url of dependency 'mathlib' changed; use `lake update mathlib` to update it
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+⚠ [104/488] Replayed Verso.Parser
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+⚠ [310/488] Replayed VersoLiterateMain
+warning: src/verso-literate/VersoLiterateMain.lean:15:0: 'Lean.Server.InfoUtils' has been deprecated: please replace this import by
+
+import Lean.Elab.InfoTree.Util
+⚠ [9244/9246] Built Challenge (7.0s)
+warning: Challenge.lean:155:8: declaration uses `sorry`
+warning: Challenge.lean:161:8: declaration uses `sorry`
+warning: Challenge.lean:167:8: declaration uses `sorry`
+warning: Challenge.lean:172:8: declaration uses `sorry`
+warning: Challenge.lean:180:8: declaration uses `sorry`
+warning: Challenge.lean:191:8: declaration uses `sorry`
+warning: Challenge.lean:198:8: declaration uses `sorry`
+warning: Challenge.lean:210:8: declaration uses `sorry`
+warning: Challenge.lean:220:8: declaration uses `sorry`
+warning: Challenge.lean:234:8: declaration uses `sorry`
+✔ [9245/9246] Built PalomarChallengeRender/Challenge:literate (26s)
+Build completed successfully (9246 jobs).

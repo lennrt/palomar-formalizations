@@ -1,0 +1,21 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarDecompression.cubicCapacity",
+    "PalomarDecompression.oddDegreeCapacity",
+    "PalomarDecompression.markedAdviceCodec",
+    "PalomarDecompression.informationLowerBound",
+    "PalomarDecompression.largeComponentPartition",
+    "PalomarDecompression.arbitraryLabelCellGeometry",
+    "PalomarDecompression.boundedCellStability",
+    "PalomarDecompression.graphMarkerReconstruction"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

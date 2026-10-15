@@ -1,0 +1,9 @@
+{
+  "scope": "included finite experiments; separate from Lean proof checks",
+  "program_sha256": {
+    "experiments/check_invariants.py": "3c8cce07a5519c47843ecfb5fa6fa12589e93686e363fd44091b660aa7157564"
+  },
+  "logs": {
+    "verification/check-invariants.log": "c66feeeaf6ca28902ed7ba2b4c9120d8523130090eaf3f4956e17b67f2559ed7"
+  }
+}

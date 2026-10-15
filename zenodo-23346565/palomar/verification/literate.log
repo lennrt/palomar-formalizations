@@ -1,0 +1,37 @@
+warning: manifest out of date: git url of dependency 'mathlib' changed; use `lake update mathlib` to update it
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+⚠ [104/541] Replayed Verso.Parser
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:243:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+warning: src/verso/Verso/Parser.lean:258:42: Tactic `constructor` applied constructor `List.Mem.head`, but `List.Mem.tail` also matches the goal.
+
+Hint: Use `constructor!` to apply the first matching constructor without this warning:
+  [apply] constructor!
+⚠ [310/541] Replayed VersoLiterateMain
+warning: src/verso-literate/VersoLiterateMain.lean:15:0: 'Lean.Server.InfoUtils' has been deprecated: please replace this import by
+
+import Lean.Elab.InfoTree.Util
+⚠ [1332/1334] Replayed Challenge
+warning: Challenge.lean:119:8: declaration uses `sorry`
+warning: Challenge.lean:124:8: declaration uses `sorry`
+warning: Challenge.lean:130:8: declaration uses `sorry`
+warning: Challenge.lean:143:8: declaration uses `sorry`
+warning: Challenge.lean:156:8: declaration uses `sorry`
+warning: Challenge.lean:179:8: declaration uses `sorry`
+warning: Challenge.lean:195:8: declaration uses `sorry`
+warning: Challenge.lean:218:8: declaration uses `sorry`
+Build completed successfully (1334 jobs).
