@@ -12,67 +12,113 @@ here, as the conventional unproved challenge goals. Solution never imports
 this module; Comparator checks its same-name declarations separately.
 
 Source: https://doi.org/10.5281/zenodo.23346565.
-The principal selected result is graphMarkerReconstruction, with one decoder
-uniform over root sets on a fixed physical graph.
-The published orientation theorem and the complete LOCAL simulation are not
-claimed as closed Lean proofs. -/
+The principal result is uniformFiniteViewReconstruction: one decoder family
+recovers edge bits at either endpoint and is local across changing topology
+and marker patterns, conditional on an explicit finite-view orientation rule.
+The external orientation algorithm and executable-machine semantics remain
+outside this formalization. -/
+namespace LocalDecompression.OrientationOracle
+open scoped BigOperators
+structure NodeRecord where
+  identifier : ℕ
+  advice : Fin 2
+  neighbors : Finset ℕ
+  deriving DecidableEq
+
+noncomputable def neighbors {V : Type*} [Fintype V]
+    (G : SimpleGraph V) (v : V) : Finset V := by
+  classical
+  exact G.neighborFinset v
+
+/-- A finite flooding process; the successor adds all neighbors. -/
+noncomputable def floodBall {V : Type*} [Fintype V]
+    (G : SimpleGraph V) : ℕ → V → Finset V
+  | 0, v => {v}
+  | t + 1, v => by
+    classical
+    exact floodBall G t v ∪ (floodBall G t v).biUnion (neighbors G)
+
+noncomputable def record {V : Type*} [Fintype V]
+    (G : SimpleGraph V) (id : V → ℕ) (advice : V → Fin 2) (v : V) : NodeRecord :=
+  ⟨id v, advice v, (neighbors G v).image id⟩
+
+/-- Records include the full neighbor-ID list at the fringe, so this view
+requires at most t+1 communication rounds with canonical ID-ordered ports. -/
+noncomputable def view {V : Type*} [Fintype V]
+    (G : SimpleGraph V) (id : V → ℕ) (advice : V → Fin 2) (t : ℕ) (v : V) :
+    Finset NodeRecord := (floodBall G t v).image (record G id advice)
+
+/-- Public order, exact maximum degree, ID exponent; two ordered endpoint IDs;
+then a finite view. No whole graph or actual root set is available to this rule. -/
+abbrev Rule := ℕ → ℕ → ℕ → ℕ → ℕ → Finset NodeRecord → Fin 2
+
+noncomputable def output {V : Type*} [Fintype V]
+    (F : Rule) (N D c t : ℕ) (G : SimpleGraph V) (id : V → ℕ)
+    (advice : V → Fin 2) (u v : V) : Fin 2 :=
+  F N D c (id u) (id v) (view G id advice t u)
+
+/-- Canonical ownership uses the smaller-ID endpoint's output, making the
+orientation consistent on every advice assignment, including invalid advice. -/
+noncomputable def tailId {V : Type*} [Fintype V]
+    (F : Rule) (N D c t : ℕ) (G : SimpleGraph V) (id : V → ℕ)
+    (advice : V → Fin 2) (u v : V) : ℕ :=
+  if id u < id v then
+    if output F N D c t G id advice u v = 0 then id u else id v
+  else
+    if output F N D c t G id advice v u = 0 then id v else id u
+
+noncomputable def outdegree {V : Type*} [Fintype V]
+    (F : Rule) (N D c t : ℕ) (G : SimpleGraph V) (id : V → ℕ)
+    (advice : V → Fin 2) (v : V) : ℕ :=
+  ((neighbors G v).filter (fun w => tailId F N D c t G id advice v w = id v)).card
+
+/-- The exact sufficient consequence of the external one-bit orientation
+theorem. It is an explicit theorem premise, not an axiom or implementation.
+The same total finite-view rule is used for all graphs and advice assignments. -/
+def GoodOneBitOracle (F : Rule) (T : ℕ → ℕ) : Prop :=
+  ∀ (V : Type) [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (N D c : ℕ),
+    Fintype.card V = N → G.maxDegree = D → 1 ≤ c →
+    ∀ id : V → ℕ, Function.Injective id →
+      (∀ v, 1 ≤ id v ∧ id v ≤ N ^ c) →
+      ∃ advice : V → Fin 2, ∀ v,
+        2 * outdegree F N D c (T D) G id advice v ≤ G.degree v + 1
+
+
+end LocalDecompression.OrientationOracle
+
+namespace LocalDecompression.FiniteView
+variable {V : Type*} [Fintype V] [DecidableEq V]
+/-- Equality of rooted induced physical views, on common vertex identifiers.
+Labels are deliberately separate from the topology clause. This compares
+possibly different physical graphs, without fixing their outside topology. -/
+structure SameGraphView (G H : SimpleGraph V) (center : V) (radius : ℕ) : Prop where
+  vertices : ∀ v, G.dist center v ≤ radius ↔ H.dist center v ≤ radius
+  edges : ∀ u v, G.dist center u ≤ radius → G.dist center v ≤ radius →
+    (G.Adj u v ↔ H.Adj u v)
+
+
+end LocalDecompression.FiniteView
+
+namespace PalomarDecompression
+/-- Radius used for bounded marker selection. -/
+def cellSelectionRadius (k : ℕ) : ℕ := 2 * (16 * (k + 1))
+
+/-- Degree bound on the simple residual quotient, independent of graph order. -/
+def quotientDegreeBound (k : ℕ) : ℕ := (2 * k - 1) * (2 * k) ^ cellSelectionRadius k
+
+/-- A conservative physical radius for the total finite-view decoder. -/
+def uniformRadius (k : ℕ) (T : ℕ → ℕ) : ℕ :=
+  (3 * cellSelectionRadius k + 2) +
+    (2 * cellSelectionRadius k + 1) * (T (quotientDegreeBound k) + 1) + 1
+end PalomarDecompression
+
 namespace PalomarDecompression
 open scoped BigOperators
-
-/-- Degree in a finite loopless edge presentation, counted with multiplicity.
-The left/right order is bookkeeping and does not orient the graph. -/
-def incidenceDegree {V E : Type*} [DecidableEq V] [Fintype E]
-    (left right : E → V) (v : V) : ℕ :=
-  ∑ e, ((if left e = v then 1 else 0) + (if right e = v then 1 else 0))
-
-/-- The vertices assigned to one root of a partition. -/
-def cellVertices {V C : Type*} [Fintype V] [DecidableEq C]
-    (part : V → C) (c : C) : Finset V :=
-  Finset.univ.filter (fun v => part v = c)
-
-/-- Number of edges with exactly one endpoint in a cell. -/
-def boundaryCount {V E C : Type*} [Fintype E] [DecidableEq C]
-    (left right : E → V) (part : V → C) (c : C) : ℕ :=
-  ∑ e, if (part (left e) = c ∧ part (right e) ≠ c) ∨
-    (part (left e) ≠ c ∧ part (right e) = c) then 1 else 0
-
-/-- Boundary edges owned by a cell when the orientation selects an endpoint:
-zero selects left and one selects right. Internal edges are excluded. -/
-def outgoingCount {V E C : Type*} [Fintype E] [DecidableEq C]
-    (left right : E → V) (part : V → C)
-    (orientation : (C → Fin 2) → E → Fin 2) (advice : C → Fin 2) (c : C) : ℕ :=
-  (Finset.univ.filter (fun e =>
-    (if orientation advice e = 0 then part (left e) else part (right e)) = c ∧
-      part (left e) ≠ part (right e))).card
-
-/-- The orientation-only oracle condition. This contains no edge payload,
-encoder, decoder, or recovery hypothesis. -/
-def BalancedBoundaryAdvice {V E C : Type*} [Fintype E] [DecidableEq C]
-    (left right : E → V) (part : V → C)
-    (orientation : (C → Fin 2) → E → Fin 2) (advice : C → Fin 2) : Prop :=
-  ∀ c, 2 * outgoingCount left right part orientation advice c ≤
-    boundaryCount left right part c + 1
-
 
 /-- Actual undirected edges listed once in increasing endpoint order. -/
 abbrev GraphEdge {V : Type*} [LinearOrder V] (G : SimpleGraph V) :=
   {p : V × V // p.1 < p.2 ∧ G.Adj p.1 p.2}
-
-/-- Actual adjacency of distinct cells, witnessed by a physical graph edge. -/
-def CellQuotient {V C : Type*} (G : SimpleGraph V) (part : V → C) : SimpleGraph C where
-  Adj c d := c ≠ d ∧ ∃ u v, part u = c ∧ part v = d ∧ G.Adj u v
-  symm := ⟨fun _ _ h => ⟨Ne.symm h.1,
-    Exists.elim h.2 (fun u hu => Exists.elim hu
-      (fun v hv => ⟨v, u, hv.2.1, hv.1, hv.2.2.symm⟩))⟩⟩
-  loopless := ⟨fun _ h => h.1 rfl⟩
-
-/-- Only quotient-nearby advice can affect this orientation output. Walks
-make the definition valid even when the quotient is disconnected. -/
-def CellOrientationLocal {V C : Type*} [LinearOrder V] (G : SimpleGraph V)
-    (part : V → C) (orientation : (C → Fin 2) → GraphEdge G → Fin 2) (T : ℕ) : Prop :=
-  ∀ a b e, (∀ c, (∃ p : (CellQuotient G part).Walk (part e.val.1) c,
-    p.length ≤ T) → a c = b c) → orientation a e = orientation b e
-
 
 /-- Nearest root, breaking distance ties by the supplied injective identifiers. -/
 def NearestRoot {V : Type*} (G : SimpleGraph V) (roots : Finset V)
@@ -99,21 +145,6 @@ noncomputable def truncatedCell {V : Type*} [Fintype V] (G : SimpleGraph V)
   classical
   exact Finset.univ.filter (fun v =>
     NearestRoot G (zeroMarkers labels) id c v ∧ G.dist c v ≤ R)
-
-/-- The ordered nonzero digits on a specified set of storage sites. -/
-noncomputable def packetValue {V : Type*} [LinearOrder V] (q : ℕ)
-    (labels : V → Fin (q + 1)) (sites : Finset V) : ℕ :=
-  ∑ i : Fin (Fintype.card {v // v ∈ sites}),
-    ((labels ((Fintype.orderIsoFinOfCardEq {v // v ∈ sites} rfl) i).val).val - 1) *
-      q ^ i.val
-
-/-- Explicit advice reader: read the nonroot truncated-cell sites in increasing
-vertex order, subtract the marker offset and take the base-q word's parity.
-No orientation, advice, or payload index is an input. Empty packets give zero. -/
-noncomputable def packetAdvice {V : Type*} [Fintype V] [LinearOrder V]
-    (q : ℕ) (G : SimpleGraph V) (id : V → ℕ) (R : ℕ)
-    (labels : V → Fin (q + 1)) (c : V) : ℕ :=
-  packetValue q labels ((truncatedCell G id R labels c).erase c) % 2
 
 /-- The ternary storage inequality for subcubic cells. -/
 theorem cubicCapacity (s : ℕ) (hs : 37 ≤ s) :
@@ -200,47 +231,36 @@ theorem boundedCellStability
     truncatedCell G id R x c = truncatedCell G id R y c := by
   sorry
 
-/-- Graph-native reconstruction and label-locality of ONE decoder chosen
-before the roots and advice. The same simple graph supplies edges, degrees
-and distances. The decoder receives only labels, whose zeros reveal roots.
-Every separated root set and advice satisfying the boundary outdegree bound
-works for every input edge subset. The explicit ordered packet reader recovers
-the supplied advice from these same labels, for every covering radius.
-It receives no orientation or payload indices. Moreover, if these roots cover within 2r
-and the orientation is T-local on the actual cell quotient, the SAME decoder
-has physical label radius (4r+1)T+8r+2 at the edge's smaller endpoint on all
-labels with this marker set, including labels outside the encoder's image.
-The premises concern orientation outputs only, not payload recovery or final
-decoder locality. This is the quantitative finite reduction behind Lemmas 7
-and 9 of https://doi.org/10.5281/zenodo.23346565. The locality assertion fixes
-topology and markers; it does not formalize uniform operational LOCAL
-semantics, the external orientation algorithm or malformed-marker execution. -/
-theorem graphMarkerReconstruction
-    {V : Type*} [Fintype V] [LinearOrder V]
-    (G : SimpleGraph V) [DecidableRel G.Adj] (hconn : G.Connected)
-    (id : V → ℕ) (hinj : Function.Injective id) (k : ℕ) (hk : 2 ≤ k)
-    (hlarge : 16 * (k + 1) < Fintype.card V)
-    (hdegree : ∀ v, G.degree v ≤ 2 * k - 1)
-    (orientation : (roots : Finset V) → roots.Nonempty →
-      (roots → Fin 2) → GraphEdge G → Fin 2) :
-    ∃ decode : (V → Fin ((2 ^ k - 1) + 1)) → (GraphEdge G → Fin 2),
-    ∀ (roots : Finset V) (hne : roots.Nonempty),
-      (∀ a ∈ roots, ∀ b ∈ roots, a ≠ b → 2 * (16 * (k + 1)) < G.dist a b) →
-      ∀ part : V → roots, (∀ v, NearestRoot G roots id (part v).val v) →
-      (∀ advice : roots → Fin 2,
-        BalancedBoundaryAdvice (fun e : GraphEdge G => e.val.1)
-          (fun e : GraphEdge G => e.val.2) part (orientation roots hne) advice →
-        ∃ encode : (GraphEdge G → Fin 2) → (V → Fin ((2 ^ k - 1) + 1)),
-        ∀ input, decode (encode input) = input ∧ zeroMarkers (encode input) = roots ∧
-          ∀ R, (∀ v, ∃ c ∈ roots, G.dist c v ≤ R) → ∀ c : roots,
-            packetAdvice (2 ^ k - 1) G id R (encode input) c.val = (advice c).val) ∧
-      (∀ r T, (∀ v, ∃ c ∈ roots, G.dist c v ≤ 2 * r) →
-        CellOrientationLocal G part (orientation roots hne) T →
-        ∀ x y : V → Fin ((2 ^ k - 1) + 1),
-          zeroMarkers x = roots → zeroMarkers y = roots →
-          ∀ e : GraphEdge G,
-            (∀ v, G.dist e.val.1 v ≤ (4 * r + 1) * T + 8 * r + 2 → x v = y v) →
-            decode x e = decode y e) := by
+/-- Uniform finite-view reduction for optimal odd-degree storage. Given one
+fixed total finite-view orientation rule with good one-bit advice, one decoder
+family is chosen before graph order, topology, marker sets, advice and payload.
+On every sufficiently large connected graph of maximum degree at most 2k-1,
+an encoder stores all edge-membership bits in the 2^k-symbol vertex alphabet.
+The SAME decoder depends only on the stated physical neighborhood on every
+labeling, even when graphs and marker sets change or inputs are malformed.
+
+Vertices are named 0,...,n-1 with identifiers v+1 and public graph order n.
+The radius depends on k and the oracle radius T, never on n. The explicit
+oracle premise concerns only a sufficient orientation outdegree bound, not compression.
+This is a reduction to that premise, not a formal implementation or proof of
+the external orientation algorithm. See Lemmas 7 and 9 of
+https://doi.org/10.5281/zenodo.23346565. -/
+theorem uniformFiniteViewReconstruction
+    (F : LocalDecompression.OrientationOracle.Rule) (T : ℕ → ℕ)
+    (hgood : LocalDecompression.OrientationOracle.GoodOneBitOracle F T)
+    (k : ℕ) (hk : 2 ≤ k) :
+    ∃ decode : (n : ℕ) → SimpleGraph (Fin n) →
+        (Fin n → Fin ((2 ^ k - 1) + 1)) → (Fin n × Fin n) → Fin 2,
+      (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+        G.Connected → 16 * (k + 1) < n → (∀ v, G.degree v ≤ 2 * k - 1) →
+        ∃ encode : (GraphEdge G → Fin 2) → (Fin n → Fin ((2 ^ k - 1) + 1)),
+          ∀ input e, decode n G (encode input) e.val = input e ∧
+            decode n G (encode input) e.val.swap = input e) ∧
+      (∀ (n : ℕ) (G H : SimpleGraph (Fin n)), G.Connected → H.Connected →
+        ∀ (x y : Fin n → Fin ((2 ^ k - 1) + 1)) (u v : Fin n),
+          LocalDecompression.FiniteView.SameGraphView G H u (uniformRadius k T) →
+          (∀ w, G.dist u w ≤ uniformRadius k T → x w = y w) →
+          decode n G x (u, v) = decode n H y (u, v)) := by
   sorry
 
 end PalomarDecompression

@@ -1,166 +1,160 @@
-# Optimal Local Decompression: Finite Reduction and Graph Geometry
+# Optimal Local Decompression: Uniform Finite-View Reduction
 
 Lennart Rudolph · [10.5281/zenodo.23346565](https://doi.org/10.5281/zenodo.23346565)
 
-The graph is the communication network. An unrestricted encoder sees the
-graph and an arbitrary subset of its edges, and writes a fixed number of bits
-at each vertex. The distributed decoder learns remote topology through
-communication and should recover the incident edge-membership bits.
-The paper proves a constant-round construction with the counting-optimal
-`k` bits per vertex for each fixed odd maximum degree `2k-1 >= 3`.
-This Lean project formalizes the finite reconstruction and geometric parts
-of that argument. The full operational LOCAL theorem remains only partially
-mechanized, as the manuscript's Section 7 explains.
+An encoder sees a graph and an arbitrary subset of its edges, and stores a
+fixed number of bits at each vertex. A local decoder must recover each
+incident edge bit from nearby topology and stored labels. For odd maximum
+degree `2k-1`, counting over the full bounded-degree graph class requires at least `k` bits
+per vertex. The paper
+constructs a constant-round scheme meeting that budget.
 
-## Why the construction matters
+The principal selected Lean theorem proves a **uniform finite-view reduction**
+for sufficiently large connected graphs. Given one total finite-view rule
+with the stated one-bit orientation guarantee, it constructs one decoder
+family before graph order, topology, markers, advice, or payload are chosen.
+Every eligible graph admits an encoder using exactly the `2^k`-symbol vertex
+alphabet. The **same decoder** has a degree-only physical radius on every
+label assignment, including malformed inputs and changes to graph topology
+and marker pattern. The external orientation theorem remains an explicit
+premise; this is not a claim that the entire paper or an executable LOCAL
+machine has been formalized.
+
+## Research motivation
 
 [Balliu et al., Distributed Computation with Local Advice](https://doi.org/10.4230/LIPIcs.DISC.2025.12),
 Section 1.8, Question 4, asks whether cubic graphs admit two-bit local
-decompression. Their earlier general method needs one additional bit above
-the counting budget. The manuscript's idea is to amortize marker and
-orientation metadata over bounded connected cells. For odd degree `2k-1`,
-reserving one symbol of the `2^k`-symbol alphabet leaves `2^k-1` data symbols,
-whose rate exceeds `(2k-1)/2` bits per vertex. Large enough cells therefore
-hold both the owned edge bits and one advice bit.
+decompression. Their earlier general construction needs one extra bit above
+the counting budget. The manuscript amortizes marker and orientation data
+over bounded connected cells. Reserving zero as a marker leaves `2^k-1`
+nonzero symbols. Their storage rate exceeds `(2k-1)/2` bits per vertex, so
+large enough cells can hold their owned edge bits together with one advice bit.
 
-A decoder first finds the zero markers and reconstructs the cells. It reads
-each cell's advice before computing orientation or payload positions. This
-order avoids assuming the ownership information needed to locate the advice
-itself. The selected graph theorem checks that a **single decoder, chosen
-before the roots and advice**, recovers every edge-bit assignment and the
-exact marker set on a connected component with more than `16(k+1)` vertices.
-An explicit ordered packet reader recovers the supplied advice from those
-same labels. The same decoder has physical label radius `(4r+1)T+8r+2`
-when roots cover within `2r` and orientation is `T`-local on the actual cell
-quotient; this locality comparison fixes both topology and marker set.
-Its graph is an actual finite simple graph: the degree,
-edge set, and distance metric all refer to the same graph.
+A global packing argument alone would not settle the local problem: a decoder
+might secretly depend on the entire graph or on an uncommunicated partition.
+Here the encoder and decoder are connected to explicit finite neighborhood
+records. Advice is read from the cell packet **before** computing orientation
+or payload positions. Parallel crossing edges are paired canonically, with
+only a possible unpaired edge using the simple residual quotient's advice.
+Padding makes the oracle's public order and exact degree independent of the
+number of markers. This explains why the reduction addresses local storage,
+beyond its capacity inequality and elementary counting lower bound.
 
-The work is relevant to distributed algorithms and graph labeling because it
-connects the optimal integer storage budget with geometrically bounded,
-recognizable cells and advice-first decoding. Positional coding, counting,
-Voronoi partitions, and almost-balanced orientation are established tools;
-the submission does not claim those tools as new individual results.
-The arithmetic and codec endpoints document the budget and noncircular
-interface used by the principal reconstruction theorem. Formal notability
-review is a separate Palomar decision.
+The upper bound for large connected graphs matches the counting lower bound
+for the full graph class. The selected complete-graph lower bound does not
+itself prove optimality within the restricted large-connected class.
+
+The contribution is relevant to distributed algorithms and graph labeling.
+Positional coding, counting, Voronoi partitions, and almost-balanced
+orientations are established ingredients and are credited as such.
+Palomar's editorial notability decision is separate from proof verification.
 
 ## Selected formal scope
 
-[Challenge.lean](Challenge.lean) imports only pinned Mathlib. Its definitions
-and eight propositions are independent of this proof library.
-[Solution.lean](Solution.lean) proves the same declarations and never imports
-Challenge. [DECLARATIONS.md](DECLARATIONS.md) maps each result to its proof.
+[Challenge.lean](Challenge.lean) independently defines the mathematical
+interface using only pinned Mathlib. [Solution.lean](Solution.lean) proves
+the same eight selected declarations without importing Challenge.
+[DECLARATIONS.md](DECLARATIONS.md) maps each endpoint to its substantive proof.
+The endpoints cover the storage budget, independent advice/payload codec,
+counting lower bound, existence and geometry of bounded cells, arbitrary-label
+cell stability, and the uniform reconstruction reduction.
 
-The selected results establish:
+For `k >= 2`, write
 
-- the explicit cubic and general odd-degree storage inequalities;
-- an advice reader and payload reader whose roundtrips are simultaneous,
-  with zero reserved exactly for the root;
-- the integer counting lower bound on complete graphs, even for a centralized
-  decoder;
-- existence of a separated nearest-root partition with unique ownership,
-  bounded size and radius, and cell-contained shortest paths;
-- bounded cells on arbitrary labels, including uncovered or malformed inputs,
-  with nonempty cells exactly at markers and nonzero nonroot storage symbols;
-- stability of the complete truncated cell under radius-`2R` marker agreement,
-  even when the global marker sets differ;
-- graph-native marker reconstruction for all sufficiently separated root
-  sets and every advice assignment satisfying the boundary outdegree bound,
-  with explicit ordered packet recovery of that advice from the same labels,
-  together with conditional fixed-marker label locality of the **same decoder**
-  within physical radius `(4r+1)T+8r+2`.
+```text
+r = 16(k+1),  R = 2r,
+D = (2k-1)(2k)^R,
+K = (3R+2) + (2R+1)(T(D)+1) + 1.
+```
 
-The complete development includes 15 supporting modules under
-[LocalDecompression](LocalDecompression), including canonical graph edges,
-parallel-edge pairing, the residual simple quotient, orientation lifting,
-actual vertex layouts, marker recovery, ordered packet reading, virtual
-padding, and fixed-marker decoder locality. These retained proofs are not
-replaced by assumptions merely because they are outside the comparison list.
+`uniformFiniteViewReconstruction` chooses a total decoder family and proves:
 
-## Exact limits of the formal theorem
+- On every connected graph on `Fin n` with `n > 16(k+1)` and degree at most
+  `2k-1`, some encoder recovers every edge-bit assignment using `2^k` labels
+  per vertex. Either endpoint can query the same recovered edge bit.
+- For any two connected graphs on `Fin n`, equal radius-`K` rooted induced
+  topology and equal labels there give equal decoder output at the queried
+  endpoint pair. This includes nonedges, uncovered vertices, malformed
+  packets, and globally different marker sets. No degree, coverage,
+  separation, good-advice, or encoder-image condition is needed for this
+  locality clause.
 
-`BalancedBoundaryAdvice` requires only the sufficient inequality
-`2 * outgoing <= boundary + 1` for each cell. It says nothing about the input
-edge labels or their recovery. The graph reconstruction theorem is
-conditional on that orientation property; it does not prove the existence
-of a one-bit distributed orientation algorithm. The library separately
-proves how the bound follows from the corresponding residual-simple-quotient
-bound by canonically pairing parallel edges.
+The proof constructs separated covering roots, obtains a degree bound for
+the residual simple quotient, and applies the oracle premise to a padded
+graph of exact order `n+D+1` and degree `D`. It proves that isolated nonroots
+and the disjoint dummy clique cannot affect root views. On encoded labels,
+the actual bounded packet reader recovers the chosen advice, named crossing
+fibers preserve the original parallel-edge ranks, and the total decoder
+agrees with the supplied graph encoder. These are proved bridges, not
+recovery hypotheses. Arbitrary-input locality is proved independently by
+transporting walks, cells, packets, crossing fibers and oracle records
+between graphs with the same finite view.
 
-[Balliu et al.'s full version](https://arxiv.org/abs/2405.04519v2), Appendix B,
-Corollary 15, supplies the orientation theorem used by the manuscript.
-It is a documented external mathematical dependency, never a Lean axiom.
-Their marker, clustering, and ordered-storage predecessors are credited in
-Appendices C.1 and E; those general methods are not claimed as novel here.
+The complete supplied library is retained. The additional modules prove
+cross-topology finite-view transport, total named-edge decoding, oracle
+padding invariance, exact rank transport, and the assembled uniform reduction.
+The earlier fixed-graph `graphMarkerReconstruction` remains proved as a
+supporting theorem, including exact marker and packet-advice recovery.
 
-The selected graph theorem combines correctness and locality of one decoder;
-these are not statements about independently chosen functions. `packetAdvice`
-is a specified arithmetic reader, not an existential function chosen to make
-the roundtrip hold. Every covering radius gives the correct supplied advice
-on the encoder's labels. This verifies the stored metadata along with the
-payload; it does not require the recovered edge bits in order to read advice.
-`CellQuotient` has an edge exactly when two distinct cells have a physical
-crossing edge.
-`CellOrientationLocal` requires orientation outputs to agree when all advice
-within a radius-`T` quotient walk agrees. It assumes neither recovery nor
-locality of the final decoder. Root coverage bounds each cell's radius by
-`2r` and every quotient edge's physical length by `4r+1`, yielding the displayed
-physical decoding radius. The partition theorem supplies coverage with
-`r = 16(k+1)`.
+## Exact limits
 
-The assembled decoder's selected label locality fixes the physical topology
-and the marker set. Its existential quantifier permits a topology-specific
-function; this extensional theorem does not rule out global precomputation
-or supply a single operational algorithm for all graphs. Separate bounded-cell
-and packet results permit changes
-of marker sets on a fixed connected graph. Those results do not constitute
-a uniform synchronous machine across changing quotient topologies.
-The published algorithm's operational simulation and totalization, and the
-final assembly over mixed small and large components, remain written
-arguments. Small-component codecs and recognition are present in the library,
-but selecting their ingredients would not close that missing assembly.
+`GoodOneBitOracle F T` states that the same rule `F` admits a one-bit advice
+assignment on every finite graph with the specified exact order, maximum
+degree, and polynomial identifier range, making `2*outdegree <= degree+1`.
+It concerns only orientations: it assumes no compression, payload recovery,
+cell partition, or final decoder locality. `F` receives public `N,D,c`, two
+endpoint IDs, and a finite set of records containing IDs, advice bits, and
+neighbor-ID sets. Full fringe neighbor records cost one extra virtual round,
+which is included in `K`.
 
-Natural graph distance is used only with explicit connectedness in these
-geometric results. Linear orders fix deterministic storage ordering;
-injective natural-number identifiers fix distance ties. The manuscript uses
-identifier-induced orders. The interface permits these two fixed orders to
-be supplied independently.
+The [full version of Balliu et al.](https://arxiv.org/abs/2405.04519v2),
+Appendix B, Corollary 15, supplies the external mathematical orientation
+result used in the paper. Its algorithm and normalization to this precise
+finite-view interface are not proved here. `F` is an arbitrary total Lean
+function; its computability is not asserted. The proved finite-view reduction
+therefore does not by itself formalize an executable synchronous machine.
 
-## Build and submission
+The selected reconstruction theorem uses connected graphs on `Fin n`,
+canonical identifiers `v.val+1`, and public graph order `n`. It covers large
+components; the paper's final assembly over mixed small and large components
+is not selected. Supporting geometric and locality results allow more general
+ordered vertex types and injective identifiers. Natural distance is used
+with explicit connectedness. The conservative radius above equals
+`(4r+1)T(D)+10r+4`; it is larger than the paper's stated radius and is not
+claimed to be a sharp round bound.
 
-From this directory, with [Lean installed through elan](https://github.com/leanprover/elan):
+## Build and verification
+
+From this directory:
 
 ```sh
 lake exe cache get
 lake build
 ```
 
-`lean-toolchain` and `lake-manifest.json` pin the compiler and all dependencies.
-The optional cache download does not change the dependency revisions. The
-build includes the complete library, independent statement definitions,
-Solution, and Challenge. Challenge's intentional eight `sorry` placeholders
-are the unproved tasks presented for comparison and are never proof
-dependencies. No proof source uses `sorry` or an added axiom.
+`lean-toolchain` and `lake-manifest.json` pin Lean and all dependencies.
+Challenge's eight intentional `sorry` placeholders are comparison goals and
+are never proof dependencies. Proof sources have no placeholders or added
+axioms. [comparator.json](comparator.json) enables NanoDa and permits only
+`propext`, `Quot.sound`, and `Classical.choice`.
 
-[comparator.json](comparator.json) selects the eight names with NanoDa enabled
-and permits only `propext`, `Quot.sound`, and `Classical.choice`.
-[formalization.yaml](formalization.yaml) uses Palomar's v0.4 metadata format.
+The [local verification workflow](../../LOCAL-VERIFICATION.md) checks source
+policy and metadata, builds all targets, replays proofs with fresh Lean and
+independent kernels, compares the independently elaborated statements, and
+renders/sanitizes the Challenge. GitHub Actions runs the pinned official full
+Linux mechanical workflow. These reports identify their exact source
+snapshot; local checks are not a hosted editorial acceptance or registration.
 The submission project path is `zenodo-23346565/palomar`.
-Build success and local rendering/metadata checks do not guarantee service
-acceptance, notability approval, or independent human review.
-The repository's [local verification workflow](../../LOCAL-VERIFICATION.md)
-runs the official metadata/source checks, fresh Lean replay, independent
-Comparator kernels and sanitized rendering. The supplied finite experiment
-can be reproduced with `python3 experiments/check_invariants.py`; it checks
-160 packets and 16 graph/identifier fixtures, without implementing the
-external orientation algorithm.
 
-## Authorship and automation
+The supplied experiment `python3 experiments/check_invariants.py` checks
+160 packets and 16 graph/identifier fixtures. These finite checks supplement
+the proofs and do not implement the external orientation algorithm.
+
+## Authorship
 
 Lennart Rudolph is the sole human author and responsible maintainer.
 The supplied manuscript and proofs disclose extensive OpenAI ChatGPT/Codex
-assistance. Codex also prepared this independent interface, strengthened its
-selected graph statements, and performed local verification and adversarial
-review. Automated review is not independent human mathematical review.
+assistance. Codex added the independent interface, strengthened the uniform
+reduction, and performed local verification and adversarial analysis.
+Automated review is not independent human mathematical review.
 Lean sources and repository scaffolding use the [MIT license](LICENSE).

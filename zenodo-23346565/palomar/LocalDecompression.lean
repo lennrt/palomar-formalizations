@@ -16,4 +16,7 @@ public import LocalDecompression.BoundedCells
 public import LocalDecompression.BoundedPacket
 public import LocalDecompression.Padding
 
+public import LocalDecompression.UniformRecovery
+public import LocalDecompression.SymmetricDecoder
+
 @[expose] public section

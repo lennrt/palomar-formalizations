@@ -1,0 +1,12 @@
+module
+
+public import Solution
+
+#print axioms PalomarDecompression.cubicCapacity
+#print axioms PalomarDecompression.oddDegreeCapacity
+#print axioms PalomarDecompression.markedAdviceCodec
+#print axioms PalomarDecompression.informationLowerBound
+#print axioms PalomarDecompression.largeComponentPartition
+#print axioms PalomarDecompression.arbitraryLabelCellGeometry
+#print axioms PalomarDecompression.boundedCellStability
+#print axioms PalomarDecompression.uniformFiniteViewReconstruction

@@ -101,6 +101,8 @@ precise theorem coverage, antecedents and limitations for that review.
 
 Neither project claims end-to-end formalization of every result in its paper.
 The lossy companion covers exact two-leg recovery and selected sample-analysis
-components; the decompression companion covers graph geometry, finite packing
-and reconstruction reductions and the counting lower bound. Their remaining
-probabilistic and operational LOCAL arguments are identified explicitly.
+components; the decompression companion proves a conditional uniform finite-view
+reconstruction reduction for large connected graphs, with geometry, coding
+and a full-class counting lower bound. Remaining probabilistic results, the
+external orientation algorithm and operational LOCAL-machine semantics are
+identified explicitly.

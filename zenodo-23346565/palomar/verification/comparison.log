@@ -2,22 +2,22 @@ WARNING: Sandbox disabled, this run is not trustworthy.
 Resolving dependencies
 Building Challenge
 ⚠ [1019/1020] Replayed Challenge
-warning: Challenge.lean:119:8: declaration uses `sorry`
-warning: Challenge.lean:124:8: declaration uses `sorry`
-warning: Challenge.lean:130:8: declaration uses `sorry`
-warning: Challenge.lean:143:8: declaration uses `sorry`
-warning: Challenge.lean:156:8: declaration uses `sorry`
-warning: Challenge.lean:179:8: declaration uses `sorry`
-warning: Challenge.lean:195:8: declaration uses `sorry`
-warning: Challenge.lean:218:8: declaration uses `sorry`
+warning: Challenge.lean:150:8: declaration uses `sorry`
+warning: Challenge.lean:155:8: declaration uses `sorry`
+warning: Challenge.lean:161:8: declaration uses `sorry`
+warning: Challenge.lean:174:8: declaration uses `sorry`
+warning: Challenge.lean:187:8: declaration uses `sorry`
+warning: Challenge.lean:210:8: declaration uses `sorry`
+warning: Challenge.lean:226:8: declaration uses `sorry`
+warning: Challenge.lean:248:8: declaration uses `sorry`
 Build completed successfully (1020 jobs).
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarDecompression.cubicCapacity, PalomarDecompression.oddDegreeCapacity, PalomarDecompression.markedAdviceCodec, PalomarDecompression.informationLowerBound, PalomarDecompression.largeComponentPartition, PalomarDecompression.arbitraryLabelCellGeometry, PalomarDecompression.boundedCellStability, PalomarDecompression.graphMarkerReconstruction, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarDecompression.cubicCapacity, PalomarDecompression.oddDegreeCapacity, PalomarDecompression.markedAdviceCodec, PalomarDecompression.informationLowerBound, PalomarDecompression.largeComponentPartition, PalomarDecompression.arbitraryLabelCellGeometry, PalomarDecompression.boundedCellStability, PalomarDecompression.uniformFiniteViewReconstruction, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
 Building Solution
-Build completed successfully (3138 jobs).
-Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarDecompression.cubicCapacity, PalomarDecompression.oddDegreeCapacity, PalomarDecompression.markedAdviceCodec, PalomarDecompression.informationLowerBound, PalomarDecompression.largeComponentPartition, PalomarDecompression.arbitraryLabelCellGeometry, PalomarDecompression.boundedCellStability, PalomarDecompression.graphMarkerReconstruction, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Build completed successfully (3153 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, PalomarDecompression.cubicCapacity, PalomarDecompression.oddDegreeCapacity, PalomarDecompression.markedAdviceCodec, PalomarDecompression.informationLowerBound, PalomarDecompression.largeComponentPartition, PalomarDecompression.arbitraryLabelCellGeometry, PalomarDecompression.boundedCellStability, PalomarDecompression.uniformFiniteViewReconstruction, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
 Running con-ron kernel on solution
 con-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)
-con-ron: accepted 9728 declarations (--verified)
+con-ron: accepted 11475 declarations (--verified)
 con-ron kernel accepts the solution
 Running nanoda kernel on solution
 nanoda kernel accepts the solution

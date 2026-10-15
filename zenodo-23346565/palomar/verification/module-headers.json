@@ -26,7 +26,9 @@
       "LocalDecompression.Ownership",
       "LocalDecompression.Padding",
       "LocalDecompression.Partition",
-      "LocalDecompression.QuotientOrientation"
+      "LocalDecompression.QuotientOrientation",
+      "LocalDecompression.SymmetricDecoder",
+      "LocalDecompression.UniformRecovery"
     ],
     "module": true
   },
@@ -49,6 +51,14 @@
     "module": true
   },
   {
+    "path": "UniformStatement.lean",
+    "imports": [
+      "Mathlib.Combinatorics.SimpleGraph.Finite",
+      "Mathlib.Combinatorics.SimpleGraph.Metric"
+    ],
+    "module": true
+  },
+  {
     "path": "LocalDecompression/BoundedCells.lean",
     "imports": [
       "LocalDecompression.MarkerLocality"
@@ -64,6 +74,14 @@
     "module": true
   },
   {
+    "path": "LocalDecompression/CrossingBridge.lean",
+    "imports": [
+      "LocalDecompression.QuotientOrientation",
+      "LocalDecompression.QuotientView"
+    ],
+    "module": true
+  },
+  {
     "path": "LocalDecompression/Decoder.lean",
     "imports": [
       "LocalDecompression.Main"
@@ -75,6 +93,14 @@
     "imports": [
       "Mathlib.Algebra.BigOperators.Fin",
       "Mathlib.Tactic"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/FiniteView.lean",
+    "imports": [
+      "LocalDecompression.BoundedPacket",
+      "UniformStatement"
     ],
     "module": true
   },
@@ -142,6 +168,44 @@
     "module": true
   },
   {
+    "path": "LocalDecompression/NamedCorrectness.lean",
+    "imports": [
+      "LocalDecompression.NamedDecoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/NamedDecoder.lean",
+    "imports": [
+      "LocalDecompression.ViewPackets"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/NamedLocality.lean",
+    "imports": [
+      "LocalDecompression.NamedDecoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/OracleView.lean",
+    "imports": [
+      "LocalDecompression.OrientationOracle",
+      "LocalDecompression.QuotientView"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/OrientationOracle.lean",
+    "imports": [
+      "LocalDecompression.Padding",
+      "LocalDecompression.QuotientOrientation",
+      "UniformStatement"
+    ],
+    "module": true
+  },
+  {
     "path": "LocalDecompression/Ownership.lean",
     "imports": [
       "Mathlib.Algebra.BigOperators.Fin",
@@ -173,6 +237,68 @@
     "imports": [
       "LocalDecompression.Main",
       "Mathlib.Data.Fintype.Fin"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/QuotientView.lean",
+    "imports": [
+      "LocalDecompression.NamedDecoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/ResidualBridge.lean",
+    "imports": [
+      "LocalDecompression.CrossingBridge",
+      "LocalDecompression.Padding"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/SymmetricDecoder.lean",
+    "imports": [
+      "LocalDecompression.UniformDecoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/UniformDecoder.lean",
+    "imports": [
+      "LocalDecompression.NamedLocality",
+      "LocalDecompression.OracleView"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/UniformDirections.lean",
+    "imports": [
+      "LocalDecompression.ResidualBridge",
+      "LocalDecompression.UniformDecoder"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/UniformRecovery.lean",
+    "imports": [
+      "LocalDecompression.GraphReduction",
+      "LocalDecompression.NamedCorrectness",
+      "LocalDecompression.OrientationOracle",
+      "LocalDecompression.UniformDirections"
+    ],
+    "module": true
+  },
+  {
+    "path": "LocalDecompression/ViewPackets.lean",
+    "imports": [
+      "LocalDecompression.FiniteView"
+    ],
+    "module": true
+  },
+  {
+    "path": "verification/AxiomAudit.lean",
+    "imports": [
+      "Solution"
     ],
     "module": true
   }

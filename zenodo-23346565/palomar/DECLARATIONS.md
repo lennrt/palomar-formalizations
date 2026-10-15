@@ -2,10 +2,10 @@
 
 [comparator.json](comparator.json) selects eight names in the namespace
 `PalomarDecompression`. The standalone [Challenge.lean](Challenge.lean)
-imports only Mathlib, repeats the finite incidence and geometric definitions,
+imports only Mathlib, repeats the geometric and finite-view oracle definitions,
 and supplies exactly eight intentional proof placeholders.
 [Solution.lean](Solution.lean) imports the proof-independent
-[Statement.lean](Statement.lean) and complete library, never the Challenge.
+[Statement.lean](Statement.lean), [UniformStatement.lean](UniformStatement.lean) and complete library, never the Challenge.
 
 | Selected declaration | Mathematical role and substantive proof |
 |---|---|
@@ -16,43 +16,56 @@ and supplies exactly eight intentional proof placeholders.
 | `largeComponentPartition` | Constructs separated roots in every sufficiently large connected degree-bounded graph, proves unique nearest-root cells, size interval `[r+1, (Δ+1)^(2r)]`, radius `2r`, and actual shortest paths staying in each cell. [Partition.lean](LocalDecompression/Partition.lean), `exists_large_component_partition`. |
 | `arbitraryLabelCellGeometry` | For arbitrary labels on a connected graph, the radius-truncated nearest-marker cell is nonempty exactly at a marker, has at most `(Δ+1)^R` vertices, contains root-to-vertex geodesics of length at most `R`, and has only nonzero nonroot labels. [BoundedCells.lean](LocalDecompression/BoundedCells.lean), `boundedCell_nonempty_iff_marker`, `boundedCell_card_upper`, `boundedOwner_path`; [BoundedPacket.lean](LocalDecompression/BoundedPacket.lean), `label_ne_zero_of_mem_boundedSites`. No coverage or separation premise. |
 | `boundedCellStability` | Radius-`2R` agreement of marker status determines the entire truncated cell, with no assumption that global marker sets agree or cover the graph. [BoundedCells.lean](LocalDecompression/BoundedCells.lean), `boundedCell_eq_of_marker_agreement`. Fixed topology is explicit. |
-| `graphMarkerReconstruction` | For an actual connected simple graph of odd degree bound `2k-1` with more than `16(k+1)` vertices, chooses **one decoder before the roots and advice**. Every sufficiently separated root set and advice satisfying the explicit boundary outdegree bound admits an encoder recovering all edge bits and exactly that marker set, using `2^k` labels per vertex. The independently defined base-`q` packet parity reader also recovers the supplied advice from those same labels at every covering radius. **The same decoder** is label-local within `(4r+1)T+8r+2` physical hops at the smaller endpoint when roots cover within `2r` and orientation is `T`-local on the actual cell quotient; both compared inputs have the specified markers. [GraphReduction.lean](LocalDecompression/GraphReduction.lean), `graph_cell_capacity`; [Decoder.lean](LocalDecompression/Decoder.lean), `markerDecode_vertexEncode`, `vertexEncode_recognizedRoots`, and `markerDecode_local_on_markers`; [BoundedPacket.lean](LocalDecompression/BoundedPacket.lean), `boundedAdvice_vertexEncode`; [Main.lean](LocalDecompression/Main.lean), the ownership, advice-first and payload roundtrips. |
+| `uniformFiniteViewReconstruction` | One decoder family is fixed before graph order, topology, markers, advice and payload. Given a total finite-view orientation rule with sufficient one-bit advice, every connected graph on `Fin n`, with canonical IDs, `n>16(k+1)` and degree at most `2k-1`, admits recovery of every edge bit at **either endpoint** using `2^k` labels per vertex. The same decoder is local on **arbitrary labels across different connected graphs and marker patterns**, within `K=(3R+2)+(2R+1)(T(D)+1)+1`, where `R=32(k+1)` and `D=(2k-1)(2k)^R`. [UniformRecovery.lean](LocalDecompression/UniformRecovery.lean), `uniform_reconstruction`; [SymmetricDecoder.lean](LocalDecompression/SymmetricDecoder.lean), `symmetricUniformDecode_eq_of_graph_view`; [UniformDirections.lean](LocalDecompression/UniformDirections.lean), exact compatibility with the supplied encoder. |
 
 ## Statement fidelity
 
-The graph edge type is `{(u,v) : V × V // u < v ∧ G.Adj u v}`;
-[GraphPresentation.lean](LocalDecompression/GraphPresentation.lean) proves
-its equivalence to Mathlib's actual undirected edge set and agreement of
-incidence degrees. The graph theorem quantifies a proposed partition together
-with its independent nearest-root specification; uniqueness identifies it
-with the decoder's reconstructed partition. No chosen partition, root set,
-advice, or unknown edge payload is an input to the final decoder.
+The actual undirected edge type is `{(u,v) // u<v ∧ G.Adj u v}`. The
+canonical graph presentation agrees with Mathlib's edge set and degree.
+The final query wrapper sorts the two endpoints, so both endpoints recover
+the same bit; its extra physical hop is included in `uniformRadius`.
 
-The graph's topology and identifier assignment, and the complete orientation
-family, are fixed before the decoder. The correctness and locality conclusions
-share this decoder witness. The advice reader is the explicit `packetAdvice`
-definition: natural-valued ordered base-`q` digits from the nonroot truncated
-cell, reduced modulo two. Its equivalence to the library's bounded advice
-reader is proved, and the same encoded labels recover the supplied advice
-for every radius covering the roots. The formula takes no orientation or
-payload-index input. Empty packet behavior is the literal empty sum, zero. `CellQuotient` is the actual simple graph of
-crossing cells, and its distance condition uses walks so disconnected cases
-are not collapsed by totalized natural distance. The local-orientation premise
-concerns only advice and edge-orientation bits. Physical root distances are
-derived from coverage, and final decoder label dependence is proved.
-The boundary bound is conditional and one-sided. [QuotientOrientation.lean](LocalDecompression/QuotientOrientation.lean)
-proves the residual-quotient lift, but the cited distributed orientation
-algorithm itself is not formalized. Locality compares all label assignments with the same markers on the fixed
-physical graph, not just encoded inputs. It does not impose operational
-uniformity across graph topologies or rule out topology-specific precomputation.
-The selected statements therefore do not assert the full unconditional
-operational LOCAL theorem.
+[UniformStatement.lean](UniformStatement.lean) defines the independent
+finite-record oracle interface and view relation. Challenge repeats those
+definitions and imports only Mathlib. An oracle receives public `N,D,c`,
+two endpoint IDs, and a finite set of records containing node IDs, advice
+and neighbor IDs. It never receives the physical graph, global marker set,
+payload or chosen encoder. `GoodOneBitOracle` assumes only existence of advice
+with `2*outdegree <= degree+1`; this sufficient one-sided bound is not full
+almost balance and contains no reconstruction or decoder-locality premise.
 
-`plainBitCodec`, `ownedEdgeCapacity`, and the abstract fixed-partition
-`adviceFirstGraphReconstruction` remain proved in Solution and the library as
-supporting results, but are not individually selected. The larger library
-also retains the more specialized residual-quotient locality theorem,
-across-marker ordered-packet
-stability, component recognition, quotient geometry, and virtual padding.
-The manuscript's remaining operational bridges are documented in
-[README.md](README.md#exact-limits-of-the-formal-theorem).
+[OrientationOracle.lean](LocalDecompression/OrientationOracle.lean) proves
+exact padding and view invariance. [FiniteView.lean](LocalDecompression/FiniteView.lean),
+[ViewPackets.lean](LocalDecompression/ViewPackets.lean), and
+[OracleView.lean](LocalDecompression/OracleView.lean) transport walks, cells,
+packets and full residual neighbor records across different graphs. The
+fringe neighbor records account for the `T(D)+1` factor.
+[CrossingBridge.lean](LocalDecompression/CrossingBridge.lean) proves an
+order isomorphism preserving actual parallel-edge ranks;
+[ResidualBridge.lean](LocalDecompression/ResidualBridge.lean) identifies
+the ambient bounded quotient with the original root quotient plus isolated
+nonroots. [NamedCorrectness.lean](LocalDecompression/NamedCorrectness.lean)
+connects the total decoder to the original `vertexEncode`. Thus the selected
+recovery conclusion is derived from the same concrete construction whose
+arbitrary-input locality is proved.
+
+The main theorem uses canonical IDs `v.val+1` and fixed public `n` in each
+view comparison. It selects a decoder family before all `n`, so topology or
+marker sets cannot be hidden in a graph-specific witness. Locality needs only
+connected graphs and agreement of the stated finite topology and labels;
+it does not assume coverage, separation, good advice, or an encoded input.
+Malformed inputs have explicit deterministic defaults in the implementation.
+The degree-only radius is conservative; no polynomial bound on the external
+radius function or computability of its total rule is proved.
+
+The selected complete-graph lower bound concerns the full graph class. It
+matches the storage budget but is not, by itself, a lower bound inside the
+restricted large-connected upper-bound domain.
+
+The earlier `graphMarkerReconstruction`, `plainBitCodec`, `ownedEdgeCapacity`
+and `adviceFirstGraphReconstruction` remain proved supporting results.
+Exact marker recovery and packet-advice recovery are retained; old fixed-graph
+locality statements are not substituted for the new uniform endpoint.
+The external orientation algorithm, machine semantics and final
+mixed-component assembly are explicitly outside scope. See
+[README.md](README.md#exact-limits).

@@ -1,10 +1,10 @@
-⚠ [3141/3142] Replayed Challenge
-warning: Challenge.lean:119:8: declaration uses `sorry`
-warning: Challenge.lean:124:8: declaration uses `sorry`
-warning: Challenge.lean:130:8: declaration uses `sorry`
-warning: Challenge.lean:143:8: declaration uses `sorry`
-warning: Challenge.lean:156:8: declaration uses `sorry`
-warning: Challenge.lean:179:8: declaration uses `sorry`
-warning: Challenge.lean:195:8: declaration uses `sorry`
-warning: Challenge.lean:218:8: declaration uses `sorry`
-Build completed successfully (3142 jobs).
+⚠ [3156/3157] Replayed Challenge
+warning: Challenge.lean:150:8: declaration uses `sorry`
+warning: Challenge.lean:155:8: declaration uses `sorry`
+warning: Challenge.lean:161:8: declaration uses `sorry`
+warning: Challenge.lean:174:8: declaration uses `sorry`
+warning: Challenge.lean:187:8: declaration uses `sorry`
+warning: Challenge.lean:210:8: declaration uses `sorry`
+warning: Challenge.lean:226:8: declaration uses `sorry`
+warning: Challenge.lean:248:8: declaration uses `sorry`
+Build completed successfully (3157 jobs).

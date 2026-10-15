@@ -9,7 +9,7 @@
     "PalomarDecompression.largeComponentPartition",
     "PalomarDecompression.arbitraryLabelCellGeometry",
     "PalomarDecompression.boundedCellStability",
-    "PalomarDecompression.graphMarkerReconstruction"
+    "PalomarDecompression.uniformFiniteViewReconstruction"
   ],
   "definition_names": [],
   "permitted_axioms": [

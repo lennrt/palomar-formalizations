@@ -375,3 +375,81 @@ theorem graphMarkerReconstruction
       roots hne part hpart r T hcover horacle x y hx hy e hagree
 
 end PalomarDecompression
+
+namespace PalomarDecompression
+
+set_option backward.isDefEq.respectTransparency false in
+/-- Uniform finite-view reduction for optimal odd-degree storage. Given one
+fixed total finite-view orientation rule with good one-bit advice, one decoder
+family is chosen before graph order, topology, marker sets, advice and payload.
+On every sufficiently large connected graph of maximum degree at most 2k-1,
+an encoder stores all edge-membership bits in the 2^k-symbol vertex alphabet.
+The SAME decoder depends only on the stated physical neighborhood on every
+labeling, even when graphs and marker sets change or inputs are malformed.
+
+Vertices are named 0,...,n-1 with identifiers v+1 and public graph order n.
+The radius depends on k and the oracle radius T, never on n. The explicit
+oracle premise concerns only a sufficient orientation outdegree bound, not compression.
+This is a reduction to that premise, not a formal implementation or proof of
+the external orientation algorithm. See Lemmas 7 and 9 of
+https://doi.org/10.5281/zenodo.23346565. -/
+theorem uniformFiniteViewReconstruction
+    (F : LocalDecompression.OrientationOracle.Rule) (T : ℕ → ℕ)
+    (hgood : LocalDecompression.OrientationOracle.GoodOneBitOracle F T)
+    (k : ℕ) (hk : 2 ≤ k) :
+    ∃ decode : (n : ℕ) → SimpleGraph (Fin n) →
+        (Fin n → Fin ((2 ^ k - 1) + 1)) → (Fin n × Fin n) → Fin 2,
+      (∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj],
+        G.Connected → 16 * (k + 1) < n → (∀ v, G.degree v ≤ 2 * k - 1) →
+        ∃ encode : (GraphEdge G → Fin 2) → (Fin n → Fin ((2 ^ k - 1) + 1)),
+          ∀ input e, decode n G (encode input) e.val = input e ∧
+            decode n G (encode input) e.val.swap = input e) ∧
+      (∀ (n : ℕ) (G H : SimpleGraph (Fin n)), G.Connected → H.Connected →
+        ∀ (x y : Fin n → Fin ((2 ^ k - 1) + 1)) (u v : Fin n),
+          LocalDecompression.FiniteView.SameGraphView G H u (uniformRadius k T) →
+          (∀ w, G.dist u w ≤ uniformRadius k T → x w = y w) →
+          decode n G x (u, v) = decode n H y (u, v)) := by
+  classical
+  let hq := LocalDecompression.FiniteView.codecAlphabet_pos k hk
+  let decode := fun (n : ℕ) (G : SimpleGraph (Fin n))
+      (labels : Fin n → Fin ((2 ^ k - 1) + 1)) (e : Fin n × Fin n) =>
+    LocalDecompression.FiniteView.symmetricUniformDecode hq F
+      (n + LocalDecompression.FiniteView.codecDegree k + 1)
+      (LocalDecompression.FiniteView.codecDegree k) 1
+      (T (LocalDecompression.FiniteView.codecDegree k)) G
+      LocalDecompression.FiniteView.canonicalId
+      (LocalDecompression.FiniteView.codecRadius k) (2*k-1) labels e
+  refine ⟨decode, ?_, ?_⟩
+  · intro n G _ hconn hlarge hdegree
+    obtain ⟨encode,hencode⟩ := LocalDecompression.FiniteView.uniform_reconstruction
+      F T hgood k n hk G hconn hdegree hlarge
+    refine ⟨encode, ?_⟩
+    intro input e
+    have hf : decode n G (encode input) e.val = input e := by
+      dsimp only [decode, LocalDecompression.FiniteView.symmetricUniformDecode]
+      have he : LocalDecompression.FiniteView.graphPairEmbedding G e = toLex e.val := rfl
+      simpa only [he, min_eq_left e.property.1.le, max_eq_right e.property.1.le] using
+        hencode input e
+    refine ⟨hf, ?_⟩
+    have hs := LocalDecompression.FiniteView.symmetricUniformDecode_swap hq F
+      (n + LocalDecompression.FiniteView.codecDegree k + 1)
+      (LocalDecompression.FiniteView.codecDegree k) 1
+      (T (LocalDecompression.FiniteView.codecDegree k)) G
+      LocalDecompression.FiniteView.canonicalId
+      (LocalDecompression.FiniteView.codecRadius k) (2*k-1) (encode input) e.val.1 e.val.2
+    exact hs.symm.trans hf
+  · intro n G H hG hH x y u v physical hlabels
+    have hinj : Function.Injective (LocalDecompression.FiniteView.canonicalId (n := n)) := by
+      intro a b h
+      apply Fin.ext
+      simpa only [LocalDecompression.FiniteView.canonicalId, Nat.add_right_cancel_iff] using h
+    apply LocalDecompression.FiniteView.symmetricUniformDecode_eq_of_graph_view hq F
+      (n + LocalDecompression.FiniteView.codecDegree k + 1)
+      (LocalDecompression.FiniteView.codecDegree k) 1
+      (T (LocalDecompression.FiniteView.codecDegree k)) G H hG hH
+      LocalDecompression.FiniteView.canonicalId hinj
+      (LocalDecompression.FiniteView.codecRadius k) (2*k-1) x y u v
+    · exact physical
+    · exact hlabels
+
+end PalomarDecompression

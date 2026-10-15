@@ -15,11 +15,13 @@
   ],
   "official_tools_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
   "input_sha256": {
-    "Challenge.lean": "dccfefc4e71fe3d29cfbb8a5b43092ff0cdd522ff22ea2ad058906f84c7d19a4",
+    "Challenge.lean": "13d4260b4d8a5ebfaf888f70e2c29a5a180a9ae311758d08f3541e3f2e4f1c71",
     "LocalDecompression/BoundedCells.lean": "76dd9d02380e209ac2e41dd23271cea7469058973972e3e2c43bcebd9378aa32",
     "LocalDecompression/BoundedPacket.lean": "d68af46c6d1664e1ff5fab2a56520d55740f4b3b9f5ec7627a0e52e0affa522e",
+    "LocalDecompression/CrossingBridge.lean": "68d2de828a4f7a49334b895b9b243e49367d6c01fe0eb9ec3959344ea1a5491c",
     "LocalDecompression/Decoder.lean": "10242c1cd19f1c10cc972009654055d81b4528c7d3dfea9f546bcb540e2406fe",
     "LocalDecompression/Encoding.lean": "4b25f03ff5b14f1d8f94480fd7d356f1372e08e4ce4bda0dd08ccc48549cdcda",
+    "LocalDecompression/FiniteView.lean": "561b644463aaf6c3f924eff235eb2aeec568215ae1eabaac47b9aa6f37f3de46",
     "LocalDecompression/GraphLayout.lean": "685544de4009b5fe2a2e8879b3d4970a67ebf8f452d897c7bf7a48f6a95f71a7",
     "LocalDecompression/GraphPresentation.lean": "3317523be6e5a19a81c35d7ff4ebff3225d9f00929ff343b8e59cec985079e60",
     "LocalDecompression/GraphReduction.lean": "a5d8e91210802267766af76a36ad91777355c0328f1ea540b34c44cc4c5899e0",
@@ -27,18 +29,32 @@
     "LocalDecompression/LocalView.lean": "a0395db213a39551f7d332201986b4f70026b4e81229e4a271dd18c076b38c12",
     "LocalDecompression/Main.lean": "1c2594bd22d0a07c80b84ccac9c1dbd541352ef8ee68d87c163655d82c916b03",
     "LocalDecompression/MarkerLocality.lean": "c9b8a7fb660b92b82527924555d0379e4fb54b610cc7120affca8ad3e985ff7a",
+    "LocalDecompression/NamedCorrectness.lean": "b7b9d1e09d7c5adc44a80029dba902149c5f963ea432f54e21c4b769a0501cac",
+    "LocalDecompression/NamedDecoder.lean": "76dea913d2704fe212c065f9cea4003fa955594e39aa9f570c6859f40c3e60dd",
+    "LocalDecompression/NamedLocality.lean": "31e6e96285d6dedaa6f687dd86cf045320b7e4f066f65c4e1e66fdc4de328290",
+    "LocalDecompression/OracleView.lean": "cfe1060fb67e52e84a738f0c63c6c2e467a0e161fe05c496faebed2a64c1c761",
+    "LocalDecompression/OrientationOracle.lean": "96f3f4c51edf13f04fb92c922904c09b31b98f0ee8d31281fe026b490b2cbab8",
     "LocalDecompression/Ownership.lean": "fadfc2a4674af4d2a88d6a963417c30a3e2700b124c9ea32f7ac00e892489e6c",
     "LocalDecompression/Padding.lean": "4f235647b013e58eb9fc64cea24c9717ad9f968050b6dfa0ba576f46b1b848f9",
     "LocalDecompression/Partition.lean": "dd76783b977121dc439aba0e6f3ea3e793dbc81f0b7568e4510a993fbe863642",
     "LocalDecompression/QuotientOrientation.lean": "227d5246072be1ac1627a682ccecb213166c26622ee1e79e142aca1133c689ec",
-    "LocalDecompression.lean": "1a1a65343422627f2f46da1fa55307bf7ffd5ef75a92a7355ac69f096f037f9b",
-    "Solution.lean": "61a50df570297481fc1b51ed55fe9e85eda6d11e8b33fd08d93e7a35996cab35",
+    "LocalDecompression/QuotientView.lean": "1d9576b6de93fe78145e93f6ed8e7f50217a19c2a8f7e200201705b8d60c20d6",
+    "LocalDecompression/ResidualBridge.lean": "fffaa2c9321950aa938ae74eb3796d57883c9aeef95d3d8af9528880482ca5e2",
+    "LocalDecompression/SymmetricDecoder.lean": "3c1d31356642f66cdb7465a7a62c3e2db593b65cb7ad4da28e46109e7c3ec2ec",
+    "LocalDecompression/UniformDecoder.lean": "eb304de33492f75b70fd053cd6037fb8918a9faca00253f8e76b37ed2c18e9c1",
+    "LocalDecompression/UniformDirections.lean": "c7fc9f800cbd24af91f01aaf10dbf14fde4b3f4bb3ab0c3e28752b4879f1ec93",
+    "LocalDecompression/UniformRecovery.lean": "54e5ca92ef55c8c88ec0adf6d050c5a4b719164fbe2e267ea62d2e2b37db14f8",
+    "LocalDecompression/ViewPackets.lean": "ac842c913b9a6053fa5334683950f58163e116e347661ffe08f72fae50de8928",
+    "LocalDecompression.lean": "cc21878a7274e6ffa1692ae4cf2d89a944da97fa15a95e5c294992e8d064091b",
+    "Solution.lean": "7e42b94b3b80ff233e0c9e614de4138d4168167eedf1c12c689909d941dc4221",
     "Statement.lean": "fe2410937febe262e7f9098d7e9e86fbf678d30f4f0d42ed8ec57d3dffdad543",
-    "comparator.json": "81ac300e87ec49456f7029db4949caa672e6ec975bb2ba5072c0f49ec916def3",
-    "formalization.yaml": "843bd4516dab7b28464f9216312c93c68e44b475dfe4bd82d1d1a7dcf6b68ac6",
+    "UniformStatement.lean": "07a9692addb9f0ff9ef62300ea97b94dc491247171714df93a388d70c9b6cc10",
+    "comparator.json": "9f22356c6f5c06b4b875df1fd70e57044fede96ba0a4072b0c9e5002ae9c1a4b",
+    "formalization.yaml": "40943ba4f9035708cbff2b494bd57038f079cc1c98febfe97f7561109b9aa566",
     "lake-manifest.json": "a3c3b0dd0d8074d2dacc2930afd147179777843235e19181ec58957b5948d608",
-    "lakefile.toml": "f8462e128a62aefc13d0b9cf8b756e1bca72d9c8fadc4d9f3f91ce0a29d05af8",
-    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a"
+    "lakefile.toml": "8f90c3ea592d495025aa9db1dfd08031035e4d25dbe3f66911ebcbff81ca5815",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "verification/AxiomAudit.lean": "4de5c2b1c3061ee3062389d925aa5a31b8e6185b4faa91599fab19cf8dafda70"
   },
   "verifier_sha256": "3dafe0feea0c0bcfee9076f0228979ba8c0f747dab664aab5164f8ae45671be1",
   "official_source_sha256": {
@@ -53,10 +69,10 @@
       "schema_version": 1,
       "module_required": true,
       "maximum_lines": 10000,
-      "files_checked": 341
+      "files_checked": 357
     },
-    "compiler_module_headers": 19,
-    "project_name": "Optimal Local Decompression: Finite Reduction and Graph Geometry",
+    "compiler_module_headers": 35,
+    "project_name": "Optimal Local Decompression: Uniform Finite-View Reduction",
     "toolchain": "leanprover/lean4:v4.35.0-rc2",
     "comparator_configuration": "passed",
     "selected_theorems": 8,
@@ -132,7 +148,7 @@
       "build"
     ],
     "exit_code": 0,
-    "seconds": 3.025
+    "seconds": 3.185
   },
   "kernel_replay": {
     "command": [
@@ -143,7 +159,7 @@
       "Solution"
     ],
     "exit_code": 0,
-    "seconds": 256.412
+    "seconds": 290.851
   },
   "comparison": {
     "command": [
@@ -154,7 +170,7 @@
       "--inadvisably-no-sandbox"
     ],
     "exit_code": 0,
-    "seconds": 24.982,
+    "seconds": 33.819,
     "status": "passed",
     "tool_sha256": {
       "lean": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
@@ -176,7 +192,7 @@
         "PalomarDecompression.largeComponentPartition",
         "PalomarDecompression.arbitraryLabelCellGeometry",
         "PalomarDecompression.boundedCellStability",
-        "PalomarDecompression.graphMarkerReconstruction"
+        "PalomarDecompression.uniformFiniteViewReconstruction"
       ],
       "definition_names": [],
       "permitted_axioms": [
@@ -220,10 +236,10 @@
         "theorem",
         "PalomarDecompression.boundedCellStability",
         "theorem",
-        "PalomarDecompression.graphMarkerReconstruction"
+        "PalomarDecompression.uniformFiniteViewReconstruction"
       ],
       "exit_code": 0,
-      "seconds": 9.488
+      "seconds": 19.809
     },
     "literate": {
       "command": [
@@ -232,7 +248,7 @@
         "Challenge:literate"
       ],
       "exit_code": 0,
-      "seconds": 4.235
+      "seconds": 8.722
     },
     "html": {
       "command": [
@@ -243,7 +259,7 @@
         "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23346565/palomar/.lake/local-render/workspace/.lake/build/palomar-render-raw"
       ],
       "exit_code": 0,
-      "seconds": 4.404
+      "seconds": 3.868
     },
     "sanitize": {
       "command": [
@@ -273,7 +289,7 @@
         "/Users/lennartrudolph/Documents/Codex/2026-10-14/w/work/palomar-formalizations/zenodo-23346565/palomar/verification/audit-declarations.json"
       ],
       "exit_code": 0,
-      "seconds": 3.853
+      "seconds": 4.103
     },
     "rendered_declarations": 8,
     "renderer_revision": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
@@ -332,7 +348,7 @@
       }
     ],
     "entrypoint": ".lake/local-render/workspace/.lake/build/palomar-render-clean/Challenge/index.html",
-    "entrypoint_sha256": "f3a96c0e893dd600dbc1548947a41465ab26693b5ec31fbd0d7c320dde8738c0"
+    "entrypoint_sha256": "fdb2ec898122ce9538654a79d0d58c168520ba6c0c9a77517a30885ef2713152"
   },
   "inputs_unchanged": true
 }
